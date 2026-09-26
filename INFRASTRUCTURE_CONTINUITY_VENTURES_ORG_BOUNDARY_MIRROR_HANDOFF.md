@@ -50,3 +50,8 @@ Replace generic INTERNAL_ENDPOINT entries with tighter endpoint-specific profile
 - GitHub Actions may validate or transport evidence, but GitHub-hosted workflow execution is not required as sovereign runtime authority.
 - Canonical implementation paths: `org-boundary/runtime/`, `org-boundary/registry/`, `org-boundary/schemas/`, `org-boundary/evidence/`, `resident-runtime/`.
 - Any legacy resident activation implementation outside `Infrastructure-Continuity-Ventures/.github` becomes an endpoint/provider to this boundary or must be migrated here; it must not remain a competing organizational activation point.
+
+
+## 2026-09-26 — native organization source-only license census
+
+Existing central `ECOSYSTEM-OPEN-SOURCE-STRATEGY-001` / COSV `20010010100000`: inspected 7 repository root `LICENSE` and `LICENSE.md` paths, none found (0 public, 6 private, 1 internal). Native detailed evidence: `docs/OPEN_SOURCE_ORGANIZATION_INVENTORY_20260926.json`; central public disclosure aggregate-only. Full source/historical grants, actual contributor title and third-party rights remain unverified; no license/release or original organizational runtime authority change.
