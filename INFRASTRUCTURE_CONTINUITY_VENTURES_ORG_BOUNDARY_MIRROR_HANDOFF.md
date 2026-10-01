@@ -69,3 +69,27 @@ Initial commercial packages:
 Catalog authority is `COMMERCIAL_DESCRIPTION_ONLY`. It grants no governance, credential, legal, operational, execution, source-system, publication, release, or customer authority. Each customer engagement remains separately scoped and admitted. No canonical Task Registry binding or COSV was invented by this source change: `canonical_task_binding=null`, `cosv_task_vector=null` until authentic canonical governance supplies them.
 
 This change does not mutate the six existing ICV application repositories, does not modify runtime endpoint routing, and does not represent current gateway source candidates as a released commercial artifact.
+
+
+## 2026-10-02 — ecosystem product census reconciliation
+
+The commercial catalog is upgraded to `icv.commercial-service-catalog.v2` after direct reconciliation of candidate source README/handoff/release/commercial evidence. The catalog uses only: `RELEASED_PRODUCT`, `REVENUE_READY_SERVICE`, `MANAGED_PILOT`, `ASSESSMENT_ONLY`, `DEVELOPMENT_PREVIEW`, `INTERNAL_SUBSTRATE`.
+
+Evidence-bounded dispositions:
+- Governance Assessment — `REVENUE_READY_SERVICE`.
+- Governance & AI Boundary Validation — `REVENUE_READY_SERVICE`; its canonical StegFin governance source explicitly identifies a first revenue-grade product and commercial forms, without creating external execution authority.
+- Admitted Code — `ASSESSMENT_ONLY`; production admission/release authority is not inferred.
+- StegGate 0.3.0 — `DEVELOPMENT_PREVIEW`; current source product exists but StegCore canonical handoff records v0.3.0 `NOT YET RELEASED`.
+- StegCRM — `MANAGED_PILOT`; projection authority remains NONE and source write-back remains false.
+- HydraSafe — `REVENUE_READY_SERVICE`; canonical commercial assets define a bounded paid facility packet and exclusions.
+- GP10 Field Validation — `REVENUE_READY_SERVICE`; canonical source explicitly calls the bounded offer revenue-ready.
+- Governance Observatory 0.1.0 — `RELEASED_PRODUCT`; canonical VERSION.json records `RELEASED`, tag `v0.1.0`, and GitHub Release 377486341.
+- KnowledgeVault / MyKV — `MANAGED_PILOT`; file-based installation/projection is materially implemented while provider/relationship authority remains separately governed.
+- StegTalk — `DEVELOPMENT_PREVIEW`; canonical release verification records `verified_non_production_local_prototype` and `production_ready=false`.
+- Ecosystem Chat — `DEVELOPMENT_PREVIEW`; Site scope source is released, but its own handoff says live distributed execution and live AI SiteFlow integration are not implemented/proven.
+- StegLearn — `DEVELOPMENT_PREVIEW`; product specification and materialized lesson/receipt flows do not establish a generally released platform.
+- StegBusiness / StegBusiness-Ops — `INTERNAL_SUBSTRATE`; retained for ecosystem/product dependency visibility but not represented as an independent customer-facing ICV package.
+
+The v2 catalog adds explicit `source_repository`, `source_product`, `version`, and `evidence_refs` lineage. Classification never upgrades source presence, CI, merge, historical evidence, local prototype status, commercial readiness, or public positioning into a stronger release/runtime claim.
+
+No Task Registry or COSV authority was supplied by this reconciliation. The catalog therefore continues to require `canonical_task_binding=null` and `cosv_task_vector=null`. Runtime endpoint ownership under `org-boundary/registry/services.json` is unchanged.
