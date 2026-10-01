@@ -48,3 +48,10 @@ python commercial/validate_catalog.py
 ```
 
 The validator requires the exact six-state classification vocabulary, the reconciled candidate set, unique offering IDs, source/product/evidence lineage, authority boundaries, customer-facing flags, and absence of an invented Task Registry/COSV binding.
+
+
+## Release-hardening census
+
+`release-hardening-census.json` records the observed release chain separately from commercial classification. It distinguishes service-only offerings from distributable software and prevents a current-main capability from being attributed to an older immutable release.
+
+A software release chain is considered complete only when the applicable canonical owner establishes the required version/release predicates and the observed tag, GitHub Release, and packaged artifact agree. Missing release machinery is not a blocker for a service-only offering unless that service claims delivery of released software.
