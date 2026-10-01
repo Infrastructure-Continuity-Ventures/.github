@@ -1,0 +1,148 @@
+{
+  "schema_version": "icv.release-hardening-census.v1",
+  "observed_at": "2026-10-01",
+  "canonical_task_binding": null,
+  "cosv_task_vector": null,
+  "entries": [
+    {
+      "offering_id": "icv.governance-assessment.v1",
+      "kind": "SERVICE_ONLY",
+      "release_posture": "NO_SOFTWARE_RELEASE_REQUIRED",
+      "repo": "Infrastructure-Continuity-Ventures/.github",
+      "gaps": [],
+      "next_release_path": "Maintain commercial scope/evidence; customer engagements are separately admitted."
+    },
+    {
+      "offering_id": "icv.governance-boundary-validation.v1",
+      "kind": "SERVICE_WITH_SOFTWARE",
+      "release_posture": "PILOT_EVIDENCE_IN_PROGRESS_NO_TAG_OR_RELEASE",
+      "repo": "StegVerse-Labs/stegfin-governance",
+      "gaps": [
+        "no product VERSION observed",
+        "no product Git tag observed",
+        "no GitHub Release observed",
+        "canonical handoff says pilot_evidence_validation_in_progress"
+      ],
+      "next_release_path": "Complete the canonical handoff's machine-observable pilot/release conditions, then bind version, exact commit, tag, release notes and reproducible package if its owner authorizes a software release."
+    },
+    {
+      "offering_id": "icv.admitted-code.v1",
+      "kind": "SERVICE_ONLY",
+      "release_posture": "ASSESSMENT_ONLY",
+      "repo": "StegVerse-Labs/StegCore",
+      "gaps": [
+        "production admission runtime/release not established"
+      ],
+      "next_release_path": "Keep assessment-only until separately authorized production admission predicates are satisfied."
+    },
+    {
+      "offering_id": "icv.steggate.v1",
+      "kind": "SOFTWARE_PRODUCT",
+      "release_posture": "SOURCE_VALIDATED_NOT_RELEASED",
+      "repo": "StegVerse-Labs/StegCore",
+      "version": "0.3.0",
+      "gaps": [
+        "v0.3.0 tag absent",
+        "v0.3.0 GitHub Release absent",
+        "canonical handoff explicitly says NOT YET RELEASED",
+        "VERSION.json drift repair pending in PR #234"
+      ],
+      "next_release_path": "Merge metadata-only PR #234 if exact-head requirements pass; thereafter follow docs/STEGCORE_0_3_RELEASE_CANDIDATE_MIRROR_HANDOFF.md and TV/TVC release authority. Do not tag from this census."
+    },
+    {
+      "offering_id": "icv.stegcrm.v1",
+      "kind": "MANAGED_PILOT",
+      "release_posture": "NO_STANDALONE_RELEASE",
+      "repo": "StegVerse-Labs/StegOps-Orchestrator",
+      "gaps": [
+        "no product tag",
+        "no GitHub Release",
+        "CRM projection is a managed-pilot component of StegOps"
+      ],
+      "next_release_path": "Keep managed pilot; define standalone release contract only if StegCRM becomes an independently distributed product."
+    },
+    {
+      "offering_id": "icv.hydrasafe.v1",
+      "kind": "SERVICE_ONLY",
+      "release_posture": "REVENUE_READY_SERVICE_NO_SOFTWARE_RELEASE",
+      "repo": "StegVerse-Labs/HydraSafe",
+      "gaps": [
+        "no Git tag",
+        "no GitHub Release"
+      ],
+      "next_release_path": "No software release is required to sell the bounded documentation service; version/tag a customer-distributable template/package only when HydraSafe defines that artifact contract."
+    },
+    {
+      "offering_id": "icv.gp10-field-validation.v1",
+      "kind": "SERVICE_ONLY",
+      "release_posture": "REVENUE_READY_SERVICE_NO_SOFTWARE_RELEASE",
+      "repo": "StegVerse-Labs/GP10",
+      "gaps": [
+        "no Git tag",
+        "no GitHub Release"
+      ],
+      "next_release_path": "No software release is required for the bounded paid evidence-review service; release only a defined distributable product artifact if one is later established."
+    },
+    {
+      "offering_id": "icv.governance-observatory.v1",
+      "kind": "SOFTWARE_PRODUCT",
+      "release_posture": "RELEASED_BASELINE",
+      "repo": "StegVerse-Labs/governance-observatory",
+      "version": "0.1.0",
+      "gaps": [
+        "current main may contain successor work beyond the v0.1.0 immutable release baseline"
+      ],
+      "next_release_path": "Preserve v0.1.0 as immutable baseline; use its release-baseline validator and create a successor version only for intentionally releasable post-v0.1.0 scope."
+    },
+    {
+      "offering_id": "icv.knowledgevault.v1",
+      "kind": "SOFTWARE_PRODUCT_AND_MANAGED_PILOT",
+      "release_posture": "RELEASED_BASELINE_WITH_POST_RELEASE_MAIN",
+      "repo": "StegVerse-Labs/continuity-vault-kit",
+      "version": "0.1.9",
+      "gaps": [
+        "current main includes substantial post-v0.1.9 MyKV/Interlock/provider-governance work",
+        "current main must not be represented as contained in v0.1.9"
+      ],
+      "next_release_path": "Preserve v0.1.9 artifact/manifest as immutable released baseline; reconcile CHANGELOG/VERSION/release evidence and select a new version only when current post-release scope satisfies its canonical release predicates."
+    },
+    {
+      "offering_id": "icv.stegtalk.v1",
+      "kind": "SOFTWARE_PREVIEW",
+      "release_posture": "VERIFIED_NON_PRODUCTION_LOCAL_PROTOTYPE",
+      "repo": "StegVerse-Labs/StegTalk",
+      "version": "v0.1.0-local-prototype-candidate",
+      "gaps": [
+        "no Git tag",
+        "no GitHub Release",
+        "production_ready=false",
+        "live physical/network bearer evidence not proven"
+      ],
+      "next_release_path": "Preserve preview; satisfy ST-029..ST-036/live-edge predicates and canonical production criteria before any production release."
+    },
+    {
+      "offering_id": "icv.ecosystem-chat.v1",
+      "kind": "SOFTWARE_PREVIEW",
+      "release_posture": "SOURCE_POSITIONING_ONLY",
+      "repo": "StegVerse-Labs/Site",
+      "gaps": [
+        "no Ecosystem Chat product tag/release",
+        "existing Site release is an experiment snapshot, not product release",
+        "live distributed execution/integrations not proven"
+      ],
+      "next_release_path": "Keep preview until the canonical Ecosystem Chat owner establishes implemented/proven product predicates and an independent product release identity."
+    },
+    {
+      "offering_id": "icv.steglearn.v1",
+      "kind": "SOFTWARE_PREVIEW",
+      "release_posture": "DEVELOPMENT_PREVIEW_NO_RELEASE",
+      "repo": "StegVerse-Labs/StegLearn",
+      "gaps": [
+        "no Git tag",
+        "no GitHub Release",
+        "no generally released platform evidence"
+      ],
+      "next_release_path": "Preserve development preview; establish canonical version/release predicates before preparing a tag."
+    }
+  ]
+}

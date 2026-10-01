@@ -93,3 +93,12 @@ Evidence-bounded dispositions:
 The v2 catalog adds explicit `source_repository`, `source_product`, `version`, and `evidence_refs` lineage. Classification never upgrades source presence, CI, merge, historical evidence, local prototype status, commercial readiness, or public positioning into a stronger release/runtime claim.
 
 No Task Registry or COSV authority was supplied by this reconciliation. The catalog therefore continues to require `canonical_task_binding=null` and `cosv_task_vector=null`. Runtime endpoint ownership under `org-boundary/registry/services.json` is unchanged.
+
+
+## 2026-10-01 — release-hardening census
+
+`commercial/release-hardening-census.json` now records the exact release posture for every customer-facing catalog entry. The census separates service commercial readiness from software release status and records missing/stale links without promoting them.
+
+Observed clean released baseline: Governance Observatory v0.1.0. KnowledgeVault/Continuity Vault Kit has an immutable v0.1.9 release with packaged ZIP and manifest, while current main contains later work and therefore must not be described as identical to v0.1.9. StegGate source is 0.3.0 and source-validated but explicitly not released; a metadata-only StegCore repair is tracked separately and does not authorize a tag. Governance Boundary Validation remains in pilot-evidence validation. StegCRM remains managed-pilot scope. HydraSafe and GP10 are revenue-ready services for which a software release is not required by the current offer. StegTalk, Ecosystem Chat and StegLearn remain previews under their own canonical boundaries.
+
+No tag, GitHub Release, activation, Task Registry binding, COSV binding, credential authority or runtime authority is created by this census.
