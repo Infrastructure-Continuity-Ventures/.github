@@ -1,92 +1,293 @@
 {
-  "schema_version": "icv.commercial-service-catalog.v1",
+  "schema_version": "icv.commercial-service-catalog.v2",
   "organization": "Infrastructure-Continuity-Ventures",
   "catalog_authority": "COMMERCIAL_DESCRIPTION_ONLY",
   "canonical_task_binding": null,
   "cosv_task_vector": null,
+  "classification_vocabulary": [
+    "RELEASED_PRODUCT",
+    "REVENUE_READY_SERVICE",
+    "MANAGED_PILOT",
+    "ASSESSMENT_ONLY",
+    "DEVELOPMENT_PREVIEW",
+    "INTERNAL_SUBSTRATE"
+  ],
   "offerings": [
     {
       "offering_id": "icv.governance-assessment.v1",
       "name": "Governance Assessment",
       "category": "governance",
-      "commercial_status": "OFFERABLE_BOUNDED_SERVICE",
-      "delivery_modes": ["fixed-scope assessment", "productized service"],
+      "classification": "REVENUE_READY_SERVICE",
+      "customer_facing": true,
+      "source_repository": "Infrastructure-Continuity-Ventures/.github",
+      "source_product": "ICV Governance Assessment",
+      "version": null,
+      "evidence_refs": [
+        "commercial/service-catalog.json",
+        "INFRASTRUCTURE_CONTINUITY_VENTURES_ORG_BOUNDARY_MIRROR_HANDOFF.md",
+        "StegVerse-Labs/stegfin-governance:docs/GOVERNANCE_BOUNDARY_VALIDATION_PRODUCT.md"
+      ],
+      "delivery_modes": [
+        "fixed-scope assessment",
+        "productized service"
+      ],
       "customer_outcome": "A source- and evidence-bound map of an existing workflow, its authoritative states, decision boundaries, allowed transitions, failure conditions, and a governed target-state implementation plan.",
-      "included": [
-        "workflow and authority inventory",
-        "state-transition and evidence model",
-        "ALLOW/DENY/FAIL_CLOSED decision boundary design",
-        "source/provenance mapping",
-        "bounded implementation roadmap"
+      "authority_boundary": "Commercial description and assessment only; applicable customer, StegVerse, legal, credential, operational, execution and release authorities remain separate."
+    },
+    {
+      "offering_id": "icv.governance-boundary-validation.v1",
+      "name": "Governance & AI Boundary Validation",
+      "category": "governance-validation",
+      "classification": "REVENUE_READY_SERVICE",
+      "customer_facing": true,
+      "source_repository": "StegVerse-Labs/stegfin-governance",
+      "source_product": "StegVerse Governance & AI Boundary Validation Engine",
+      "version": null,
+      "evidence_refs": [
+        "README.md",
+        "docs/GOVERNANCE_BOUNDARY_VALIDATION_PRODUCT.md"
       ],
-      "excluded": [
-        "legal opinion",
-        "regulatory certification",
-        "automatic transfer of customer authority",
-        "claim that repository or CI success establishes runtime governance"
+      "delivery_modes": [
+        "fixed-scope validation",
+        "paid pilot integration",
+        "research/evaluation contract",
+        "implementation/training"
       ],
-      "source_refs": [
-        "Infrastructure-Continuity-Ventures/.github:org-boundary/",
-        "StegVerse-Labs/.github canonical governance/task records"
-      ],
-      "authority_boundary": "ICV may analyze and package governance requirements; authoritative customer, StegVerse, legal, operational, credential, execution, and release decisions remain with their applicable owners."
+      "customer_outcome": "Deterministically validate a declared governance manifest against a proposed or recorded execution context and return machine-readable findings plus a human-readable audit report.",
+      "authority_boundary": "Validation does not create execution authority, payment/custody authority, identity, legal certification, token authority, or a hosted control plane."
     },
     {
       "offering_id": "icv.admitted-code.v1",
       "name": "Admitted Code",
       "category": "admissibility",
-      "commercial_status": "OFFERABLE_ASSESSMENT_ONLY",
-      "delivery_modes": ["code-admission assessment", "controlled proof-of-concept"],
-      "customer_outcome": "A bounded determination of what code is being proposed, what it is allowed to affect, what evidence is required before admission, and what receipt/evidence must exist before any governed execution claim.",
-      "included": [
-        "code/change identity binding",
-        "declared target and scope binding",
-        "admission predicate definition",
-        "pre-execution evidence requirements",
-        "non-ALLOW and fail-closed test cases",
-        "receipt and reconstruction design"
+      "classification": "ASSESSMENT_ONLY",
+      "customer_facing": true,
+      "source_repository": "StegVerse-Labs/StegCore",
+      "source_product": "Admitted Code assessment / StegGate-backed admissibility design",
+      "version": null,
+      "evidence_refs": [
+        "docs/STEGGATE_PORTABLE_PRODUCT.md",
+        "STEGCORE_MIRROR_HANDOFF.md",
+        "Infrastructure-Continuity-Ventures/infrastructure-continuity-engine:gateway/"
       ],
-      "excluded": [
-        "production admission runtime unless separately released and authorized",
-        "customer credential issuance",
-        "automatic trust enrollment",
-        "claim that current ICV gateway source candidates are released commercial artifacts"
+      "delivery_modes": [
+        "code-admission assessment",
+        "controlled proof-of-concept"
       ],
-      "source_refs": [
-        "Infrastructure-Continuity-Ventures/infrastructure-continuity-engine:gateway/",
-        "StegVerse-Labs/StegCore",
-        "StegVerse-org/StegVerse-SDK"
+      "customer_outcome": "Bind a proposed code/change identity, target, admission predicates and evidence requirements before any separately authorized consequential execution.",
+      "authority_boundary": "StegCore source and ICV gateway candidates do not by themselves establish a released production admission service; production authority, distribution, trust-root and custody remain separately governed."
+    },
+    {
+      "offering_id": "icv.steggate.v1",
+      "name": "StegGate",
+      "category": "portable-admissibility-product",
+      "classification": "DEVELOPMENT_PREVIEW",
+      "customer_facing": true,
+      "source_repository": "StegVerse-Labs/StegCore",
+      "source_product": "StegGate Portable Product",
+      "version": "0.3.0",
+      "evidence_refs": [
+        "README.md",
+        "docs/STEGGATE_PORTABLE_PRODUCT.md",
+        "VERSION",
+        "STEGCORE_MIRROR_HANDOFF.md"
       ],
-      "authority_boundary": "Current ICV gateway work is source/test evidence, not a released admission authority. A production Admitted Code service requires separately authorized runtime, distribution, trust-root, and custody conditions."
+      "delivery_modes": [
+        "local evaluation preview",
+        "integration pilot"
+      ],
+      "customer_outcome": "Submit a structured commitment candidate through the canonical StegCore admissibility composition and receive a governed disposition, reasons, predicate matrix and reconstruction hashes.",
+      "authority_boundary": "The 0.3.0 source line is current and validated but the canonical handoff states v0.3.0 NOT YET RELEASED. An evaluation is not proof of execution and does not mint authority, identity, custody or continuity."
     },
     {
       "offering_id": "icv.stegcrm.v1",
       "name": "StegCRM",
       "category": "governed-crm",
-      "commercial_status": "OFFERABLE_MANAGED_PILOT",
-      "delivery_modes": ["managed CRM overlay pilot", "commercial relationship governance assessment"],
-      "customer_outcome": "A governed commercial relationship projection across existing CRM, campaign, email, repository, and operational sources without forcing those systems to surrender source authority.",
-      "included": [
-        "relationship and opportunity projection",
-        "source-authority preservation",
-        "interaction/evidence references",
-        "source-native stage preservation",
-        "next-action projection",
-        "projection_authority=NONE boundary",
-        "managed reconciliation pilot"
+      "classification": "MANAGED_PILOT",
+      "customer_facing": true,
+      "source_repository": "StegVerse-Labs/StegOps-Orchestrator",
+      "source_product": "Governed CRM projection layer",
+      "version": null,
+      "evidence_refs": [
+        "crm_projections/",
+        "schemas/campaign-projection.schema.json",
+        "schemas/prospect-projection.schema.json",
+        "docs/STEGOPS_ORCHESTRATOR_MIRROR_HANDOFF.md"
       ],
-      "excluded": [
-        "automatic replacement of customer CRM authority",
-        "generic probability or qualification synthesis",
-        "source-campaign write-back unless separately admitted",
-        "production customer deployment implied solely by internal StegOps proof"
+      "delivery_modes": [
+        "managed CRM overlay pilot",
+        "commercial relationship governance assessment"
       ],
-      "source_refs": [
-        "StegVerse-Labs/StegOps-Orchestrator:crm_projections/",
-        "StegVerse-Labs/StegOps-Orchestrator:schemas/campaign-projection.schema.json",
-        "StegVerse-Labs/StegOps-Orchestrator:schemas/prospect-projection.schema.json"
+      "customer_outcome": "Project commercial relationships across existing campaign, CRM, email, repository and operational sources while preserving source authority and evidence lineage.",
+      "authority_boundary": "Projection authority remains NONE; source systems retain authority and no write-back, generic probability or qualification synthesis is implied."
+    },
+    {
+      "offering_id": "icv.hydrasafe.v1",
+      "name": "HydraSafe Permitting-Readiness",
+      "category": "industrial-documentation",
+      "classification": "REVENUE_READY_SERVICE",
+      "customer_facing": true,
+      "source_repository": "StegVerse-Labs/HydraSafe",
+      "source_product": "HydraSafe hydrogen permitting-readiness packet",
+      "version": "0.1.0",
+      "evidence_refs": [
+        "README.md",
+        "commercial/README.md",
+        "commercial/free-gap-assessment.md",
+        "commercial/facility-packet-sow.md",
+        "docs/HYDRASAFE_MIRROR_HANDOFF.md",
+        "hydrasafe.manifest.json"
       ],
-      "authority_boundary": "StegCRM may project and reconcile customer commercial state; source systems retain their declared authority unless a separately admitted transition explicitly changes ownership."
+      "delivery_modes": [
+        "no-cost documentation gap assessment",
+        "paid facility packet"
+      ],
+      "customer_outcome": "Assemble and check a structured facility evidence packet for hydrogen/reactive-gas permitting and qualified-professional review.",
+      "authority_boundary": "HydraSafe does not issue permits, provide legal advice, perform engineering design, certify code compliance, stamp engineering work or authorize facility operation."
+    },
+    {
+      "offering_id": "icv.gp10-field-validation.v1",
+      "name": "GP10 Field Validation",
+      "category": "rail-evidence-validation",
+      "classification": "REVENUE_READY_SERVICE",
+      "customer_facing": true,
+      "source_repository": "StegVerse-Labs/GP10",
+      "source_product": "GP10 Paid Field-Validation Offer",
+      "version": null,
+      "evidence_refs": [
+        "README.md",
+        "docs/business/PAID_FIELD_VALIDATION_OFFER.md",
+        "GP10_MIRROR_HANDOFF.md"
+      ],
+      "delivery_modes": [
+        "paid fixed-scope evidence review"
+      ],
+      "customer_outcome": "Normalize a customer-authorized locomotive or parts-history evidence package, preserve provenance/conflicts, apply deterministic validation and return an evidence packet with unresolved questions and next-evidence recommendations.",
+      "authority_boundary": "The service does not establish safety, regulatory, emissions, fitment, pricing, profitability, repair, retrofit, commissioning, purchase or release authority beyond supplied evidence and applicable qualified review."
+    },
+    {
+      "offering_id": "icv.governance-observatory.v1",
+      "name": "Governance Observatory",
+      "category": "governance-intelligence",
+      "classification": "RELEASED_PRODUCT",
+      "customer_facing": true,
+      "source_repository": "StegVerse-Labs/governance-observatory",
+      "source_product": "Governance Observatory",
+      "version": "0.1.0",
+      "evidence_refs": [
+        "README.md",
+        "VERSION.json",
+        "GitHub Release 377486341 / tag v0.1.0"
+      ],
+      "delivery_modes": [
+        "released source-intake and observation toolkit",
+        "governance research/evaluation support"
+      ],
+      "customer_outcome": "Capture, compare and publish source-bound observations of external governance, evidentiary, runtime and admissibility frameworks using reproducible artifacts and explicit publication boundaries.",
+      "authority_boundary": "Release does not imply endorsement, certification, standing, execution authorization, partnership or authority transfer; the repository records observations and does not grant execution authority."
+    },
+    {
+      "offering_id": "icv.knowledgevault.v1",
+      "name": "KnowledgeVault / MyKV",
+      "category": "continuity-and-knowledge",
+      "classification": "MANAGED_PILOT",
+      "customer_facing": true,
+      "source_repository": "StegVerse-Labs/continuity-vault-kit",
+      "source_product": "KnowledgeVault Kit with MyKV projection",
+      "version": null,
+      "evidence_refs": [
+        "README.md",
+        "docs/KV_MYKV_INSTANCE_PROJECTION.md",
+        "StegVerse-Labs/Site:docs/MYKV_IOS_INSTALLABLE_SURFACE_MIRROR_HANDOFF.md"
+      ],
+      "delivery_modes": [
+        "file-based vault deployment",
+        "managed continuity pilot"
+      ],
+      "customer_outcome": "Create portable owner-controlled knowledge/continuity vaults with installation receipts, multi-instance identity, bounded relationship state and reconstructable provenance without requiring a hosted service.",
+      "authority_boundary": "File/source tooling does not establish provider access, synchronization, AI corpus exposure, storage authority or relationship transitions without separately admitted evidence and authority."
+    },
+    {
+      "offering_id": "icv.stegtalk.v1",
+      "name": "StegTalk",
+      "category": "secure-communications",
+      "classification": "DEVELOPMENT_PREVIEW",
+      "customer_facing": true,
+      "source_repository": "StegVerse-Labs/StegTalk",
+      "source_product": "StegTalk local prototype candidate",
+      "version": "v0.1.0-local-prototype-candidate",
+      "evidence_refs": [
+        "README.md",
+        "STEGTALK_MIRROR_HANDOFF.md",
+        "STEGTALK_CANDIDATE_STATUS.json",
+        "STEGTALK_RELEASE_VERIFICATION.json"
+      ],
+      "delivery_modes": [
+        "non-production local prototype demonstration"
+      ],
+      "customer_outcome": "Demonstrate the current device-agnostic communication architecture and local messaging/runtime surfaces under bounded prototype conditions.",
+      "authority_boundary": "Canonical release verification states verified_non_production_local_prototype and production_ready=false; no production transport, cryptography, deployment standing or final governance authority is claimed."
+    },
+    {
+      "offering_id": "icv.ecosystem-chat.v1",
+      "name": "Ecosystem Chat",
+      "category": "governed-capability-interface",
+      "classification": "DEVELOPMENT_PREVIEW",
+      "customer_facing": true,
+      "source_repository": "StegVerse-Labs/Site",
+      "source_product": "Ecosystem Chat governed conversational capability interface",
+      "version": null,
+      "evidence_refs": [
+        "docs/ECOSYSTEM_CHAT_SCOPE_MIRROR_HANDOFF.md",
+        "README.md",
+        "StegVerse-org/LLM-adapter:docs/ECOSYSTEM_CHAT_MIRROR_HANDOFF.md"
+      ],
+      "delivery_modes": [
+        "source-demonstrated capability-interface preview"
+      ],
+      "customer_outcome": "Present a governed conversational interface that can discover and compose provider capabilities while retaining provider identity, provenance and governance boundaries.",
+      "authority_boundary": "Source positioning is released, but live distributed multi-LLM execution and live AI SiteFlow integration are explicitly NOT YET IMPLEMENTED / NOT PROVEN."
+    },
+    {
+      "offering_id": "icv.steglearn.v1",
+      "name": "StegLearn",
+      "category": "learning",
+      "classification": "DEVELOPMENT_PREVIEW",
+      "customer_facing": true,
+      "source_repository": "StegVerse-Labs/StegLearn",
+      "source_product": "StegLearn homeschool-capable learning system",
+      "version": null,
+      "evidence_refs": [
+        "README.md",
+        "docs/product-spec.md",
+        "STEGLEARN_MIRROR_HANDOFF.md"
+      ],
+      "delivery_modes": [
+        "bounded learning-loop pilot"
+      ],
+      "customer_outcome": "Capture learner curiosity, activity and explanation, support parent review, and preserve structured learning receipts and portfolio records.",
+      "authority_boundary": "The current source defines and materializes bounded learning flows; it does not establish a generally released education platform, legal homeschool compliance automation or AI authority over the learner."
+    },
+    {
+      "offering_id": "icv.stegbusiness-ops.v1",
+      "name": "StegBusiness / StegBusiness-Ops",
+      "category": "business-operations",
+      "classification": "INTERNAL_SUBSTRATE",
+      "customer_facing": false,
+      "source_repository": "StegVerse-Labs/StegBusiness-Ops",
+      "source_product": "Canonical StegVerse business lifecycle operations",
+      "version": null,
+      "evidence_refs": [
+        "StegVerse-Labs/StegBusiness:README.md",
+        "StegVerse-Labs/StegBusiness:STEGBUSINESS_MIRROR_HANDOFF.md",
+        "README.md",
+        "STEGBUSINESS_OPS_MIRROR_HANDOFF.md"
+      ],
+      "delivery_modes": [
+        "internal business lifecycle coordination"
+      ],
+      "customer_outcome": "Internal canonical business identity/lifecycle and operational coordination supporting formation, tax, procurement, contracts, finance, compliance, insurance, licensing and renewals.",
+      "authority_boundary": "Current ownership is StegVerse business administration substrate. Repository preparation does not create legal formation, filing, certification, award, payment, banking or external portal authority; no independent customer-facing ICV package is claimed here."
     }
   ]
 }
