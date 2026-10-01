@@ -55,3 +55,17 @@ Replace generic INTERNAL_ENDPOINT entries with tighter endpoint-specific profile
 ## 2026-09-26 — native organization source-only license census
 
 Existing central `ECOSYSTEM-OPEN-SOURCE-STRATEGY-001` / COSV `20010010100000`: inspected 7 repository root `LICENSE` and `LICENSE.md` paths, none found (0 public, 6 private, 1 internal). Native detailed evidence: `docs/OPEN_SOURCE_ORGANIZATION_INVENTORY_20260926.json`; central public disclosure aggregate-only. Full source/historical grants, actual contributor title and third-party rights remain unverified; no license/release or original organizational runtime authority change.
+
+
+## 2026-10-01 — bounded commercial service catalog
+
+Owner-approved productization work adds `commercial/` as the organization-level description surface for customer-facing ICV packages while preserving `org-boundary/registry/services.json` as the distinct runtime endpoint registry.
+
+Initial commercial packages:
+- `icv.governance-assessment.v1` — bounded Governance Assessment; commercial status `OFFERABLE_BOUNDED_SERVICE`.
+- `icv.admitted-code.v1` — code-admission assessment / controlled proof-of-concept; commercial status `OFFERABLE_ASSESSMENT_ONLY` until separately authorized production admission runtime/distribution/trust prerequisites exist.
+- `icv.stegcrm.v1` — governed CRM overlay assessment / managed pilot; commercial status `OFFERABLE_MANAGED_PILOT`, consuming the authority-free StegOps projection contract without transferring source-system authority.
+
+Catalog authority is `COMMERCIAL_DESCRIPTION_ONLY`. It grants no governance, credential, legal, operational, execution, source-system, publication, release, or customer authority. Each customer engagement remains separately scoped and admitted. No canonical Task Registry binding or COSV was invented by this source change: `canonical_task_binding=null`, `cosv_task_vector=null` until authentic canonical governance supplies them.
+
+This change does not mutate the six existing ICV application repositories, does not modify runtime endpoint routing, and does not represent current gateway source candidates as a released commercial artifact.
