@@ -25,7 +25,8 @@
       "evidence_refs": [
         "commercial/service-catalog.json",
         "INFRASTRUCTURE_CONTINUITY_VENTURES_ORG_BOUNDARY_MIRROR_HANDOFF.md",
-        "StegVerse-Labs/stegfin-governance:docs/GOVERNANCE_BOUNDARY_VALIDATION_PRODUCT.md"
+        "StegVerse-Labs/stegfin-governance:docs/GOVERNANCE_BOUNDARY_VALIDATION_PRODUCT.md",
+        "commercial/packages/governance-assessment.md"
       ],
       "delivery_modes": [
         "fixed-scope assessment",
@@ -68,7 +69,8 @@
       "evidence_refs": [
         "docs/STEGGATE_PORTABLE_PRODUCT.md",
         "STEGCORE_MIRROR_HANDOFF.md",
-        "Infrastructure-Continuity-Ventures/infrastructure-continuity-engine:gateway/"
+        "Infrastructure-Continuity-Ventures/infrastructure-continuity-engine:gateway/",
+        "commercial/packages/admitted-code-assessment.md"
       ],
       "delivery_modes": [
         "code-admission assessment",

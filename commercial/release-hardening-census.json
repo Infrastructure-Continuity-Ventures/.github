@@ -1,6 +1,6 @@
 {
   "schema_version": "icv.release-hardening-census.v1",
-  "observed_at": "2026-10-01",
+  "observed_at": "2026-10-01T18:49:00-05:00",
   "canonical_task_binding": null,
   "cosv_task_vector": null,
   "entries": [
@@ -10,7 +10,14 @@
       "release_posture": "NO_SOFTWARE_RELEASE_REQUIRED",
       "repo": "Infrastructure-Continuity-Ventures/.github",
       "gaps": [],
-      "next_release_path": "Maintain commercial scope/evidence; customer engagements are separately admitted."
+      "next_release_path": "Maintain commercial scope/evidence; customer engagements are separately admitted.",
+      "transaction_readiness": {
+        "state": "DOCUMENTED",
+        "evidence": [
+          "commercial/packages/governance-assessment.md"
+        ],
+        "software_release_implied": false
+      }
     },
     {
       "offering_id": "icv.governance-boundary-validation.v1",
@@ -33,7 +40,14 @@
       "gaps": [
         "production admission runtime/release not established"
       ],
-      "next_release_path": "Keep assessment-only until separately authorized production admission predicates are satisfied."
+      "next_release_path": "Keep assessment-only until separately authorized production admission predicates are satisfied.",
+      "transaction_readiness": {
+        "state": "DOCUMENTED_AS_ASSESSMENT_ONLY",
+        "evidence": [
+          "commercial/packages/admitted-code-assessment.md"
+        ],
+        "software_release_implied": false
+      }
     },
     {
       "offering_id": "icv.steggate.v1",
@@ -45,9 +59,19 @@
         "v0.3.0 tag absent",
         "v0.3.0 GitHub Release absent",
         "canonical handoff explicitly says NOT YET RELEASED",
-        "VERSION.json drift repair pending in PR #234"
+        "VERSION.json is reconciled to 0.3.0 SOURCE_VALIDATED_NOT_RELEASED; release authority/predicates remain unsatisfied"
       ],
-      "next_release_path": "Merge metadata-only PR #234 if exact-head requirements pass; thereafter follow docs/STEGCORE_0_3_RELEASE_CANDIDATE_MIRROR_HANDOFF.md and TV/TVC release authority. Do not tag from this census."
+      "next_release_path": "Merge metadata-only PR #234 if exact-head requirements pass; thereafter follow docs/STEGCORE_0_3_RELEASE_CANDIDATE_MIRROR_HANDOFF.md and TV/TVC release authority. Do not tag from this census.",
+      "release_transition": {
+        "disposition": "FAIL_CLOSED",
+        "attempted_transition": "publish v0.3.0 successor release",
+        "failing_predicate": "CURRENT_TV_TVC_RELEASE_AUTHORIZATION_AND_SUCCESSOR_AGGREGATE_PREDICATES_SATISFIED",
+        "evidence": [
+          "StegVerse-Labs/StegCore:docs/STEGCORE_0_3_RELEASE_CANDIDATE_MIRROR_HANDOFF.md",
+          "StegVerse-Labs/StegCore:VERSION.json"
+        ],
+        "reason": "Exact candidate is prepared and source-validated, but TV authorization is REQUESTED_NOT_GRANTED and required aggregate/runtime/custody predicates remain incomplete."
+      }
     },
     {
       "offering_id": "icv.stegcrm.v1",
@@ -70,7 +94,16 @@
         "no Git tag",
         "no GitHub Release"
       ],
-      "next_release_path": "No software release is required to sell the bounded documentation service; version/tag a customer-distributable template/package only when HydraSafe defines that artifact contract."
+      "next_release_path": "No software release is required to sell the bounded documentation service; version/tag a customer-distributable template/package only when HydraSafe defines that artifact contract.",
+      "transaction_readiness": {
+        "state": "DOCUMENTED",
+        "evidence": [
+          "StegVerse-Labs/HydraSafe:commercial/README.md",
+          "StegVerse-Labs/HydraSafe:commercial/free-gap-assessment.md",
+          "StegVerse-Labs/HydraSafe:commercial/facility-packet-sow.md"
+        ],
+        "software_release_implied": false
+      }
     },
     {
       "offering_id": "icv.gp10-field-validation.v1",
@@ -81,7 +114,14 @@
         "no Git tag",
         "no GitHub Release"
       ],
-      "next_release_path": "No software release is required for the bounded paid evidence-review service; release only a defined distributable product artifact if one is later established."
+      "next_release_path": "No software release is required for the bounded paid evidence-review service; release only a defined distributable product artifact if one is later established.",
+      "transaction_readiness": {
+        "state": "DOCUMENTED",
+        "evidence": [
+          "StegVerse-Labs/GP10:docs/business/PAID_FIELD_VALIDATION_OFFER.md"
+        ],
+        "software_release_implied": false
+      }
     },
     {
       "offering_id": "icv.governance-observatory.v1",
@@ -92,7 +132,28 @@
       "gaps": [
         "current main may contain successor work beyond the v0.1.0 immutable release baseline"
       ],
-      "next_release_path": "Preserve v0.1.0 as immutable baseline; use its release-baseline validator and create a successor version only for intentionally releasable post-v0.1.0 scope."
+      "next_release_path": "Preserve v0.1.0 as immutable baseline; use its release-baseline validator and create a successor version only for intentionally releasable post-v0.1.0 scope.",
+      "current_main_delta": {
+        "baseline": "v0.1.0 / 277556adefb09900e7e889e4d919aeaf79ee6923",
+        "ahead_by": 4,
+        "changed_release_scope": [
+          "VERSION.json release-state reconciliation",
+          "canonical handoff continuation",
+          "downstream release-awareness receipt"
+        ],
+        "product_code_successor_observed": false
+      },
+      "release_transition": {
+        "disposition": "FAIL_CLOSED",
+        "attempted_transition": "publish successor after v0.1.0",
+        "failing_predicate": "SUCCESSOR_PRODUCT_VERSION_AND_RELEASE_CANDIDATE_DEFINED_AND_VALIDATED",
+        "evidence": [
+          "StegVerse-Labs/governance-observatory:VERSION.json",
+          "StegVerse-Labs/governance-observatory:docs/GOVERNANCE_OBSERVATORY_MIRROR_HANDOFF.md",
+          "StegVerse-Labs/governance-observatory:tools/validate_release_baseline.py"
+        ],
+        "reason": "Current main is four commits beyond v0.1.0, but observed delta is release-state/handoff/downstream-awareness material and no successor product version/candidate is defined."
+      }
     },
     {
       "offering_id": "icv.knowledgevault.v1",
@@ -104,7 +165,24 @@
         "current main includes substantial post-v0.1.9 MyKV/Interlock/provider-governance work",
         "current main must not be represented as contained in v0.1.9"
       ],
-      "next_release_path": "Preserve v0.1.9 artifact/manifest as immutable released baseline; reconcile CHANGELOG/VERSION/release evidence and select a new version only when current post-release scope satisfies its canonical release predicates."
+      "next_release_path": "Preserve v0.1.9 artifact/manifest as immutable released baseline; reconcile CHANGELOG/VERSION/release evidence and select a new version only when current post-release scope satisfies its canonical release predicates.",
+      "current_main_delta": {
+        "baseline": "v0.1.9 / e474f15c4a0a9414ef7391e9f8212ff3ebcb2b8f",
+        "ahead_by": 1290,
+        "summary": "Large post-release source line spanning MyKV, Interlock/InTr, provider governance, persistence, export, recovery and hosted-authority retirement; CHANGELOG keeps it under Unreleased.",
+        "released_version_file": "0.1.9"
+      },
+      "release_transition": {
+        "disposition": "FAIL_CLOSED",
+        "attempted_transition": "publish successor after v0.1.9",
+        "failing_predicate": "ADMITTED_TV_TVC_SUCCESSOR_RELEASE_CANDIDATE_AND_PUBLICATION_PATH_OBSERVED",
+        "evidence": [
+          "StegVerse-Labs/continuity-vault-kit:CHANGELOG.md",
+          "StegVerse-Labs/continuity-vault-kit:VERSION",
+          "StegVerse-Labs/continuity-vault-kit:CONTINUITY_VAULT_KIT_MIRROR_HANDOFF.md"
+        ],
+        "reason": "Current main is 1290 commits beyond v0.1.9 and remains Unreleased; hosted release mutation authority is retired and no admitted TV/TVC successor publication candidate/path was established by this census."
+      }
     },
     {
       "offering_id": "icv.stegtalk.v1",
@@ -144,5 +222,6 @@
       ],
       "next_release_path": "Preserve development preview; establish canonical version/release predicates before preparing a tag."
     }
-  ]
+  ],
+  "release_transition_rule": "Every evaluated successor release transition records ALLOW, DENY, or FAIL_CLOSED. No tag/release is created unless canonical authority and all applicable predicates are authentically satisfied."
 }

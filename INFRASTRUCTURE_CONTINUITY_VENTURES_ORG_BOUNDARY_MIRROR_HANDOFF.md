@@ -102,3 +102,18 @@ No Task Registry or COSV authority was supplied by this reconciliation. The cata
 Observed clean released baseline: Governance Observatory v0.1.0. KnowledgeVault/Continuity Vault Kit has an immutable v0.1.9 release with packaged ZIP and manifest, while current main contains later work and therefore must not be described as identical to v0.1.9. StegGate source is 0.3.0 and source-validated but explicitly not released; a metadata-only StegCore repair is tracked separately and does not authorize a tag. Governance Boundary Validation remains in pilot-evidence validation. StegCRM remains managed-pilot scope. HydraSafe and GP10 are revenue-ready services for which a software release is not required by the current offer. StegTalk, Ecosystem Chat and StegLearn remain previews under their own canonical boundaries.
 
 No tag, GitHub Release, activation, Task Registry binding, COSV binding, credential authority or runtime authority is created by this census.
+
+
+## 2026-10-01 — successor release admissibility and service transaction hardening
+
+Exact baseline-to-main reconciliation produced no admissible successor software release.
+
+- StegGate 0.3.0: `FAIL_CLOSED` for release. The frozen candidate remains source-validated, but canonical TV authorization is `REQUESTED_NOT_GRANTED` and successor aggregate/runtime/custody predicates remain incomplete. The prior VERSION.json drift is repaired; that repair is not release authority.
+- Governance Observatory: `FAIL_CLOSED` for a successor after v0.1.0. Main is four commits beyond release commit `277556adefb09900e7e889e4d919aeaf79ee6923`; the observed delta is release-state/handoff/downstream-awareness material, not a defined successor product version/candidate.
+- KnowledgeVault / Continuity Vault Kit: `FAIL_CLOSED` for a successor after v0.1.9. Main is 1290 commits beyond release commit `e474f15c4a0a9414ef7391e9f8212ff3ebcb2b8f`, CHANGELOG retains the post-release line under `Unreleased`, and hosted release mutation authority has been retired in favor of separately admitted TV/TVC publication.
+
+No tag or GitHub Release was created.
+
+Service transaction review found HydraSafe and GP10 already carry bounded customer inputs/deliverables/exclusions/commercial or scope terms/acceptance or fulfillment semantics sufficient for their current service posture without implying released software. ICV Governance Assessment and Admitted Code lacked equally explicit transaction-boundary documents, so bounded package documents were added under `commercial/packages/`. They define intake, deliverables, exclusions, commercial-term semantics and acceptance without inventing a universal price or software-release claim.
+
+Task Registry/COSV binding remains absent.
