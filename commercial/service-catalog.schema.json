@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "icv.commercial-service-catalog.schema.v1",
+  "title": "Infrastructure Continuity Ventures Commercial Service Catalog",
+  "type": "object",
+  "required": ["schema_version","organization","catalog_authority","canonical_task_binding","cosv_task_vector","offerings"],
+  "properties": {
+    "schema_version": {"const":"icv.commercial-service-catalog.v1"},
+    "organization": {"const":"Infrastructure-Continuity-Ventures"},
+    "catalog_authority": {"const":"COMMERCIAL_DESCRIPTION_ONLY"},
+    "canonical_task_binding": {"type":["string","null"]},
+    "cosv_task_vector": {"type":["string","null"]},
+    "offerings": {
+      "type":"array",
+      "minItems":3,
+      "items":{
+        "type":"object",
+        "required":["offering_id","name","category","commercial_status","delivery_modes","customer_outcome","included","excluded","source_refs","authority_boundary"],
+        "properties":{
+          "offering_id":{"type":"string","minLength":1},
+          "name":{"type":"string","minLength":1},
+          "category":{"type":"string","minLength":1},
+          "commercial_status":{"enum":["OFFERABLE_BOUNDED_SERVICE","OFFERABLE_ASSESSMENT_ONLY","OFFERABLE_MANAGED_PILOT","NOT_OFFERABLE"]},
+          "delivery_modes":{"type":"array","minItems":1,"items":{"type":"string"}},
+          "customer_outcome":{"type":"string","minLength":1},
+          "included":{"type":"array","items":{"type":"string"}},
+          "excluded":{"type":"array","items":{"type":"string"}},
+          "source_refs":{"type":"array","minItems":1,"items":{"type":"string"}},
+          "authority_boundary":{"type":"string","minLength":1}
+        },
+        "additionalProperties":false
+      }
+    }
+  },
+  "additionalProperties":false
+}
