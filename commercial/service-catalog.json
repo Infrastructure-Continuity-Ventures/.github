@@ -1,0 +1,92 @@
+{
+  "schema_version": "icv.commercial-service-catalog.v1",
+  "organization": "Infrastructure-Continuity-Ventures",
+  "catalog_authority": "COMMERCIAL_DESCRIPTION_ONLY",
+  "canonical_task_binding": null,
+  "cosv_task_vector": null,
+  "offerings": [
+    {
+      "offering_id": "icv.governance-assessment.v1",
+      "name": "Governance Assessment",
+      "category": "governance",
+      "commercial_status": "OFFERABLE_BOUNDED_SERVICE",
+      "delivery_modes": ["fixed-scope assessment", "productized service"],
+      "customer_outcome": "A source- and evidence-bound map of an existing workflow, its authoritative states, decision boundaries, allowed transitions, failure conditions, and a governed target-state implementation plan.",
+      "included": [
+        "workflow and authority inventory",
+        "state-transition and evidence model",
+        "ALLOW/DENY/FAIL_CLOSED decision boundary design",
+        "source/provenance mapping",
+        "bounded implementation roadmap"
+      ],
+      "excluded": [
+        "legal opinion",
+        "regulatory certification",
+        "automatic transfer of customer authority",
+        "claim that repository or CI success establishes runtime governance"
+      ],
+      "source_refs": [
+        "Infrastructure-Continuity-Ventures/.github:org-boundary/",
+        "StegVerse-Labs/.github canonical governance/task records"
+      ],
+      "authority_boundary": "ICV may analyze and package governance requirements; authoritative customer, StegVerse, legal, operational, credential, execution, and release decisions remain with their applicable owners."
+    },
+    {
+      "offering_id": "icv.admitted-code.v1",
+      "name": "Admitted Code",
+      "category": "admissibility",
+      "commercial_status": "OFFERABLE_ASSESSMENT_ONLY",
+      "delivery_modes": ["code-admission assessment", "controlled proof-of-concept"],
+      "customer_outcome": "A bounded determination of what code is being proposed, what it is allowed to affect, what evidence is required before admission, and what receipt/evidence must exist before any governed execution claim.",
+      "included": [
+        "code/change identity binding",
+        "declared target and scope binding",
+        "admission predicate definition",
+        "pre-execution evidence requirements",
+        "non-ALLOW and fail-closed test cases",
+        "receipt and reconstruction design"
+      ],
+      "excluded": [
+        "production admission runtime unless separately released and authorized",
+        "customer credential issuance",
+        "automatic trust enrollment",
+        "claim that current ICV gateway source candidates are released commercial artifacts"
+      ],
+      "source_refs": [
+        "Infrastructure-Continuity-Ventures/infrastructure-continuity-engine:gateway/",
+        "StegVerse-Labs/StegCore",
+        "StegVerse-org/StegVerse-SDK"
+      ],
+      "authority_boundary": "Current ICV gateway work is source/test evidence, not a released admission authority. A production Admitted Code service requires separately authorized runtime, distribution, trust-root, and custody conditions."
+    },
+    {
+      "offering_id": "icv.stegcrm.v1",
+      "name": "StegCRM",
+      "category": "governed-crm",
+      "commercial_status": "OFFERABLE_MANAGED_PILOT",
+      "delivery_modes": ["managed CRM overlay pilot", "commercial relationship governance assessment"],
+      "customer_outcome": "A governed commercial relationship projection across existing CRM, campaign, email, repository, and operational sources without forcing those systems to surrender source authority.",
+      "included": [
+        "relationship and opportunity projection",
+        "source-authority preservation",
+        "interaction/evidence references",
+        "source-native stage preservation",
+        "next-action projection",
+        "projection_authority=NONE boundary",
+        "managed reconciliation pilot"
+      ],
+      "excluded": [
+        "automatic replacement of customer CRM authority",
+        "generic probability or qualification synthesis",
+        "source-campaign write-back unless separately admitted",
+        "production customer deployment implied solely by internal StegOps proof"
+      ],
+      "source_refs": [
+        "StegVerse-Labs/StegOps-Orchestrator:crm_projections/",
+        "StegVerse-Labs/StegOps-Orchestrator:schemas/campaign-projection.schema.json",
+        "StegVerse-Labs/StegOps-Orchestrator:schemas/prospect-projection.schema.json"
+      ],
+      "authority_boundary": "StegCRM may project and reconcile customer commercial state; source systems retain their declared authority unless a separately admitted transition explicitly changes ownership."
+    }
+  ]
+}
