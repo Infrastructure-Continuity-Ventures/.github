@@ -99,18 +99,18 @@
       "disposition_on_current_evidence": "FAIL_CLOSED",
       "required_evidence": [
         "PURPORTED_ACCEPTANCE_OBSERVED under commercial/contract-acceptance-observation.schema.json",
-        "exact proposal_id and proposal_version binding",
-        "authenticated provider observation with timestamp and private evidence locator",
-        "explicit unmodified acceptance semantics",
-        "VERIFIED_COUNTERPART_AUTHORITY from separately attributable organization-specific evidence",
-        "applicable legal/entity/signature/professional requirements resolved for the engagement"
+        "VERIFIED_COUNTERPART_AUTHORITY",
+        "VERIFIED_LEGAL_ENTITY_IDENTITY_CAPACITY",
+        "VERIFIED_SIGNATURE_SUFFICIENCY",
+        "VERIFIED_LEGAL_ENFORCEABILITY"
       ],
-      "reason": "Authenticated mailbox evidence can establish receipt and sender metadata, but cannot by itself establish authority to bind the customer. VERIFIED_COUNTERPART_AUTHORITY therefore remains a separately satisfied predicate.",
+      "reason": "All acceptance predicates are independent. Counterpart authority, entity identity/capacity, signature sufficiency, signed artifacts, repository state and contract lifecycle documentation cannot be promoted into legal enforceability.",
       "acceptance_observation_contract": "commercial/contract-acceptance-observation.schema.json",
       "intermediate_state": "PURPORTED_ACCEPTANCE_OBSERVED",
       "counterpart_authority_predicate": "VERIFIED_COUNTERPART_AUTHORITY",
       "counterpart_authority_status": "SEPARATELY_SATISFIED_PREDICATE",
-      "mailbox_provider_sufficient_for_counterpart_authority": false
+      "mailbox_provider_sufficient_for_counterpart_authority": false,
+      "acceptance_predicates_contract": "commercial/contract-acceptance-predicates.schema.json"
     },
     {
       "from": "CONTRACT_OR_SOW_ACCEPTED",
