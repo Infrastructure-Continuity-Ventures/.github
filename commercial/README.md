@@ -55,3 +55,16 @@ The validator requires the exact six-state classification vocabulary, the reconc
 `release-hardening-census.json` records the observed release chain separately from commercial classification. It distinguishes service-only offerings from distributable software and prevents a current-main capability from being attributed to an older immutable release.
 
 A software release chain is considered complete only when the applicable canonical owner establishes the required version/release predicates and the observed tag, GitHub Release, and packaged artifact agree. Missing release machinery is not a blocker for a service-only offering unless that service claims delivery of released software.
+
+
+## Customer purchase-path census
+
+`customer-purchase-path-census.json` distinguishes three states that must not be collapsed:
+
+1. `DOCUMENTED_TRANSACTION_READY` — scope, deliverables, exclusions, commercial terms, evidence and acceptance can be stated.
+2. `PUBLICLY_DISCOVERABLE_AND_REQUESTABLE` — a prospective customer can find the offer and an offer-specific public request path is actually documented/observable.
+3. `PAYMENT_OR_CONTRACT_EXECUTION_READY` — an authentic contract/payment execution path is established rather than merely described.
+
+The current census finds all twelve customer-facing entries transaction-documented after bounded source repairs, but **none** has evidence for the full public-request plus contract/payment execution chain. Public repository presence alone is not a commercial intake endpoint.
+
+`engagement-request.md` defines the minimum internal source-level intake contract for a quote/SOW request. It does not create a hosted/public form, payment credential, contract authority or customer request.
