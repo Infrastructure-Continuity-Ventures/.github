@@ -11,3 +11,8 @@ The catalog now uses an evidence-bound maturity vocabulary: `RELEASED_PRODUCT`, 
 Current customer-facing catalog families include governance assessment/validation, Admitted Code assessment, StegGate preview, StegCRM, HydraSafe, GP10 field validation, Governance Observatory, KnowledgeVault/MyKV, StegTalk preview, Ecosystem Chat preview, and StegLearn preview. StegBusiness/StegBusiness-Ops is retained in the census as `INTERNAL_SUBSTRATE`, not advertised as an independent ICV package.
 
 A commercial catalog entry describes a bounded offer or maturity state; it does not itself grant governance, execution, credential, legal, publication, release, source-system, provider, customer, payment, or custody authority. Runtime routing continues to be governed independently by `org-boundary/registry/services.json`.
+
+
+## Customer transaction boundaries
+
+Customer-facing pilot and preview packages are documented under `commercial/packages/`. Each package states its intake boundary, bounded deliverables, exclusions, acceptance criteria, commercial-term semantics, evidence/receipt expectations, and the unreleased or unproven substrate that is explicitly not being sold. These documents describe commercial scope only; they do not upgrade product maturity or grant runtime/release authority.
