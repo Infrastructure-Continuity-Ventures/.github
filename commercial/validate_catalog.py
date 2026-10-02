@@ -7,6 +7,7 @@ CATALOG=ROOT/"commercial/service-catalog.json"
 PURCHASE=ROOT/"commercial/customer-purchase-path-census.json"
 REQUEST_TRANSITION=ROOT/"commercial/engagement-request-transition.json"
 PROPOSAL_ENVELOPE=ROOT/"commercial/scoped-engagement-proposal.schema.json"
+ACCEPTANCE_OBSERVATION=ROOT/"commercial/contract-acceptance-observation.schema.json"
 CLASSES=[
     "RELEASED_PRODUCT","REVENUE_READY_SERVICE","MANAGED_PILOT",
     "ASSESSMENT_ONLY","DEVELOPMENT_PREVIEW","INTERNAL_SUBSTRATE",
@@ -89,7 +90,20 @@ def main():
     assert transition["proposal_envelope"]["schema"]=="commercial/scoped-engagement-proposal.schema.json"
     assert transition["proposal_envelope"]["creates_acceptance_authority"] is False
     print("ICV_ENGAGEMENT_REQUEST_TRANSITION_V1_VALID")
+    acceptance=json.loads(ACCEPTANCE_OBSERVATION.read_text(encoding="utf-8"))
+    assert acceptance["schema_version"]=="icv.contract-acceptance-observation.v1"
+    assert acceptance["canonical_task_binding"] is None
+    assert acceptance["cosv_task_vector"] is None
+    assert acceptance["provider_observation"]["owner"]=="authenticated mailbox provider"
+    assert "authority to bind organization" in acceptance["provider_observation"]["does_not_prove"]
+    assert acceptance["dispositions"]["verified_counterpart_authority"]["current_status"]=="SEPARATELY_SATISFIED_PREDICATE"
+    assert acceptance["dispositions"]["verified_counterpart_authority"]["mailbox_provider_sufficient"] is False
+    assert acceptance["dispositions"]["contract_or_sow_accepted"]["current_disposition"]=="FAIL_CLOSED"
+    assert acceptance["dispositions"]["contract_or_sow_accepted"]["legal_enforceability_effect"]=="NONE"
+    assert transition["transitions"][3]["counterpart_authority_predicate"]=="VERIFIED_COUNTERPART_AUTHORITY"
+    assert transition["transitions"][3]["mailbox_provider_sufficient_for_counterpart_authority"] is False
     print("ICV_SCOPED_ENGAGEMENT_PROPOSAL_V1_VALID")
+    print("ICV_CONTRACT_ACCEPTANCE_OBSERVATION_V1_VALID")
 
 if __name__=="__main__":
     main()
