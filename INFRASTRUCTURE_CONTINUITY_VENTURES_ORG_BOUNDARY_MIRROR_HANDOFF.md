@@ -171,3 +171,25 @@ NO_PAYMENT_EXECUTION_PATH = true
 Site recorded the observation in PR #1491 / merge `a5315faa85b7cd9187f0c334a20074092c2b7bdc` and released its bounded validation claim in PR #1492 / merge `7af083d69ae47051ce88ed249b2162dae1a9631c`.
 
 The observation does not establish an actual customer request, buyer record, accepted quote, executed SOW/contract, payment capability, payment receipt, delivery, acceptance, runtime activation, credential authority, Task Registry binding or COSV binding.
+
+
+## 2026-10-02 — authentic engagement-request owner reconciliation
+
+The now-observed public catalog/request surface was reconciled against existing intake, CRM, SOW and payment boundaries.
+
+The smallest existing owner seam is the authenticated mailbox provider behind the published offer-specific `mailto:rigel@stegverse.org` links. HydraSafe and GP10 already establish the evidence pattern of provider-observed sends/replies and explicitly distinguish provider observation from delivery, response, commercial validation or payment. No new hosted intake service is necessary.
+
+The StegOps CRM mutation API was rejected as the receiving owner for this transition: `POST /leads` creates a Lead and audit record, while `POST /leads/{lead_id}/deals` creates a Deal with `stage=scoping` and `probability=50`. Authentic inbound receipt does not justify those synthesized CRM states.
+
+The bounded transition is now defined in `commercial/engagement-request-transition.json`:
+
+```text
+PUBLICLY_DISCOVERABLE_AND_REQUESTABLE
+  -> AUTHENTIC_ENGAGEMENT_REQUEST_OBSERVED
+  -> ENGAGEMENT_REQUEST_DOCUMENTED
+  -> SCOPED_ENGAGEMENT_PROPOSED
+  -> CONTRACT_OR_SOW_ACCEPTED       [FAIL_CLOSED absent separate authentic acceptance]
+  -> PAYMENT_EXECUTABLE_OR_OBSERVED [FAIL_CLOSED; NO_PAYMENT_EXECUTION_PATH]
+```
+
+No transition was invoked because no customer request was manufactured or assumed. Private mailbox content/provider identifiers remain private evidence. No Lead, Deal, probability, qualification, buyer record, payment credential, runtime authority, Task Registry or COSV binding was created. `PAYMENT_OR_CONTRACT_EXECUTION_READY=false` remains correct for all twelve offerings.
