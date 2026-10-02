@@ -1,6 +1,6 @@
 {
   "schema_version": "icv.customer-purchase-path-census.v1",
-  "observed_at": "2026-10-01T19:40:00-05:00",
+  "observed_at": "2026-10-01T23:53:00-05:00",
   "authority": "OBSERVATION_AND_COMMERCIAL_DOCUMENTATION_ONLY",
   "canonical_task_binding": null,
   "cosv_task_vector": null,
@@ -14,8 +14,8 @@
     {
       "offering_id": "icv.governance-assessment.v1",
       "transaction_state": "DOCUMENTED_TRANSACTION_READY",
-      "discovery_state": "PRIVATE_SOURCE_ONLY",
-      "request_state": "NO_PUBLIC_OFFER_SPECIFIC_REQUEST_PATH_OBSERVED",
+      "discovery_state": "SITE_PUBLIC_MIRROR_SOURCE_INTEGRATED_PENDING_SERVED_BODY_OBSERVATION",
+      "request_state": "CREDENTIAL_FREE_MAILTO_SOURCE_INTEGRATED_PENDING_SERVED_BODY_OBSERVATION",
       "quote_contract_state": "PACKAGE_TERMS_ONLY",
       "payment_state": "NO_AUTHENTIC_PAYMENT_EXECUTION_PATH_OBSERVED",
       "acceptance_state": "DOCUMENTED",
@@ -28,8 +28,8 @@
     {
       "offering_id": "icv.governance-boundary-validation.v1",
       "transaction_state": "DOCUMENTED_TRANSACTION_READY",
-      "discovery_state": "PRIVATE_SOURCE_ONLY",
-      "request_state": "NO_PUBLIC_OFFER_SPECIFIC_REQUEST_PATH_OBSERVED",
+      "discovery_state": "SITE_PUBLIC_MIRROR_SOURCE_INTEGRATED_PENDING_SERVED_BODY_OBSERVATION",
+      "request_state": "CREDENTIAL_FREE_MAILTO_SOURCE_INTEGRATED_PENDING_SERVED_BODY_OBSERVATION",
       "quote_contract_state": "PACKAGE_TERMS_ONLY",
       "payment_state": "NO_AUTHENTIC_PAYMENT_EXECUTION_PATH_OBSERVED",
       "acceptance_state": "DOCUMENTED",
@@ -42,8 +42,8 @@
     {
       "offering_id": "icv.admitted-code.v1",
       "transaction_state": "DOCUMENTED_TRANSACTION_READY",
-      "discovery_state": "PRIVATE_SOURCE_ONLY",
-      "request_state": "NO_PUBLIC_OFFER_SPECIFIC_REQUEST_PATH_OBSERVED",
+      "discovery_state": "SITE_PUBLIC_MIRROR_SOURCE_INTEGRATED_PENDING_SERVED_BODY_OBSERVATION",
+      "request_state": "CREDENTIAL_FREE_MAILTO_SOURCE_INTEGRATED_PENDING_SERVED_BODY_OBSERVATION",
       "quote_contract_state": "PACKAGE_TERMS_ONLY",
       "payment_state": "NO_AUTHENTIC_PAYMENT_EXECUTION_PATH_OBSERVED",
       "acceptance_state": "DOCUMENTED",
@@ -56,8 +56,8 @@
     {
       "offering_id": "icv.steggate.v1",
       "transaction_state": "DOCUMENTED_TRANSACTION_READY",
-      "discovery_state": "PRIVATE_SOURCE_ONLY",
-      "request_state": "NO_PUBLIC_OFFER_SPECIFIC_REQUEST_PATH_OBSERVED",
+      "discovery_state": "SITE_PUBLIC_MIRROR_SOURCE_INTEGRATED_PENDING_SERVED_BODY_OBSERVATION",
+      "request_state": "CREDENTIAL_FREE_MAILTO_SOURCE_INTEGRATED_PENDING_SERVED_BODY_OBSERVATION",
       "quote_contract_state": "PACKAGE_TERMS_ONLY",
       "payment_state": "NO_AUTHENTIC_PAYMENT_EXECUTION_PATH_OBSERVED",
       "acceptance_state": "DOCUMENTED",
@@ -70,8 +70,8 @@
     {
       "offering_id": "icv.stegcrm.v1",
       "transaction_state": "DOCUMENTED_TRANSACTION_READY",
-      "discovery_state": "PRIVATE_SOURCE_ONLY",
-      "request_state": "INTERNAL_STEGOPS_CONTACT_PATH_OBSERVED_NOT_PUBLICLY_VERIFIED_FOR_ICV_STEGCRM",
+      "discovery_state": "SITE_PUBLIC_MIRROR_SOURCE_INTEGRATED_PENDING_SERVED_BODY_OBSERVATION",
+      "request_state": "CREDENTIAL_FREE_MAILTO_SOURCE_INTEGRATED_PENDING_SERVED_BODY_OBSERVATION",
       "quote_contract_state": "STEGOPS_SERVICE_PRICING_EXISTS_NOT_STEGCRM_SOW",
       "payment_state": "NO_AUTHENTIC_PAYMENT_EXECUTION_PATH_OBSERVED",
       "acceptance_state": "DOCUMENTED",
@@ -84,8 +84,8 @@
     {
       "offering_id": "icv.hydrasafe.v1",
       "transaction_state": "DOCUMENTED_TRANSACTION_READY",
-      "discovery_state": "PUBLIC_SOURCE_DISCOVERABLE",
-      "request_state": "NO_OFFER_SPECIFIC_ENGAGEMENT_REQUEST_INSTRUCTIONS_OBSERVED",
+      "discovery_state": "SITE_PUBLIC_MIRROR_SOURCE_INTEGRATED_PENDING_SERVED_BODY_OBSERVATION",
+      "request_state": "CREDENTIAL_FREE_MAILTO_SOURCE_INTEGRATED_PENDING_SERVED_BODY_OBSERVATION",
       "quote_contract_state": "SOW_TEMPLATE_AND_PRICE_RANGE_AVAILABLE",
       "payment_state": "NO_AUTHENTIC_PAYMENT_EXECUTION_PATH_OBSERVED",
       "acceptance_state": "DOCUMENTED",
@@ -98,8 +98,8 @@
     {
       "offering_id": "icv.gp10-field-validation.v1",
       "transaction_state": "DOCUMENTED_TRANSACTION_READY",
-      "discovery_state": "PRIVATE_SOURCE_ONLY",
-      "request_state": "NO_PUBLIC_OFFER_SPECIFIC_REQUEST_PATH_OBSERVED",
+      "discovery_state": "SITE_PUBLIC_MIRROR_SOURCE_INTEGRATED_PENDING_SERVED_BODY_OBSERVATION",
+      "request_state": "CREDENTIAL_FREE_MAILTO_SOURCE_INTEGRATED_PENDING_SERVED_BODY_OBSERVATION",
       "quote_contract_state": "WRITTEN_SCOPE_REQUIRED_BEFORE_PAYMENT",
       "payment_state": "NO_AUTHENTIC_PAYMENT_EXECUTION_PATH_OBSERVED",
       "acceptance_state": "DOCUMENTED",
@@ -112,8 +112,8 @@
     {
       "offering_id": "icv.governance-observatory.v1",
       "transaction_state": "DOCUMENTED_TRANSACTION_READY",
-      "discovery_state": "PRIVATE_SOURCE_ONLY",
-      "request_state": "NO_PUBLIC_OFFER_SPECIFIC_REQUEST_PATH_OBSERVED",
+      "discovery_state": "SITE_PUBLIC_MIRROR_SOURCE_INTEGRATED_PENDING_SERVED_BODY_OBSERVATION",
+      "request_state": "CREDENTIAL_FREE_MAILTO_SOURCE_INTEGRATED_PENDING_SERVED_BODY_OBSERVATION",
       "quote_contract_state": "NO_COMMERCIAL_CONTRACT_PATH_OBSERVED",
       "payment_state": "NO_AUTHENTIC_PAYMENT_EXECUTION_PATH_OBSERVED",
       "acceptance_state": "DOCUMENTED_AFTER_ICV_PACKAGE_REPAIR",
@@ -126,8 +126,8 @@
     {
       "offering_id": "icv.knowledgevault.v1",
       "transaction_state": "DOCUMENTED_TRANSACTION_READY",
-      "discovery_state": "PUBLIC_SOURCE_DISCOVERABLE",
-      "request_state": "PUBLIC_SUPPORT_ISSUE_PATH_EXISTS_BUT_NOT_COMMERCIAL_ENGAGEMENT_PATH",
+      "discovery_state": "SITE_PUBLIC_MIRROR_SOURCE_INTEGRATED_PENDING_SERVED_BODY_OBSERVATION",
+      "request_state": "CREDENTIAL_FREE_MAILTO_SOURCE_INTEGRATED_PENDING_SERVED_BODY_OBSERVATION",
       "quote_contract_state": "PACKAGE_TERMS_ONLY",
       "payment_state": "NO_AUTHENTIC_PAYMENT_EXECUTION_PATH_OBSERVED",
       "acceptance_state": "DOCUMENTED",
@@ -140,8 +140,8 @@
     {
       "offering_id": "icv.stegtalk.v1",
       "transaction_state": "DOCUMENTED_TRANSACTION_READY",
-      "discovery_state": "PUBLIC_SOURCE_DISCOVERABLE",
-      "request_state": "NO_OFFER_SPECIFIC_ENGAGEMENT_REQUEST_INSTRUCTIONS_OBSERVED",
+      "discovery_state": "SITE_PUBLIC_MIRROR_SOURCE_INTEGRATED_PENDING_SERVED_BODY_OBSERVATION",
+      "request_state": "CREDENTIAL_FREE_MAILTO_SOURCE_INTEGRATED_PENDING_SERVED_BODY_OBSERVATION",
       "quote_contract_state": "PACKAGE_TERMS_ONLY",
       "payment_state": "NO_AUTHENTIC_PAYMENT_EXECUTION_PATH_OBSERVED",
       "acceptance_state": "DOCUMENTED",
@@ -154,8 +154,8 @@
     {
       "offering_id": "icv.ecosystem-chat.v1",
       "transaction_state": "DOCUMENTED_TRANSACTION_READY",
-      "discovery_state": "PUBLIC_SOURCE_POSITIONING_DISCOVERABLE",
-      "request_state": "NO_COMMERCIAL_ENGAGEMENT_REQUEST_PATH_OBSERVED",
+      "discovery_state": "SITE_PUBLIC_MIRROR_SOURCE_INTEGRATED_PENDING_SERVED_BODY_OBSERVATION",
+      "request_state": "CREDENTIAL_FREE_MAILTO_SOURCE_INTEGRATED_PENDING_SERVED_BODY_OBSERVATION",
       "quote_contract_state": "PACKAGE_TERMS_ONLY",
       "payment_state": "NO_AUTHENTIC_PAYMENT_EXECUTION_PATH_OBSERVED",
       "acceptance_state": "DOCUMENTED",
@@ -168,8 +168,8 @@
     {
       "offering_id": "icv.steglearn.v1",
       "transaction_state": "DOCUMENTED_TRANSACTION_READY",
-      "discovery_state": "PUBLIC_SOURCE_DISCOVERABLE",
-      "request_state": "NO_OFFER_SPECIFIC_ENGAGEMENT_REQUEST_INSTRUCTIONS_OBSERVED",
+      "discovery_state": "SITE_PUBLIC_MIRROR_SOURCE_INTEGRATED_PENDING_SERVED_BODY_OBSERVATION",
+      "request_state": "CREDENTIAL_FREE_MAILTO_SOURCE_INTEGRATED_PENDING_SERVED_BODY_OBSERVATION",
       "quote_contract_state": "PACKAGE_TERMS_ONLY",
       "payment_state": "NO_AUTHENTIC_PAYMENT_EXECUTION_PATH_OBSERVED",
       "acceptance_state": "DOCUMENTED",
@@ -179,5 +179,18 @@
       "publicly_discoverable_and_requestable": false,
       "payment_or_contract_execution_ready": false
     }
-  ]
+  ],
+  "publication_integration": {
+    "owner": "StegVerse-Labs/Site",
+    "source_merge": "357b0490e4da96c55f4727ba4951870556b496bd",
+    "claim_release_merge": "346403284d80c4130f0e750c3a58819cf09593d3",
+    "surface": "services.html#icv-commercial-catalog",
+    "contact": "mailto:rigel@stegverse.org",
+    "credential_required": false,
+    "hosted_form": false,
+    "buyer_record_created": false,
+    "payment_execution_path": "NONE",
+    "served_body_observed": false,
+    "disposition": "SOURCE_INTEGRATED_PUBLIC_OBSERVATION_REQUIRED"
+  }
 }
