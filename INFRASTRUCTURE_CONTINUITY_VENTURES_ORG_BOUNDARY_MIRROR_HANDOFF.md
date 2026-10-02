@@ -257,3 +257,25 @@ Level 5 COMMUNICATION_CONTEXT_ONLY                  -> corroborative only
 Disposition rules are `VERIFIED`, `UNRESOLVED`, or `REJECTED`. `REJECTED` requires affirmative authentic evidence that authority is absent, revoked, expired, superseded or out of scope; mere lack of evidence remains `UNRESOLVED`.
 
 No customer record was queried because no authentic acceptance event exists. Legal enforceability, signature sufficiency and legal-entity capacity remain separate unresolved predicates unless independently evidenced. No legal, payment, CRM, runtime, Task Registry or COSV authority is created.
+
+
+## 2026-10-02 — contract-acceptance predicate separation
+
+The remaining `CONTRACT_OR_SOW_ACCEPTED` predicates were reconciled only against source definitions; no actual customer, signature, mailbox or agreement was inspected.
+
+StegBusiness can represent entity identity through entity ID, accepted legal name, entity type/jurisdiction, formation/effective state and evidence references, and contract state through contracting entity, counterparty, signature authority and execution/amendment/renewal state. StegBusiness-Ops requires exact legal contracting entity, counterparty identity/reference, signature authority and direct signed-contract evidence before its `EXECUTED` lifecycle state. Its own documentation also states that preparation/repository approval is not legal activation or execution.
+
+Those existing owners are therefore bound as evidence sources for entity identity/capacity and signature evidence, but not as a universal legal-enforceability authority.
+
+`commercial/contract-acceptance-predicates.schema.json` now separates:
+
+```text
+VERIFIED_COUNTERPART_AUTHORITY
+VERIFIED_LEGAL_ENTITY_IDENTITY_CAPACITY
+VERIFIED_SIGNATURE_SUFFICIENCY
+VERIFIED_LEGAL_ENFORCEABILITY
+```
+
+Each predicate is non-transitive. Counterpart authority does not prove entity capacity or signature sufficiency; a signature artifact does not prove authority or enforceability; canonical contract-state documentation does not prove enforceability. `VERIFIED_LEGAL_ENFORCEABILITY` has no current owner reference and remains `UNRESOLVED_UNLESS_INDEPENDENTLY_EVIDENCED`.
+
+Accordingly `CONTRACT_OR_SOW_ACCEPTED` remains `FAIL_CLOSED`. Even a future bounded acceptance disposition would not itself mutate StegBusiness/StegBusiness-Ops to `EXECUTED`; that remains a separate owner-governed transition. No legal advice, e-signature authority, contract execution, payment, CRM, runtime, Task Registry or COSV authority was created.
