@@ -8,6 +8,7 @@ PURCHASE=ROOT/"commercial/customer-purchase-path-census.json"
 REQUEST_TRANSITION=ROOT/"commercial/engagement-request-transition.json"
 PROPOSAL_ENVELOPE=ROOT/"commercial/scoped-engagement-proposal.schema.json"
 ACCEPTANCE_OBSERVATION=ROOT/"commercial/contract-acceptance-observation.schema.json"
+COUNTERPART_AUTHORITY=ROOT/"commercial/counterpart-authority-evidence.schema.json"
 CLASSES=[
     "RELEASED_PRODUCT","REVENUE_READY_SERVICE","MANAGED_PILOT",
     "ASSESSMENT_ONLY","DEVELOPMENT_PREVIEW","INTERNAL_SUBSTRATE",
@@ -103,7 +104,20 @@ def main():
     assert transition["transitions"][3]["counterpart_authority_predicate"]=="VERIFIED_COUNTERPART_AUTHORITY"
     assert transition["transitions"][3]["mailbox_provider_sufficient_for_counterpart_authority"] is False
     print("ICV_SCOPED_ENGAGEMENT_PROPOSAL_V1_VALID")
+    authority=json.loads(COUNTERPART_AUTHORITY.read_text(encoding="utf-8"))
+    assert authority["schema_version"]=="icv.counterpart-authority-evidence.v1"
+    assert authority["canonical_task_binding"] is None
+    assert authority["cosv_task_vector"] is None
+    assert authority["dispositions"]==["VERIFIED","UNRESOLVED","REJECTED"]
+    assert authority["owner_model"]["contact_directory"]["authority_fields_observed"]==[]
+    assert authority["classification_rules"]["VERIFIED"]["effect"].startswith("Satisfies VERIFIED_COUNTERPART_AUTHORITY")
+    assert authority["classification_rules"]["UNRESOLVED"]["effect"]=="CONTRACT_OR_SOW_ACCEPTED remains FAIL_CLOSED."
+    assert authority["separate_predicates"]["legal_enforceability"]=="UNRESOLVED_UNLESS_INDEPENDENTLY_EVIDENCED"
+    assert authority["separate_predicates"]["signature_sufficiency"]=="UNRESOLVED_UNLESS_INDEPENDENTLY_EVIDENCED"
+    assert acceptance["counterpart_identity_evidence"]["authority_evidence_contract"]=="commercial/counterpart-authority-evidence.schema.json"
+    assert acceptance["counterpart_identity_evidence"]["real_customer_query_gate"]=="AUTHENTIC_ACCEPTANCE_EVENT_EXISTS"
     print("ICV_CONTRACT_ACCEPTANCE_OBSERVATION_V1_VALID")
+    print("ICV_COUNTERPART_AUTHORITY_EVIDENCE_V1_VALID")
 
 if __name__=="__main__":
     main()
