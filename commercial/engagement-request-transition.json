@@ -98,12 +98,19 @@
       "to": "CONTRACT_OR_SOW_ACCEPTED",
       "disposition_on_current_evidence": "FAIL_CLOSED",
       "required_evidence": [
-        "authentic acceptance attributable to authorized customer counterpart",
-        "exact accepted proposal/SOW identity and version",
-        "acceptance timestamp and evidence locator",
-        "applicable legal/entity/signature requirements"
+        "PURPORTED_ACCEPTANCE_OBSERVED under commercial/contract-acceptance-observation.schema.json",
+        "exact proposal_id and proposal_version binding",
+        "authenticated provider observation with timestamp and private evidence locator",
+        "explicit unmodified acceptance semantics",
+        "VERIFIED_COUNTERPART_AUTHORITY from separately attributable organization-specific evidence",
+        "applicable legal/entity/signature/professional requirements resolved for the engagement"
       ],
-      "reason": "No universal authenticated contract-acceptance owner/path is presently established across all twelve offerings."
+      "reason": "Authenticated mailbox evidence can establish receipt and sender metadata, but cannot by itself establish authority to bind the customer. VERIFIED_COUNTERPART_AUTHORITY therefore remains a separately satisfied predicate.",
+      "acceptance_observation_contract": "commercial/contract-acceptance-observation.schema.json",
+      "intermediate_state": "PURPORTED_ACCEPTANCE_OBSERVED",
+      "counterpart_authority_predicate": "VERIFIED_COUNTERPART_AUTHORITY",
+      "counterpart_authority_status": "SEPARATELY_SATISFIED_PREDICATE",
+      "mailbox_provider_sufficient_for_counterpart_authority": false
     },
     {
       "from": "CONTRACT_OR_SOW_ACCEPTED",

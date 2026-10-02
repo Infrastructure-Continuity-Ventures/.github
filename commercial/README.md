@@ -86,3 +86,12 @@ StegOps Lead/Deal APIs are not the receiving seam: they create CRM state and mus
 Existing HydraSafe, GP10 and StegOps SOW documents remain offering/source-specific. None is promoted to universal ICV authority: HydraSafe carries facility/professional/deposit semantics, GP10 requires scope-specific pricing before payment, and StegOps hard-codes audit tiers/modules and issue-based acceptance.
 
 The common envelope cannot upgrade maturity, alter source authority, invent price, create electronic-signature sufficiency, or establish acceptance/payment. `CONTRACT_OR_SOW_ACCEPTED` remains `FAIL_CLOSED` until separate authentic acceptance attributable to an authorized customer counterpart is observed.
+
+
+## Contract acceptance observation
+
+`contract-acceptance-observation.schema.json` defines the bounded evidence contract for a customer's purported acceptance of an exact proposal. The authenticated mailbox provider can prove message receipt, provider-observed sender metadata and timestamp; it cannot by itself prove legal identity, organizational role, authority to bind the customer, signature sufficiency or enforceability.
+
+The acceptance path therefore separates `PURPORTED_ACCEPTANCE_OBSERVED` from `VERIFIED_COUNTERPART_AUTHORITY`. The latter is a separately satisfied predicate requiring independently attributable organization-specific evidence. Email address, matching company domain, signature-block job title, prior correspondence, CRM state, proposal opening or payment intent are insufficient by themselves.
+
+`CONTRACT_OR_SOW_ACCEPTED` remains `FAIL_CLOSED` until purported acceptance, verified counterpart authority and applicable legal/entity/signature/professional requirements are all separately satisfied.

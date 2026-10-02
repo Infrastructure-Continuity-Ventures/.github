@@ -213,3 +213,23 @@ NO_PAYMENT_EXECUTION_PATH = true
 ```
 
 Separate authentic acceptance must be attributable to an authorized customer counterpart and bound to the exact proposal ID/version, timestamp and applicable legal/entity/signature/professional requirements. The envelope creates no electronic-signature, payment, legal-entity, runtime, CRM, Task Registry or COSV authority.
+
+
+## 2026-10-02 — counterpart acceptance evidence boundary
+
+The existing authenticated mailbox owner was reconciled against the proposal-ID/version acceptance boundary. It is sufficient to authenticate receipt of an inbound message and provider-observed sender metadata, but it is not an authority registry and cannot establish that a sender is empowered to bind a customer organization.
+
+The smallest acceptance-evidence contract is now `commercial/contract-acceptance-observation.schema.json`. It requires exact `proposal_id`/`proposal_version` binding, authenticated provider observation, explicit unmodified acceptance semantics, timestamp, private evidence locator, privacy-preserving retention and a counterpart-authority disposition.
+
+The bounded states are:
+
+```text
+SCOPED_ENGAGEMENT_PROPOSED
+  -> PURPORTED_ACCEPTANCE_OBSERVED
+  -> VERIFIED_COUNTERPART_AUTHORITY [SEPARATELY_SATISFIED_PREDICATE]
+  -> CONTRACT_OR_SOW_ACCEPTED       [FAIL_CLOSED until both plus applicable requirements]
+```
+
+`VERIFIED_COUNTERPART_AUTHORITY` cannot be inferred from email identity alone, matching company domain, signature-block title, prior correspondence, CRM state, proposal opening or payment intent. Existing evidence owners do not provide a universal customer-authority registry, so this predicate remains separately satisfied from independently attributable organization-specific evidence.
+
+No proposal was sent and no acceptance was manufactured. No electronic-signature, legal enforceability, payment, CRM mutation, runtime authority, Task Registry or COSV binding was created.
