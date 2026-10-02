@@ -117,3 +117,18 @@ No tag or GitHub Release was created.
 Service transaction review found HydraSafe and GP10 already carry bounded customer inputs/deliverables/exclusions/commercial or scope terms/acceptance or fulfillment semantics sufficient for their current service posture without implying released software. ICV Governance Assessment and Admitted Code lacked equally explicit transaction-boundary documents, so bounded package documents were added under `commercial/packages/`. They define intake, deliverables, exclusions, commercial-term semantics and acceptance without inventing a universal price or software-release claim.
 
 Task Registry/COSV binding remains absent.
+
+
+## 2026-10-01 — managed-pilot and preview transaction readiness
+
+The remaining customer-facing `SERVICE_WITH_SOFTWARE`, `MANAGED_PILOT`, and `SOFTWARE_PREVIEW` entries were reconciled against a common transaction-readiness standard.
+
+Canonical source review showed Governance & AI Boundary Validation already had strong pilot intake, deliverables, exclusions, acceptance and commercial-posture semantics, while the ICV catalog lacked a single transaction-boundary reference. StegCRM, KnowledgeVault/MyKV, StegGate, StegTalk, Ecosystem Chat and StegLearn had meaningful product/source boundaries but lacked a complete ICV-level customer transaction document covering all required fields. Bounded package documents were therefore added under `commercial/packages/` and referenced by the catalog/census.
+
+No maturity classification changed. In particular:
+- Governance & AI Boundary Validation remains a revenue-ready service with unreleased software substrate.
+- StegCRM and KnowledgeVault/MyKV remain managed pilots.
+- StegGate, StegTalk, Ecosystem Chat and StegLearn remain development previews.
+- the documents explicitly separate what can be transacted now from unreleased/unproven runtime, provider, release, write-back, production, compliance or authority claims.
+
+No release, runtime activation, credential authority, Task Registry binding or COSV binding is created by this documentation.
