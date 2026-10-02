@@ -26,7 +26,8 @@
         "commercial/service-catalog.json",
         "INFRASTRUCTURE_CONTINUITY_VENTURES_ORG_BOUNDARY_MIRROR_HANDOFF.md",
         "StegVerse-Labs/stegfin-governance:docs/GOVERNANCE_BOUNDARY_VALIDATION_PRODUCT.md",
-        "commercial/packages/governance-assessment.md"
+        "commercial/packages/governance-assessment.md",
+        "commercial/engagement-request.md"
       ],
       "delivery_modes": [
         "fixed-scope assessment",
@@ -47,7 +48,8 @@
       "evidence_refs": [
         "README.md",
         "docs/GOVERNANCE_BOUNDARY_VALIDATION_PRODUCT.md",
-        "commercial/packages/governance-boundary-validation-pilot.md"
+        "commercial/packages/governance-boundary-validation-pilot.md",
+        "commercial/engagement-request.md"
       ],
       "delivery_modes": [
         "fixed-scope validation",
@@ -71,7 +73,8 @@
         "docs/STEGGATE_PORTABLE_PRODUCT.md",
         "STEGCORE_MIRROR_HANDOFF.md",
         "Infrastructure-Continuity-Ventures/infrastructure-continuity-engine:gateway/",
-        "commercial/packages/admitted-code-assessment.md"
+        "commercial/packages/admitted-code-assessment.md",
+        "commercial/engagement-request.md"
       ],
       "delivery_modes": [
         "code-admission assessment",
@@ -94,7 +97,8 @@
         "docs/STEGGATE_PORTABLE_PRODUCT.md",
         "VERSION",
         "STEGCORE_MIRROR_HANDOFF.md",
-        "commercial/packages/steggate-preview.md"
+        "commercial/packages/steggate-preview.md",
+        "commercial/engagement-request.md"
       ],
       "delivery_modes": [
         "local evaluation preview",
@@ -117,7 +121,8 @@
         "schemas/campaign-projection.schema.json",
         "schemas/prospect-projection.schema.json",
         "docs/STEGOPS_ORCHESTRATOR_MIRROR_HANDOFF.md",
-        "commercial/packages/stegcrm-managed-pilot.md"
+        "commercial/packages/stegcrm-managed-pilot.md",
+        "commercial/engagement-request.md"
       ],
       "delivery_modes": [
         "managed CRM overlay pilot",
@@ -141,7 +146,8 @@
         "commercial/free-gap-assessment.md",
         "commercial/facility-packet-sow.md",
         "docs/HYDRASAFE_MIRROR_HANDOFF.md",
-        "hydrasafe.manifest.json"
+        "hydrasafe.manifest.json",
+        "commercial/engagement-request.md"
       ],
       "delivery_modes": [
         "no-cost documentation gap assessment",
@@ -162,7 +168,8 @@
       "evidence_refs": [
         "README.md",
         "docs/business/PAID_FIELD_VALIDATION_OFFER.md",
-        "GP10_MIRROR_HANDOFF.md"
+        "GP10_MIRROR_HANDOFF.md",
+        "commercial/engagement-request.md"
       ],
       "delivery_modes": [
         "paid fixed-scope evidence review"
@@ -182,7 +189,9 @@
       "evidence_refs": [
         "README.md",
         "VERSION.json",
-        "GitHub Release 377486341 / tag v0.1.0"
+        "GitHub Release 377486341 / tag v0.1.0",
+        "commercial/engagement-request.md",
+        "commercial/packages/governance-observatory-support.md"
       ],
       "delivery_modes": [
         "released source-intake and observation toolkit",
@@ -204,7 +213,8 @@
         "README.md",
         "docs/KV_MYKV_INSTANCE_PROJECTION.md",
         "StegVerse-Labs/Site:docs/MYKV_IOS_INSTALLABLE_SURFACE_MIRROR_HANDOFF.md",
-        "commercial/packages/knowledgevault-managed-pilot.md"
+        "commercial/packages/knowledgevault-managed-pilot.md",
+        "commercial/engagement-request.md"
       ],
       "delivery_modes": [
         "file-based vault deployment",
@@ -227,7 +237,8 @@
         "STEGTALK_MIRROR_HANDOFF.md",
         "STEGTALK_CANDIDATE_STATUS.json",
         "STEGTALK_RELEASE_VERIFICATION.json",
-        "commercial/packages/stegtalk-preview.md"
+        "commercial/packages/stegtalk-preview.md",
+        "commercial/engagement-request.md"
       ],
       "delivery_modes": [
         "non-production local prototype demonstration"
@@ -248,7 +259,8 @@
         "docs/ECOSYSTEM_CHAT_SCOPE_MIRROR_HANDOFF.md",
         "README.md",
         "StegVerse-org/LLM-adapter:docs/ECOSYSTEM_CHAT_MIRROR_HANDOFF.md",
-        "commercial/packages/ecosystem-chat-preview.md"
+        "commercial/packages/ecosystem-chat-preview.md",
+        "commercial/engagement-request.md"
       ],
       "delivery_modes": [
         "source-demonstrated capability-interface preview"
@@ -269,7 +281,8 @@
         "README.md",
         "docs/product-spec.md",
         "STEGLEARN_MIRROR_HANDOFF.md",
-        "commercial/packages/steglearn-preview.md"
+        "commercial/packages/steglearn-preview.md",
+        "commercial/engagement-request.md"
       ],
       "delivery_modes": [
         "bounded learning-loop pilot"
