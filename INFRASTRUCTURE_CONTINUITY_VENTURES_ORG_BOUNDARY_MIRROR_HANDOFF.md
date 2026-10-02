@@ -154,3 +154,20 @@ The existing `StegVerse-Labs/Site` commercial/publication owner was confirmed as
 The integration preserves every ICV maturity label, source-authority boundary, privacy-first initial-contact rule and `NO_PAYMENT_EXECUTION_PATH`. It creates no hosted form, buyer/CRM record, payment credential, checkout, contract acceptance, runtime authority, Task Registry or COSV binding.
 
 Source merge is not public served-body proof. Therefore the purchase-path census records `SOURCE_INTEGRATED_PUBLIC_OBSERVATION_REQUIRED` and keeps every offering `publicly_discoverable_and_requestable=false` until the exact served `stegverse.org/services.html` body is independently observed. Payment/contract execution remains false regardless of later public-page observation.
+
+
+## 2026-10-02 — public catalog served-body observation
+
+An independent HTTPS observation of `https://stegverse.org/services.html` returned the served public body and directly verified the complete bounded ICV catalog mirror. All twelve customer-facing offerings were present with their maturity classifications preserved, each exposed a credential-free offer-specific `Request scope` email path to `rigel@stegverse.org`, the privacy-first initial-contact warning was present, and the page explicitly declared `NO_PAYMENT_EXECUTION_PATH`.
+
+The supported state transition is therefore limited to:
+
+```text
+PUBLICLY_DISCOVERABLE_AND_REQUESTABLE = true
+PAYMENT_OR_CONTRACT_EXECUTION_READY = false
+NO_PAYMENT_EXECUTION_PATH = true
+```
+
+Site recorded the observation in PR #1491 / merge `a5315faa85b7cd9187f0c334a20074092c2b7bdc` and released its bounded validation claim in PR #1492 / merge `7af083d69ae47051ce88ed249b2162dae1a9631c`.
+
+The observation does not establish an actual customer request, buyer record, accepted quote, executed SOW/contract, payment capability, payment receipt, delivery, acceptance, runtime activation, credential authority, Task Registry binding or COSV binding.
