@@ -233,3 +233,27 @@ SCOPED_ENGAGEMENT_PROPOSED
 `VERIFIED_COUNTERPART_AUTHORITY` cannot be inferred from email identity alone, matching company domain, signature-block title, prior correspondence, CRM state, proposal opening or payment intent. Existing evidence owners do not provide a universal customer-authority registry, so this predicate remains separately satisfied from independently attributable organization-specific evidence.
 
 No proposal was sent and no acceptance was manufactured. No electronic-signature, legal enforceability, payment, CRM mutation, runtime authority, Task Registry or COSV binding was created.
+
+
+## 2026-10-02 — counterpart-authority evidence hierarchy
+
+`VERIFIED_COUNTERPART_AUTHORITY` was reconciled against existing evidence-owner classes without querying any actual customer record.
+
+- StegBusiness already defines canonical contract state including contracting entity, counterparty, signature authority and execution/amendment/renewal state.
+- StegBusiness-Ops owns contract lifecycle operations/evidence and requires exact legal contracting entity, counterparty identity/reference, signature authority and direct signed-contract evidence before `EXECUTED`.
+- Available Google Contacts/directory capability exposes contact name, email, organization and title but no delegation/signature-authority field. It is therefore corroborative identity/role evidence only.
+- Customer-supplied organization-attributable authorization/delegation and applicable prior executed agreements can satisfy authority only when authenticity, attribution, scope, temporal validity and non-revocation are established.
+
+The hierarchy is encoded in `commercial/counterpart-authority-evidence.schema.json`:
+
+```text
+Level 1 DIRECT_ORGANIZATION_AUTHORITY              -> may satisfy VERIFIED
+Level 2 PRIOR_EXECUTED_AUTHORITY_PRECEDENT         -> may satisfy VERIFIED
+Level 3 ORGANIZATION_CONTROLLED_ROLE_CORROBORATION -> corroborative only
+Level 4 CONTACT_DIRECTORY_CORROBORATION             -> corroborative only
+Level 5 COMMUNICATION_CONTEXT_ONLY                  -> corroborative only
+```
+
+Disposition rules are `VERIFIED`, `UNRESOLVED`, or `REJECTED`. `REJECTED` requires affirmative authentic evidence that authority is absent, revoked, expired, superseded or out of scope; mere lack of evidence remains `UNRESOLVED`.
+
+No customer record was queried because no authentic acceptance event exists. Legal enforceability, signature sufficiency and legal-entity capacity remain separate unresolved predicates unless independently evidenced. No legal, payment, CRM, runtime, Task Registry or COSV authority is created.
