@@ -23,7 +23,9 @@
         "commercial/packages/governance-assessment.md"
       ],
       "publicly_discoverable_and_requestable": true,
-      "payment_or_contract_execution_ready": false
+      "payment_or_contract_execution_ready": false,
+      "request_receipt_state": "AUTHENTIC_PROVIDER_OBSERVATION_REQUIRED",
+      "scoped_engagement_transition": "DEFINED_NOT_INVOKED"
     },
     {
       "offering_id": "icv.governance-boundary-validation.v1",
@@ -37,7 +39,9 @@
         "commercial/packages/governance-boundary-validation-pilot.md"
       ],
       "publicly_discoverable_and_requestable": true,
-      "payment_or_contract_execution_ready": false
+      "payment_or_contract_execution_ready": false,
+      "request_receipt_state": "AUTHENTIC_PROVIDER_OBSERVATION_REQUIRED",
+      "scoped_engagement_transition": "DEFINED_NOT_INVOKED"
     },
     {
       "offering_id": "icv.admitted-code.v1",
@@ -51,7 +55,9 @@
         "commercial/packages/admitted-code-assessment.md"
       ],
       "publicly_discoverable_and_requestable": true,
-      "payment_or_contract_execution_ready": false
+      "payment_or_contract_execution_ready": false,
+      "request_receipt_state": "AUTHENTIC_PROVIDER_OBSERVATION_REQUIRED",
+      "scoped_engagement_transition": "DEFINED_NOT_INVOKED"
     },
     {
       "offering_id": "icv.steggate.v1",
@@ -65,7 +71,9 @@
         "commercial/packages/steggate-preview.md"
       ],
       "publicly_discoverable_and_requestable": true,
-      "payment_or_contract_execution_ready": false
+      "payment_or_contract_execution_ready": false,
+      "request_receipt_state": "AUTHENTIC_PROVIDER_OBSERVATION_REQUIRED",
+      "scoped_engagement_transition": "DEFINED_NOT_INVOKED"
     },
     {
       "offering_id": "icv.stegcrm.v1",
@@ -79,7 +87,9 @@
         "commercial/packages/stegcrm-managed-pilot.md"
       ],
       "publicly_discoverable_and_requestable": true,
-      "payment_or_contract_execution_ready": false
+      "payment_or_contract_execution_ready": false,
+      "request_receipt_state": "AUTHENTIC_PROVIDER_OBSERVATION_REQUIRED",
+      "scoped_engagement_transition": "DEFINED_NOT_INVOKED"
     },
     {
       "offering_id": "icv.hydrasafe.v1",
@@ -93,7 +103,9 @@
         "StegVerse-Labs/HydraSafe:commercial/facility-packet-sow.md"
       ],
       "publicly_discoverable_and_requestable": true,
-      "payment_or_contract_execution_ready": false
+      "payment_or_contract_execution_ready": false,
+      "request_receipt_state": "AUTHENTIC_PROVIDER_OBSERVATION_REQUIRED",
+      "scoped_engagement_transition": "DEFINED_NOT_INVOKED"
     },
     {
       "offering_id": "icv.gp10-field-validation.v1",
@@ -107,7 +119,9 @@
         "StegVerse-Labs/GP10:docs/business/PAID_FIELD_VALIDATION_OFFER.md"
       ],
       "publicly_discoverable_and_requestable": true,
-      "payment_or_contract_execution_ready": false
+      "payment_or_contract_execution_ready": false,
+      "request_receipt_state": "AUTHENTIC_PROVIDER_OBSERVATION_REQUIRED",
+      "scoped_engagement_transition": "DEFINED_NOT_INVOKED"
     },
     {
       "offering_id": "icv.governance-observatory.v1",
@@ -121,7 +135,9 @@
         "commercial/packages/governance-observatory-support.md"
       ],
       "publicly_discoverable_and_requestable": true,
-      "payment_or_contract_execution_ready": false
+      "payment_or_contract_execution_ready": false,
+      "request_receipt_state": "AUTHENTIC_PROVIDER_OBSERVATION_REQUIRED",
+      "scoped_engagement_transition": "DEFINED_NOT_INVOKED"
     },
     {
       "offering_id": "icv.knowledgevault.v1",
@@ -135,7 +151,9 @@
         "commercial/packages/knowledgevault-managed-pilot.md"
       ],
       "publicly_discoverable_and_requestable": true,
-      "payment_or_contract_execution_ready": false
+      "payment_or_contract_execution_ready": false,
+      "request_receipt_state": "AUTHENTIC_PROVIDER_OBSERVATION_REQUIRED",
+      "scoped_engagement_transition": "DEFINED_NOT_INVOKED"
     },
     {
       "offering_id": "icv.stegtalk.v1",
@@ -149,7 +167,9 @@
         "commercial/packages/stegtalk-preview.md"
       ],
       "publicly_discoverable_and_requestable": true,
-      "payment_or_contract_execution_ready": false
+      "payment_or_contract_execution_ready": false,
+      "request_receipt_state": "AUTHENTIC_PROVIDER_OBSERVATION_REQUIRED",
+      "scoped_engagement_transition": "DEFINED_NOT_INVOKED"
     },
     {
       "offering_id": "icv.ecosystem-chat.v1",
@@ -163,7 +183,9 @@
         "commercial/packages/ecosystem-chat-preview.md"
       ],
       "publicly_discoverable_and_requestable": true,
-      "payment_or_contract_execution_ready": false
+      "payment_or_contract_execution_ready": false,
+      "request_receipt_state": "AUTHENTIC_PROVIDER_OBSERVATION_REQUIRED",
+      "scoped_engagement_transition": "DEFINED_NOT_INVOKED"
     },
     {
       "offering_id": "icv.steglearn.v1",
@@ -177,7 +199,9 @@
         "commercial/packages/steglearn-preview.md"
       ],
       "publicly_discoverable_and_requestable": true,
-      "payment_or_contract_execution_ready": false
+      "payment_or_contract_execution_ready": false,
+      "request_receipt_state": "AUTHENTIC_PROVIDER_OBSERVATION_REQUIRED",
+      "scoped_engagement_transition": "DEFINED_NOT_INVOKED"
     }
   ],
   "publication_integration": {
@@ -201,6 +225,17 @@
     "credential_free_request_links_observed": true,
     "privacy_first_initial_contact_observed": true,
     "no_payment_execution_path_observed": true,
+    "payment_or_contract_execution_ready": false
+  },
+  "engagement_request_transition": {
+    "contract": "commercial/engagement-request-transition.json",
+    "receiving_owner": "authenticated mailbox provider behind published rigel@stegverse.org mailto",
+    "authentic_request_state": "AUTHENTIC_ENGAGEMENT_REQUEST_OBSERVED",
+    "normalized_request_state": "ENGAGEMENT_REQUEST_DOCUMENTED",
+    "proposal_state": "SCOPED_ENGAGEMENT_PROPOSED",
+    "crm_auto_creation": false,
+    "contract_acceptance_owner_status": "NO_UNIVERSAL_AUTHENTIC_OWNER_PATH_OBSERVED",
+    "payment_execution_path": "NONE",
     "payment_or_contract_execution_ready": false
   }
 }

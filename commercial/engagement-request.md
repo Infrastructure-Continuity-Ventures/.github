@@ -33,3 +33,29 @@ A completed intake record is only `ENGAGEMENT_REQUEST_DOCUMENTED`. A quote or SO
 
 ## Public-path boundary
 This file is inside the ICV organization repository and does not establish public discoverability or a public submission endpoint. A future public contact/intake surface must be separately published and observed before any catalog entry is marked `PUBLICLY_DISCOVERABLE_AND_REQUESTABLE`.
+
+
+## Existing receiving owner
+
+The smallest existing receiving seam is the authenticated mailbox behind the published offer-specific `mailto:rigel@stegverse.org` links. This reuses an existing communication/provider evidence owner and does not create a hosted intake service.
+
+An email link or a sent message is not an engagement. The first admissible inbound transition requires an **authenticated provider observation of an inbound message** whose offer-specific subject or content establishes an ICV engagement request.
+
+The StegOps `POST /leads` and `POST /leads/{lead_id}/deals` APIs are explicitly **not** the receiving owner for this transition. Those APIs create CRM state, and the deal endpoint currently creates `stage=scoping` with `probability=50`; invoking them from mere inbound receipt would manufacture commercial state.
+
+## Exact request transition
+
+```text
+PUBLICLY_DISCOVERABLE_AND_REQUESTABLE
+  -> AUTHENTIC_ENGAGEMENT_REQUEST_OBSERVED
+  -> ENGAGEMENT_REQUEST_DOCUMENTED
+  -> SCOPED_ENGAGEMENT_PROPOSED
+  -> CONTRACT_OR_SOW_ACCEPTED       [FAIL_CLOSED without separate acceptance evidence]
+  -> PAYMENT_EXECUTABLE_OR_OBSERVED [FAIL_CLOSED; NO_PAYMENT_EXECUTION_PATH]
+```
+
+The machine-readable predicates are in `commercial/engagement-request-transition.json`.
+
+Provider message/thread identifiers and message bodies remain private unless separately authorized for publication. Public evidence may retain only bounded state/disposition plus an authorized redacted/hash/locator reference.
+
+No inbound request automatically creates a Lead, Deal, probability, qualification, contract, payment state, Task Registry record or COSV binding.

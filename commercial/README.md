@@ -68,3 +68,12 @@ A software release chain is considered complete only when the applicable canonic
 The current census finds all twelve customer-facing entries transaction-documented after bounded source repairs, but **none** has evidence for the full public-request plus contract/payment execution chain. Public repository presence alone is not a commercial intake endpoint.
 
 `engagement-request.md` defines the minimum internal source-level intake contract for a quote/SOW request. It does not create a hosted/public form, payment credential, contract authority or customer request.
+
+
+## Authentic engagement-request transition
+
+The existing public mailto path terminates at an existing authenticated mailbox provider. `engagement-request-transition.json` defines the evidence boundary from public discovery to a scoped proposal without creating a new intake service or automatic CRM state.
+
+An inbound message must first be authentically provider-observed. Only then may its bounded fields be normalized into `ENGAGEMENT_REQUEST_DOCUMENTED`. A scoped proposal/SOW is a separate state. Contract/SOW acceptance and payment remain fail-closed without their own authentic evidence.
+
+StegOps Lead/Deal APIs are not the receiving seam: they create CRM state and must not be called merely because an inbound message exists.
