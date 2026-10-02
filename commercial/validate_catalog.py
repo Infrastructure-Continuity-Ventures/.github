@@ -6,6 +6,7 @@ ROOT=Path(__file__).resolve().parents[1]
 CATALOG=ROOT/"commercial/service-catalog.json"
 PURCHASE=ROOT/"commercial/customer-purchase-path-census.json"
 REQUEST_TRANSITION=ROOT/"commercial/engagement-request-transition.json"
+PROPOSAL_ENVELOPE=ROOT/"commercial/scoped-engagement-proposal.schema.json"
 CLASSES=[
     "RELEASED_PRODUCT","REVENUE_READY_SERVICE","MANAGED_PILOT",
     "ASSESSMENT_ONLY","DEVELOPMENT_PREVIEW","INTERNAL_SUBSTRATE",
@@ -74,7 +75,21 @@ def main():
     assert any(x["to"]=="PAYMENT_EXECUTABLE_OR_OBSERVED" and x["disposition_on_current_evidence"]=="FAIL_CLOSED" for x in transition["transitions"])
     assert "Lead/Deal creation is a later separately admitted action" in transition["crm_boundary"]
     print("ICV_CUSTOMER_PURCHASE_PATH_CENSUS_V1_VALID")
+    envelope=json.loads(PROPOSAL_ENVELOPE.read_text(encoding="utf-8"))
+    assert envelope["schema_version"]=="icv.scoped-engagement-proposal.v1"
+    assert envelope["canonical_task_binding"] is None
+    assert envelope["cosv_task_vector"] is None
+    assert envelope["acceptance_boundary"]["current_disposition"]=="FAIL_CLOSED"
+    assert envelope["acceptance_boundary"]["envelope_effect"]=="NONE"
+    assert envelope["payment_boundary"]["payment_or_contract_execution_ready"] is False
+    assert envelope["payment_boundary"]["payment_execution_path"]=="NONE"
+    assert len(envelope["offering_specific_preservation"])==12
+    required={"proposal_id","proposal_version","engagement_id","offering_id","offering_package_ref","maturity_classification","source_authority","deliverables","exclusions","pricing_disposition","acceptance_instructions","unreleased_unproven_substrate_boundary","proposal_delivery_evidence"}
+    assert required.issubset(set(envelope["required_fields"]))
+    assert transition["proposal_envelope"]["schema"]=="commercial/scoped-engagement-proposal.schema.json"
+    assert transition["proposal_envelope"]["creates_acceptance_authority"] is False
     print("ICV_ENGAGEMENT_REQUEST_TRANSITION_V1_VALID")
+    print("ICV_SCOPED_ENGAGEMENT_PROPOSAL_V1_VALID")
 
 if __name__=="__main__":
     main()

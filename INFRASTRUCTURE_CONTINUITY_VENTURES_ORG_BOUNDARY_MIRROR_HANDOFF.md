@@ -193,3 +193,23 @@ PUBLICLY_DISCOVERABLE_AND_REQUESTABLE
 ```
 
 No transition was invoked because no customer request was manufactured or assumed. Private mailbox content/provider identifiers remain private evidence. No Lead, Deal, probability, qualification, buyer record, payment credential, runtime authority, Task Registry or COSV binding was created. `PAYMENT_OR_CONTRACT_EXECUTION_READY=false` remains correct for all twelve offerings.
+
+
+## 2026-10-02 — common scoped-engagement proposal envelope
+
+All twelve offering packages and the existing HydraSafe, GP10 and StegOps SOW/offer documents were reconciled against the `SCOPED_ENGAGEMENT_PROPOSED` boundary.
+
+No existing template is a safe universal owner. HydraSafe's SOW contains facility, deposit/milestone, professional-review and reference-rights semantics specific to that service. GP10 intentionally requires an exact written scope and fixed-fee/cost-plus amount before payment. StegOps templates assume audit modules/tiers, GitHub-native delivery and an issue-based `ACCEPT` instruction that are not common to all ICV offerings.
+
+The smallest common source contract is therefore `commercial/scoped-engagement-proposal.schema.json` plus its human template `commercial/scoped-engagement-proposal.md`. It normalizes proposal identity/version, engagement/offering identity, offering-package reference, maturity, source authority, scope, deliverables, exclusions, responsibilities, evidence expectations, pricing disposition, schedule/review, acceptance instructions, change/stop conditions, privacy, unreleased/unproven substrate boundary and proposal-delivery evidence. Offering-specific semantics remain controlling and are referenced rather than flattened.
+
+The envelope has no acceptance effect:
+
+```text
+SCOPED_ENGAGEMENT_PROPOSED = definable/deliverable with authentic delivery evidence
+CONTRACT_OR_SOW_ACCEPTED = FAIL_CLOSED
+PAYMENT_OR_CONTRACT_EXECUTION_READY = false
+NO_PAYMENT_EXECUTION_PATH = true
+```
+
+Separate authentic acceptance must be attributable to an authorized customer counterpart and bound to the exact proposal ID/version, timestamp and applicable legal/entity/signature/professional requirements. The envelope creates no electronic-signature, payment, legal-entity, runtime, CRM, Task Registry or COSV authority.

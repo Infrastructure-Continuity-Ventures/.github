@@ -1,0 +1,100 @@
+{
+  "schema_version": "icv.scoped-engagement-proposal.v1",
+  "authority": "COMMERCIAL_PROPOSAL_DESCRIPTION_ONLY",
+  "canonical_task_binding": null,
+  "cosv_task_vector": null,
+  "purpose": "Normalize SCOPED_ENGAGEMENT_PROPOSED evidence across all customer-facing ICV offerings without replacing offering-specific scope, pricing, maturity, source authority, acceptance or professional/legal requirements.",
+  "required_fields": [
+    "proposal_id",
+    "proposal_version",
+    "engagement_id",
+    "offering_id",
+    "offering_package_ref",
+    "customer_organization",
+    "customer_contact_as_supplied",
+    "proposal_issuer",
+    "issued_at",
+    "valid_until_or_explicit_none",
+    "maturity_classification",
+    "source_authority",
+    "objective",
+    "bounded_scope",
+    "deliverables",
+    "exclusions",
+    "customer_responsibilities",
+    "evidence_receipt_expectations",
+    "pricing_disposition",
+    "commercial_terms",
+    "target_schedule",
+    "review_period",
+    "acceptance_instructions",
+    "change_stop_conditions",
+    "privacy_data_handling",
+    "unreleased_unproven_substrate_boundary",
+    "proposal_delivery_evidence"
+  ],
+  "pricing_dispositions": [
+    "FIXED_FEE",
+    "FEE_RANGE",
+    "COST_PLUS",
+    "SCOPE_BEFORE_PRICE",
+    "NO_FEE_RESEARCH_COLLABORATION",
+    "OTHER_EXPLICIT_WRITTEN_TERMS"
+  ],
+  "offering_specific_preservation": {
+    "governance_assessment": "Engagement-specific price/schedule/retention/IP; no universal price.",
+    "governance_boundary_validation": "Engagement-specific price/IP/publication/support/travel/retention; validator pilot is not production runtime.",
+    "admitted_code": "Exact-scope quote; assessment does not create production admission/release authority.",
+    "steggate": "Preview/pilot terms only; 0.3.0 remains SOURCE_VALIDATED_NOT_RELEASED.",
+    "stegcrm": "Managed-pilot terms; no source write-back or synthesized probability/qualification.",
+    "hydrasafe": "May carry fixed fee, deposit, milestones, external-professional fee treatment and reference-rights terms from its facility SOW; professional work remains separately governed.",
+    "gp10": "Written exact scope and fixed-fee/cost-plus amount required before accepting payment; stop-work if source package materially differs.",
+    "governance_observatory": "Support fee does not redefine immutable v0.1.0 release.",
+    "knowledgevault": "Pilot/migration/provider terms must distinguish v0.1.9 release from later main capabilities.",
+    "stegtalk": "Non-production preview terms only; production_ready=false.",
+    "ecosystem_chat": "Preview/evaluation terms only; live distributed execution/provider consumption not sold as proven.",
+    "steglearn": "Pilot terms preserve parent/steward review and privacy boundaries; no generally released education platform."
+  },
+  "acceptance_boundary": {
+    "proposal_state": "SCOPED_ENGAGEMENT_PROPOSED",
+    "acceptance_state": "CONTRACT_OR_SOW_ACCEPTED",
+    "current_disposition": "FAIL_CLOSED",
+    "envelope_effect": "NONE",
+    "required_separate_evidence": [
+      "authentic acceptance attributable to an authorized customer counterpart",
+      "exact accepted proposal_id and proposal_version",
+      "acceptance timestamp",
+      "private/authenticated evidence locator",
+      "applicable legal-entity/signature/professional requirements for the specific engagement"
+    ],
+    "prohibitions": [
+      "Do not infer authority from sender address alone",
+      "Do not treat proposal delivery/opening as acceptance",
+      "Do not treat a generic reply, GitHub reaction, payment intent or CRM state as acceptance",
+      "Do not define electronic-signature sufficiency or legal enforceability in this envelope"
+    ]
+  },
+  "payment_boundary": {
+    "payment_or_contract_execution_ready": false,
+    "payment_execution_path": "NONE",
+    "prohibitions": [
+      "No payment credentials",
+      "No checkout/payment link generation",
+      "No production StegPay authority",
+      "No inference of payment from acceptance"
+    ]
+  },
+  "crm_boundary": "Proposal creation/delivery does not create or mutate Lead, Deal, probability, qualification or source-system state.",
+  "runtime_boundary": "Proposal/SOW scope does not activate software/runtime/release/credential/custody authority.",
+  "privacy_boundary": "Private customer content, provider message/thread IDs, signatures, credentials and confidential source materials remain outside public proposal evidence unless separately authorized.",
+  "disposition_rules": {
+    "allow_scoped_engagement_proposed_when": "Every required field is explicit, offering package semantics are preserved, proposal identity/version is fixed, and proposal delivery is authentically evidenced.",
+    "deny_or_fail_closed_when": [
+      "required proposal field is missing or silently inferred",
+      "proposal contradicts offering package maturity/source authority/pricing/acceptance boundary",
+      "proposal represents unreleased/unproven substrate as released/proven",
+      "delivery evidence is unavailable",
+      "acceptance is being inferred from proposal existence or delivery"
+    ]
+  }
+}

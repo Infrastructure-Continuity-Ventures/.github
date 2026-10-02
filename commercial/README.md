@@ -77,3 +77,12 @@ The existing public mailto path terminates at an existing authenticated mailbox 
 An inbound message must first be authentically provider-observed. Only then may its bounded fields be normalized into `ENGAGEMENT_REQUEST_DOCUMENTED`. A scoped proposal/SOW is a separate state. Contract/SOW acceptance and payment remain fail-closed without their own authentic evidence.
 
 StegOps Lead/Deal APIs are not the receiving seam: they create CRM state and must not be called merely because an inbound message exists.
+
+
+## Common scoped-engagement proposal envelope
+
+`scoped-engagement-proposal.schema.json` and `scoped-engagement-proposal.md` normalize the `SCOPED_ENGAGEMENT_PROPOSED` state across all twelve customer-facing offerings. The envelope references, rather than replaces, each offering's transaction package.
+
+Existing HydraSafe, GP10 and StegOps SOW documents remain offering/source-specific. None is promoted to universal ICV authority: HydraSafe carries facility/professional/deposit semantics, GP10 requires scope-specific pricing before payment, and StegOps hard-codes audit tiers/modules and issue-based acceptance.
+
+The common envelope cannot upgrade maturity, alter source authority, invent price, create electronic-signature sufficiency, or establish acceptance/payment. `CONTRACT_OR_SOW_ACCEPTED` remains `FAIL_CLOSED` until separate authentic acceptance attributable to an authorized customer counterpart is observed.
