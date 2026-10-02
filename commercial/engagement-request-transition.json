@@ -82,7 +82,8 @@
         "review/acceptance period",
         "change/stop conditions",
         "source authority and unreleased/unproven substrate boundary",
-        "proposal/SOW delivery evidence"
+        "proposal/SOW delivery evidence",
+        "proposal envelope conforms to commercial/scoped-engagement-proposal.schema.json and references the applicable offering package"
       ],
       "fail_closed_when": [
         "scope/price/authority is inferred beyond offering package",
@@ -131,5 +132,13 @@
     ]
   },
   "crm_boundary": "CRM projection or Lead/Deal creation is a later separately admitted action. Authentic inbound request evidence does not itself authorize or require a Lead, Deal, probability, qualification, write-back or source-stage mutation.",
-  "payment_or_contract_execution_ready": false
+  "payment_or_contract_execution_ready": false,
+  "proposal_envelope": {
+    "schema": "commercial/scoped-engagement-proposal.schema.json",
+    "template": "commercial/scoped-engagement-proposal.md",
+    "owner": "ICV commercial documentation boundary",
+    "applies_to_all_customer_facing_offerings": true,
+    "replaces_offering_specific_terms": false,
+    "creates_acceptance_authority": false
+  }
 }
