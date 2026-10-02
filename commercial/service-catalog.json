@@ -46,7 +46,8 @@
       "version": null,
       "evidence_refs": [
         "README.md",
-        "docs/GOVERNANCE_BOUNDARY_VALIDATION_PRODUCT.md"
+        "docs/GOVERNANCE_BOUNDARY_VALIDATION_PRODUCT.md",
+        "commercial/packages/governance-boundary-validation-pilot.md"
       ],
       "delivery_modes": [
         "fixed-scope validation",
@@ -92,7 +93,8 @@
         "README.md",
         "docs/STEGGATE_PORTABLE_PRODUCT.md",
         "VERSION",
-        "STEGCORE_MIRROR_HANDOFF.md"
+        "STEGCORE_MIRROR_HANDOFF.md",
+        "commercial/packages/steggate-preview.md"
       ],
       "delivery_modes": [
         "local evaluation preview",
@@ -114,7 +116,8 @@
         "crm_projections/",
         "schemas/campaign-projection.schema.json",
         "schemas/prospect-projection.schema.json",
-        "docs/STEGOPS_ORCHESTRATOR_MIRROR_HANDOFF.md"
+        "docs/STEGOPS_ORCHESTRATOR_MIRROR_HANDOFF.md",
+        "commercial/packages/stegcrm-managed-pilot.md"
       ],
       "delivery_modes": [
         "managed CRM overlay pilot",
@@ -200,7 +203,8 @@
       "evidence_refs": [
         "README.md",
         "docs/KV_MYKV_INSTANCE_PROJECTION.md",
-        "StegVerse-Labs/Site:docs/MYKV_IOS_INSTALLABLE_SURFACE_MIRROR_HANDOFF.md"
+        "StegVerse-Labs/Site:docs/MYKV_IOS_INSTALLABLE_SURFACE_MIRROR_HANDOFF.md",
+        "commercial/packages/knowledgevault-managed-pilot.md"
       ],
       "delivery_modes": [
         "file-based vault deployment",
@@ -222,7 +226,8 @@
         "README.md",
         "STEGTALK_MIRROR_HANDOFF.md",
         "STEGTALK_CANDIDATE_STATUS.json",
-        "STEGTALK_RELEASE_VERIFICATION.json"
+        "STEGTALK_RELEASE_VERIFICATION.json",
+        "commercial/packages/stegtalk-preview.md"
       ],
       "delivery_modes": [
         "non-production local prototype demonstration"
@@ -242,7 +247,8 @@
       "evidence_refs": [
         "docs/ECOSYSTEM_CHAT_SCOPE_MIRROR_HANDOFF.md",
         "README.md",
-        "StegVerse-org/LLM-adapter:docs/ECOSYSTEM_CHAT_MIRROR_HANDOFF.md"
+        "StegVerse-org/LLM-adapter:docs/ECOSYSTEM_CHAT_MIRROR_HANDOFF.md",
+        "commercial/packages/ecosystem-chat-preview.md"
       ],
       "delivery_modes": [
         "source-demonstrated capability-interface preview"
@@ -262,7 +268,8 @@
       "evidence_refs": [
         "README.md",
         "docs/product-spec.md",
-        "STEGLEARN_MIRROR_HANDOFF.md"
+        "STEGLEARN_MIRROR_HANDOFF.md",
+        "commercial/packages/steglearn-preview.md"
       ],
       "delivery_modes": [
         "bounded learning-loop pilot"

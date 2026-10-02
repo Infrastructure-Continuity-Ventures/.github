@@ -30,7 +30,23 @@
         "no GitHub Release observed",
         "canonical handoff says pilot_evidence_validation_in_progress"
       ],
-      "next_release_path": "Complete the canonical handoff's machine-observable pilot/release conditions, then bind version, exact commit, tag, release notes and reproducible package if its owner authorizes a software release."
+      "next_release_path": "Complete the canonical handoff's machine-observable pilot/release conditions, then bind version, exact commit, tag, release notes and reproducible package if its owner authorizes a software release.",
+      "transaction_readiness": {
+        "state": "DOCUMENTED_PAID_PILOT",
+        "evidence": [
+          "commercial/packages/governance-boundary-validation-pilot.md"
+        ],
+        "software_release_implied": false,
+        "required_fields": [
+          "intake_boundary",
+          "bounded_deliverables",
+          "exclusions",
+          "acceptance",
+          "commercial_terms",
+          "evidence_receipt",
+          "unreleased_or_unproven_substrate_not_sold"
+        ]
+      }
     },
     {
       "offering_id": "icv.admitted-code.v1",
@@ -71,6 +87,22 @@
           "StegVerse-Labs/StegCore:VERSION.json"
         ],
         "reason": "Exact candidate is prepared and source-validated, but TV authorization is REQUESTED_NOT_GRANTED and required aggregate/runtime/custody predicates remain incomplete."
+      },
+      "transaction_readiness": {
+        "state": "DOCUMENTED_DEVELOPMENT_PREVIEW",
+        "evidence": [
+          "commercial/packages/steggate-preview.md"
+        ],
+        "software_release_implied": false,
+        "required_fields": [
+          "intake_boundary",
+          "bounded_deliverables",
+          "exclusions",
+          "acceptance",
+          "commercial_terms",
+          "evidence_receipt",
+          "unreleased_or_unproven_substrate_not_sold"
+        ]
       }
     },
     {
@@ -83,7 +115,23 @@
         "no GitHub Release",
         "CRM projection is a managed-pilot component of StegOps"
       ],
-      "next_release_path": "Keep managed pilot; define standalone release contract only if StegCRM becomes an independently distributed product."
+      "next_release_path": "Keep managed pilot; define standalone release contract only if StegCRM becomes an independently distributed product.",
+      "transaction_readiness": {
+        "state": "DOCUMENTED_MANAGED_PILOT",
+        "evidence": [
+          "commercial/packages/stegcrm-managed-pilot.md"
+        ],
+        "software_release_implied": false,
+        "required_fields": [
+          "intake_boundary",
+          "bounded_deliverables",
+          "exclusions",
+          "acceptance",
+          "commercial_terms",
+          "evidence_receipt",
+          "unreleased_or_unproven_substrate_not_sold"
+        ]
+      }
     },
     {
       "offering_id": "icv.hydrasafe.v1",
@@ -182,6 +230,22 @@
           "StegVerse-Labs/continuity-vault-kit:CONTINUITY_VAULT_KIT_MIRROR_HANDOFF.md"
         ],
         "reason": "Current main is 1290 commits beyond v0.1.9 and remains Unreleased; hosted release mutation authority is retired and no admitted TV/TVC successor publication candidate/path was established by this census."
+      },
+      "transaction_readiness": {
+        "state": "DOCUMENTED_MANAGED_PILOT",
+        "evidence": [
+          "commercial/packages/knowledgevault-managed-pilot.md"
+        ],
+        "software_release_implied": false,
+        "required_fields": [
+          "intake_boundary",
+          "bounded_deliverables",
+          "exclusions",
+          "acceptance",
+          "commercial_terms",
+          "evidence_receipt",
+          "unreleased_or_unproven_substrate_not_sold"
+        ]
       }
     },
     {
@@ -196,7 +260,23 @@
         "production_ready=false",
         "live physical/network bearer evidence not proven"
       ],
-      "next_release_path": "Preserve preview; satisfy ST-029..ST-036/live-edge predicates and canonical production criteria before any production release."
+      "next_release_path": "Preserve preview; satisfy ST-029..ST-036/live-edge predicates and canonical production criteria before any production release.",
+      "transaction_readiness": {
+        "state": "DOCUMENTED_DEVELOPMENT_PREVIEW",
+        "evidence": [
+          "commercial/packages/stegtalk-preview.md"
+        ],
+        "software_release_implied": false,
+        "required_fields": [
+          "intake_boundary",
+          "bounded_deliverables",
+          "exclusions",
+          "acceptance",
+          "commercial_terms",
+          "evidence_receipt",
+          "unreleased_or_unproven_substrate_not_sold"
+        ]
+      }
     },
     {
       "offering_id": "icv.ecosystem-chat.v1",
@@ -208,7 +288,23 @@
         "existing Site release is an experiment snapshot, not product release",
         "live distributed execution/integrations not proven"
       ],
-      "next_release_path": "Keep preview until the canonical Ecosystem Chat owner establishes implemented/proven product predicates and an independent product release identity."
+      "next_release_path": "Keep preview until the canonical Ecosystem Chat owner establishes implemented/proven product predicates and an independent product release identity.",
+      "transaction_readiness": {
+        "state": "DOCUMENTED_DEVELOPMENT_PREVIEW",
+        "evidence": [
+          "commercial/packages/ecosystem-chat-preview.md"
+        ],
+        "software_release_implied": false,
+        "required_fields": [
+          "intake_boundary",
+          "bounded_deliverables",
+          "exclusions",
+          "acceptance",
+          "commercial_terms",
+          "evidence_receipt",
+          "unreleased_or_unproven_substrate_not_sold"
+        ]
+      }
     },
     {
       "offering_id": "icv.steglearn.v1",
@@ -220,7 +316,23 @@
         "no GitHub Release",
         "no generally released platform evidence"
       ],
-      "next_release_path": "Preserve development preview; establish canonical version/release predicates before preparing a tag."
+      "next_release_path": "Preserve development preview; establish canonical version/release predicates before preparing a tag.",
+      "transaction_readiness": {
+        "state": "DOCUMENTED_DEVELOPMENT_PREVIEW",
+        "evidence": [
+          "commercial/packages/steglearn-preview.md"
+        ],
+        "software_release_implied": false,
+        "required_fields": [
+          "intake_boundary",
+          "bounded_deliverables",
+          "exclusions",
+          "acceptance",
+          "commercial_terms",
+          "evidence_receipt",
+          "unreleased_or_unproven_substrate_not_sold"
+        ]
+      }
     }
   ],
   "release_transition_rule": "Every evaluated successor release transition records ALLOW, DENY, or FAIL_CLOSED. No tag/release is created unless canonical authority and all applicable predicates are authentically satisfied."
