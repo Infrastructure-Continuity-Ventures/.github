@@ -5,6 +5,7 @@ from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 CATALOG=ROOT/"commercial/service-catalog.json"
 PURCHASE=ROOT/"commercial/customer-purchase-path-census.json"
+REQUEST_TRANSITION=ROOT/"commercial/engagement-request-transition.json"
 CLASSES=[
     "RELEASED_PRODUCT","REVENUE_READY_SERVICE","MANAGED_PILOT",
     "ASSESSMENT_ONLY","DEVELOPMENT_PREVIEW","INTERNAL_SUBSTRATE",
@@ -62,7 +63,18 @@ def main():
         assert entry["payment_state"]=="NO_AUTHENTIC_PAYMENT_EXECUTION_PATH_OBSERVED"
         assert entry["transaction_evidence"]
     print("ICV_COMMERCIAL_SERVICE_CATALOG_V2_VALID")
+    transition=json.loads(REQUEST_TRANSITION.read_text(encoding="utf-8"))
+    assert transition["schema_version"]=="icv.engagement-request-transition.v1"
+    assert transition["canonical_task_binding"] is None
+    assert transition["cosv_task_vector"] is None
+    assert transition["receiving_owner"]["hosted_service_created"] is False
+    assert transition["payment_or_contract_execution_ready"] is False
+    assert any(x["to"]=="AUTHENTIC_ENGAGEMENT_REQUEST_OBSERVED" for x in transition["transitions"])
+    assert any(x["to"]=="CONTRACT_OR_SOW_ACCEPTED" and x["disposition_on_current_evidence"]=="FAIL_CLOSED" for x in transition["transitions"])
+    assert any(x["to"]=="PAYMENT_EXECUTABLE_OR_OBSERVED" and x["disposition_on_current_evidence"]=="FAIL_CLOSED" for x in transition["transitions"])
+    assert "Lead/Deal creation is a later separately admitted action" in transition["crm_boundary"]
     print("ICV_CUSTOMER_PURCHASE_PATH_CENSUS_V1_VALID")
+    print("ICV_ENGAGEMENT_REQUEST_TRANSITION_V1_VALID")
 
 if __name__=="__main__":
     main()
