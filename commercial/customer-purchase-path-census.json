@@ -1,6 +1,6 @@
 {
   "schema_version": "icv.customer-purchase-path-census.v1",
-  "observed_at": "2026-10-01T23:53:00-05:00",
+  "observed_at": "2026-10-02T10:34:00-05:00",
   "authority": "OBSERVATION_AND_COMMERCIAL_DOCUMENTATION_ONLY",
   "canonical_task_binding": null,
   "cosv_task_vector": null,
@@ -9,174 +9,174 @@
     "public_request": "PUBLICLY_DISCOVERABLE_AND_REQUESTABLE",
     "execution": "PAYMENT_OR_CONTRACT_EXECUTION_READY"
   },
-  "conclusion": "All twelve customer-facing offerings have or can be bound to documented transaction scope after this repair, but no offering currently has evidence for the full PUBLICLY_DISCOVERABLE_AND_REQUESTABLE -> PAYMENT_OR_CONTRACT_EXECUTION_READY chain. Public repository presence alone is not a commercial request path.",
+  "conclusion": "All twelve customer-facing offerings are now authentically PUBLICLY_DISCOVERABLE_AND_REQUESTABLE through the served StegVerse Site catalog mirror and credential-free offer-specific email request links. This observation advances discovery/request only. No offering has evidence for PAYMENT_OR_CONTRACT_EXECUTION_READY; NO_PAYMENT_EXECUTION_PATH remains explicit.",
   "entries": [
     {
       "offering_id": "icv.governance-assessment.v1",
       "transaction_state": "DOCUMENTED_TRANSACTION_READY",
-      "discovery_state": "SITE_PUBLIC_MIRROR_SOURCE_INTEGRATED_PENDING_SERVED_BODY_OBSERVATION",
-      "request_state": "CREDENTIAL_FREE_MAILTO_SOURCE_INTEGRATED_PENDING_SERVED_BODY_OBSERVATION",
+      "discovery_state": "PUBLIC_SITE_CATALOG_SERVED_BODY_OBSERVED",
+      "request_state": "CREDENTIAL_FREE_OFFER_SPECIFIC_MAILTO_PUBLICLY_OBSERVED",
       "quote_contract_state": "PACKAGE_TERMS_ONLY",
       "payment_state": "NO_AUTHENTIC_PAYMENT_EXECUTION_PATH_OBSERVED",
       "acceptance_state": "DOCUMENTED",
       "transaction_evidence": [
         "commercial/packages/governance-assessment.md"
       ],
-      "publicly_discoverable_and_requestable": false,
+      "publicly_discoverable_and_requestable": true,
       "payment_or_contract_execution_ready": false
     },
     {
       "offering_id": "icv.governance-boundary-validation.v1",
       "transaction_state": "DOCUMENTED_TRANSACTION_READY",
-      "discovery_state": "SITE_PUBLIC_MIRROR_SOURCE_INTEGRATED_PENDING_SERVED_BODY_OBSERVATION",
-      "request_state": "CREDENTIAL_FREE_MAILTO_SOURCE_INTEGRATED_PENDING_SERVED_BODY_OBSERVATION",
+      "discovery_state": "PUBLIC_SITE_CATALOG_SERVED_BODY_OBSERVED",
+      "request_state": "CREDENTIAL_FREE_OFFER_SPECIFIC_MAILTO_PUBLICLY_OBSERVED",
       "quote_contract_state": "PACKAGE_TERMS_ONLY",
       "payment_state": "NO_AUTHENTIC_PAYMENT_EXECUTION_PATH_OBSERVED",
       "acceptance_state": "DOCUMENTED",
       "transaction_evidence": [
         "commercial/packages/governance-boundary-validation-pilot.md"
       ],
-      "publicly_discoverable_and_requestable": false,
+      "publicly_discoverable_and_requestable": true,
       "payment_or_contract_execution_ready": false
     },
     {
       "offering_id": "icv.admitted-code.v1",
       "transaction_state": "DOCUMENTED_TRANSACTION_READY",
-      "discovery_state": "SITE_PUBLIC_MIRROR_SOURCE_INTEGRATED_PENDING_SERVED_BODY_OBSERVATION",
-      "request_state": "CREDENTIAL_FREE_MAILTO_SOURCE_INTEGRATED_PENDING_SERVED_BODY_OBSERVATION",
+      "discovery_state": "PUBLIC_SITE_CATALOG_SERVED_BODY_OBSERVED",
+      "request_state": "CREDENTIAL_FREE_OFFER_SPECIFIC_MAILTO_PUBLICLY_OBSERVED",
       "quote_contract_state": "PACKAGE_TERMS_ONLY",
       "payment_state": "NO_AUTHENTIC_PAYMENT_EXECUTION_PATH_OBSERVED",
       "acceptance_state": "DOCUMENTED",
       "transaction_evidence": [
         "commercial/packages/admitted-code-assessment.md"
       ],
-      "publicly_discoverable_and_requestable": false,
+      "publicly_discoverable_and_requestable": true,
       "payment_or_contract_execution_ready": false
     },
     {
       "offering_id": "icv.steggate.v1",
       "transaction_state": "DOCUMENTED_TRANSACTION_READY",
-      "discovery_state": "SITE_PUBLIC_MIRROR_SOURCE_INTEGRATED_PENDING_SERVED_BODY_OBSERVATION",
-      "request_state": "CREDENTIAL_FREE_MAILTO_SOURCE_INTEGRATED_PENDING_SERVED_BODY_OBSERVATION",
+      "discovery_state": "PUBLIC_SITE_CATALOG_SERVED_BODY_OBSERVED",
+      "request_state": "CREDENTIAL_FREE_OFFER_SPECIFIC_MAILTO_PUBLICLY_OBSERVED",
       "quote_contract_state": "PACKAGE_TERMS_ONLY",
       "payment_state": "NO_AUTHENTIC_PAYMENT_EXECUTION_PATH_OBSERVED",
       "acceptance_state": "DOCUMENTED",
       "transaction_evidence": [
         "commercial/packages/steggate-preview.md"
       ],
-      "publicly_discoverable_and_requestable": false,
+      "publicly_discoverable_and_requestable": true,
       "payment_or_contract_execution_ready": false
     },
     {
       "offering_id": "icv.stegcrm.v1",
       "transaction_state": "DOCUMENTED_TRANSACTION_READY",
-      "discovery_state": "SITE_PUBLIC_MIRROR_SOURCE_INTEGRATED_PENDING_SERVED_BODY_OBSERVATION",
-      "request_state": "CREDENTIAL_FREE_MAILTO_SOURCE_INTEGRATED_PENDING_SERVED_BODY_OBSERVATION",
+      "discovery_state": "PUBLIC_SITE_CATALOG_SERVED_BODY_OBSERVED",
+      "request_state": "CREDENTIAL_FREE_OFFER_SPECIFIC_MAILTO_PUBLICLY_OBSERVED",
       "quote_contract_state": "STEGOPS_SERVICE_PRICING_EXISTS_NOT_STEGCRM_SOW",
       "payment_state": "NO_AUTHENTIC_PAYMENT_EXECUTION_PATH_OBSERVED",
       "acceptance_state": "DOCUMENTED",
       "transaction_evidence": [
         "commercial/packages/stegcrm-managed-pilot.md"
       ],
-      "publicly_discoverable_and_requestable": false,
+      "publicly_discoverable_and_requestable": true,
       "payment_or_contract_execution_ready": false
     },
     {
       "offering_id": "icv.hydrasafe.v1",
       "transaction_state": "DOCUMENTED_TRANSACTION_READY",
-      "discovery_state": "SITE_PUBLIC_MIRROR_SOURCE_INTEGRATED_PENDING_SERVED_BODY_OBSERVATION",
-      "request_state": "CREDENTIAL_FREE_MAILTO_SOURCE_INTEGRATED_PENDING_SERVED_BODY_OBSERVATION",
+      "discovery_state": "PUBLIC_SITE_CATALOG_SERVED_BODY_OBSERVED",
+      "request_state": "CREDENTIAL_FREE_OFFER_SPECIFIC_MAILTO_PUBLICLY_OBSERVED",
       "quote_contract_state": "SOW_TEMPLATE_AND_PRICE_RANGE_AVAILABLE",
       "payment_state": "NO_AUTHENTIC_PAYMENT_EXECUTION_PATH_OBSERVED",
       "acceptance_state": "DOCUMENTED",
       "transaction_evidence": [
         "StegVerse-Labs/HydraSafe:commercial/facility-packet-sow.md"
       ],
-      "publicly_discoverable_and_requestable": false,
+      "publicly_discoverable_and_requestable": true,
       "payment_or_contract_execution_ready": false
     },
     {
       "offering_id": "icv.gp10-field-validation.v1",
       "transaction_state": "DOCUMENTED_TRANSACTION_READY",
-      "discovery_state": "SITE_PUBLIC_MIRROR_SOURCE_INTEGRATED_PENDING_SERVED_BODY_OBSERVATION",
-      "request_state": "CREDENTIAL_FREE_MAILTO_SOURCE_INTEGRATED_PENDING_SERVED_BODY_OBSERVATION",
+      "discovery_state": "PUBLIC_SITE_CATALOG_SERVED_BODY_OBSERVED",
+      "request_state": "CREDENTIAL_FREE_OFFER_SPECIFIC_MAILTO_PUBLICLY_OBSERVED",
       "quote_contract_state": "WRITTEN_SCOPE_REQUIRED_BEFORE_PAYMENT",
       "payment_state": "NO_AUTHENTIC_PAYMENT_EXECUTION_PATH_OBSERVED",
       "acceptance_state": "DOCUMENTED",
       "transaction_evidence": [
         "StegVerse-Labs/GP10:docs/business/PAID_FIELD_VALIDATION_OFFER.md"
       ],
-      "publicly_discoverable_and_requestable": false,
+      "publicly_discoverable_and_requestable": true,
       "payment_or_contract_execution_ready": false
     },
     {
       "offering_id": "icv.governance-observatory.v1",
       "transaction_state": "DOCUMENTED_TRANSACTION_READY",
-      "discovery_state": "SITE_PUBLIC_MIRROR_SOURCE_INTEGRATED_PENDING_SERVED_BODY_OBSERVATION",
-      "request_state": "CREDENTIAL_FREE_MAILTO_SOURCE_INTEGRATED_PENDING_SERVED_BODY_OBSERVATION",
+      "discovery_state": "PUBLIC_SITE_CATALOG_SERVED_BODY_OBSERVED",
+      "request_state": "CREDENTIAL_FREE_OFFER_SPECIFIC_MAILTO_PUBLICLY_OBSERVED",
       "quote_contract_state": "NO_COMMERCIAL_CONTRACT_PATH_OBSERVED",
       "payment_state": "NO_AUTHENTIC_PAYMENT_EXECUTION_PATH_OBSERVED",
       "acceptance_state": "DOCUMENTED_AFTER_ICV_PACKAGE_REPAIR",
       "transaction_evidence": [
         "commercial/packages/governance-observatory-support.md"
       ],
-      "publicly_discoverable_and_requestable": false,
+      "publicly_discoverable_and_requestable": true,
       "payment_or_contract_execution_ready": false
     },
     {
       "offering_id": "icv.knowledgevault.v1",
       "transaction_state": "DOCUMENTED_TRANSACTION_READY",
-      "discovery_state": "SITE_PUBLIC_MIRROR_SOURCE_INTEGRATED_PENDING_SERVED_BODY_OBSERVATION",
-      "request_state": "CREDENTIAL_FREE_MAILTO_SOURCE_INTEGRATED_PENDING_SERVED_BODY_OBSERVATION",
+      "discovery_state": "PUBLIC_SITE_CATALOG_SERVED_BODY_OBSERVED",
+      "request_state": "CREDENTIAL_FREE_OFFER_SPECIFIC_MAILTO_PUBLICLY_OBSERVED",
       "quote_contract_state": "PACKAGE_TERMS_ONLY",
       "payment_state": "NO_AUTHENTIC_PAYMENT_EXECUTION_PATH_OBSERVED",
       "acceptance_state": "DOCUMENTED",
       "transaction_evidence": [
         "commercial/packages/knowledgevault-managed-pilot.md"
       ],
-      "publicly_discoverable_and_requestable": false,
+      "publicly_discoverable_and_requestable": true,
       "payment_or_contract_execution_ready": false
     },
     {
       "offering_id": "icv.stegtalk.v1",
       "transaction_state": "DOCUMENTED_TRANSACTION_READY",
-      "discovery_state": "SITE_PUBLIC_MIRROR_SOURCE_INTEGRATED_PENDING_SERVED_BODY_OBSERVATION",
-      "request_state": "CREDENTIAL_FREE_MAILTO_SOURCE_INTEGRATED_PENDING_SERVED_BODY_OBSERVATION",
+      "discovery_state": "PUBLIC_SITE_CATALOG_SERVED_BODY_OBSERVED",
+      "request_state": "CREDENTIAL_FREE_OFFER_SPECIFIC_MAILTO_PUBLICLY_OBSERVED",
       "quote_contract_state": "PACKAGE_TERMS_ONLY",
       "payment_state": "NO_AUTHENTIC_PAYMENT_EXECUTION_PATH_OBSERVED",
       "acceptance_state": "DOCUMENTED",
       "transaction_evidence": [
         "commercial/packages/stegtalk-preview.md"
       ],
-      "publicly_discoverable_and_requestable": false,
+      "publicly_discoverable_and_requestable": true,
       "payment_or_contract_execution_ready": false
     },
     {
       "offering_id": "icv.ecosystem-chat.v1",
       "transaction_state": "DOCUMENTED_TRANSACTION_READY",
-      "discovery_state": "SITE_PUBLIC_MIRROR_SOURCE_INTEGRATED_PENDING_SERVED_BODY_OBSERVATION",
-      "request_state": "CREDENTIAL_FREE_MAILTO_SOURCE_INTEGRATED_PENDING_SERVED_BODY_OBSERVATION",
+      "discovery_state": "PUBLIC_SITE_CATALOG_SERVED_BODY_OBSERVED",
+      "request_state": "CREDENTIAL_FREE_OFFER_SPECIFIC_MAILTO_PUBLICLY_OBSERVED",
       "quote_contract_state": "PACKAGE_TERMS_ONLY",
       "payment_state": "NO_AUTHENTIC_PAYMENT_EXECUTION_PATH_OBSERVED",
       "acceptance_state": "DOCUMENTED",
       "transaction_evidence": [
         "commercial/packages/ecosystem-chat-preview.md"
       ],
-      "publicly_discoverable_and_requestable": false,
+      "publicly_discoverable_and_requestable": true,
       "payment_or_contract_execution_ready": false
     },
     {
       "offering_id": "icv.steglearn.v1",
       "transaction_state": "DOCUMENTED_TRANSACTION_READY",
-      "discovery_state": "SITE_PUBLIC_MIRROR_SOURCE_INTEGRATED_PENDING_SERVED_BODY_OBSERVATION",
-      "request_state": "CREDENTIAL_FREE_MAILTO_SOURCE_INTEGRATED_PENDING_SERVED_BODY_OBSERVATION",
+      "discovery_state": "PUBLIC_SITE_CATALOG_SERVED_BODY_OBSERVED",
+      "request_state": "CREDENTIAL_FREE_OFFER_SPECIFIC_MAILTO_PUBLICLY_OBSERVED",
       "quote_contract_state": "PACKAGE_TERMS_ONLY",
       "payment_state": "NO_AUTHENTIC_PAYMENT_EXECUTION_PATH_OBSERVED",
       "acceptance_state": "DOCUMENTED",
       "transaction_evidence": [
         "commercial/packages/steglearn-preview.md"
       ],
-      "publicly_discoverable_and_requestable": false,
+      "publicly_discoverable_and_requestable": true,
       "payment_or_contract_execution_ready": false
     }
   ],
@@ -190,7 +190,17 @@
     "hosted_form": false,
     "buyer_record_created": false,
     "payment_execution_path": "NONE",
-    "served_body_observed": false,
-    "disposition": "SOURCE_INTEGRATED_PUBLIC_OBSERVATION_REQUIRED"
+    "served_body_observed": true,
+    "disposition": "PUBLICLY_DISCOVERABLE_AND_REQUESTABLE",
+    "site_observation_record_merge": "a5315faa85b7cd9187f0c334a20074092c2b7bdc",
+    "site_observation_claim_release_merge": "7af083d69ae47051ce88ed249b2162dae1a9631c",
+    "served_body_observed_at": "2026-10-02T10:34:00-05:00",
+    "served_url": "https://stegverse.org/services.html",
+    "offering_count_observed": 12,
+    "maturity_labels_preserved": true,
+    "credential_free_request_links_observed": true,
+    "privacy_first_initial_contact_observed": true,
+    "no_payment_execution_path_observed": true,
+    "payment_or_contract_execution_ready": false
   }
 }
