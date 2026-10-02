@@ -1,0 +1,148 @@
+{
+  "schema_version": "icv.contract-acceptance-observation.v1",
+  "authority": "ACCEPTANCE_EVIDENCE_ONLY",
+  "canonical_task_binding": null,
+  "cosv_task_vector": null,
+  "purpose": "Observe and bind a purported customer acceptance to an exact ICV proposal without deciding legal enforceability or inferring counterpart authority from email identity alone.",
+  "required_fields": [
+    "acceptance_observation_id",
+    "proposal_id",
+    "proposal_version",
+    "engagement_id",
+    "offering_id",
+    "provider_observation",
+    "counterpart_identity_evidence",
+    "acceptance_semantics",
+    "observed_at",
+    "private_evidence_locator",
+    "privacy_retention",
+    "counterpart_authority_disposition"
+  ],
+  "provider_observation": {
+    "owner": "authenticated mailbox provider",
+    "requires": [
+      "inbound message authentically observed by provider",
+      "sender address/identity as provider-observed metadata",
+      "provider timestamp",
+      "provider message/thread locator retained privately",
+      "recipient/context sufficient to bind observation to ICV"
+    ],
+    "proves": [
+      "message receipt",
+      "provider-observed sender metadata",
+      "provider timestamp"
+    ],
+    "does_not_prove": [
+      "legal identity",
+      "employment/role",
+      "authority to bind organization",
+      "signature sufficiency",
+      "legal enforceability"
+    ]
+  },
+  "exact_proposal_binding": {
+    "requires": [
+      "exact proposal_id",
+      "exact proposal_version",
+      "engagement_id",
+      "offering_id"
+    ],
+    "acceptable_semantics": [
+      "explicit statement accepting the exact proposal/version",
+      "explicit assent text that unambiguously references the exact proposal/version"
+    ],
+    "fail_closed_when": [
+      "proposal/version absent or ambiguous",
+      "message references superseded proposal",
+      "generic approval/interest without exact proposal binding",
+      "acceptance text is conditional or materially modifies terms without new proposal"
+    ]
+  },
+  "counterpart_identity_evidence": {
+    "minimum_observation": [
+      "provider-observed sender address",
+      "name/role only if authentically attributable"
+    ],
+    "authority_predicate": "VERIFIED_COUNTERPART_AUTHORITY",
+    "authority_states": [
+      "UNRESOLVED",
+      "VERIFIED"
+    ],
+    "verification_sources_may_include": [
+      "customer-supplied authorization explicitly attributable to the organization",
+      "organization-controlled directory/role evidence",
+      "signed corporate authorization or delegation record",
+      "existing executed agreement identifying authorized counterpart",
+      "other independently attributable evidence specific to the customer organization"
+    ],
+    "prohibited_inferences": [
+      "email address alone",
+      "matching company domain alone",
+      "job title in signature block alone",
+      "prior correspondence alone",
+      "CRM Lead/Deal status",
+      "proposal delivery/opening",
+      "payment intent"
+    ]
+  },
+  "acceptance_semantics": {
+    "required": "Explicit assent to the exact proposal_id/proposal_version with no unresolved material modification.",
+    "modification_rule": "A purported acceptance that changes price, scope, deliverables, exclusions, schedule, liability, authority, payment, or other material terms is not acceptance of the existing proposal; it requires a new proposal/version or explicit separately resolved amendment."
+  },
+  "privacy_retention": {
+    "public_repo_may_retain": [
+      "acceptance_observation_id",
+      "proposal_id",
+      "proposal_version",
+      "engagement_id if non-sensitive",
+      "offering_id",
+      "bounded dispositions",
+      "redacted/hash evidence reference where authorized"
+    ],
+    "must_remain_private": [
+      "message body unless separately authorized",
+      "provider message/thread IDs",
+      "non-public personal contact data",
+      "signature images",
+      "authorization documents",
+      "credentials/private keys",
+      "confidential customer records"
+    ]
+  },
+  "dispositions": {
+    "purported_acceptance_observed": {
+      "state": "PURPORTED_ACCEPTANCE_OBSERVED",
+      "allow_when": [
+        "exact proposal binding satisfied",
+        "authenticated provider observation satisfied",
+        "explicit acceptance semantics satisfied",
+        "timestamp/evidence locator retained privately"
+      ],
+      "effect": "EVIDENCE_ONLY"
+    },
+    "verified_counterpart_authority": {
+      "state": "VERIFIED_COUNTERPART_AUTHORITY",
+      "current_status": "SEPARATELY_SATISFIED_PREDICATE",
+      "mailbox_provider_sufficient": false,
+      "effect": "IDENTITY_AUTHORITY_EVIDENCE_ONLY"
+    },
+    "contract_or_sow_accepted": {
+      "state": "CONTRACT_OR_SOW_ACCEPTED",
+      "current_disposition": "FAIL_CLOSED",
+      "allow_only_when": [
+        "PURPORTED_ACCEPTANCE_OBSERVED",
+        "VERIFIED_COUNTERPART_AUTHORITY",
+        "applicable legal/entity/signature/professional requirements resolved for the engagement"
+      ],
+      "legal_enforceability_effect": "NONE"
+    }
+  },
+  "prohibitions": [
+    "Do not send a proposal",
+    "Do not manufacture acceptance",
+    "Do not create electronic-signature or legal authority",
+    "Do not mutate CRM state",
+    "Do not create payment authority",
+    "Do not create Task Registry/COSV authority"
+  ]
+}
