@@ -1,0 +1,204 @@
+{
+  "schema_version": "icv.counterpart-authority-evidence.v1",
+  "authority": "COUNTERPART_AUTHORITY_EVIDENCE_CLASSIFICATION_ONLY",
+  "canonical_task_binding": null,
+  "cosv_task_vector": null,
+  "invocation_gate": "Evaluate a real counterpart only after an authentic acceptance event exists. This schema defines evidence classes and does not authorize proactive customer/contact/agreement lookup.",
+  "dispositions": [
+    "VERIFIED",
+    "UNRESOLVED",
+    "REJECTED"
+  ],
+  "owner_model": {
+    "canonical_contract_state": {
+      "owner": "StegVerse-Labs/StegBusiness",
+      "evidence": "docs/RECORD_DOMAINS.md",
+      "scope": [
+        "contracting entity",
+        "counterparty",
+        "signature authority",
+        "execution/amendment/renewal state"
+      ],
+      "boundary": "Defines canonical business state; does not itself prove a customer's authority."
+    },
+    "contract_operations": {
+      "owner": "StegVerse-Labs/StegBusiness-Ops",
+      "evidence": "contracts/README.md",
+      "scope": [
+        "exact legal contracting entity",
+        "counterparty identity/reference",
+        "signature authority",
+        "direct signed-contract evidence for EXECUTED"
+      ],
+      "boundary": "Operational evidence owner; repository approval/draft is not execution."
+    },
+    "contact_directory": {
+      "owner": "Google Contacts/directory",
+      "capability_observed_without_customer_query": [
+        "name",
+        "email",
+        "organization",
+        "title"
+      ],
+      "authority_fields_observed": [],
+      "boundary": "Corroborative identity/role evidence only; no observed delegation/signature-authority field."
+    },
+    "customer_authorization": {
+      "owner": "customer/organization attributable source",
+      "scope": [
+        "authorization",
+        "delegation",
+        "resolution",
+        "signatory designation"
+      ],
+      "boundary": "May verify authority only when authenticity, organization attribution, scope, validity and non-revocation are established."
+    },
+    "prior_executed_agreement": {
+      "owner": "existing executed agreement evidence owner",
+      "scope": [
+        "identified parties",
+        "identified authorized counterpart/signatory",
+        "scope/term",
+        "execution evidence"
+      ],
+      "boundary": "May support authority only when the agreement is authentic, applicable to the current organization/role/scope and not expired/superseded/revoked."
+    }
+  },
+  "evidence_hierarchy": [
+    {
+      "level": 1,
+      "class": "DIRECT_ORGANIZATION_AUTHORITY",
+      "examples": [
+        "organization-attributable signed authorization/delegation",
+        "board/member/officer resolution or written consent identifying signatory authority",
+        "organization-controlled signatory/authority registry with attributable provenance"
+      ],
+      "can_satisfy_verified": true,
+      "requirements": [
+        "authenticity",
+        "organization attribution",
+        "named counterpart or deterministically resolved role",
+        "scope includes proposed engagement/contract class",
+        "valid at acceptance timestamp",
+        "no observed revocation/supersession"
+      ]
+    },
+    {
+      "level": 2,
+      "class": "PRIOR_EXECUTED_AUTHORITY_PRECEDENT",
+      "examples": [
+        "authentic prior executed agreement identifying the same counterpart as authorized signatory",
+        "existing master agreement/delegation defining authorized role"
+      ],
+      "can_satisfy_verified": true,
+      "requirements": [
+        "authentic execution evidence",
+        "same legal customer entity or explicit applicable successor",
+        "authority language applicable to current proposal",
+        "valid/non-expired/non-superseded at acceptance timestamp",
+        "no conflicting higher-level evidence"
+      ]
+    },
+    {
+      "level": 3,
+      "class": "ORGANIZATION_CONTROLLED_ROLE_CORROBORATION",
+      "examples": [
+        "organization-controlled directory",
+        "official organization role page",
+        "customer-controlled identity/role record"
+      ],
+      "can_satisfy_verified": false,
+      "boundary": "Can corroborate identity/role and resolve a role named by Level 1/2 evidence; role/title alone does not grant contracting authority."
+    },
+    {
+      "level": 4,
+      "class": "CONTACT_DIRECTORY_CORROBORATION",
+      "examples": [
+        "Google Contacts/directory name/email/organization/title"
+      ],
+      "can_satisfy_verified": false,
+      "boundary": "Locally stored or directory contact metadata is not delegation evidence."
+    },
+    {
+      "level": 5,
+      "class": "COMMUNICATION_CONTEXT_ONLY",
+      "examples": [
+        "authenticated mailbox sender metadata",
+        "matching company-domain email",
+        "signature-block job title",
+        "prior correspondence",
+        "proposal thread continuity"
+      ],
+      "can_satisfy_verified": false,
+      "boundary": "Supports attribution/context only."
+    }
+  ],
+  "classification_rules": {
+    "VERIFIED": {
+      "requires": [
+        "authentic acceptance event already exists",
+        "counterpart identity sufficiently attributable",
+        "at least one Level 1 evidence item, or Level 2 evidence item whose authority language is applicable",
+        "scope and temporal validity cover exact proposal acceptance",
+        "no unresolved contradictory/revoked/superseded authority evidence"
+      ],
+      "effect": "Satisfies VERIFIED_COUNTERPART_AUTHORITY evidence predicate only; does not establish legal enforceability, signature sufficiency, contract execution, payment or CRM authority."
+    },
+    "UNRESOLVED": {
+      "when": [
+        "only Levels 3-5 evidence exists",
+        "Level 1/2 evidence authenticity, attribution, scope, temporal validity or non-revocation is incomplete",
+        "conflicting evidence exists without authoritative resolution",
+        "no authority evidence has been queried because no authentic acceptance event exists"
+      ],
+      "effect": "CONTRACT_OR_SOW_ACCEPTED remains FAIL_CLOSED."
+    },
+    "REJECTED": {
+      "requires": [
+        "authentic organization-attributable evidence affirmatively shows the counterpart lacks required authority, or authority was revoked/expired/superseded before acceptance",
+        "or verified authority scope expressly excludes the proposed engagement"
+      ],
+      "effect": "Counterpart-authority predicate fails for that acceptance observation; does not make any broader legal conclusion."
+    }
+  },
+  "prohibited_shortcuts": [
+    "company-domain email alone",
+    "job title alone",
+    "Google Contacts/directory record alone",
+    "prior correspondence alone",
+    "CRM state",
+    "proposal delivery/opening",
+    "payment intent",
+    "self-asserted authority without organization-attributable support"
+  ],
+  "separate_predicates": {
+    "legal_enforceability": "UNRESOLVED_UNLESS_INDEPENDENTLY_EVIDENCED",
+    "signature_sufficiency": "UNRESOLVED_UNLESS_INDEPENDENTLY_EVIDENCED",
+    "legal_entity_capacity": "UNRESOLVED_UNLESS_INDEPENDENTLY_EVIDENCED_WHEN_APPLICABLE"
+  },
+  "privacy": {
+    "query_real_customer_only_after": "AUTHENTIC_ACCEPTANCE_EVENT_EXISTS",
+    "public_retention": [
+      "bounded disposition",
+      "evidence class",
+      "redacted/hash locator where authorized"
+    ],
+    "private_retention": [
+      "contact records",
+      "authorization/delegation documents",
+      "executed agreements",
+      "provider IDs",
+      "personal data",
+      "signature artifacts"
+    ]
+  },
+  "prohibitions": [
+    "No proactive actual-customer lookup",
+    "No customer record creation",
+    "No legal authority creation",
+    "No payment authority",
+    "No CRM mutation",
+    "No runtime authority",
+    "No Task Registry/COSV binding"
+  ]
+}

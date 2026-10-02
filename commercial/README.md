@@ -95,3 +95,14 @@ The common envelope cannot upgrade maturity, alter source authority, invent pric
 The acceptance path therefore separates `PURPORTED_ACCEPTANCE_OBSERVED` from `VERIFIED_COUNTERPART_AUTHORITY`. The latter is a separately satisfied predicate requiring independently attributable organization-specific evidence. Email address, matching company domain, signature-block job title, prior correspondence, CRM state, proposal opening or payment intent are insufficient by themselves.
 
 `CONTRACT_OR_SOW_ACCEPTED` remains `FAIL_CLOSED` until purported acceptance, verified counterpart authority and applicable legal/entity/signature/professional requirements are all separately satisfied.
+
+
+## Counterpart-authority evidence hierarchy
+
+`counterpart-authority-evidence.schema.json` defines `VERIFIED`, `UNRESOLVED` and `REJECTED` classifications for the separately satisfied `VERIFIED_COUNTERPART_AUTHORITY` predicate.
+
+StegBusiness is the canonical business-state owner for counterparty/signature-authority/contract state; StegBusiness-Ops owns operational contract evidence and requires direct signed-contract evidence for execution. Google Contacts/directory capability exposes name, email, organization and title but no observed delegation/signature-authority field, so it is corroborative only.
+
+Direct organization-attributable authorization/delegation is the strongest class. Applicable prior executed authority evidence may also verify authority when authentic, current and in scope. Organization-controlled role records and Contacts/directory data corroborate identity/role but cannot independently verify authority. Mailbox/domain/title/prior-correspondence evidence is context only.
+
+No actual customer/contact/agreement lookup is permitted under this contract until an authentic acceptance event exists. Legal enforceability and signature sufficiency remain separate unresolved predicates unless independently evidenced.
