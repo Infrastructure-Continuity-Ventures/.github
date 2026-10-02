@@ -1,0 +1,135 @@
+{
+  "schema_version": "icv.engagement-request-transition.v1",
+  "authority": "COMMERCIAL_REQUEST_EVIDENCE_ONLY",
+  "canonical_task_binding": null,
+  "cosv_task_vector": null,
+  "public_discovery_state": "PUBLICLY_DISCOVERABLE_AND_REQUESTABLE",
+  "receiving_owner": {
+    "surface": "published offer-specific mailto",
+    "address": "rigel@stegverse.org",
+    "evidence_owner": "authenticated mailbox provider",
+    "credential_required_from_customer": false,
+    "hosted_service_created": false
+  },
+  "excluded_receivers": [
+    {
+      "surface": "StegOps POST /leads",
+      "reason": "Creates Lead state and audit record; not required to authenticate receipt and must not be invoked merely because an inbound email exists."
+    },
+    {
+      "surface": "StegOps POST /leads/{lead_id}/deals",
+      "reason": "Creates stage=scoping and probability=50; would synthesize commercial state before bounded request normalization."
+    }
+  ],
+  "transitions": [
+    {
+      "from": "PUBLICLY_DISCOVERABLE_AND_REQUESTABLE",
+      "to": "AUTHENTIC_ENGAGEMENT_REQUEST_OBSERVED",
+      "disposition_on_valid_evidence": "ALLOW",
+      "required_evidence": [
+        "provider-observed inbound message in the authenticated mailbox addressed to the published contact",
+        "offer identity from the offer-specific subject/link or unambiguous message content",
+        "sender identity/address as provider-observed metadata",
+        "provider timestamp",
+        "provider message/thread locator retained privately",
+        "message content sufficient to establish an engagement request rather than spam/automated traffic"
+      ],
+      "fail_closed_when": [
+        "no authenticated provider observation",
+        "message cannot be tied to an ICV offering or engagement request",
+        "only a user assertion/screenshot/copied text exists without the applicable authenticated provider observation when provider observation is required"
+      ],
+      "creates_buyer_record": false,
+      "creates_contract": false,
+      "creates_payment": false
+    },
+    {
+      "from": "AUTHENTIC_ENGAGEMENT_REQUEST_OBSERVED",
+      "to": "ENGAGEMENT_REQUEST_DOCUMENTED",
+      "disposition_on_complete_normalization": "ALLOW",
+      "required_evidence": [
+        "private provider evidence reference, not public message body",
+        "offering_id",
+        "customer/organization name as supplied or authentically attributable",
+        "accountable customer contact",
+        "requested outcome",
+        "bounded scope or explicit UNKNOWN/TO_BE_SCOPED",
+        "authorized-source-material statement or explicit NONE_YET",
+        "delivery/timing/privacy/acceptance/dependency fields recorded as supplied or UNKNOWN"
+      ],
+      "fail_closed_when": [
+        "required field is silently invented",
+        "private message body or provider identifiers would be published",
+        "sender identity is promoted to authorized decision maker without evidence"
+      ],
+      "creates_buyer_record": false,
+      "creates_contract": false,
+      "creates_payment": false
+    },
+    {
+      "from": "ENGAGEMENT_REQUEST_DOCUMENTED",
+      "to": "SCOPED_ENGAGEMENT_PROPOSED",
+      "disposition_on_complete_proposal": "ALLOW",
+      "required_evidence": [
+        "engagement_id",
+        "exact deliverables",
+        "exclusions",
+        "customer responsibilities",
+        "evidence/receipt expectations",
+        "fee/range/scope-before-price disposition",
+        "deposit/milestone semantics when applicable",
+        "target schedule",
+        "review/acceptance period",
+        "change/stop conditions",
+        "source authority and unreleased/unproven substrate boundary",
+        "proposal/SOW delivery evidence"
+      ],
+      "fail_closed_when": [
+        "scope/price/authority is inferred beyond offering package",
+        "proposal delivery is not observed"
+      ],
+      "creates_buyer_record": false,
+      "creates_contract": false,
+      "creates_payment": false
+    },
+    {
+      "from": "SCOPED_ENGAGEMENT_PROPOSED",
+      "to": "CONTRACT_OR_SOW_ACCEPTED",
+      "disposition_on_current_evidence": "FAIL_CLOSED",
+      "required_evidence": [
+        "authentic acceptance attributable to authorized customer counterpart",
+        "exact accepted proposal/SOW identity and version",
+        "acceptance timestamp and evidence locator",
+        "applicable legal/entity/signature requirements"
+      ],
+      "reason": "No universal authenticated contract-acceptance owner/path is presently established across all twelve offerings."
+    },
+    {
+      "from": "CONTRACT_OR_SOW_ACCEPTED",
+      "to": "PAYMENT_EXECUTABLE_OR_OBSERVED",
+      "disposition_on_current_evidence": "FAIL_CLOSED",
+      "required_evidence": [
+        "separately authorized payment mechanism or authentic payment evidence"
+      ],
+      "reason": "NO_PAYMENT_EXECUTION_PATH remains explicit; test-only StegPay evidence is not production payment authority."
+    }
+  ],
+  "privacy": {
+    "public_repo_may_retain": [
+      "offering_id",
+      "engagement_id if non-sensitive",
+      "bounded state/disposition",
+      "redacted evidence locator/hash where authorized"
+    ],
+    "must_remain_private": [
+      "message body unless separately authorized for publication",
+      "provider message/thread IDs",
+      "personal contact details beyond already-public business contact",
+      "credentials/private keys",
+      "regulated personal data",
+      "confidential facility/customer source materials"
+    ]
+  },
+  "crm_boundary": "CRM projection or Lead/Deal creation is a later separately admitted action. Authentic inbound request evidence does not itself authorize or require a Lead, Deal, probability, qualification, write-back or source-stage mutation.",
+  "payment_or_contract_execution_ready": false
+}
