@@ -66,7 +66,8 @@
     "authority_predicate": "VERIFIED_COUNTERPART_AUTHORITY",
     "authority_states": [
       "UNRESOLVED",
-      "VERIFIED"
+      "VERIFIED",
+      "REJECTED"
     ],
     "verification_sources_may_include": [
       "customer-supplied authorization explicitly attributable to the organization",
@@ -83,7 +84,9 @@
       "CRM Lead/Deal status",
       "proposal delivery/opening",
       "payment intent"
-    ]
+    ],
+    "authority_evidence_contract": "commercial/counterpart-authority-evidence.schema.json",
+    "real_customer_query_gate": "AUTHENTIC_ACCEPTANCE_EVENT_EXISTS"
   },
   "acceptance_semantics": {
     "required": "Explicit assent to the exact proposal_id/proposal_version with no unresolved material modification.",
@@ -124,7 +127,15 @@
       "state": "VERIFIED_COUNTERPART_AUTHORITY",
       "current_status": "SEPARATELY_SATISFIED_PREDICATE",
       "mailbox_provider_sufficient": false,
-      "effect": "IDENTITY_AUTHORITY_EVIDENCE_ONLY"
+      "effect": "IDENTITY_AUTHORITY_EVIDENCE_ONLY",
+      "evidence_contract": "commercial/counterpart-authority-evidence.schema.json",
+      "classifications": [
+        "VERIFIED",
+        "UNRESOLVED",
+        "REJECTED"
+      ],
+      "legal_enforceability_effect": "NONE",
+      "signature_sufficiency_effect": "NONE"
     },
     "contract_or_sow_accepted": {
       "state": "CONTRACT_OR_SOW_ACCEPTED",
