@@ -16,3 +16,8 @@ A commercial catalog entry describes a bounded offer or maturity state; it does 
 ## Customer transaction boundaries
 
 Customer-facing pilot and preview packages are documented under `commercial/packages/`. Each package states its intake boundary, bounded deliverables, exclusions, acceptance criteria, commercial-term semantics, evidence/receipt expectations, and the unreleased or unproven substrate that is explicitly not being sold. These documents describe commercial scope only; they do not upgrade product maturity or grant runtime/release authority.
+
+
+## Purchase-path evidence
+
+Commercial transaction documentation and actual customer acquisition are tracked separately. `commercial/customer-purchase-path-census.json` records discovery, engagement-request, quote/SOW, payment and acceptance evidence for every customer-facing offering. The current source can prepare bounded engagements, but no catalog entry is promoted to publicly requestable or payment/contract-execution-ready without observed external evidence.

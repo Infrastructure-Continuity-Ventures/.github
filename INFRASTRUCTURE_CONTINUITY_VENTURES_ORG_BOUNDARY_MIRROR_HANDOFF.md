@@ -132,3 +132,16 @@ No maturity classification changed. In particular:
 - the documents explicitly separate what can be transacted now from unreleased/unproven runtime, provider, release, write-back, production, compliance or authority claims.
 
 No release, runtime activation, credential authority, Task Registry binding or COSV binding is created by this documentation.
+
+
+## 2026-10-01 — customer purchase-path census
+
+All twelve customer-facing catalog entries were reconciled from catalog discovery through engagement request, quote/SOW, payment and acceptance.
+
+The result deliberately separates `DOCUMENTED_TRANSACTION_READY`, `PUBLICLY_DISCOVERABLE_AND_REQUESTABLE` and `PAYMENT_OR_CONTRACT_EXECUTION_READY`. After this repair every customer-facing offering has a bounded transaction description; Governance Observatory research/evaluation support received the missing ICV transaction package, and `commercial/engagement-request.md` now defines the minimum non-authorizing intake record shared across offerings.
+
+No offering was promoted to `PUBLICLY_DISCOVERABLE_AND_REQUESTABLE`. The ICV catalog repository itself is internal; several source repositories are public, but public repository presence does not by itself provide an offer-specific commercial request route. StegOps contains an existing issue/email engagement path, but that private source does not prove a public ICV StegCRM intake route. HydraSafe has a public source repository plus SOW/price-range assets but no observed offer-specific engagement request instruction. KnowledgeVault has public onboarding/support issue semantics, not a commercial pilot request path. Other public preview repositories likewise lack an observed offer-specific commercial intake path.
+
+No offering was promoted to `PAYMENT_OR_CONTRACT_EXECUTION_READY`. HydraSafe has the strongest contract-preparation evidence (SOW template and payment-term fields), and GP10 explicitly requires a written scope before payment, but no authentic payment mechanism, executed-contract channel or payment credential was observed for any offering. No such mechanism was created.
+
+The census and validator preserve these negative observations rather than inferring buyer interest, contract execution or payment from documentation. No hosted form, payment credential, runtime authority, publication authority, Task Registry binding or COSV binding was created.

@@ -1,0 +1,183 @@
+{
+  "schema_version": "icv.customer-purchase-path-census.v1",
+  "observed_at": "2026-10-01T19:40:00-05:00",
+  "authority": "OBSERVATION_AND_COMMERCIAL_DOCUMENTATION_ONLY",
+  "canonical_task_binding": null,
+  "cosv_task_vector": null,
+  "state_vocabulary": {
+    "transaction": "DOCUMENTED_TRANSACTION_READY",
+    "public_request": "PUBLICLY_DISCOVERABLE_AND_REQUESTABLE",
+    "execution": "PAYMENT_OR_CONTRACT_EXECUTION_READY"
+  },
+  "conclusion": "All twelve customer-facing offerings have or can be bound to documented transaction scope after this repair, but no offering currently has evidence for the full PUBLICLY_DISCOVERABLE_AND_REQUESTABLE -> PAYMENT_OR_CONTRACT_EXECUTION_READY chain. Public repository presence alone is not a commercial request path.",
+  "entries": [
+    {
+      "offering_id": "icv.governance-assessment.v1",
+      "transaction_state": "DOCUMENTED_TRANSACTION_READY",
+      "discovery_state": "PRIVATE_SOURCE_ONLY",
+      "request_state": "NO_PUBLIC_OFFER_SPECIFIC_REQUEST_PATH_OBSERVED",
+      "quote_contract_state": "PACKAGE_TERMS_ONLY",
+      "payment_state": "NO_AUTHENTIC_PAYMENT_EXECUTION_PATH_OBSERVED",
+      "acceptance_state": "DOCUMENTED",
+      "transaction_evidence": [
+        "commercial/packages/governance-assessment.md"
+      ],
+      "publicly_discoverable_and_requestable": false,
+      "payment_or_contract_execution_ready": false
+    },
+    {
+      "offering_id": "icv.governance-boundary-validation.v1",
+      "transaction_state": "DOCUMENTED_TRANSACTION_READY",
+      "discovery_state": "PRIVATE_SOURCE_ONLY",
+      "request_state": "NO_PUBLIC_OFFER_SPECIFIC_REQUEST_PATH_OBSERVED",
+      "quote_contract_state": "PACKAGE_TERMS_ONLY",
+      "payment_state": "NO_AUTHENTIC_PAYMENT_EXECUTION_PATH_OBSERVED",
+      "acceptance_state": "DOCUMENTED",
+      "transaction_evidence": [
+        "commercial/packages/governance-boundary-validation-pilot.md"
+      ],
+      "publicly_discoverable_and_requestable": false,
+      "payment_or_contract_execution_ready": false
+    },
+    {
+      "offering_id": "icv.admitted-code.v1",
+      "transaction_state": "DOCUMENTED_TRANSACTION_READY",
+      "discovery_state": "PRIVATE_SOURCE_ONLY",
+      "request_state": "NO_PUBLIC_OFFER_SPECIFIC_REQUEST_PATH_OBSERVED",
+      "quote_contract_state": "PACKAGE_TERMS_ONLY",
+      "payment_state": "NO_AUTHENTIC_PAYMENT_EXECUTION_PATH_OBSERVED",
+      "acceptance_state": "DOCUMENTED",
+      "transaction_evidence": [
+        "commercial/packages/admitted-code-assessment.md"
+      ],
+      "publicly_discoverable_and_requestable": false,
+      "payment_or_contract_execution_ready": false
+    },
+    {
+      "offering_id": "icv.steggate.v1",
+      "transaction_state": "DOCUMENTED_TRANSACTION_READY",
+      "discovery_state": "PRIVATE_SOURCE_ONLY",
+      "request_state": "NO_PUBLIC_OFFER_SPECIFIC_REQUEST_PATH_OBSERVED",
+      "quote_contract_state": "PACKAGE_TERMS_ONLY",
+      "payment_state": "NO_AUTHENTIC_PAYMENT_EXECUTION_PATH_OBSERVED",
+      "acceptance_state": "DOCUMENTED",
+      "transaction_evidence": [
+        "commercial/packages/steggate-preview.md"
+      ],
+      "publicly_discoverable_and_requestable": false,
+      "payment_or_contract_execution_ready": false
+    },
+    {
+      "offering_id": "icv.stegcrm.v1",
+      "transaction_state": "DOCUMENTED_TRANSACTION_READY",
+      "discovery_state": "PRIVATE_SOURCE_ONLY",
+      "request_state": "INTERNAL_STEGOPS_CONTACT_PATH_OBSERVED_NOT_PUBLICLY_VERIFIED_FOR_ICV_STEGCRM",
+      "quote_contract_state": "STEGOPS_SERVICE_PRICING_EXISTS_NOT_STEGCRM_SOW",
+      "payment_state": "NO_AUTHENTIC_PAYMENT_EXECUTION_PATH_OBSERVED",
+      "acceptance_state": "DOCUMENTED",
+      "transaction_evidence": [
+        "commercial/packages/stegcrm-managed-pilot.md"
+      ],
+      "publicly_discoverable_and_requestable": false,
+      "payment_or_contract_execution_ready": false
+    },
+    {
+      "offering_id": "icv.hydrasafe.v1",
+      "transaction_state": "DOCUMENTED_TRANSACTION_READY",
+      "discovery_state": "PUBLIC_SOURCE_DISCOVERABLE",
+      "request_state": "NO_OFFER_SPECIFIC_ENGAGEMENT_REQUEST_INSTRUCTIONS_OBSERVED",
+      "quote_contract_state": "SOW_TEMPLATE_AND_PRICE_RANGE_AVAILABLE",
+      "payment_state": "NO_AUTHENTIC_PAYMENT_EXECUTION_PATH_OBSERVED",
+      "acceptance_state": "DOCUMENTED",
+      "transaction_evidence": [
+        "StegVerse-Labs/HydraSafe:commercial/facility-packet-sow.md"
+      ],
+      "publicly_discoverable_and_requestable": false,
+      "payment_or_contract_execution_ready": false
+    },
+    {
+      "offering_id": "icv.gp10-field-validation.v1",
+      "transaction_state": "DOCUMENTED_TRANSACTION_READY",
+      "discovery_state": "PRIVATE_SOURCE_ONLY",
+      "request_state": "NO_PUBLIC_OFFER_SPECIFIC_REQUEST_PATH_OBSERVED",
+      "quote_contract_state": "WRITTEN_SCOPE_REQUIRED_BEFORE_PAYMENT",
+      "payment_state": "NO_AUTHENTIC_PAYMENT_EXECUTION_PATH_OBSERVED",
+      "acceptance_state": "DOCUMENTED",
+      "transaction_evidence": [
+        "StegVerse-Labs/GP10:docs/business/PAID_FIELD_VALIDATION_OFFER.md"
+      ],
+      "publicly_discoverable_and_requestable": false,
+      "payment_or_contract_execution_ready": false
+    },
+    {
+      "offering_id": "icv.governance-observatory.v1",
+      "transaction_state": "DOCUMENTED_TRANSACTION_READY",
+      "discovery_state": "PRIVATE_SOURCE_ONLY",
+      "request_state": "NO_PUBLIC_OFFER_SPECIFIC_REQUEST_PATH_OBSERVED",
+      "quote_contract_state": "NO_COMMERCIAL_CONTRACT_PATH_OBSERVED",
+      "payment_state": "NO_AUTHENTIC_PAYMENT_EXECUTION_PATH_OBSERVED",
+      "acceptance_state": "DOCUMENTED_AFTER_ICV_PACKAGE_REPAIR",
+      "transaction_evidence": [
+        "commercial/packages/governance-observatory-support.md"
+      ],
+      "publicly_discoverable_and_requestable": false,
+      "payment_or_contract_execution_ready": false
+    },
+    {
+      "offering_id": "icv.knowledgevault.v1",
+      "transaction_state": "DOCUMENTED_TRANSACTION_READY",
+      "discovery_state": "PUBLIC_SOURCE_DISCOVERABLE",
+      "request_state": "PUBLIC_SUPPORT_ISSUE_PATH_EXISTS_BUT_NOT_COMMERCIAL_ENGAGEMENT_PATH",
+      "quote_contract_state": "PACKAGE_TERMS_ONLY",
+      "payment_state": "NO_AUTHENTIC_PAYMENT_EXECUTION_PATH_OBSERVED",
+      "acceptance_state": "DOCUMENTED",
+      "transaction_evidence": [
+        "commercial/packages/knowledgevault-managed-pilot.md"
+      ],
+      "publicly_discoverable_and_requestable": false,
+      "payment_or_contract_execution_ready": false
+    },
+    {
+      "offering_id": "icv.stegtalk.v1",
+      "transaction_state": "DOCUMENTED_TRANSACTION_READY",
+      "discovery_state": "PUBLIC_SOURCE_DISCOVERABLE",
+      "request_state": "NO_OFFER_SPECIFIC_ENGAGEMENT_REQUEST_INSTRUCTIONS_OBSERVED",
+      "quote_contract_state": "PACKAGE_TERMS_ONLY",
+      "payment_state": "NO_AUTHENTIC_PAYMENT_EXECUTION_PATH_OBSERVED",
+      "acceptance_state": "DOCUMENTED",
+      "transaction_evidence": [
+        "commercial/packages/stegtalk-preview.md"
+      ],
+      "publicly_discoverable_and_requestable": false,
+      "payment_or_contract_execution_ready": false
+    },
+    {
+      "offering_id": "icv.ecosystem-chat.v1",
+      "transaction_state": "DOCUMENTED_TRANSACTION_READY",
+      "discovery_state": "PUBLIC_SOURCE_POSITIONING_DISCOVERABLE",
+      "request_state": "NO_COMMERCIAL_ENGAGEMENT_REQUEST_PATH_OBSERVED",
+      "quote_contract_state": "PACKAGE_TERMS_ONLY",
+      "payment_state": "NO_AUTHENTIC_PAYMENT_EXECUTION_PATH_OBSERVED",
+      "acceptance_state": "DOCUMENTED",
+      "transaction_evidence": [
+        "commercial/packages/ecosystem-chat-preview.md"
+      ],
+      "publicly_discoverable_and_requestable": false,
+      "payment_or_contract_execution_ready": false
+    },
+    {
+      "offering_id": "icv.steglearn.v1",
+      "transaction_state": "DOCUMENTED_TRANSACTION_READY",
+      "discovery_state": "PUBLIC_SOURCE_DISCOVERABLE",
+      "request_state": "NO_OFFER_SPECIFIC_ENGAGEMENT_REQUEST_INSTRUCTIONS_OBSERVED",
+      "quote_contract_state": "PACKAGE_TERMS_ONLY",
+      "payment_state": "NO_AUTHENTIC_PAYMENT_EXECUTION_PATH_OBSERVED",
+      "acceptance_state": "DOCUMENTED",
+      "transaction_evidence": [
+        "commercial/packages/steglearn-preview.md"
+      ],
+      "publicly_discoverable_and_requestable": false,
+      "payment_or_contract_execution_ready": false
+    }
+  ]
+}
