@@ -145,3 +145,12 @@ No offering was promoted to `PUBLICLY_DISCOVERABLE_AND_REQUESTABLE`. The ICV cat
 No offering was promoted to `PAYMENT_OR_CONTRACT_EXECUTION_READY`. HydraSafe has the strongest contract-preparation evidence (SOW template and payment-term fields), and GP10 explicitly requires a written scope before payment, but no authentic payment mechanism, executed-contract channel or payment credential was observed for any offering. No such mechanism was created.
 
 The census and validator preserve these negative observations rather than inferring buyer interest, contract execution or payment from documentation. No hosted form, payment credential, runtime authority, publication authority, Task Registry binding or COSV binding was created.
+
+
+## 2026-10-01 — Site public commercial catalog source integration
+
+The existing `StegVerse-Labs/Site` commercial/publication owner was confirmed as the smallest credential-free public discovery/contact seam. Site PR #1488 merged source commit `357b0490e4da96c55f4727ba4951870556b496bd`, mirroring all twelve customer-facing ICV entries on the existing `services.html` surface and reusing the already-public `mailto:rigel@stegverse.org` contact owner. Site claim release merged as `346403284d80c4130f0e750c3a58819cf09593d3`.
+
+The integration preserves every ICV maturity label, source-authority boundary, privacy-first initial-contact rule and `NO_PAYMENT_EXECUTION_PATH`. It creates no hosted form, buyer/CRM record, payment credential, checkout, contract acceptance, runtime authority, Task Registry or COSV binding.
+
+Source merge is not public served-body proof. Therefore the purchase-path census records `SOURCE_INTEGRATED_PUBLIC_OBSERVATION_REQUIRED` and keeps every offering `publicly_discoverable_and_requestable=false` until the exact served `stegverse.org/services.html` body is independently observed. Payment/contract execution remains false regardless of later public-page observation.
