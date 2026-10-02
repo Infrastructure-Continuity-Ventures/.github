@@ -143,9 +143,14 @@
       "allow_only_when": [
         "PURPORTED_ACCEPTANCE_OBSERVED",
         "VERIFIED_COUNTERPART_AUTHORITY",
-        "applicable legal/entity/signature/professional requirements resolved for the engagement"
+        "VERIFIED_LEGAL_ENTITY_IDENTITY_CAPACITY",
+        "VERIFIED_SIGNATURE_SUFFICIENCY",
+        "VERIFIED_LEGAL_ENFORCEABILITY"
       ],
-      "legal_enforceability_effect": "NONE"
+      "legal_enforceability_effect": "NONE_UNLESS_SEPARATELY_VERIFIED",
+      "acceptance_predicates_contract": "commercial/contract-acceptance-predicates.schema.json",
+      "signature_sufficiency_effect": "NONE_UNLESS_SEPARATELY_VERIFIED",
+      "legal_entity_capacity_effect": "NONE_UNLESS_SEPARATELY_VERIFIED"
     }
   },
   "prohibitions": [

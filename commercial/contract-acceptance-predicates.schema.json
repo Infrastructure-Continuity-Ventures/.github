@@ -1,0 +1,146 @@
+{
+  "schema_version": "icv.contract-acceptance-predicates.v1",
+  "authority": "CONTRACT_ACCEPTANCE_EVIDENCE_SEPARATION_ONLY",
+  "canonical_task_binding": null,
+  "cosv_task_vector": null,
+  "invocation_gate": "No actual customer, signature or agreement may be inspected under this contract until an authentic acceptance event exists.",
+  "purpose": "Keep counterpart authority, legal-entity identity/capacity, signature sufficiency and legal enforceability independently evidenced so no one predicate is promoted into another.",
+  "predicates": {
+    "VERIFIED_COUNTERPART_AUTHORITY": {
+      "evidence_contract": "commercial/counterpart-authority-evidence.schema.json",
+      "owner_refs": [
+        "StegVerse-Labs/StegBusiness docs/RECORD_DOMAINS.md contracts.signature authority",
+        "StegVerse-Labs/StegBusiness-Ops contracts/README.md signature authority"
+      ],
+      "states": [
+        "VERIFIED",
+        "UNRESOLVED",
+        "REJECTED"
+      ],
+      "proves_only": "Evidence supports that the counterpart was authorized for the relevant acceptance scope/time.",
+      "does_not_prove": [
+        "legal-entity identity/capacity",
+        "signature sufficiency",
+        "legal enforceability",
+        "contract execution"
+      ]
+    },
+    "VERIFIED_LEGAL_ENTITY_IDENTITY_CAPACITY": {
+      "owner_refs": [
+        "StegVerse-Labs/StegBusiness docs/RECORD_DOMAINS.md Entity identity: entity_id, accepted legal name, entity type/jurisdiction, formation/effective state, evidence refs",
+        "StegVerse-Labs/StegBusiness-Ops contracts/README.md exact legal contracting entity"
+      ],
+      "states": [
+        "VERIFIED",
+        "UNRESOLVED",
+        "REJECTED"
+      ],
+      "minimum_evidence": [
+        "exact customer legal entity identity attributable to authoritative entity evidence",
+        "entity type/jurisdiction when applicable",
+        "formation/effective/existence state applicable at acceptance timestamp",
+        "capacity/applicability evidence required by the specific engagement, or explicit UNRESOLVED"
+      ],
+      "current_status": "UNRESOLVED_UNTIL_AUTHENTIC_ACCEPTANCE_AND_APPLICABLE_ENTITY_EVIDENCE",
+      "proves_only": "Bounded evidence for the identity and applicable capacity posture of the contracting entity.",
+      "does_not_prove": [
+        "counterpart authority",
+        "signature sufficiency",
+        "legal enforceability",
+        "contract execution"
+      ]
+    },
+    "VERIFIED_SIGNATURE_SUFFICIENCY": {
+      "owner_refs": [
+        "StegVerse-Labs/StegBusiness-Ops contracts/README.md direct signed-contract evidence required for EXECUTED",
+        "StegVerse-Labs/StegBusiness-Ops filing/READY_FOR_SIGNATURE_GATE.md signature authority identified and exact artifact preserved"
+      ],
+      "states": [
+        "VERIFIED",
+        "UNRESOLVED",
+        "REJECTED"
+      ],
+      "minimum_evidence": [
+        "exact proposal/contract artifact identity and version",
+        "signature/assent artifact authentically attributable to the acceptance event",
+        "signing method/form and timestamp",
+        "applicable signature requirements identified for the engagement",
+        "artifact integrity/provenance evidence"
+      ],
+      "current_status": "UNRESOLVED_UNTIL_AUTHENTIC_ACCEPTANCE_AND_APPLICABLE_SIGNATURE_EVIDENCE",
+      "proves_only": "Evidence supports that the observed signature/assent artifact satisfies the separately identified signature requirements for this engagement.",
+      "does_not_prove": [
+        "counterpart authority",
+        "legal-entity capacity",
+        "legal enforceability",
+        "contract execution"
+      ],
+      "prohibited_shortcuts": [
+        "presence of signature image alone",
+        "typed name alone",
+        "email assent alone",
+        "repository approval alone",
+        "READY_FOR_SIGNATURE state alone"
+      ]
+    },
+    "VERIFIED_LEGAL_ENFORCEABILITY": {
+      "owner_refs": [],
+      "states": [
+        "VERIFIED",
+        "UNRESOLVED",
+        "REJECTED"
+      ],
+      "current_status": "UNRESOLVED_UNLESS_INDEPENDENTLY_EVIDENCED",
+      "minimum_evidence": [
+        "applicable authoritative legal basis identified for the specific engagement/jurisdiction",
+        "material contract terms and acceptance evidence evaluated against that basis",
+        "all required entity/authority/signature/professional predicates resolved",
+        "no unresolved condition that prevents the bounded enforceability conclusion"
+      ],
+      "proves_only": "A separately evidenced bounded enforceability disposition for the specific agreement; it is not inferred from repository state.",
+      "does_not_prove": [
+        "payment",
+        "performance",
+        "regulatory approval",
+        "professional certification",
+        "runtime activation"
+      ],
+      "prohibited_shortcuts": [
+        "VERIFIED_COUNTERPART_AUTHORITY alone",
+        "VERIFIED_LEGAL_ENTITY_IDENTITY_CAPACITY alone",
+        "VERIFIED_SIGNATURE_SUFFICIENCY alone",
+        "signed artifact alone",
+        "StegBusiness contract state alone",
+        "StegBusiness-Ops EXECUTED state alone",
+        "repository approval or merge"
+      ]
+    }
+  },
+  "contract_or_sow_accepted_gate": {
+    "current_disposition": "FAIL_CLOSED",
+    "required_predicates": [
+      "PURPORTED_ACCEPTANCE_OBSERVED",
+      "VERIFIED_COUNTERPART_AUTHORITY",
+      "VERIFIED_LEGAL_ENTITY_IDENTITY_CAPACITY",
+      "VERIFIED_SIGNATURE_SUFFICIENCY",
+      "VERIFIED_LEGAL_ENFORCEABILITY"
+    ],
+    "rule": "All predicates remain independent. Evidence satisfying one may be referenced by another only where explicitly applicable; no state promotion is transitive.",
+    "execution_boundary": "Even a future CONTRACT_OR_SOW_ACCEPTED evidence disposition does not itself mutate StegBusiness/StegBusiness-Ops to EXECUTED; contract execution remains its own owner-governed transition."
+  },
+  "source_semantics": {
+    "hydrasafe": "Facility SOW acceptance/deliverable acceptance does not mean regulatory approval, engineering certification or operational authorization; external professional work remains separately governed.",
+    "gp10": "Written exact scope and fee/cost-plus amount are required before accepting payment; the service does not establish legal approval or operational authority.",
+    "icv_proposal_envelope": "Acceptance instructions do not determine legal sufficiency or counterpart authority."
+  },
+  "prohibitions": [
+    "No legal advice or legal conclusion generated by this schema",
+    "No electronic-signature authority",
+    "No contract execution",
+    "No payment authority",
+    "No CRM mutation",
+    "No runtime authority",
+    "No Task Registry/COSV binding",
+    "No actual customer/signature/agreement lookup before authentic acceptance"
+  ]
+}

@@ -106,3 +106,14 @@ StegBusiness is the canonical business-state owner for counterparty/signature-au
 Direct organization-attributable authorization/delegation is the strongest class. Applicable prior executed authority evidence may also verify authority when authentic, current and in scope. Organization-controlled role records and Contacts/directory data corroborate identity/role but cannot independently verify authority. Mailbox/domain/title/prior-correspondence evidence is context only.
 
 No actual customer/contact/agreement lookup is permitted under this contract until an authentic acceptance event exists. Legal enforceability and signature sufficiency remain separate unresolved predicates unless independently evidenced.
+
+
+## Contract-acceptance predicate separation
+
+`contract-acceptance-predicates.schema.json` keeps four evidence predicates independent: `VERIFIED_COUNTERPART_AUTHORITY`, `VERIFIED_LEGAL_ENTITY_IDENTITY_CAPACITY`, `VERIFIED_SIGNATURE_SUFFICIENCY`, and `VERIFIED_LEGAL_ENFORCEABILITY`.
+
+StegBusiness can represent canonical entity identity and contract/signature-authority state. StegBusiness-Ops can represent exact legal contracting entity, signature authority and direct signed-contract evidence in its contract lifecycle. Those owners are evidence sources, not a universal legal-enforceability oracle.
+
+A signature artifact, `READY_FOR_SIGNATURE`, repository approval, StegBusiness contract state, or StegBusiness-Ops `EXECUTED` state cannot by itself establish legal enforceability. The enforceability predicate has no current canonical owner reference and remains `UNRESOLVED_UNLESS_INDEPENDENTLY_EVIDENCED`.
+
+No actual customer, signature or agreement is queried until an authentic acceptance event exists.

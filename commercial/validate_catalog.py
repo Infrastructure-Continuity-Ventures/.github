@@ -9,6 +9,7 @@ REQUEST_TRANSITION=ROOT/"commercial/engagement-request-transition.json"
 PROPOSAL_ENVELOPE=ROOT/"commercial/scoped-engagement-proposal.schema.json"
 ACCEPTANCE_OBSERVATION=ROOT/"commercial/contract-acceptance-observation.schema.json"
 COUNTERPART_AUTHORITY=ROOT/"commercial/counterpart-authority-evidence.schema.json"
+ACCEPTANCE_PREDICATES=ROOT/"commercial/contract-acceptance-predicates.schema.json"
 CLASSES=[
     "RELEASED_PRODUCT","REVENUE_READY_SERVICE","MANAGED_PILOT",
     "ASSESSMENT_ONLY","DEVELOPMENT_PREVIEW","INTERNAL_SUBSTRATE",
@@ -117,7 +118,20 @@ def main():
     assert acceptance["counterpart_identity_evidence"]["authority_evidence_contract"]=="commercial/counterpart-authority-evidence.schema.json"
     assert acceptance["counterpart_identity_evidence"]["real_customer_query_gate"]=="AUTHENTIC_ACCEPTANCE_EVENT_EXISTS"
     print("ICV_CONTRACT_ACCEPTANCE_OBSERVATION_V1_VALID")
+    predicates=json.loads(ACCEPTANCE_PREDICATES.read_text(encoding="utf-8"))
+    assert predicates["schema_version"]=="icv.contract-acceptance-predicates.v1"
+    assert predicates["canonical_task_binding"] is None
+    assert predicates["cosv_task_vector"] is None
+    expected={"VERIFIED_COUNTERPART_AUTHORITY","VERIFIED_LEGAL_ENTITY_IDENTITY_CAPACITY","VERIFIED_SIGNATURE_SUFFICIENCY","VERIFIED_LEGAL_ENFORCEABILITY"}
+    assert set(predicates["predicates"])==expected
+    assert predicates["predicates"]["VERIFIED_LEGAL_ENFORCEABILITY"]["owner_refs"]==[]
+    assert predicates["predicates"]["VERIFIED_LEGAL_ENFORCEABILITY"]["current_status"]=="UNRESOLVED_UNLESS_INDEPENDENTLY_EVIDENCED"
+    assert "signed artifact alone" in predicates["predicates"]["VERIFIED_LEGAL_ENFORCEABILITY"]["prohibited_shortcuts"]
+    assert "StegBusiness-Ops EXECUTED state alone" in predicates["predicates"]["VERIFIED_LEGAL_ENFORCEABILITY"]["prohibited_shortcuts"]
+    assert predicates["contract_or_sow_accepted_gate"]["current_disposition"]=="FAIL_CLOSED"
+    assert acceptance["dispositions"]["contract_or_sow_accepted"]["acceptance_predicates_contract"]=="commercial/contract-acceptance-predicates.schema.json"
     print("ICV_COUNTERPART_AUTHORITY_EVIDENCE_V1_VALID")
+    print("ICV_CONTRACT_ACCEPTANCE_PREDICATES_V1_VALID")
 
 if __name__=="__main__":
     main()
