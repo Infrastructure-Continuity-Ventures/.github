@@ -15,7 +15,11 @@
         "ENGAGEMENT_SPECIFIC data-handling constraints"
       ],
       "delivery_owner_requirement": "Authentic admitted Governance Assessment delivery owner",
-      "current_disposition": "FAIL_CLOSED_NOT_EVALUATED"
+      "current_disposition": "FAIL_CLOSED",
+      "delivery_owner_reconciliation": "commercial/service-delivery-owner-reconciliation.json",
+      "smallest_existing_owner": "Infrastructure-Continuity-Ventures/.github commercial package owner",
+      "delivery_owner_interface_observed": false,
+      "first_missing_existing_owner_predicate": "EXISTING_GOVERNANCE_ASSESSMENT_OWNER_CONTROLLED_DELIVERY_ADMISSION_INTERFACE_BOUND_TO_EXACT_ENGAGEMENT_NOT_OBSERVED"
     },
     {
       "offering_id": "icv.governance-boundary-validation.v1",
@@ -29,7 +33,11 @@
         "ENGAGEMENT_SPECIFIC handling agreement for otherwise excluded sensitive material"
       ],
       "delivery_owner_requirement": "Authentic admitted governance-validation pilot delivery owner",
-      "current_disposition": "FAIL_CLOSED_NOT_EVALUATED"
+      "current_disposition": "FAIL_CLOSED",
+      "delivery_owner_reconciliation": "commercial/service-delivery-owner-reconciliation.json",
+      "smallest_existing_owner": "StegVerse-Labs/stegfin-governance",
+      "delivery_owner_interface_observed": false,
+      "first_missing_existing_owner_predicate": "EXISTING_GOVERNANCE_VALIDATION_OWNER_CONTROLLED_COMMERCIAL_DELIVERY_ADMISSION_INTERFACE_NOT_OBSERVED"
     },
     {
       "offering_id": "icv.admitted-code.v1",
@@ -42,7 +50,11 @@
         "ENGAGEMENT_SPECIFIC target/approval authority assertions"
       ],
       "delivery_owner_requirement": "Authentic admitted Admitted Code assessment delivery owner",
-      "current_disposition": "FAIL_CLOSED_NOT_EVALUATED"
+      "current_disposition": "FAIL_CLOSED",
+      "delivery_owner_reconciliation": "commercial/service-delivery-owner-reconciliation.json",
+      "smallest_existing_owner": "StegVerse-Labs/StegCore",
+      "delivery_owner_interface_observed": false,
+      "first_missing_existing_owner_predicate": "EXISTING_ADMITTED_CODE_ASSESSMENT_DELIVERY_ADMISSION_INTERFACE_BOUND_TO_COMMERCIAL_ENGAGEMENT_NOT_OBSERVED"
     },
     {
       "offering_id": "icv.steggate.v1",
@@ -56,7 +68,11 @@
         "NO production authorization dependency may be inferred"
       ],
       "delivery_owner_requirement": "Authentic admitted StegGate preview delivery owner",
-      "current_disposition": "FAIL_CLOSED_NOT_EVALUATED"
+      "current_disposition": "FAIL_CLOSED",
+      "delivery_owner_reconciliation": "commercial/service-delivery-owner-reconciliation.json",
+      "smallest_existing_owner": "StegVerse-Labs/StegCore",
+      "delivery_owner_interface_observed": false,
+      "first_missing_existing_owner_predicate": "EXISTING_STEGGATE_PREVIEW_DELIVERY_ADMISSION_INTERFACE_BOUND_TO_COMMERCIAL_ENGAGEMENT_NOT_OBSERVED"
     },
     {
       "offering_id": "icv.stegcrm.v1",
@@ -70,7 +86,11 @@
         "ENGAGEMENT_SPECIFIC source-system access"
       ],
       "delivery_owner_requirement": "Authentic admitted StegCRM managed-pilot delivery owner",
-      "current_disposition": "FAIL_CLOSED_NOT_EVALUATED"
+      "current_disposition": "FAIL_CLOSED",
+      "delivery_owner_reconciliation": "commercial/service-delivery-owner-reconciliation.json",
+      "smallest_existing_owner": "StegVerse-Labs/StegOps-Orchestrator",
+      "delivery_owner_interface_observed": false,
+      "first_missing_existing_owner_predicate": "EXISTING_STEGCRM_MANAGED_PILOT_DELIVERY_ADMISSION_INTERFACE_NOT_OBSERVED"
     },
     {
       "offering_id": "icv.hydrasafe.v1",
@@ -84,7 +104,11 @@
         "ENGAGEMENT_SPECIFIC OEM/insurer/AHJ dependencies"
       ],
       "delivery_owner_requirement": "Authentic admitted HydraSafe engagement delivery owner",
-      "current_disposition": "FAIL_CLOSED_NOT_EVALUATED"
+      "current_disposition": "FAIL_CLOSED",
+      "delivery_owner_reconciliation": "commercial/service-delivery-owner-reconciliation.json",
+      "smallest_existing_owner": "StegVerse-Labs/HydraSafe",
+      "delivery_owner_interface_observed": false,
+      "first_missing_existing_owner_predicate": "EXISTING_HYDRASAFE_ENGAGEMENT_DELIVERY_ADMISSION_INTERFACE_BOUND_TO_EXECUTED_SCOPE_AND_APPLICABLE_DEPOSIT_NOT_OBSERVED"
     },
     {
       "offering_id": "icv.gp10-field-validation.v1",
@@ -98,7 +122,11 @@
         "REQUIRED stop-work condition for materially different source package"
       ],
       "delivery_owner_requirement": "Authentic admitted GP10 field-validation delivery owner",
-      "current_disposition": "FAIL_CLOSED_NOT_EVALUATED"
+      "current_disposition": "FAIL_CLOSED",
+      "delivery_owner_reconciliation": "commercial/service-delivery-owner-reconciliation.json",
+      "smallest_existing_owner": "StegVerse-Labs/GP10",
+      "delivery_owner_interface_observed": false,
+      "first_missing_existing_owner_predicate": "EXISTING_GP10_FIELD_VALIDATION_DELIVERY_ADMISSION_INTERFACE_BOUND_TO_EXACT_WRITTEN_SCOPE_NOT_OBSERVED"
     },
     {
       "offering_id": "icv.governance-observatory.v1",
@@ -111,7 +139,11 @@
         "ENGAGEMENT_SPECIFIC publication/privacy constraints"
       ],
       "delivery_owner_requirement": "Authentic admitted Governance Observatory support delivery owner",
-      "current_disposition": "FAIL_CLOSED_NOT_EVALUATED"
+      "current_disposition": "FAIL_CLOSED",
+      "delivery_owner_reconciliation": "commercial/service-delivery-owner-reconciliation.json",
+      "smallest_existing_owner": "StegVerse-Labs/governance-observatory",
+      "delivery_owner_interface_observed": false,
+      "first_missing_existing_owner_predicate": "EXISTING_GOVERNANCE_OBSERVATORY_SUPPORT_DELIVERY_ADMISSION_INTERFACE_BOUND_TO_ENGAGEMENT_NOT_OBSERVED"
     },
     {
       "offering_id": "icv.knowledgevault.v1",
@@ -125,7 +157,11 @@
         "ENGAGEMENT_SPECIFIC optional provider/runtime capability separately admitted"
       ],
       "delivery_owner_requirement": "Authentic admitted KnowledgeVault managed-pilot delivery owner",
-      "current_disposition": "FAIL_CLOSED_NOT_EVALUATED"
+      "current_disposition": "FAIL_CLOSED",
+      "delivery_owner_reconciliation": "commercial/service-delivery-owner-reconciliation.json",
+      "smallest_existing_owner": "StegVerse-Labs/continuity-vault-kit",
+      "delivery_owner_interface_observed": false,
+      "first_missing_existing_owner_predicate": "EXISTING_KNOWLEDGEVAULT_MANAGED_PILOT_DELIVERY_ADMISSION_INTERFACE_BOUND_TO_CUSTOMER_SCOPE_NOT_OBSERVED"
     },
     {
       "offering_id": "icv.stegtalk.v1",
@@ -139,7 +175,11 @@
         "NO production bearer/deployment authority"
       ],
       "delivery_owner_requirement": "Authentic admitted StegTalk preview delivery owner",
-      "current_disposition": "FAIL_CLOSED_NOT_EVALUATED"
+      "current_disposition": "FAIL_CLOSED",
+      "delivery_owner_reconciliation": "commercial/service-delivery-owner-reconciliation.json",
+      "smallest_existing_owner": "StegVerse-Labs/StegTalk",
+      "delivery_owner_interface_observed": false,
+      "first_missing_existing_owner_predicate": "EXISTING_STEGTALK_PREVIEW_DELIVERY_ADMISSION_INTERFACE_BOUND_TO_TEST_SCENARIO_NOT_OBSERVED"
     },
     {
       "offering_id": "icv.ecosystem-chat.v1",
@@ -153,7 +193,11 @@
         "NO external provider credential or consumption entitlement implied"
       ],
       "delivery_owner_requirement": "Authentic admitted Ecosystem Chat preview delivery owner",
-      "current_disposition": "FAIL_CLOSED_NOT_EVALUATED"
+      "current_disposition": "FAIL_CLOSED",
+      "delivery_owner_reconciliation": "commercial/service-delivery-owner-reconciliation.json",
+      "smallest_existing_owner": "StegVerse-Labs/Site scope owner with StegVerse-org/LLM-adapter runtime authority retained separately",
+      "delivery_owner_interface_observed": false,
+      "first_missing_existing_owner_predicate": "EXISTING_ECOSYSTEM_CHAT_PREVIEW_DELIVERY_ADMISSION_INTERFACE_BOUND_TO_COMMERCIAL_SCENARIO_NOT_OBSERVED"
     },
     {
       "offering_id": "icv.steglearn.v1",
@@ -168,10 +212,14 @@
         "ENGAGEMENT_SPECIFIC external provider/media integration separately admitted"
       ],
       "delivery_owner_requirement": "Authentic admitted StegLearn preview delivery owner",
-      "current_disposition": "FAIL_CLOSED_NOT_EVALUATED"
+      "current_disposition": "FAIL_CLOSED",
+      "delivery_owner_reconciliation": "commercial/service-delivery-owner-reconciliation.json",
+      "smallest_existing_owner": "StegVerse-Labs/StegLearn",
+      "delivery_owner_interface_observed": false,
+      "first_missing_existing_owner_predicate": "EXISTING_STEGLEARN_PILOT_DELIVERY_ADMISSION_INTERFACE_BOUND_TO_PARENT_STEWARD_APPROVED_SCOPE_NOT_OBSERVED"
     }
   ],
   "evaluation_rule": "Use commercial/service-delivery-admission.schema.json. Preserve each profile verbatim; resolve ENGAGEMENT_SPECIFIC only from exact accepted terms/evidence. Stop at first missing required owner-specific predicate.",
-  "current_global_disposition": "SERVICE_DELIVERY_AUTHORIZED=FAIL_CLOSED",
+  "current_global_disposition": "SERVICE_DELIVERY_AUTHORIZED=FAIL_CLOSED_NO_EXISTING_OWNER_ADMISSION_INTERFACE_OBSERVED",
   "no_current_evaluation_invoked": true
 }
