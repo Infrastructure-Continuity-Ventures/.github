@@ -1,0 +1,85 @@
+{
+  "schema_version": "icv.engagement-closure.v1",
+  "authority": "COMMERCIAL_ENGAGEMENT_CLOSURE_EVIDENCE_ONLY",
+  "canonical_task_binding": null,
+  "cosv_task_vector": null,
+  "purpose": "Determine bounded ICV engagement closure independently from payment, deliverable acceptance, contract lifecycle COMPLETE, contract expiry, accounting close, legal discharge, repository state or runtime execution.",
+  "required_fields": [
+    "closure_id",
+    "engagement_id",
+    "offering_id",
+    "proposal_id",
+    "proposal_version",
+    "closure_owner",
+    "closure_owner_authority_evidence_ref",
+    "disposition",
+    "disposition_evidence_refs",
+    "closed_or_decided_at",
+    "successor_obligations"
+  ],
+  "dispositions": [
+    "COMPLETE",
+    "COMPLETE_WITH_SUCCESSOR_OBLIGATION",
+    "TERMINATED",
+    "FAIL_CLOSED"
+  ],
+  "rules": {
+    "COMPLETE": [
+      "all accepted engagement completion obligations are satisfied or explicitly resolved",
+      "required review/correction conditions are closed",
+      "no unresolved obligation belonging to the engagement remains",
+      "accountable offering owner records attributable closure evidence"
+    ],
+    "COMPLETE_WITH_SUCCESSOR_OBLIGATION": [
+      "original bounded engagement completion obligations are satisfied or explicitly resolved",
+      "one or more surviving/follow-on obligations are explicitly identified with type, scope, owner, trigger/due condition and evidence reference",
+      "successor obligation is not silently treated as work remaining inside the completed engagement"
+    ],
+    "TERMINATED": [
+      "authentic accepted termination/stop condition or authorized termination decision is evidenced",
+      "performed/delivered/accepted/payment states remain independently preserved",
+      "unperformed obligations and any surviving duties are explicitly identified"
+    ],
+    "FAIL_CLOSED": [
+      "exact engagement or closure owner cannot be authenticated",
+      "required completion/termination evidence is absent or contradictory",
+      "open obligation cannot be classified as resolved, successor, or terminated",
+      "successor obligation lacks an identified owner/scope/evidence basis"
+    ]
+  },
+  "successor_obligation_types": [
+    "SUPPORT",
+    "RETENTION_OR_DELETION",
+    "PUBLICATION_OR_REFERENCE_RIGHTS",
+    "CORRECTION_PERIOD",
+    "PROFESSIONAL_REVIEW_FOLLOWUP",
+    "RENEWAL_OR_EXTENSION",
+    "FUTURE_INTEGRATION_OR_LICENSING",
+    "OTHER_EXPLICIT_ACCEPTED_OBLIGATION"
+  ],
+  "owner_refs": [
+    "applicable offering fulfillment owner and exact accepted proposal/SOW",
+    "StegVerse-Labs/StegBusiness contracts canonical execution/amendment/renewal state references",
+    "StegVerse-Labs/StegBusiness-Ops contracts lifecycle DRAFT -> REVIEW_REQUIRED -> APPROVED_FOR_SIGNATURE -> EXECUTED -> ACTIVE -> AMENDED / RENEWAL_DUE -> EXPIRED / TERMINATED / COMPLETE",
+    "StegVerse-Labs/StegBusiness-Ops finance accounting-period close remains separate"
+  ],
+  "non_equivalence": {
+    "payment": "PAYMENT_OBSERVED does not establish any closure disposition.",
+    "deliverable_acceptance": "CUSTOMER_DELIVERABLE_ACCEPTED does not establish any closure disposition.",
+    "contract_expiry": "EXPIRED is a StegBusiness-Ops contract lifecycle state and does not establish ICV engagement completion.",
+    "contract_complete": "StegBusiness-Ops COMPLETE is separately governed and neither automatically follows nor establishes ICV engagement COMPLETE.",
+    "accounting_close": "month/quarter/year close and revenue cut-off review do not establish engagement completion.",
+    "repository": "issue/PR/branch/repository closure does not establish engagement completion.",
+    "legal": "No closure disposition establishes legal discharge/enforceability.",
+    "runtime": "No closure disposition establishes software/runtime execution or authority."
+  },
+  "current_evaluation": "NOT_INVOKED_NO_AUTHENTIC_ENGAGEMENT_EVIDENCE",
+  "prohibitions": [
+    "No customer record inspection",
+    "No real work begun",
+    "No invoice/payment creation",
+    "No CRM mutation",
+    "No runtime invocation",
+    "No Task Registry/COSV authority"
+  ]
+}
