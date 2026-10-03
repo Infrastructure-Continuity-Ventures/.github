@@ -371,3 +371,14 @@ This avoids authority inheritance:
 - StegLearn parent/steward review governs learning evidence, not ICV commercial service admission.
 
 No dispatcher, adapter, hosted service, runtime or authority plane was created. No delivery authorization or runtime invocation occurred.
+
+
+## 2026-10-03 — accountable human service authorization vs runtime admission
+
+Reconciliation showed the prior machine-interface requirement was stricter than the existing commercial and business-state semantics require. StegBusiness already represents governing persons/roles and contract/signature authority; StegBusiness-Ops owns operational contract workflows; the ICV proposal/SOW packages define accountable owners, accepted scope, customer responsibilities and bounded fulfillment. None requires a new software admission endpoint merely for an accountable person to authorize commencement of professional/service work.
+
+Added `commercial/service-delivery-owner-decision.schema.json`. The minimum commercial start evidence is exact engagement/offering/proposal identity, satisfied delivery-admission evidence, an authentically identified accountable offering owner with existing authority for that bounded service, an attributable/timestamped owner decision, and `ALLOW | DENY | FAIL_CLOSED`.
+
+`SERVICE_DELIVERY_AUTHORIZED` therefore has no software-runtime effect. Where fulfillment reaches consequential software action, that action must independently pass the applicable existing runtime/admissibility/provider/credential/custody gate. StegGate commitment admissibility, StegCRM write-back, KnowledgeVault provider/InTr/SKAP activation, StegTalk production transport, Ecosystem Chat provider/runtime invocation and StegLearn external-provider integration remain separate.
+
+No authentic acceptance event exists, so no owner decision was evaluated and `SERVICE_DELIVERY_AUTHORIZED=FAIL_CLOSED_NOT_EVALUATED`. No real delivery or runtime transition occurred.
