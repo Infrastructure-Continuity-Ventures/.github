@@ -305,3 +305,31 @@ StegBusiness-Ops EXECUTED
 No promotion is transitive. `CONTRACT_OR_SOW_ACCEPTED` has `legal_effect=NONE` and `contract_execution_effect=NONE`. A future acceptance record cannot itself establish enforceability or mutate StegBusiness/StegBusiness-Ops to `EXECUTED`.
 
 No actual customer/agreement/signature was inspected. No legal advice, electronic-signature authority, contract execution, payment, CRM, runtime, Task Registry or COSV authority was created.
+
+
+## 2026-10-03 — post-acceptance state-machine reconciliation
+
+The former direct `CONTRACT_OR_SOW_ACCEPTED -> PAYMENT_EXECUTABLE_OR_OBSERVED` edge conflated five separately owned concerns.
+
+Existing sources establish:
+- StegBusiness canonical finance state is record/reference based.
+- StegBusiness-Ops contract lifecycle separately owns `EXECUTED` and requires direct signed-contract evidence.
+- StegBusiness-Ops finance owns invoice/AR operational records but explicitly is not a bank, payment processor or financial execution engine.
+- Its invoice schema distinguishes `DRAFT`, `ISSUED`, `PARTIALLY_PAID`, `PAID`, `VOID`, and `DISPUTED`.
+- Banking coordination states that movement of funds remains separately authorized and receipted.
+- The twelve offering boundaries do not share one universal payment-before-delivery rule. HydraSafe contains explicit execution/deposit/milestone semantics; GP10 requires exact written scope and fee basis before accepting payment; other packages preserve their own delivery/start constraints.
+
+The smallest state model is:
+
+```text
+CONTRACT_OR_SOW_ACCEPTED
+  -> POST_ACCEPTANCE_EVIDENCE_ROUTING
+       -> CONTRACT_LIFECYCLE_EXECUTED      [FAIL_CLOSED; when applicable]
+       -> INVOICE_OR_PAYMENT_TERMS_READY    [FAIL_CLOSED]
+            -> PAYMENT_OBSERVED             [FAIL_CLOSED]
+       -> SERVICE_DELIVERY_AUTHORIZED       [FAIL_CLOSED; independently gated]
+```
+
+These edges are not automatically transitive. Invoice/payment readiness does not issue an invoice. Payment observation does not create a payment mechanism. Payment is neither universally required nor sufficient for delivery. Delivery authorization must satisfy the exact offering's accepted scope, source/data authority and any applicable execution/deposit/payment/professional/provider/runtime prerequisites.
+
+No downstream transition was invoked. `NO_PAYMENT_EXECUTION_PATH` remains effective and `PAYMENT_OR_CONTRACT_EXECUTION_READY=false`. No invoice, contract execution, payment, delivery authorization, customer/CRM record, runtime authority, Task Registry or COSV binding was created.
