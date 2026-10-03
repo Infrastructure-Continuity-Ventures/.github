@@ -382,3 +382,21 @@ Added `commercial/service-delivery-owner-decision.schema.json`. The minimum comm
 `SERVICE_DELIVERY_AUTHORIZED` therefore has no software-runtime effect. Where fulfillment reaches consequential software action, that action must independently pass the applicable existing runtime/admissibility/provider/credential/custody gate. StegGate commitment admissibility, StegCRM write-back, KnowledgeVault provider/InTr/SKAP activation, StegTalk production transport, Ecosystem Chat provider/runtime invocation and StegLearn external-provider integration remain separate.
 
 No authentic acceptance event exists, so no owner decision was evaluated and `SERVICE_DELIVERY_AUTHORIZED=FAIL_CLOSED_NOT_EVALUATED`. No real delivery or runtime transition occurred.
+
+
+## 2026-10-03 — terminal commercial evidence-state reconciliation
+
+The terminal bounded-service path is now explicitly separated in `commercial/terminal-commercial-evidence-path.schema.json`.
+
+Existing source semantics support five distinct evidence states:
+- `DELIVERY_BEGUN`: attributable proof that authorized bounded work actually commenced.
+- `DELIVERABLE_DELIVERED`: exact deliverable identity plus authentic transmission/availability evidence.
+- `CUSTOMER_DELIVERABLE_ACCEPTED`: offering-specific customer review/acceptance evidence for the exact delivered artifact.
+- `PAYMENT_OBSERVED`: authentic provider/financial evidence tied to the engagement/invoice/payment obligation.
+- `ENGAGEMENT_COMPLETE`: accountable-owner evidence that all accepted completion obligations and review/open-item conditions are satisfied or explicitly resolved.
+
+The states do not promote one another. `SERVICE_DELIVERY_AUTHORIZED` is entry permission only and proves no work occurred. Delivery does not prove customer acceptance. Customer acceptance and payment are independent unless exact accepted terms say otherwise. Payment does not establish revenue recognition. `ENGAGEMENT_COMPLETE` does not automatically transition StegBusiness-Ops contract lifecycle to `COMPLETE`, establish legal discharge, or prove runtime execution.
+
+StegBusiness remains the canonical reference layer for contract and finance state; StegBusiness-Ops separately owns contract lifecycle evidence, AR/payment reconciliation and accounting records. Revenue recognition remains a separate accounting-basis determination.
+
+All five terminal states remain `FAIL_CLOSED_NOT_OBSERVED`; no real customer or fulfillment evidence was inspected and no transition was invoked.
