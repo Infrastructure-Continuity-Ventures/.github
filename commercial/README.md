@@ -162,3 +162,22 @@ The earlier requirement for an owner-controlled **machine** delivery-admission i
 This is not a runtime permission. `SERVICE_DELIVERY_AUTHORIZED` authorizes only the bounded professional/service engagement described by the accepted scope. Consequential software execution, source write-back, provider invocation, credentials/custody, production transport/deployment and other runtime actions retain their separate native admission gates.
 
 No current engagement was evaluated; current state remains `FAIL_CLOSED_NOT_EVALUATED`.
+
+
+## Terminal commercial evidence path
+
+`terminal-commercial-evidence-path.schema.json` separates authorization, actual work, deliverable transmission, customer acceptance, payment observation and engagement completion.
+
+```text
+SERVICE_DELIVERY_AUTHORIZED
+  -> DELIVERY_BEGUN
+  -> DELIVERABLE_DELIVERED
+  -> CUSTOMER_DELIVERABLE_ACCEPTED
+
+PAYMENT_OBSERVED                 [independent financial evidence]
+ENGAGEMENT_COMPLETE              [exact engagement-completion evidence]
+```
+
+None of these states is automatically transitive. Authorization is not proof work began; delivery is not customer acceptance; customer acceptance is not payment; payment is not revenue recognition; and engagement completion is not automatically StegBusiness-Ops contract `COMPLETE` or a legal discharge.
+
+Revenue recognition remains a separate accounting-basis determination under StegBusiness/StegBusiness-Ops finance records.
