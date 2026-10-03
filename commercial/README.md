@@ -117,3 +117,12 @@ StegBusiness can represent canonical entity identity and contract/signature-auth
 A signature artifact, `READY_FOR_SIGNATURE`, repository approval, StegBusiness contract state, or StegBusiness-Ops `EXECUTED` state cannot by itself establish legal enforceability. The enforceability predicate has no current canonical owner reference and remains `UNRESOLVED_UNLESS_INDEPENDENTLY_EVIDENCED`.
 
 No actual customer, signature or agreement is queried until an authentic acceptance event exists.
+
+
+## Acceptance evidence is not legal enforceability
+
+The state semantics are intentionally distinct. `CONTRACT_OR_SOW_ACCEPTED` is a bounded commercial evidence disposition, not a finding that a contract is legally enforceable and not the StegBusiness-Ops `EXECUTED` lifecycle state.
+
+The acceptance gate therefore requires `PURPORTED_ACCEPTANCE_OBSERVED`, `VERIFIED_COUNTERPART_AUTHORITY`, `VERIFIED_LEGAL_ENTITY_IDENTITY_CAPACITY` and `VERIFIED_SIGNATURE_SUFFICIENCY`. `VERIFIED_LEGAL_ENFORCEABILITY` remains a separate, non-gating predicate that may remain unresolved even after accepted terms are recorded.
+
+StegBusiness-Ops `EXECUTED` remains separately governed and requires its own direct signed-contract evidence and applicable lifecycle controls.
