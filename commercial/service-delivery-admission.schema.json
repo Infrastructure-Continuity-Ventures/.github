@@ -58,10 +58,12 @@
   },
   "disposition": {
     "allow_evidence_state": "DELIVERY_ADMISSION_EVIDENCE_SATISFIED",
-    "service_delivery_authorized": "FAIL_CLOSED_NO_EXISTING_OWNER_ADMISSION_INTERFACE_OBSERVED",
+    "service_delivery_authorized": "FAIL_CLOSED_NOT_EVALUATED",
     "fail_closed_first_missing_predicate": true,
     "no_runtime_or_delivery_effect": true,
-    "owner_interface_requirement": "Existing offering-owner-controlled interface capable of consuming exact bounded admission evidence and independently returning ALLOW, DENY or FAIL_CLOSED for SERVICE_DELIVERY_AUTHORIZED without inheriting authority from this envelope."
+    "owner_decision_contract": "commercial/service-delivery-owner-decision.schema.json",
+    "authorization_rule": "Complete admission evidence may be presented to an authentically identified accountable offering owner. That owner may return ALLOW, DENY or FAIL_CLOSED as a commercial/service-start decision using the owner-decision evidence contract; no machine admission interface is required for professional/service work.",
+    "runtime_separation": "Any consequential software execution remains separately governed by its native runtime/admissibility owner and cannot inherit SERVICE_DELIVERY_AUTHORIZED."
   },
   "privacy": "Retain customer/private source material, provider IDs, credentials and sensitive evidence outside public repository records; public evidence may retain bounded disposition and authorized redacted/hash references.",
   "prohibitions": [
