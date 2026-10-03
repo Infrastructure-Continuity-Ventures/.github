@@ -1,0 +1,125 @@
+{
+  "schema_version": "icv.service-delivery-owner-reconciliation.v1",
+  "authority": "OWNER_DISCOVERY_EVIDENCE_ONLY",
+  "canonical_task_binding": null,
+  "cosv_task_vector": null,
+  "required_dispositions": [
+    "ALLOW",
+    "DENY",
+    "FAIL_CLOSED"
+  ],
+  "result": "NO_EXISTING_OFFERING_OWNER_ADMISSION_INTERFACE_OBSERVED",
+  "records": [
+    {
+      "offering_id": "icv.governance-assessment.v1",
+      "smallest_existing_owner": "Infrastructure-Continuity-Ventures/.github commercial package owner",
+      "existing_fulfillment_surface": "commercial/packages/governance-assessment.md assessment fulfillment definition",
+      "can_receive_icv_delivery_admission_evidence_and_return_service_delivery_disposition": false,
+      "current_disposition": "FAIL_CLOSED",
+      "first_missing_existing_owner_predicate": "EXISTING_GOVERNANCE_ASSESSMENT_OWNER_CONTROLLED_DELIVERY_ADMISSION_INTERFACE_BOUND_TO_EXACT_ENGAGEMENT_NOT_OBSERVED",
+      "authority_boundary": "Package defines intake/deliverables/acceptance but is documentation, not an operational admission surface."
+    },
+    {
+      "offering_id": "icv.governance-boundary-validation.v1",
+      "smallest_existing_owner": "StegVerse-Labs/stegfin-governance",
+      "existing_fulfillment_surface": "local/repository-integrated Governance & AI Boundary Validation Engine",
+      "can_receive_icv_delivery_admission_evidence_and_return_service_delivery_disposition": false,
+      "current_disposition": "FAIL_CLOSED",
+      "first_missing_existing_owner_predicate": "EXISTING_GOVERNANCE_VALIDATION_OWNER_CONTROLLED_COMMERCIAL_DELIVERY_ADMISSION_INTERFACE_NOT_OBSERVED",
+      "authority_boundary": "Validator returns deterministic governance findings; it does not own commercial service-start authority."
+    },
+    {
+      "offering_id": "icv.admitted-code.v1",
+      "smallest_existing_owner": "StegVerse-Labs/StegCore",
+      "existing_fulfillment_surface": "canonical StegGate admissibility composition used for bounded assessment/PoC",
+      "can_receive_icv_delivery_admission_evidence_and_return_service_delivery_disposition": false,
+      "current_disposition": "FAIL_CLOSED",
+      "first_missing_existing_owner_predicate": "EXISTING_ADMITTED_CODE_ASSESSMENT_DELIVERY_ADMISSION_INTERFACE_BOUND_TO_COMMERCIAL_ENGAGEMENT_NOT_OBSERVED",
+      "authority_boundary": "StegGate ALLOW/DENY/REVIEW/FAIL_CLOSED governs commitment admissibility, not ICV service delivery; no authority inheritance."
+    },
+    {
+      "offering_id": "icv.steggate.v1",
+      "smallest_existing_owner": "StegVerse-Labs/StegCore",
+      "existing_fulfillment_surface": "StegGate Python/CLI/HTTP evaluation surfaces",
+      "can_receive_icv_delivery_admission_evidence_and_return_service_delivery_disposition": false,
+      "current_disposition": "FAIL_CLOSED",
+      "first_missing_existing_owner_predicate": "EXISTING_STEGGATE_PREVIEW_DELIVERY_ADMISSION_INTERFACE_BOUND_TO_COMMERCIAL_ENGAGEMENT_NOT_OBSERVED",
+      "authority_boundary": "Canonical evaluation surface cannot be repurposed as commercial delivery authority; v0.3.0 remains not released."
+    },
+    {
+      "offering_id": "icv.stegcrm.v1",
+      "smallest_existing_owner": "StegVerse-Labs/StegOps-Orchestrator",
+      "existing_fulfillment_surface": "authority-free CRM projection/reconciliation layer",
+      "can_receive_icv_delivery_admission_evidence_and_return_service_delivery_disposition": false,
+      "current_disposition": "FAIL_CLOSED",
+      "first_missing_existing_owner_predicate": "EXISTING_STEGCRM_MANAGED_PILOT_DELIVERY_ADMISSION_INTERFACE_NOT_OBSERVED",
+      "authority_boundary": "Projection authority NONE; CRM mutation APIs are not delivery-admission owners."
+    },
+    {
+      "offering_id": "icv.hydrasafe.v1",
+      "smallest_existing_owner": "StegVerse-Labs/HydraSafe",
+      "existing_fulfillment_surface": "commercial/facility-packet-sow.md documentation-only facility packet fulfillment",
+      "can_receive_icv_delivery_admission_evidence_and_return_service_delivery_disposition": false,
+      "current_disposition": "FAIL_CLOSED",
+      "first_missing_existing_owner_predicate": "EXISTING_HYDRASAFE_ENGAGEMENT_DELIVERY_ADMISSION_INTERFACE_BOUND_TO_EXECUTED_SCOPE_AND_APPLICABLE_DEPOSIT_NOT_OBSERVED",
+      "authority_boundary": "SOW defines responsibilities and execution/deposit semantics but no owner-controlled admission interface."
+    },
+    {
+      "offering_id": "icv.gp10-field-validation.v1",
+      "smallest_existing_owner": "StegVerse-Labs/GP10",
+      "existing_fulfillment_surface": "customer-authorized export -> governed evidence intake -> normalization -> validation -> evidence packet",
+      "can_receive_icv_delivery_admission_evidence_and_return_service_delivery_disposition": false,
+      "current_disposition": "FAIL_CLOSED",
+      "first_missing_existing_owner_predicate": "EXISTING_GP10_FIELD_VALIDATION_DELIVERY_ADMISSION_INTERFACE_BOUND_TO_EXACT_WRITTEN_SCOPE_NOT_OBSERVED",
+      "authority_boundary": "Fulfillment path exists; no separate commercial start/admission surface returns delivery authorization."
+    },
+    {
+      "offering_id": "icv.governance-observatory.v1",
+      "smallest_existing_owner": "StegVerse-Labs/governance-observatory",
+      "existing_fulfillment_surface": "source-capture/observation workflow",
+      "can_receive_icv_delivery_admission_evidence_and_return_service_delivery_disposition": false,
+      "current_disposition": "FAIL_CLOSED",
+      "first_missing_existing_owner_predicate": "EXISTING_GOVERNANCE_OBSERVATORY_SUPPORT_DELIVERY_ADMISSION_INTERFACE_BOUND_TO_ENGAGEMENT_NOT_OBSERVED",
+      "authority_boundary": "Observation workflow owns source capture, not commercial service-start authority."
+    },
+    {
+      "offering_id": "icv.knowledgevault.v1",
+      "smallest_existing_owner": "StegVerse-Labs/continuity-vault-kit",
+      "existing_fulfillment_surface": "file-based vault deployment/installation receipt path",
+      "can_receive_icv_delivery_admission_evidence_and_return_service_delivery_disposition": false,
+      "current_disposition": "FAIL_CLOSED",
+      "first_missing_existing_owner_predicate": "EXISTING_KNOWLEDGEVAULT_MANAGED_PILOT_DELIVERY_ADMISSION_INTERFACE_BOUND_TO_CUSTOMER_SCOPE_NOT_OBSERVED",
+      "authority_boundary": "Installation/deployment evidence is not prior commercial delivery admission; provider/runtime activation remains separate."
+    },
+    {
+      "offering_id": "icv.stegtalk.v1",
+      "smallest_existing_owner": "StegVerse-Labs/StegTalk",
+      "existing_fulfillment_surface": "local prototype shell/runtime demonstration surfaces",
+      "can_receive_icv_delivery_admission_evidence_and_return_service_delivery_disposition": false,
+      "current_disposition": "FAIL_CLOSED",
+      "first_missing_existing_owner_predicate": "EXISTING_STEGTALK_PREVIEW_DELIVERY_ADMISSION_INTERFACE_BOUND_TO_TEST_SCENARIO_NOT_OBSERVED",
+      "authority_boundary": "Local prototype actions do not establish commercial start authority or production standing."
+    },
+    {
+      "offering_id": "icv.ecosystem-chat.v1",
+      "smallest_existing_owner": "StegVerse-Labs/Site scope owner with StegVerse-org/LLM-adapter runtime authority retained separately",
+      "existing_fulfillment_surface": "source-demonstrated capability-interface preview",
+      "can_receive_icv_delivery_admission_evidence_and_return_service_delivery_disposition": false,
+      "current_disposition": "FAIL_CLOSED",
+      "first_missing_existing_owner_predicate": "EXISTING_ECOSYSTEM_CHAT_PREVIEW_DELIVERY_ADMISSION_INTERFACE_BOUND_TO_COMMERCIAL_SCENARIO_NOT_OBSERVED",
+      "authority_boundary": "Site scope is positioning-only; runtime authority is separate and live distributed execution is not proven."
+    },
+    {
+      "offering_id": "icv.steglearn.v1",
+      "smallest_existing_owner": "StegVerse-Labs/StegLearn",
+      "existing_fulfillment_surface": "local-first bounded learner loop with parent/steward review",
+      "can_receive_icv_delivery_admission_evidence_and_return_service_delivery_disposition": false,
+      "current_disposition": "FAIL_CLOSED",
+      "first_missing_existing_owner_predicate": "EXISTING_STEGLEARN_PILOT_DELIVERY_ADMISSION_INTERFACE_BOUND_TO_PARENT_STEWARD_APPROVED_SCOPE_NOT_OBSERVED",
+      "authority_boundary": "Parent review owns learning-evidence acceptance, not ICV commercial service-start authority."
+    }
+  ],
+  "common_rule": "DELIVERY_ADMISSION_EVIDENCE_SATISFIED may be offered as evidence only to an already-existing owner-controlled admission interface. Repository ownership, package documentation, a product evaluator, fulfillment implementation, parent review, or runtime capability does not inherit ICV commercial delivery authority.",
+  "no_interface_creation": true,
+  "no_transition_invoked": true
+}

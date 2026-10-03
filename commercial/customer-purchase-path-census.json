@@ -279,11 +279,13 @@
     "contract_lifecycle_executed": "FAIL_CLOSED",
     "invoice_or_payment_terms_ready": "FAIL_CLOSED",
     "payment_observed": "FAIL_CLOSED",
-    "service_delivery_authorized": "FAIL_CLOSED_NOT_EVALUATED",
+    "service_delivery_authorized": "FAIL_CLOSED_NO_EXISTING_OWNER_ADMISSION_INTERFACE_OBSERVED",
     "payment_execution_path": "NONE",
     "no_current_transition_invoked": true,
     "delivery_admission_contract": "commercial/service-delivery-admission.schema.json",
     "delivery_prerequisite_profiles": "commercial/service-delivery-prerequisite-profiles.json",
-    "delivery_admission_evidence": "NOT_EVALUATED"
+    "delivery_admission_evidence": "NOT_EVALUATED",
+    "delivery_owner_reconciliation": "commercial/service-delivery-owner-reconciliation.json",
+    "first_missing_predicate": "OFFERING_SPECIFIC_EXISTING_OWNER_CONTROLLED_DELIVERY_ADMISSION_INTERFACE"
   }
 }
