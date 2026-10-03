@@ -1,0 +1,166 @@
+{
+  "schema_version": "icv.engagement-closure-profiles.v1",
+  "authority": "OFFERING_CLOSURE_DESCRIPTION_ONLY",
+  "canonical_task_binding": null,
+  "cosv_task_vector": null,
+  "profiles": [
+    {
+      "offering_id": "icv.governance-assessment.v1",
+      "source_refs": [
+        "commercial/packages/governance-assessment.md"
+      ],
+      "possible_successor_obligation_types": [
+        "RETENTION_OR_DELETION",
+        "FUTURE_INTEGRATION_OR_LICENSING"
+      ],
+      "closure_rule": "Written scope controls review period, retention, IP and follow-on implementation. Completion cannot erase separately agreed retention or follow-on obligations.",
+      "current_disposition": "FAIL_CLOSED_NOT_EVALUATED"
+    },
+    {
+      "offering_id": "icv.governance-boundary-validation.v1",
+      "source_refs": [
+        "commercial/packages/governance-boundary-validation-pilot.md"
+      ],
+      "possible_successor_obligation_types": [
+        "PUBLICATION_OR_REFERENCE_RIGHTS",
+        "SUPPORT",
+        "RETENTION_OR_DELETION",
+        "FUTURE_INTEGRATION_OR_LICENSING"
+      ],
+      "closure_rule": "Price/IP/publication/support/travel/retention/follow-on licensing are engagement-specific and may survive artifact completion.",
+      "current_disposition": "FAIL_CLOSED_NOT_EVALUATED"
+    },
+    {
+      "offering_id": "icv.admitted-code.v1",
+      "source_refs": [
+        "commercial/packages/admitted-code-assessment.md"
+      ],
+      "possible_successor_obligation_types": [
+        "SUPPORT",
+        "RETENTION_OR_DELETION",
+        "FUTURE_INTEGRATION_OR_LICENSING"
+      ],
+      "closure_rule": "Assessment acceptance is reproducibility of agreed findings; implementation/support/retention may be separately scoped.",
+      "current_disposition": "FAIL_CLOSED_NOT_EVALUATED"
+    },
+    {
+      "offering_id": "icv.steggate.v1",
+      "source_refs": [
+        "commercial/packages/steggate-preview.md"
+      ],
+      "possible_successor_obligation_types": [
+        "SUPPORT",
+        "RETENTION_OR_DELETION",
+        "FUTURE_INTEGRATION_OR_LICENSING"
+      ],
+      "closure_rule": "Preview support/source handling/retention and later integration remain separately quoted; no production SLA/license implied.",
+      "current_disposition": "FAIL_CLOSED_NOT_EVALUATED"
+    },
+    {
+      "offering_id": "icv.stegcrm.v1",
+      "source_refs": [
+        "commercial/packages/stegcrm-managed-pilot.md"
+      ],
+      "possible_successor_obligation_types": [
+        "SUPPORT",
+        "RETENTION_OR_DELETION",
+        "FUTURE_INTEGRATION_OR_LICENSING"
+      ],
+      "closure_rule": "Pilot duration/support/retention/later write-enabled integration may survive bounded reconciliation completion.",
+      "current_disposition": "FAIL_CLOSED_NOT_EVALUATED"
+    },
+    {
+      "offering_id": "icv.hydrasafe.v1",
+      "source_refs": [
+        "StegVerse-Labs/HydraSafe:commercial/facility-packet-sow.md"
+      ],
+      "possible_successor_obligation_types": [
+        "CORRECTION_PERIOD",
+        "PROFESSIONAL_REVIEW_FOLLOWUP",
+        "PUBLICATION_OR_REFERENCE_RIGHTS"
+      ],
+      "closure_rule": "Customer correction/review stage, separately governed licensed-professional review, and separately agreed reference rights must be classified explicitly at closure.",
+      "current_disposition": "FAIL_CLOSED_NOT_EVALUATED"
+    },
+    {
+      "offering_id": "icv.gp10-field-validation.v1",
+      "source_refs": [
+        "StegVerse-Labs/GP10:docs/business/PAID_FIELD_VALIDATION_OFFER.md"
+      ],
+      "possible_successor_obligation_types": [
+        "PROFESSIONAL_REVIEW_FOLLOWUP",
+        "OTHER_EXPLICIT_ACCEPTED_OBLIGATION"
+      ],
+      "closure_rule": "Evidence packet/customer review may recommend next evidence or qualified-review actions; such follow-up is successor work unless included in exact accepted scope.",
+      "current_disposition": "FAIL_CLOSED_NOT_EVALUATED"
+    },
+    {
+      "offering_id": "icv.governance-observatory.v1",
+      "source_refs": [
+        "commercial/packages/governance-observatory-support.md"
+      ],
+      "possible_successor_obligation_types": [
+        "PUBLICATION_OR_REFERENCE_RIGHTS",
+        "SUPPORT",
+        "RETENTION_OR_DELETION"
+      ],
+      "closure_rule": "Publication rights/support/retention are separately quoted and may survive delivery of observation artifacts.",
+      "current_disposition": "FAIL_CLOSED_NOT_EVALUATED"
+    },
+    {
+      "offering_id": "icv.knowledgevault.v1",
+      "source_refs": [
+        "commercial/packages/knowledgevault-managed-pilot.md"
+      ],
+      "possible_successor_obligation_types": [
+        "SUPPORT",
+        "RETENTION_OR_DELETION",
+        "FUTURE_INTEGRATION_OR_LICENSING"
+      ],
+      "closure_rule": "Support/retention/storage-provider work and optional governed integrations are separately quoted and must not be silently absorbed into completion.",
+      "current_disposition": "FAIL_CLOSED_NOT_EVALUATED"
+    },
+    {
+      "offering_id": "icv.stegtalk.v1",
+      "source_refs": [
+        "commercial/packages/stegtalk-preview.md"
+      ],
+      "possible_successor_obligation_types": [
+        "SUPPORT",
+        "RETENTION_OR_DELETION",
+        "FUTURE_INTEGRATION_OR_LICENSING"
+      ],
+      "closure_rule": "Demo/pilot support and test-data handling may survive demonstration; production work is separate.",
+      "current_disposition": "FAIL_CLOSED_NOT_EVALUATED"
+    },
+    {
+      "offering_id": "icv.ecosystem-chat.v1",
+      "source_refs": [
+        "commercial/packages/ecosystem-chat-preview.md"
+      ],
+      "possible_successor_obligation_types": [
+        "SUPPORT",
+        "RETENTION_OR_DELETION",
+        "FUTURE_INTEGRATION_OR_LICENSING"
+      ],
+      "closure_rule": "Support/data handling/future integration are separately quoted; provider/runtime work is not implied by preview completion.",
+      "current_disposition": "FAIL_CLOSED_NOT_EVALUATED"
+    },
+    {
+      "offering_id": "icv.steglearn.v1",
+      "source_refs": [
+        "commercial/packages/steglearn-preview.md"
+      ],
+      "possible_successor_obligation_types": [
+        "SUPPORT",
+        "RETENTION_OR_DELETION",
+        "FUTURE_INTEGRATION_OR_LICENSING"
+      ],
+      "closure_rule": "Support/privacy-retention and external media/provider integration remain separately agreed; parent/steward review state remains preserved.",
+      "current_disposition": "FAIL_CLOSED_NOT_EVALUATED"
+    }
+  ],
+  "evaluation_rule": "Use commercial/engagement-closure.schema.json. COMPLETE only when no engagement-owned obligation remains. Use COMPLETE_WITH_SUCCESSOR_OBLIGATION when the bounded engagement is complete but an explicitly owned surviving/follow-on obligation remains. TERMINATED requires authentic termination evidence. Otherwise FAIL_CLOSED.",
+  "current_global_disposition": "FAIL_CLOSED_NOT_EVALUATED",
+  "no_current_evaluation_invoked": true
+}
