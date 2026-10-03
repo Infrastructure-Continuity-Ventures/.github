@@ -153,3 +153,12 @@ Passing the evidence envelope produces only `DELIVERY_ADMISSION_EVIDENCE_SATISFI
 Product evaluators and fulfillment surfaces retain their native authority only. In particular, StegGate's governed disposition interface cannot be repurposed into ICV commercial service-start authority, CRM mutation APIs cannot become StegCRM delivery admission, and parent/steward learning review cannot become StegLearn commercial admission.
 
 Accordingly all twelve offerings remain `FAIL_CLOSED` at their recorded existing-owner-interface predicate. No new interface is introduced.
+
+
+## Accountable-owner service-start decision
+
+The earlier requirement for an owner-controlled **machine** delivery-admission interface was over-specified for bounded professional/service work. `service-delivery-owner-decision.schema.json` now defines the smaller evidence contract: after exact delivery-admission evidence is satisfied, an authentically identified accountable offering owner may record `ALLOW`, `DENY` or `FAIL_CLOSED` for the bounded commercial service start through attributable human evidence.
+
+This is not a runtime permission. `SERVICE_DELIVERY_AUTHORIZED` authorizes only the bounded professional/service engagement described by the accepted scope. Consequential software execution, source write-back, provider invocation, credentials/custody, production transport/deployment and other runtime actions retain their separate native admission gates.
+
+No current engagement was evaluated; current state remains `FAIL_CLOSED_NOT_EVALUATED`.
