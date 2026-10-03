@@ -129,6 +129,12 @@ def main():
     assert "signed artifact alone" in predicates["predicates"]["VERIFIED_LEGAL_ENFORCEABILITY"]["prohibited_shortcuts"]
     assert "StegBusiness-Ops EXECUTED state alone" in predicates["predicates"]["VERIFIED_LEGAL_ENFORCEABILITY"]["prohibited_shortcuts"]
     assert predicates["contract_or_sow_accepted_gate"]["current_disposition"]=="FAIL_CLOSED"
+    assert predicates["contract_or_sow_accepted_gate"]["required_predicates"]==["PURPORTED_ACCEPTANCE_OBSERVED","VERIFIED_COUNTERPART_AUTHORITY","VERIFIED_LEGAL_ENTITY_IDENTITY_CAPACITY","VERIFIED_SIGNATURE_SUFFICIENCY"]
+    assert predicates["contract_or_sow_accepted_gate"]["non_gating_separate_predicates"]==["VERIFIED_LEGAL_ENFORCEABILITY"]
+    assert predicates["contract_or_sow_accepted_gate"]["legal_effect"]=="NONE"
+    assert predicates["predicates"]["VERIFIED_LEGAL_ENFORCEABILITY"]["gating_for_contract_or_sow_accepted"] is False
+    assert acceptance["dispositions"]["contract_or_sow_accepted"]["non_gating_separate_predicates"]==["VERIFIED_LEGAL_ENFORCEABILITY"]
+    assert acceptance["dispositions"]["contract_or_sow_accepted"]["contract_execution_effect"]=="NONE"
     assert acceptance["dispositions"]["contract_or_sow_accepted"]["acceptance_predicates_contract"]=="commercial/contract-acceptance-predicates.schema.json"
     print("ICV_COUNTERPART_AUTHORITY_EVIDENCE_V1_VALID")
     print("ICV_CONTRACT_ACCEPTANCE_PREDICATES_V1_VALID")
