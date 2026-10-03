@@ -70,7 +70,7 @@
     },
     "SERVICE_DELIVERY_AUTHORIZED": {
       "owner": "applicable offering transaction boundary plus separately admitted operational owner",
-      "current_disposition": "FAIL_CLOSED",
+      "current_disposition": "FAIL_CLOSED_NO_EXISTING_OWNER_ADMISSION_INTERFACE_OBSERVED",
       "required_evidence": [
         "exact offering/engagement and accepted scope",
         "all offering-specific start conditions satisfied",
@@ -90,7 +90,9 @@
       "admission_contract": "commercial/service-delivery-admission.schema.json",
       "prerequisite_profiles": "commercial/service-delivery-prerequisite-profiles.json",
       "admission_evidence_effect": "DELIVERY_ADMISSION_EVIDENCE_SATISFIED_ONLY",
-      "authorization_rule": "Even complete common-envelope evidence does not itself authorize or begin delivery; authentic offering-specific delivery owner must separately admit SERVICE_DELIVERY_AUTHORIZED."
+      "authorization_rule": "Even complete common-envelope evidence does not itself authorize or begin delivery; authentic offering-specific delivery owner must separately admit SERVICE_DELIVERY_AUTHORIZED.",
+      "owner_reconciliation": "commercial/service-delivery-owner-reconciliation.json",
+      "first_missing_predicate": "OFFERING_SPECIFIC_EXISTING_OWNER_CONTROLLED_DELIVERY_ADMISSION_INTERFACE"
     }
   },
   "topology": {
