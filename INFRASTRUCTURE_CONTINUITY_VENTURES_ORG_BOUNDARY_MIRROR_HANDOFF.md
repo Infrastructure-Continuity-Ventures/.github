@@ -279,3 +279,29 @@ VERIFIED_LEGAL_ENFORCEABILITY
 Each predicate is non-transitive. Counterpart authority does not prove entity capacity or signature sufficiency; a signature artifact does not prove authority or enforceability; canonical contract-state documentation does not prove enforceability. `VERIFIED_LEGAL_ENFORCEABILITY` has no current owner reference and remains `UNRESOLVED_UNLESS_INDEPENDENTLY_EVIDENCED`.
 
 Accordingly `CONTRACT_OR_SOW_ACCEPTED` remains `FAIL_CLOSED`. Even a future bounded acceptance disposition would not itself mutate StegBusiness/StegBusiness-Ops to `EXECUTED`; that remains a separate owner-governed transition. No legal advice, e-signature authority, contract execution, payment, CRM, runtime, Task Registry or COSV authority was created.
+
+
+## 2026-10-03 — acceptance evidence / enforceability semantic repair
+
+Re-reading the existing state definitions showed that the prior gate over-constrained `CONTRACT_OR_SOW_ACCEPTED` by requiring `VERIFIED_LEGAL_ENFORCEABILITY`. ICV introduced `CONTRACT_OR_SOW_ACCEPTED` as a commercial evidence state, while StegBusiness-Ops separately owns the lifecycle `EXECUTED` state and explicitly requires direct signed-contract evidence for execution.
+
+The repaired model is:
+
+```text
+PURPORTED_ACCEPTANCE_OBSERVED
+  + VERIFIED_COUNTERPART_AUTHORITY
+  + VERIFIED_LEGAL_ENTITY_IDENTITY_CAPACITY
+  + VERIFIED_SIGNATURE_SUFFICIENCY
+    -> CONTRACT_OR_SOW_ACCEPTED [bounded commercial evidence disposition]
+
+VERIFIED_LEGAL_ENFORCEABILITY
+    -> separate non-gating legal predicate
+       UNRESOLVED_UNLESS_INDEPENDENTLY_EVIDENCED
+
+StegBusiness-Ops EXECUTED
+    -> separate owner-governed contract-lifecycle transition
+```
+
+No promotion is transitive. `CONTRACT_OR_SOW_ACCEPTED` has `legal_effect=NONE` and `contract_execution_effect=NONE`. A future acceptance record cannot itself establish enforceability or mutate StegBusiness/StegBusiness-Ops to `EXECUTED`.
+
+No actual customer/agreement/signature was inspected. No legal advice, electronic-signature authority, contract execution, payment, CRM, runtime, Task Registry or COSV authority was created.

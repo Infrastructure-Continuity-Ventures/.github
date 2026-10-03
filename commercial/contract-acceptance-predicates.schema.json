@@ -113,7 +113,9 @@
         "StegBusiness contract state alone",
         "StegBusiness-Ops EXECUTED state alone",
         "repository approval or merge"
-      ]
+      ],
+      "gating_for_contract_or_sow_accepted": false,
+      "relationship_to_acceptance": "Independent non-gating legal predicate. May remain UNRESOLVED after CONTRACT_OR_SOW_ACCEPTED."
     }
   },
   "contract_or_sow_accepted_gate": {
@@ -122,11 +124,14 @@
       "PURPORTED_ACCEPTANCE_OBSERVED",
       "VERIFIED_COUNTERPART_AUTHORITY",
       "VERIFIED_LEGAL_ENTITY_IDENTITY_CAPACITY",
-      "VERIFIED_SIGNATURE_SUFFICIENCY",
+      "VERIFIED_SIGNATURE_SUFFICIENCY"
+    ],
+    "rule": "CONTRACT_OR_SOW_ACCEPTED is a bounded commercial evidence disposition that the exact proposal/SOW was accepted with counterpart authority, entity identity/capacity and signature sufficiency evidenced. VERIFIED_LEGAL_ENFORCEABILITY remains independent and non-gating; neither acceptance nor enforceability promotes the other.",
+    "execution_boundary": "CONTRACT_OR_SOW_ACCEPTED does not mean legally enforceable or EXECUTED. StegBusiness-Ops EXECUTED remains a separately governed lifecycle transition requiring its own direct signed-contract evidence and applicable controls.",
+    "non_gating_separate_predicates": [
       "VERIFIED_LEGAL_ENFORCEABILITY"
     ],
-    "rule": "All predicates remain independent. Evidence satisfying one may be referenced by another only where explicitly applicable; no state promotion is transitive.",
-    "execution_boundary": "Even a future CONTRACT_OR_SOW_ACCEPTED evidence disposition does not itself mutate StegBusiness/StegBusiness-Ops to EXECUTED; contract execution remains its own owner-governed transition."
+    "legal_effect": "NONE"
   },
   "source_semantics": {
     "hydrasafe": "Facility SOW acceptance/deliverable acceptance does not mean regulatory approval, engineering certification or operational authorization; external professional work remains separately governed.",

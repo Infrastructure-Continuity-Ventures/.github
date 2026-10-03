@@ -144,13 +144,17 @@
         "PURPORTED_ACCEPTANCE_OBSERVED",
         "VERIFIED_COUNTERPART_AUTHORITY",
         "VERIFIED_LEGAL_ENTITY_IDENTITY_CAPACITY",
-        "VERIFIED_SIGNATURE_SUFFICIENCY",
-        "VERIFIED_LEGAL_ENFORCEABILITY"
+        "VERIFIED_SIGNATURE_SUFFICIENCY"
       ],
-      "legal_enforceability_effect": "NONE_UNLESS_SEPARATELY_VERIFIED",
+      "legal_enforceability_effect": "NONE",
       "acceptance_predicates_contract": "commercial/contract-acceptance-predicates.schema.json",
       "signature_sufficiency_effect": "NONE_UNLESS_SEPARATELY_VERIFIED",
-      "legal_entity_capacity_effect": "NONE_UNLESS_SEPARATELY_VERIFIED"
+      "legal_entity_capacity_effect": "NONE_UNLESS_SEPARATELY_VERIFIED",
+      "non_gating_separate_predicates": [
+        "VERIFIED_LEGAL_ENFORCEABILITY"
+      ],
+      "contract_execution_effect": "NONE",
+      "meaning": "Bounded commercial evidence that the exact proposal/SOW was accepted after the applicable acceptance-evidence predicates were satisfied; not a legal-enforceability or contract-execution conclusion."
     }
   },
   "prohibitions": [

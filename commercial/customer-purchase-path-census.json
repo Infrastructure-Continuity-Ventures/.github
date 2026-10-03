@@ -26,7 +26,7 @@
       "payment_or_contract_execution_ready": false,
       "request_receipt_state": "AUTHENTIC_PROVIDER_OBSERVATION_REQUIRED",
       "scoped_engagement_transition": "DEFINED_NOT_INVOKED",
-      "contract_acceptance_state": "FAIL_CLOSED_PENDING_PURPORTED_ACCEPTANCE_AND_VERIFIED_COUNTERPART_AUTHORITY"
+      "contract_acceptance_state": "FAIL_CLOSED_PENDING_ACCEPTANCE_AUTHORITY_ENTITY_SIGNATURE_EVIDENCE"
     },
     {
       "offering_id": "icv.governance-boundary-validation.v1",
@@ -43,7 +43,7 @@
       "payment_or_contract_execution_ready": false,
       "request_receipt_state": "AUTHENTIC_PROVIDER_OBSERVATION_REQUIRED",
       "scoped_engagement_transition": "DEFINED_NOT_INVOKED",
-      "contract_acceptance_state": "FAIL_CLOSED_PENDING_PURPORTED_ACCEPTANCE_AND_VERIFIED_COUNTERPART_AUTHORITY"
+      "contract_acceptance_state": "FAIL_CLOSED_PENDING_ACCEPTANCE_AUTHORITY_ENTITY_SIGNATURE_EVIDENCE"
     },
     {
       "offering_id": "icv.admitted-code.v1",
@@ -60,7 +60,7 @@
       "payment_or_contract_execution_ready": false,
       "request_receipt_state": "AUTHENTIC_PROVIDER_OBSERVATION_REQUIRED",
       "scoped_engagement_transition": "DEFINED_NOT_INVOKED",
-      "contract_acceptance_state": "FAIL_CLOSED_PENDING_PURPORTED_ACCEPTANCE_AND_VERIFIED_COUNTERPART_AUTHORITY"
+      "contract_acceptance_state": "FAIL_CLOSED_PENDING_ACCEPTANCE_AUTHORITY_ENTITY_SIGNATURE_EVIDENCE"
     },
     {
       "offering_id": "icv.steggate.v1",
@@ -77,7 +77,7 @@
       "payment_or_contract_execution_ready": false,
       "request_receipt_state": "AUTHENTIC_PROVIDER_OBSERVATION_REQUIRED",
       "scoped_engagement_transition": "DEFINED_NOT_INVOKED",
-      "contract_acceptance_state": "FAIL_CLOSED_PENDING_PURPORTED_ACCEPTANCE_AND_VERIFIED_COUNTERPART_AUTHORITY"
+      "contract_acceptance_state": "FAIL_CLOSED_PENDING_ACCEPTANCE_AUTHORITY_ENTITY_SIGNATURE_EVIDENCE"
     },
     {
       "offering_id": "icv.stegcrm.v1",
@@ -94,7 +94,7 @@
       "payment_or_contract_execution_ready": false,
       "request_receipt_state": "AUTHENTIC_PROVIDER_OBSERVATION_REQUIRED",
       "scoped_engagement_transition": "DEFINED_NOT_INVOKED",
-      "contract_acceptance_state": "FAIL_CLOSED_PENDING_PURPORTED_ACCEPTANCE_AND_VERIFIED_COUNTERPART_AUTHORITY"
+      "contract_acceptance_state": "FAIL_CLOSED_PENDING_ACCEPTANCE_AUTHORITY_ENTITY_SIGNATURE_EVIDENCE"
     },
     {
       "offering_id": "icv.hydrasafe.v1",
@@ -111,7 +111,7 @@
       "payment_or_contract_execution_ready": false,
       "request_receipt_state": "AUTHENTIC_PROVIDER_OBSERVATION_REQUIRED",
       "scoped_engagement_transition": "DEFINED_NOT_INVOKED",
-      "contract_acceptance_state": "FAIL_CLOSED_PENDING_PURPORTED_ACCEPTANCE_AND_VERIFIED_COUNTERPART_AUTHORITY"
+      "contract_acceptance_state": "FAIL_CLOSED_PENDING_ACCEPTANCE_AUTHORITY_ENTITY_SIGNATURE_EVIDENCE"
     },
     {
       "offering_id": "icv.gp10-field-validation.v1",
@@ -128,7 +128,7 @@
       "payment_or_contract_execution_ready": false,
       "request_receipt_state": "AUTHENTIC_PROVIDER_OBSERVATION_REQUIRED",
       "scoped_engagement_transition": "DEFINED_NOT_INVOKED",
-      "contract_acceptance_state": "FAIL_CLOSED_PENDING_PURPORTED_ACCEPTANCE_AND_VERIFIED_COUNTERPART_AUTHORITY"
+      "contract_acceptance_state": "FAIL_CLOSED_PENDING_ACCEPTANCE_AUTHORITY_ENTITY_SIGNATURE_EVIDENCE"
     },
     {
       "offering_id": "icv.governance-observatory.v1",
@@ -145,7 +145,7 @@
       "payment_or_contract_execution_ready": false,
       "request_receipt_state": "AUTHENTIC_PROVIDER_OBSERVATION_REQUIRED",
       "scoped_engagement_transition": "DEFINED_NOT_INVOKED",
-      "contract_acceptance_state": "FAIL_CLOSED_PENDING_PURPORTED_ACCEPTANCE_AND_VERIFIED_COUNTERPART_AUTHORITY"
+      "contract_acceptance_state": "FAIL_CLOSED_PENDING_ACCEPTANCE_AUTHORITY_ENTITY_SIGNATURE_EVIDENCE"
     },
     {
       "offering_id": "icv.knowledgevault.v1",
@@ -162,7 +162,7 @@
       "payment_or_contract_execution_ready": false,
       "request_receipt_state": "AUTHENTIC_PROVIDER_OBSERVATION_REQUIRED",
       "scoped_engagement_transition": "DEFINED_NOT_INVOKED",
-      "contract_acceptance_state": "FAIL_CLOSED_PENDING_PURPORTED_ACCEPTANCE_AND_VERIFIED_COUNTERPART_AUTHORITY"
+      "contract_acceptance_state": "FAIL_CLOSED_PENDING_ACCEPTANCE_AUTHORITY_ENTITY_SIGNATURE_EVIDENCE"
     },
     {
       "offering_id": "icv.stegtalk.v1",
@@ -179,7 +179,7 @@
       "payment_or_contract_execution_ready": false,
       "request_receipt_state": "AUTHENTIC_PROVIDER_OBSERVATION_REQUIRED",
       "scoped_engagement_transition": "DEFINED_NOT_INVOKED",
-      "contract_acceptance_state": "FAIL_CLOSED_PENDING_PURPORTED_ACCEPTANCE_AND_VERIFIED_COUNTERPART_AUTHORITY"
+      "contract_acceptance_state": "FAIL_CLOSED_PENDING_ACCEPTANCE_AUTHORITY_ENTITY_SIGNATURE_EVIDENCE"
     },
     {
       "offering_id": "icv.ecosystem-chat.v1",
@@ -196,7 +196,7 @@
       "payment_or_contract_execution_ready": false,
       "request_receipt_state": "AUTHENTIC_PROVIDER_OBSERVATION_REQUIRED",
       "scoped_engagement_transition": "DEFINED_NOT_INVOKED",
-      "contract_acceptance_state": "FAIL_CLOSED_PENDING_PURPORTED_ACCEPTANCE_AND_VERIFIED_COUNTERPART_AUTHORITY"
+      "contract_acceptance_state": "FAIL_CLOSED_PENDING_ACCEPTANCE_AUTHORITY_ENTITY_SIGNATURE_EVIDENCE"
     },
     {
       "offering_id": "icv.steglearn.v1",
@@ -213,7 +213,7 @@
       "payment_or_contract_execution_ready": false,
       "request_receipt_state": "AUTHENTIC_PROVIDER_OBSERVATION_REQUIRED",
       "scoped_engagement_transition": "DEFINED_NOT_INVOKED",
-      "contract_acceptance_state": "FAIL_CLOSED_PENDING_PURPORTED_ACCEPTANCE_AND_VERIFIED_COUNTERPART_AUTHORITY"
+      "contract_acceptance_state": "FAIL_CLOSED_PENDING_ACCEPTANCE_AUTHORITY_ENTITY_SIGNATURE_EVIDENCE"
     }
   ],
   "publication_integration": {
@@ -256,7 +256,9 @@
     "counterpart_authority_predicate": "VERIFIED_COUNTERPART_AUTHORITY",
     "counterpart_authority_status": "SEPARATELY_SATISFIED_PREDICATE",
     "mailbox_provider_sufficient_for_counterpart_authority": false,
-    "contract_or_sow_accepted": "FAIL_CLOSED",
-    "payment_or_contract_execution_ready": false
+    "contract_or_sow_accepted": "FAIL_CLOSED_PENDING_ACCEPTANCE_AUTHORITY_ENTITY_SIGNATURE_EVIDENCE",
+    "payment_or_contract_execution_ready": false,
+    "legal_enforceability": "SEPARATE_NON_GATING_UNRESOLVED_UNLESS_INDEPENDENTLY_EVIDENCED",
+    "stegbusiness_ops_executed": "SEPARATE_OWNER_GOVERNED_LIFECYCLE_TRANSITION"
   }
 }
