@@ -181,3 +181,17 @@ ENGAGEMENT_COMPLETE              [exact engagement-completion evidence]
 None of these states is automatically transitive. Authorization is not proof work began; delivery is not customer acceptance; customer acceptance is not payment; payment is not revenue recognition; and engagement completion is not automatically StegBusiness-Ops contract `COMPLETE` or a legal discharge.
 
 Revenue recognition remains a separate accounting-basis determination under StegBusiness/StegBusiness-Ops finance records.
+
+
+## Engagement closure
+
+`engagement-closure.schema.json` makes ICV engagement closure independent of StegBusiness-Ops contract lifecycle and accounting close. It supports exactly four dispositions:
+
+- `COMPLETE`
+- `COMPLETE_WITH_SUCCESSOR_OBLIGATION`
+- `TERMINATED`
+- `FAIL_CLOSED`
+
+`engagement-closure-profiles.json` preserves the twelve offerings' possible surviving obligations, including support, retention/deletion, publication/reference rights, correction periods, professional-review follow-up, renewal/extension and separately scoped future integration/licensing.
+
+Payment, deliverable acceptance, contract expiry, contract `COMPLETE`, accounting-period close and repository closure are not substitutes for ICV engagement closure.

@@ -92,7 +92,7 @@
         "applicable offering fulfillment owner and accepted engagement completion terms",
         "StegVerse-Labs/StegBusiness-Ops contracts/README.md only where separate contract lifecycle COMPLETE is applicable"
       ],
-      "current_disposition": "FAIL_CLOSED_NOT_OBSERVED",
+      "current_disposition": "FAIL_CLOSED_NOT_EVALUATED",
       "required_evidence": [
         "exact engagement identity",
         "all accepted in-scope deliverables/obligations required for engagement completion are satisfied or explicitly resolved",
@@ -100,7 +100,7 @@
         "all explicit stop/change/open-item conditions are closed, waived by authorized evidence, or carried forward under a separately identified successor obligation",
         "accountable offering owner records attributable completion evidence"
       ],
-      "effect": "BOUNDED_COMMERCIAL_ENGAGEMENT_COMPLETION_EVIDENCE_ONLY",
+      "effect": "ICV_COMMERCIAL_CLOSURE_EVIDENCE_ONLY",
       "does_not_prove": [
         "payment unless independently PAYMENT_OBSERVED",
         "revenue recognition",
@@ -108,7 +108,15 @@
         "legal completion/discharge",
         "regulatory/professional approval",
         "runtime execution"
-      ]
+      ],
+      "closure_contract": "commercial/engagement-closure.schema.json",
+      "allowed_closure_dispositions": [
+        "COMPLETE",
+        "COMPLETE_WITH_SUCCESSOR_OBLIGATION",
+        "TERMINATED",
+        "FAIL_CLOSED"
+      ],
+      "closure_independence": "Independent of StegBusiness-Ops contract COMPLETE, EXPIRED, accounting close, payment, repository closure and legal discharge."
     }
   },
   "topology": {
@@ -117,7 +125,7 @@
     "begun_to_delivered": "DELIVERY_BEGUN does not imply a deliverable exists or was delivered.",
     "delivered_to_accepted": "DELIVERABLE_DELIVERED does not imply customer acceptance.",
     "accepted_vs_payment": "CUSTOMER_DELIVERABLE_ACCEPTED and PAYMENT_OBSERVED are independent unless exact accepted terms expressly make one a prerequisite for another.",
-    "complete": "ENGAGEMENT_COMPLETE uses exact engagement completion terms and accountable-owner evidence; payment, customer acceptance, contract COMPLETE, or delivery alone cannot be promoted into completion.",
+    "complete": "ENGAGEMENT_COMPLETE is an ICV commercial closure evidence state. Its closure contract may resolve COMPLETE, COMPLETE_WITH_SUCCESSOR_OBLIGATION, TERMINATED or FAIL_CLOSED; contract lifecycle and accounting close remain separate.",
     "accounting": "Revenue recognition is a separate accounting-basis determination under StegBusiness/StegBusiness-Ops finance records and is not created by any state in this contract.",
     "contract_lifecycle": "StegBusiness-Ops contract COMPLETE remains a separate contract-lifecycle transition where applicable."
   },
@@ -145,5 +153,7 @@
     "No revenue-recognition conclusion",
     "No legal-completion conclusion",
     "No Task Registry/COSV binding"
-  ]
+  ],
+  "engagement_closure_contract": "commercial/engagement-closure.schema.json",
+  "engagement_closure_profiles": "commercial/engagement-closure-profiles.json"
 }

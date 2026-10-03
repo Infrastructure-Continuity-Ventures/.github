@@ -400,3 +400,16 @@ The states do not promote one another. `SERVICE_DELIVERY_AUTHORIZED` is entry pe
 StegBusiness remains the canonical reference layer for contract and finance state; StegBusiness-Ops separately owns contract lifecycle evidence, AR/payment reconciliation and accounting records. Revenue recognition remains a separate accounting-basis determination.
 
 All five terminal states remain `FAIL_CLOSED_NOT_OBSERVED`; no real customer or fulfillment evidence was inspected and no transition was invoked.
+
+
+## 2026-10-03 — engagement closure and successor obligations
+
+`ENGAGEMENT_COMPLETE` remains an ICV commercial evidence state independent of StegBusiness-Ops contract `COMPLETE` and accounting close. The twelve transaction boundaries show that a bounded engagement may finish while separately owned obligations survive: support, retention/deletion, publication/reference rights, correction periods, professional-review follow-up, renewal/extension or future integration/licensing.
+
+Added `commercial/engagement-closure.schema.json` with four dispositions: `COMPLETE`, `COMPLETE_WITH_SUCCESSOR_OBLIGATION`, `TERMINATED` and `FAIL_CLOSED`. Added `commercial/engagement-closure-profiles.json` binding each offering to only the successor-obligation categories supported by its existing package/SOW semantics.
+
+`COMPLETE` requires all accepted engagement-owned completion obligations to be satisfied/resolved and no unresolved obligation to remain. `COMPLETE_WITH_SUCCESSOR_OBLIGATION` requires the original engagement to be complete while every surviving/follow-on obligation is explicitly identified with scope, owner, trigger/due condition and evidence reference. `TERMINATED` requires authentic termination/stop evidence and preserves already-performed/delivered/accepted/payment states independently. Ambiguous/open obligations remain `FAIL_CLOSED`.
+
+StegBusiness-Ops contract `AMENDED`, `RENEWAL_DUE`, `EXPIRED`, `TERMINATED` and `COMPLETE` remain separate contract-lifecycle states. Accounting period close and revenue cut-off review remain separate finance operations. Payment, deliverable acceptance, contract expiry and repository closure cannot establish engagement closure.
+
+No real engagement was evaluated or closed.

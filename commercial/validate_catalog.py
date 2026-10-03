@@ -16,6 +16,8 @@ DELIVERY_PROFILES=ROOT/"commercial/service-delivery-prerequisite-profiles.json"
 DELIVERY_OWNERS=ROOT/"commercial/service-delivery-owner-reconciliation.json"
 DELIVERY_OWNER_DECISION=ROOT/"commercial/service-delivery-owner-decision.schema.json"
 TERMINAL_COMMERCIAL=ROOT/"commercial/terminal-commercial-evidence-path.schema.json"
+ENGAGEMENT_CLOSURE=ROOT/"commercial/engagement-closure.schema.json"
+ENGAGEMENT_CLOSURE_PROFILES=ROOT/"commercial/engagement-closure-profiles.json"
 CLASSES=[
     "RELEASED_PRODUCT","REVENUE_READY_SERVICE","MANAGED_PILOT",
     "ASSESSMENT_ONLY","DEVELOPMENT_PREVIEW","INTERNAL_SUBSTRATE",
@@ -202,7 +204,20 @@ def main():
     assert post["terminal_commercial_evidence_path"]=="commercial/terminal-commercial-evidence-path.schema.json"
     assert post["states"]["SERVICE_DELIVERY_AUTHORIZED"]["terminal_path_effect"]=="ENTRY_ONLY_NO_PROOF_OF_WORK"
     print("ICV_SERVICE_DELIVERY_OWNER_DECISION_V1_VALID")
+    closure=json.loads(ENGAGEMENT_CLOSURE.read_text(encoding="utf-8"))
+    closure_profiles=json.loads(ENGAGEMENT_CLOSURE_PROFILES.read_text(encoding="utf-8"))
+    assert closure["schema_version"]=="icv.engagement-closure.v1"
+    assert closure["canonical_task_binding"] is None and closure["cosv_task_vector"] is None
+    assert closure["dispositions"]==["COMPLETE","COMPLETE_WITH_SUCCESSOR_OBLIGATION","TERMINATED","FAIL_CLOSED"]
+    assert closure["current_evaluation"]=="NOT_INVOKED_NO_AUTHENTIC_ENGAGEMENT_EVIDENCE"
+    assert closure_profiles["schema_version"]=="icv.engagement-closure-profiles.v1"
+    assert len(closure_profiles["profiles"])==12
+    assert all(x["current_disposition"]=="FAIL_CLOSED_NOT_EVALUATED" for x in closure_profiles["profiles"])
+    assert closure_profiles["no_current_evaluation_invoked"] is True
+    assert terminal["engagement_closure_contract"]=="commercial/engagement-closure.schema.json"
+    assert terminal["states"]["ENGAGEMENT_COMPLETE"]["closure_independence"].startswith("Independent of StegBusiness-Ops contract COMPLETE")
     print("ICV_TERMINAL_COMMERCIAL_EVIDENCE_PATH_V1_VALID")
+    print("ICV_ENGAGEMENT_CLOSURE_V1_VALID")
 
 if __name__=="__main__":
     main()
