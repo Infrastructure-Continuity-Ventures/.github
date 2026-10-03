@@ -15,6 +15,7 @@ DELIVERY_ADMISSION=ROOT/"commercial/service-delivery-admission.schema.json"
 DELIVERY_PROFILES=ROOT/"commercial/service-delivery-prerequisite-profiles.json"
 DELIVERY_OWNERS=ROOT/"commercial/service-delivery-owner-reconciliation.json"
 DELIVERY_OWNER_DECISION=ROOT/"commercial/service-delivery-owner-decision.schema.json"
+TERMINAL_COMMERCIAL=ROOT/"commercial/terminal-commercial-evidence-path.schema.json"
 CLASSES=[
     "RELEASED_PRODUCT","REVENUE_READY_SERVICE","MANAGED_PILOT",
     "ASSESSMENT_ONLY","DEVELOPMENT_PREVIEW","INTERNAL_SUBSTRATE",
@@ -190,7 +191,18 @@ def main():
     assert decision["current_evaluation"]=="NOT_INVOKED_NO_AUTHENTIC_ACCEPTANCE_EVENT"
     print("ICV_SERVICE_DELIVERY_ADMISSION_V1_VALID")
     print("ICV_SERVICE_DELIVERY_OWNER_RECONCILIATION_V2_VALID")
+    terminal=json.loads(TERMINAL_COMMERCIAL.read_text(encoding="utf-8"))
+    assert terminal["schema_version"]=="icv.terminal-commercial-evidence-path.v1"
+    assert terminal["canonical_task_binding"] is None and terminal["cosv_task_vector"] is None
+    assert terminal["entry_state"]=="SERVICE_DELIVERY_AUTHORIZED"
+    assert set(terminal["states"])=={"DELIVERY_BEGUN","DELIVERABLE_DELIVERED","CUSTOMER_DELIVERABLE_ACCEPTED","PAYMENT_OBSERVED","ENGAGEMENT_COMPLETE"}
+    assert all(x["current_disposition"]=="FAIL_CLOSED_NOT_OBSERVED" for x in terminal["states"].values())
+    assert len(terminal["offering_acceptance_binding"])==12
+    assert terminal["no_current_transition_invoked"] is True
+    assert post["terminal_commercial_evidence_path"]=="commercial/terminal-commercial-evidence-path.schema.json"
+    assert post["states"]["SERVICE_DELIVERY_AUTHORIZED"]["terminal_path_effect"]=="ENTRY_ONLY_NO_PROOF_OF_WORK"
     print("ICV_SERVICE_DELIVERY_OWNER_DECISION_V1_VALID")
+    print("ICV_TERMINAL_COMMERCIAL_EVIDENCE_PATH_V1_VALID")
 
 if __name__=="__main__":
     main()

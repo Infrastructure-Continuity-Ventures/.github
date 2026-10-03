@@ -1,0 +1,149 @@
+{
+  "schema_version": "icv.terminal-commercial-evidence-path.v1",
+  "authority": "TERMINAL_COMMERCIAL_EVIDENCE_ONLY",
+  "canonical_task_binding": null,
+  "cosv_task_vector": null,
+  "entry_state": "SERVICE_DELIVERY_AUTHORIZED",
+  "purpose": "Separate evidence that bounded professional/service work began, deliverables were delivered, customer deliverables were accepted, payment was observed, and the engagement completed without promoting one state into another or into revenue/legal/runtime conclusions.",
+  "states": {
+    "DELIVERY_BEGUN": {
+      "owner": "applicable offering fulfillment owner",
+      "current_disposition": "FAIL_CLOSED_NOT_OBSERVED",
+      "required_evidence": [
+        "SERVICE_DELIVERY_AUTHORIZED for exact engagement/offering/proposal scope",
+        "authentic attributable evidence that bounded work actually commenced",
+        "commencement timestamp or bounded work-event coordinate",
+        "no unresolved offering-specific stop/start condition"
+      ],
+      "effect": "WORK_COMMENCEMENT_EVIDENCE_ONLY",
+      "does_not_prove": [
+        "deliverable delivery",
+        "customer acceptance",
+        "payment",
+        "revenue recognition",
+        "contract completion",
+        "legal completion",
+        "runtime execution"
+      ]
+    },
+    "DELIVERABLE_DELIVERED": {
+      "owner": "applicable offering fulfillment owner",
+      "current_disposition": "FAIL_CLOSED_NOT_OBSERVED",
+      "required_evidence": [
+        "exact engagement and deliverable identity",
+        "deliverable version/hash or equivalent stable identity where applicable",
+        "authentic delivery/transmission/availability evidence attributable to the intended customer/review surface",
+        "delivery timestamp"
+      ],
+      "effect": "DELIVERY_EVIDENCE_ONLY",
+      "does_not_prove": [
+        "customer acceptance",
+        "payment",
+        "revenue recognition",
+        "contract completion",
+        "legal completion",
+        "runtime execution"
+      ]
+    },
+    "CUSTOMER_DELIVERABLE_ACCEPTED": {
+      "owner": "customer/counterpart acceptance evidence owner under exact offering acceptance semantics",
+      "current_disposition": "FAIL_CLOSED_NOT_OBSERVED",
+      "required_evidence": [
+        "exact delivered artifact/deliverable identity",
+        "authentic customer/counterpart acceptance evidence attributable to the applicable acceptance mechanism",
+        "acceptance semantics satisfied for the offering/review period",
+        "unresolved correction/rejection condition absent or explicitly resolved"
+      ],
+      "effect": "DELIVERABLE_ACCEPTANCE_EVIDENCE_ONLY",
+      "does_not_prove": [
+        "payment",
+        "revenue recognition",
+        "contract lifecycle COMPLETE",
+        "legal completion",
+        "regulatory/professional approval",
+        "runtime execution"
+      ]
+    },
+    "PAYMENT_OBSERVED": {
+      "owner_refs": [
+        "StegVerse-Labs/StegBusiness docs/RECORD_DOMAINS.md Finance receivable/revenue record references",
+        "StegVerse-Labs/StegBusiness-Ops finance/README.md",
+        "StegVerse-Labs/StegBusiness-Ops finance/AR_REGISTER.md",
+        "StegVerse-Labs/StegBusiness-Ops banking/README.md"
+      ],
+      "current_disposition": "FAIL_CLOSED_NOT_OBSERVED",
+      "required_evidence": [
+        "authentic provider/financial evidence of payment or receivable settlement",
+        "amount/currency attributable to the exact engagement/invoice/payment obligation",
+        "receipt/reconciliation evidence"
+      ],
+      "effect": "PAYMENT_EVIDENCE_ONLY",
+      "does_not_prove": [
+        "deliverable acceptance",
+        "revenue recognition",
+        "contract lifecycle COMPLETE",
+        "engagement completion",
+        "legal completion",
+        "runtime execution"
+      ]
+    },
+    "ENGAGEMENT_COMPLETE": {
+      "owner_refs": [
+        "applicable offering fulfillment owner and accepted engagement completion terms",
+        "StegVerse-Labs/StegBusiness-Ops contracts/README.md only where separate contract lifecycle COMPLETE is applicable"
+      ],
+      "current_disposition": "FAIL_CLOSED_NOT_OBSERVED",
+      "required_evidence": [
+        "exact engagement identity",
+        "all accepted in-scope deliverables/obligations required for engagement completion are satisfied or explicitly resolved",
+        "all required customer review/acceptance/correction conditions for engagement completion are satisfied",
+        "all explicit stop/change/open-item conditions are closed, waived by authorized evidence, or carried forward under a separately identified successor obligation",
+        "accountable offering owner records attributable completion evidence"
+      ],
+      "effect": "BOUNDED_COMMERCIAL_ENGAGEMENT_COMPLETION_EVIDENCE_ONLY",
+      "does_not_prove": [
+        "payment unless independently PAYMENT_OBSERVED",
+        "revenue recognition",
+        "StegBusiness-Ops contract COMPLETE unless separately transitioned",
+        "legal completion/discharge",
+        "regulatory/professional approval",
+        "runtime execution"
+      ]
+    }
+  },
+  "topology": {
+    "rule": "States are evidence-distinct and are not automatically transitive.",
+    "authorized_to_begun": "SERVICE_DELIVERY_AUTHORIZED permits bounded work to begin but is not evidence that work began.",
+    "begun_to_delivered": "DELIVERY_BEGUN does not imply a deliverable exists or was delivered.",
+    "delivered_to_accepted": "DELIVERABLE_DELIVERED does not imply customer acceptance.",
+    "accepted_vs_payment": "CUSTOMER_DELIVERABLE_ACCEPTED and PAYMENT_OBSERVED are independent unless exact accepted terms expressly make one a prerequisite for another.",
+    "complete": "ENGAGEMENT_COMPLETE uses exact engagement completion terms and accountable-owner evidence; payment, customer acceptance, contract COMPLETE, or delivery alone cannot be promoted into completion.",
+    "accounting": "Revenue recognition is a separate accounting-basis determination under StegBusiness/StegBusiness-Ops finance records and is not created by any state in this contract.",
+    "contract_lifecycle": "StegBusiness-Ops contract COMPLETE remains a separate contract-lifecycle transition where applicable."
+  },
+  "offering_acceptance_binding": {
+    "icv.governance-assessment.v1": "Customer confirms receipt/acceptance or supplies consolidated factual corrections within written review period; operational authorization is not implied.",
+    "icv.governance-boundary-validation.v1": "Completion requires reproducible agreed artifacts and explained findings without implying production approval/certification.",
+    "icv.admitted-code.v1": "Acceptance requires agreed candidate/evidence matrix and findings delivered reproducibly; deployment authorization is not implied.",
+    "icv.steggate.v1": "Acceptance requires agreed candidate evaluation and reproducible disposition/evidence; production authority is not implied.",
+    "icv.stegcrm.v1": "Acceptance requires bounded projection/reconciliation output with source authority/evidence lineage preserved and projection authority NONE.",
+    "icv.hydrasafe.v1": "Deliverable accepted when customer confirms receipt and approves next review stage or supplies consolidated correction list; no regulatory/engineering/operational approval implied.",
+    "icv.gp10-field-validation.v1": "Fulfillment terminates in evidence packet/receipt and customer review; payment and field conclusions remain separate.",
+    "icv.governance-observatory.v1": "Complete when agreed observation/evaluation artifacts are delivered with provenance/publication boundaries and unresolved fields explicit.",
+    "icv.knowledgevault.v1": "Complete when agreed file-based vault is delivered/initialized, applicable integrity checks pass and customer can inspect agreed structure/receipts.",
+    "icv.stegtalk.v1": "Complete when agreed local prototype scenario is demonstrated and candidate status/evidence/gaps are delivered.",
+    "icv.ecosystem-chat.v1": "Complete when agreed scenario is mapped through released source-positioning contract and implemented-vs-unproven evidence is delivered.",
+    "icv.steglearn.v1": "Complete when agreed learning loop produces a reviewable receipt/portfolio record and parent/steward can accept, correct or decline the evidence."
+  },
+  "no_current_transition_invoked": true,
+  "prohibitions": [
+    "No real delivery begun",
+    "No customer records inspected",
+    "No invoice/payment created",
+    "No CRM mutation",
+    "No runtime invocation",
+    "No revenue-recognition conclusion",
+    "No legal-completion conclusion",
+    "No Task Registry/COSV binding"
+  ]
+}
