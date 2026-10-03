@@ -308,9 +308,17 @@
     "deliverable_delivered": "FAIL_CLOSED_NOT_OBSERVED",
     "customer_deliverable_accepted": "FAIL_CLOSED_NOT_OBSERVED",
     "payment_observed": "FAIL_CLOSED_NOT_OBSERVED",
-    "engagement_complete": "FAIL_CLOSED_NOT_OBSERVED",
+    "engagement_complete": "FAIL_CLOSED_NOT_EVALUATED",
     "revenue_recognition": "SEPARATE_ACCOUNTING_BASIS_DETERMINATION",
     "contract_lifecycle_complete": "SEPARATE_OWNER_GOVERNED_TRANSITION",
-    "no_current_transition_invoked": true
+    "no_current_transition_invoked": true,
+    "engagement_closure_contract": "commercial/engagement-closure.schema.json",
+    "engagement_closure_profiles": "commercial/engagement-closure-profiles.json",
+    "closure_dispositions": [
+      "COMPLETE",
+      "COMPLETE_WITH_SUCCESSOR_OBLIGATION",
+      "TERMINATED",
+      "FAIL_CLOSED"
+    ]
   }
 }
