@@ -118,12 +118,42 @@
     },
     {
       "from": "CONTRACT_OR_SOW_ACCEPTED",
-      "to": "PAYMENT_EXECUTABLE_OR_OBSERVED",
+      "to": "POST_ACCEPTANCE_EVIDENCE_ROUTING",
       "disposition_on_current_evidence": "FAIL_CLOSED",
-      "required_evidence": [
-        "separately authorized payment mechanism or authentic payment evidence"
-      ],
-      "reason": "NO_PAYMENT_EXECUTION_PATH remains explicit; test-only StegPay evidence is not production payment authority."
+      "state_machine": "commercial/post-acceptance-state-machine.schema.json",
+      "reason": "Acceptance does not imply contract execution, invoice/payment readiness, payment observation or delivery authorization. Each downstream state has a distinct evidence owner and gate.",
+      "creates_contract_execution": false,
+      "creates_invoice": false,
+      "creates_payment": false,
+      "creates_delivery_authority": false
+    },
+    {
+      "from": "POST_ACCEPTANCE_EVIDENCE_ROUTING",
+      "to": "CONTRACT_LIFECYCLE_EXECUTED",
+      "disposition_on_current_evidence": "FAIL_CLOSED",
+      "when_applicable": "Only when the engagement requires the StegBusiness-Ops contract lifecycle execution transition.",
+      "state_machine": "commercial/post-acceptance-state-machine.schema.json"
+    },
+    {
+      "from": "POST_ACCEPTANCE_EVIDENCE_ROUTING",
+      "to": "INVOICE_OR_PAYMENT_TERMS_READY",
+      "disposition_on_current_evidence": "FAIL_CLOSED",
+      "state_machine": "commercial/post-acceptance-state-machine.schema.json",
+      "reason": "Readiness/evidence only; does not issue an invoice or create payment authority."
+    },
+    {
+      "from": "INVOICE_OR_PAYMENT_TERMS_READY",
+      "to": "PAYMENT_OBSERVED",
+      "disposition_on_current_evidence": "FAIL_CLOSED",
+      "state_machine": "commercial/post-acceptance-state-machine.schema.json",
+      "reason": "Requires authentic provider/financial evidence; NO_PAYMENT_EXECUTION_PATH remains explicit."
+    },
+    {
+      "from": "POST_ACCEPTANCE_EVIDENCE_ROUTING",
+      "to": "SERVICE_DELIVERY_AUTHORIZED",
+      "disposition_on_current_evidence": "FAIL_CLOSED",
+      "state_machine": "commercial/post-acceptance-state-machine.schema.json",
+      "reason": "Independent offering-specific admission; payment is neither universally required nor universally sufficient."
     }
   ],
   "privacy": {
@@ -151,5 +181,6 @@
     "applies_to_all_customer_facing_offerings": true,
     "replaces_offering_specific_terms": false,
     "creates_acceptance_authority": false
-  }
+  },
+  "post_acceptance_state_machine": "commercial/post-acceptance-state-machine.schema.json"
 }
