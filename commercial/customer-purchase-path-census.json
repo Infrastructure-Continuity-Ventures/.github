@@ -27,7 +27,8 @@
       "request_receipt_state": "AUTHENTIC_PROVIDER_OBSERVATION_REQUIRED",
       "scoped_engagement_transition": "DEFINED_NOT_INVOKED",
       "contract_acceptance_state": "FAIL_CLOSED_PENDING_ACCEPTANCE_AUTHORITY_ENTITY_SIGNATURE_EVIDENCE",
-      "post_acceptance_state": "NOT_REACHED"
+      "post_acceptance_state": "NOT_REACHED",
+      "terminal_commercial_state": "NOT_REACHED"
     },
     {
       "offering_id": "icv.governance-boundary-validation.v1",
@@ -45,7 +46,8 @@
       "request_receipt_state": "AUTHENTIC_PROVIDER_OBSERVATION_REQUIRED",
       "scoped_engagement_transition": "DEFINED_NOT_INVOKED",
       "contract_acceptance_state": "FAIL_CLOSED_PENDING_ACCEPTANCE_AUTHORITY_ENTITY_SIGNATURE_EVIDENCE",
-      "post_acceptance_state": "NOT_REACHED"
+      "post_acceptance_state": "NOT_REACHED",
+      "terminal_commercial_state": "NOT_REACHED"
     },
     {
       "offering_id": "icv.admitted-code.v1",
@@ -63,7 +65,8 @@
       "request_receipt_state": "AUTHENTIC_PROVIDER_OBSERVATION_REQUIRED",
       "scoped_engagement_transition": "DEFINED_NOT_INVOKED",
       "contract_acceptance_state": "FAIL_CLOSED_PENDING_ACCEPTANCE_AUTHORITY_ENTITY_SIGNATURE_EVIDENCE",
-      "post_acceptance_state": "NOT_REACHED"
+      "post_acceptance_state": "NOT_REACHED",
+      "terminal_commercial_state": "NOT_REACHED"
     },
     {
       "offering_id": "icv.steggate.v1",
@@ -81,7 +84,8 @@
       "request_receipt_state": "AUTHENTIC_PROVIDER_OBSERVATION_REQUIRED",
       "scoped_engagement_transition": "DEFINED_NOT_INVOKED",
       "contract_acceptance_state": "FAIL_CLOSED_PENDING_ACCEPTANCE_AUTHORITY_ENTITY_SIGNATURE_EVIDENCE",
-      "post_acceptance_state": "NOT_REACHED"
+      "post_acceptance_state": "NOT_REACHED",
+      "terminal_commercial_state": "NOT_REACHED"
     },
     {
       "offering_id": "icv.stegcrm.v1",
@@ -99,7 +103,8 @@
       "request_receipt_state": "AUTHENTIC_PROVIDER_OBSERVATION_REQUIRED",
       "scoped_engagement_transition": "DEFINED_NOT_INVOKED",
       "contract_acceptance_state": "FAIL_CLOSED_PENDING_ACCEPTANCE_AUTHORITY_ENTITY_SIGNATURE_EVIDENCE",
-      "post_acceptance_state": "NOT_REACHED"
+      "post_acceptance_state": "NOT_REACHED",
+      "terminal_commercial_state": "NOT_REACHED"
     },
     {
       "offering_id": "icv.hydrasafe.v1",
@@ -117,7 +122,8 @@
       "request_receipt_state": "AUTHENTIC_PROVIDER_OBSERVATION_REQUIRED",
       "scoped_engagement_transition": "DEFINED_NOT_INVOKED",
       "contract_acceptance_state": "FAIL_CLOSED_PENDING_ACCEPTANCE_AUTHORITY_ENTITY_SIGNATURE_EVIDENCE",
-      "post_acceptance_state": "NOT_REACHED"
+      "post_acceptance_state": "NOT_REACHED",
+      "terminal_commercial_state": "NOT_REACHED"
     },
     {
       "offering_id": "icv.gp10-field-validation.v1",
@@ -135,7 +141,8 @@
       "request_receipt_state": "AUTHENTIC_PROVIDER_OBSERVATION_REQUIRED",
       "scoped_engagement_transition": "DEFINED_NOT_INVOKED",
       "contract_acceptance_state": "FAIL_CLOSED_PENDING_ACCEPTANCE_AUTHORITY_ENTITY_SIGNATURE_EVIDENCE",
-      "post_acceptance_state": "NOT_REACHED"
+      "post_acceptance_state": "NOT_REACHED",
+      "terminal_commercial_state": "NOT_REACHED"
     },
     {
       "offering_id": "icv.governance-observatory.v1",
@@ -153,7 +160,8 @@
       "request_receipt_state": "AUTHENTIC_PROVIDER_OBSERVATION_REQUIRED",
       "scoped_engagement_transition": "DEFINED_NOT_INVOKED",
       "contract_acceptance_state": "FAIL_CLOSED_PENDING_ACCEPTANCE_AUTHORITY_ENTITY_SIGNATURE_EVIDENCE",
-      "post_acceptance_state": "NOT_REACHED"
+      "post_acceptance_state": "NOT_REACHED",
+      "terminal_commercial_state": "NOT_REACHED"
     },
     {
       "offering_id": "icv.knowledgevault.v1",
@@ -171,7 +179,8 @@
       "request_receipt_state": "AUTHENTIC_PROVIDER_OBSERVATION_REQUIRED",
       "scoped_engagement_transition": "DEFINED_NOT_INVOKED",
       "contract_acceptance_state": "FAIL_CLOSED_PENDING_ACCEPTANCE_AUTHORITY_ENTITY_SIGNATURE_EVIDENCE",
-      "post_acceptance_state": "NOT_REACHED"
+      "post_acceptance_state": "NOT_REACHED",
+      "terminal_commercial_state": "NOT_REACHED"
     },
     {
       "offering_id": "icv.stegtalk.v1",
@@ -189,7 +198,8 @@
       "request_receipt_state": "AUTHENTIC_PROVIDER_OBSERVATION_REQUIRED",
       "scoped_engagement_transition": "DEFINED_NOT_INVOKED",
       "contract_acceptance_state": "FAIL_CLOSED_PENDING_ACCEPTANCE_AUTHORITY_ENTITY_SIGNATURE_EVIDENCE",
-      "post_acceptance_state": "NOT_REACHED"
+      "post_acceptance_state": "NOT_REACHED",
+      "terminal_commercial_state": "NOT_REACHED"
     },
     {
       "offering_id": "icv.ecosystem-chat.v1",
@@ -207,7 +217,8 @@
       "request_receipt_state": "AUTHENTIC_PROVIDER_OBSERVATION_REQUIRED",
       "scoped_engagement_transition": "DEFINED_NOT_INVOKED",
       "contract_acceptance_state": "FAIL_CLOSED_PENDING_ACCEPTANCE_AUTHORITY_ENTITY_SIGNATURE_EVIDENCE",
-      "post_acceptance_state": "NOT_REACHED"
+      "post_acceptance_state": "NOT_REACHED",
+      "terminal_commercial_state": "NOT_REACHED"
     },
     {
       "offering_id": "icv.steglearn.v1",
@@ -225,7 +236,8 @@
       "request_receipt_state": "AUTHENTIC_PROVIDER_OBSERVATION_REQUIRED",
       "scoped_engagement_transition": "DEFINED_NOT_INVOKED",
       "contract_acceptance_state": "FAIL_CLOSED_PENDING_ACCEPTANCE_AUTHORITY_ENTITY_SIGNATURE_EVIDENCE",
-      "post_acceptance_state": "NOT_REACHED"
+      "post_acceptance_state": "NOT_REACHED",
+      "terminal_commercial_state": "NOT_REACHED"
     }
   ],
   "publication_integration": {
@@ -289,5 +301,16 @@
     "first_missing_predicate": "AUTHENTIC_ACCEPTANCE_EVENT_AND_ENGAGEMENT_SPECIFIC_OWNER_DECISION_EVIDENCE_NOT_PRESENT",
     "owner_decision_contract": "commercial/service-delivery-owner-decision.schema.json",
     "runtime_authorization_effect": "NONE_SEPARATE_NATIVE_ADMISSION_REQUIRED"
+  },
+  "terminal_commercial_evidence_path": {
+    "schema": "commercial/terminal-commercial-evidence-path.schema.json",
+    "delivery_begun": "FAIL_CLOSED_NOT_OBSERVED",
+    "deliverable_delivered": "FAIL_CLOSED_NOT_OBSERVED",
+    "customer_deliverable_accepted": "FAIL_CLOSED_NOT_OBSERVED",
+    "payment_observed": "FAIL_CLOSED_NOT_OBSERVED",
+    "engagement_complete": "FAIL_CLOSED_NOT_OBSERVED",
+    "revenue_recognition": "SEPARATE_ACCOUNTING_BASIS_DETERMINATION",
+    "contract_lifecycle_complete": "SEPARATE_OWNER_GOVERNED_TRANSITION",
+    "no_current_transition_invoked": true
   }
 }
