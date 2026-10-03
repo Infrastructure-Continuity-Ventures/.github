@@ -1,0 +1,177 @@
+{
+  "schema_version": "icv.service-delivery-prerequisite-profiles.v1",
+  "authority": "OFFERING_PREREQUISITE_DESCRIPTION_ONLY",
+  "canonical_task_binding": null,
+  "cosv_task_vector": null,
+  "profiles": [
+    {
+      "offering_id": "icv.governance-assessment.v1",
+      "package_ref": "commercial/packages/governance-assessment.md",
+      "contract_lifecycle_requirement": "ENGAGEMENT_SPECIFIC",
+      "deposit_payment_prerequisite": "ENGAGEMENT_SPECIFIC",
+      "customer_source_data_authority": "REQUIRED",
+      "maturity_release_constraint": "Assessment service only; no runtime/certification/operational authority.",
+      "professional_regulatory_provider_dependencies": [
+        "ENGAGEMENT_SPECIFIC data-handling constraints"
+      ],
+      "delivery_owner_requirement": "Authentic admitted Governance Assessment delivery owner",
+      "current_disposition": "FAIL_CLOSED_NOT_EVALUATED"
+    },
+    {
+      "offering_id": "icv.governance-boundary-validation.v1",
+      "package_ref": "commercial/packages/governance-boundary-validation-pilot.md",
+      "contract_lifecycle_requirement": "ENGAGEMENT_SPECIFIC",
+      "deposit_payment_prerequisite": "ENGAGEMENT_SPECIFIC",
+      "customer_source_data_authority": "REQUIRED",
+      "maturity_release_constraint": "Paid pilot/research service; not production enforcement runtime or hosted control plane.",
+      "professional_regulatory_provider_dependencies": [
+        "REQUIRED approved data-handling plan",
+        "ENGAGEMENT_SPECIFIC handling agreement for otherwise excluded sensitive material"
+      ],
+      "delivery_owner_requirement": "Authentic admitted governance-validation pilot delivery owner",
+      "current_disposition": "FAIL_CLOSED_NOT_EVALUATED"
+    },
+    {
+      "offering_id": "icv.admitted-code.v1",
+      "package_ref": "commercial/packages/admitted-code-assessment.md",
+      "contract_lifecycle_requirement": "ENGAGEMENT_SPECIFIC",
+      "deposit_payment_prerequisite": "ENGAGEMENT_SPECIFIC",
+      "customer_source_data_authority": "REQUIRED",
+      "maturity_release_constraint": "ASSESSMENT_ONLY; underlying unreleased substrate cannot be promoted to production admission/deployment authority.",
+      "professional_regulatory_provider_dependencies": [
+        "ENGAGEMENT_SPECIFIC target/approval authority assertions"
+      ],
+      "delivery_owner_requirement": "Authentic admitted Admitted Code assessment delivery owner",
+      "current_disposition": "FAIL_CLOSED_NOT_EVALUATED"
+    },
+    {
+      "offering_id": "icv.steggate.v1",
+      "package_ref": "commercial/packages/steggate-preview.md",
+      "contract_lifecycle_requirement": "ENGAGEMENT_SPECIFIC",
+      "deposit_payment_prerequisite": "ENGAGEMENT_SPECIFIC",
+      "customer_source_data_authority": "REQUIRED",
+      "maturity_release_constraint": "StegGate 0.3.0 SOURCE_VALIDATED_NOT_RELEASED; preview/local integration only.",
+      "professional_regulatory_provider_dependencies": [
+        "ENGAGEMENT_SPECIFIC declared policy/evidence and target context",
+        "NO production authorization dependency may be inferred"
+      ],
+      "delivery_owner_requirement": "Authentic admitted StegGate preview delivery owner",
+      "current_disposition": "FAIL_CLOSED_NOT_EVALUATED"
+    },
+    {
+      "offering_id": "icv.stegcrm.v1",
+      "package_ref": "commercial/packages/stegcrm-managed-pilot.md",
+      "contract_lifecycle_requirement": "ENGAGEMENT_SPECIFIC",
+      "deposit_payment_prerequisite": "ENGAGEMENT_SPECIFIC",
+      "customer_source_data_authority": "REQUIRED",
+      "maturity_release_constraint": "MANAGED_PILOT; projection authority NONE; no source write-back without separate admission.",
+      "professional_regulatory_provider_dependencies": [
+        "REQUIRED permitted read/export access",
+        "ENGAGEMENT_SPECIFIC source-system access"
+      ],
+      "delivery_owner_requirement": "Authentic admitted StegCRM managed-pilot delivery owner",
+      "current_disposition": "FAIL_CLOSED_NOT_EVALUATED"
+    },
+    {
+      "offering_id": "icv.hydrasafe.v1",
+      "package_ref": "StegVerse-Labs/HydraSafe:commercial/facility-packet-sow.md",
+      "contract_lifecycle_requirement": "REQUIRED",
+      "deposit_payment_prerequisite": "REQUIRED_IF_ACCEPTED_SOW_SPECIFIES_DEPOSIT_OR_MILESTONE_BEFORE_WORK",
+      "customer_source_data_authority": "REQUIRED",
+      "maturity_release_constraint": "Documentation-only service; no engineering/legal/permit/operational authority.",
+      "professional_regulatory_provider_dependencies": [
+        "ENGAGEMENT_SPECIFIC licensed-professional review/stamp under separate agreement",
+        "ENGAGEMENT_SPECIFIC OEM/insurer/AHJ dependencies"
+      ],
+      "delivery_owner_requirement": "Authentic admitted HydraSafe engagement delivery owner",
+      "current_disposition": "FAIL_CLOSED_NOT_EVALUATED"
+    },
+    {
+      "offering_id": "icv.gp10-field-validation.v1",
+      "package_ref": "StegVerse-Labs/GP10:docs/business/PAID_FIELD_VALIDATION_OFFER.md",
+      "contract_lifecycle_requirement": "ENGAGEMENT_SPECIFIC",
+      "deposit_payment_prerequisite": "ENGAGEMENT_SPECIFIC",
+      "customer_source_data_authority": "REQUIRED",
+      "maturity_release_constraint": "Revenue-ready bounded evidence review; no safety/regulatory/repair/release authority.",
+      "professional_regulatory_provider_dependencies": [
+        "REQUIRED written exact scope and fee/cost-plus basis before payment",
+        "REQUIRED stop-work condition for materially different source package"
+      ],
+      "delivery_owner_requirement": "Authentic admitted GP10 field-validation delivery owner",
+      "current_disposition": "FAIL_CLOSED_NOT_EVALUATED"
+    },
+    {
+      "offering_id": "icv.governance-observatory.v1",
+      "package_ref": "commercial/packages/governance-observatory-support.md",
+      "contract_lifecycle_requirement": "ENGAGEMENT_SPECIFIC",
+      "deposit_payment_prerequisite": "ENGAGEMENT_SPECIFIC",
+      "customer_source_data_authority": "REQUIRED",
+      "maturity_release_constraint": "v0.1.0 immutable released baseline; support does not redefine release/current-main inclusion.",
+      "professional_regulatory_provider_dependencies": [
+        "ENGAGEMENT_SPECIFIC publication/privacy constraints"
+      ],
+      "delivery_owner_requirement": "Authentic admitted Governance Observatory support delivery owner",
+      "current_disposition": "FAIL_CLOSED_NOT_EVALUATED"
+    },
+    {
+      "offering_id": "icv.knowledgevault.v1",
+      "package_ref": "commercial/packages/knowledgevault-managed-pilot.md",
+      "contract_lifecycle_requirement": "ENGAGEMENT_SPECIFIC",
+      "deposit_payment_prerequisite": "ENGAGEMENT_SPECIFIC",
+      "customer_source_data_authority": "REQUIRED",
+      "maturity_release_constraint": "MANAGED_PILOT; distinguish v0.1.9 release from post-release main; no production InTr/SKAP/provider activation.",
+      "professional_regulatory_provider_dependencies": [
+        "ENGAGEMENT_SPECIFIC storage/provider/migration authority",
+        "ENGAGEMENT_SPECIFIC optional provider/runtime capability separately admitted"
+      ],
+      "delivery_owner_requirement": "Authentic admitted KnowledgeVault managed-pilot delivery owner",
+      "current_disposition": "FAIL_CLOSED_NOT_EVALUATED"
+    },
+    {
+      "offering_id": "icv.stegtalk.v1",
+      "package_ref": "commercial/packages/stegtalk-preview.md",
+      "contract_lifecycle_requirement": "ENGAGEMENT_SPECIFIC",
+      "deposit_payment_prerequisite": "ENGAGEMENT_SPECIFIC",
+      "customer_source_data_authority": "REQUIRED",
+      "maturity_release_constraint": "verified_non_production_local_prototype; production_ready=false.",
+      "professional_regulatory_provider_dependencies": [
+        "REQUIRED permitted test identities/endpoints/data",
+        "NO production bearer/deployment authority"
+      ],
+      "delivery_owner_requirement": "Authentic admitted StegTalk preview delivery owner",
+      "current_disposition": "FAIL_CLOSED_NOT_EVALUATED"
+    },
+    {
+      "offering_id": "icv.ecosystem-chat.v1",
+      "package_ref": "commercial/packages/ecosystem-chat-preview.md",
+      "contract_lifecycle_requirement": "ENGAGEMENT_SPECIFIC",
+      "deposit_payment_prerequisite": "ENGAGEMENT_SPECIFIC",
+      "customer_source_data_authority": "REQUIRED",
+      "maturity_release_constraint": "DEVELOPMENT_PREVIEW; live distributed multi-LLM execution and live AI SiteFlow NOT IMPLEMENTED/PROVEN.",
+      "professional_regulatory_provider_dependencies": [
+        "ENGAGEMENT_SPECIFIC provider/capability classes",
+        "NO external provider credential or consumption entitlement implied"
+      ],
+      "delivery_owner_requirement": "Authentic admitted Ecosystem Chat preview delivery owner",
+      "current_disposition": "FAIL_CLOSED_NOT_EVALUATED"
+    },
+    {
+      "offering_id": "icv.steglearn.v1",
+      "package_ref": "commercial/packages/steglearn-preview.md",
+      "contract_lifecycle_requirement": "ENGAGEMENT_SPECIFIC",
+      "deposit_payment_prerequisite": "ENGAGEMENT_SPECIFIC",
+      "customer_source_data_authority": "REQUIRED",
+      "maturity_release_constraint": "DEVELOPMENT_PREVIEW; not generally released platform or homeschool-compliance automation.",
+      "professional_regulatory_provider_dependencies": [
+        "REQUIRED parent/steward owner and review responsibility",
+        "REQUIRED privacy/data-handling constraints",
+        "ENGAGEMENT_SPECIFIC external provider/media integration separately admitted"
+      ],
+      "delivery_owner_requirement": "Authentic admitted StegLearn preview delivery owner",
+      "current_disposition": "FAIL_CLOSED_NOT_EVALUATED"
+    }
+  ],
+  "evaluation_rule": "Use commercial/service-delivery-admission.schema.json. Preserve each profile verbatim; resolve ENGAGEMENT_SPECIFIC only from exact accepted terms/evidence. Stop at first missing required owner-specific predicate.",
+  "current_global_disposition": "SERVICE_DELIVERY_AUTHORIZED=FAIL_CLOSED",
+  "no_current_evaluation_invoked": true
+}
