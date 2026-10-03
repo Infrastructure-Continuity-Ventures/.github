@@ -333,3 +333,20 @@ CONTRACT_OR_SOW_ACCEPTED
 These edges are not automatically transitive. Invoice/payment readiness does not issue an invoice. Payment observation does not create a payment mechanism. Payment is neither universally required nor sufficient for delivery. Delivery authorization must satisfy the exact offering's accepted scope, source/data authority and any applicable execution/deposit/payment/professional/provider/runtime prerequisites.
 
 No downstream transition was invoked. `NO_PAYMENT_EXECUTION_PATH` remains effective and `PAYMENT_OR_CONTRACT_EXECUTION_READY=false`. No invoice, contract execution, payment, delivery authorization, customer/CRM record, runtime authority, Task Registry or COSV binding was created.
+
+
+## 2026-10-03 — common service-delivery admission envelope
+
+The twelve offering transaction boundaries share a common set of delivery-admission questions but not common prerequisite answers. A common evidence-only envelope is therefore sufficient only when offering-specific profiles remain controlling.
+
+Added:
+- `commercial/service-delivery-admission.schema.json`
+- `commercial/service-delivery-prerequisite-profiles.json`
+
+The common envelope requires exact accepted scope identity; resolution of applicable contract lifecycle and deposit/payment conditions; customer source/data authority; canonical maturity/release constraints; professional/regulatory/provider dependencies; and an authentic offering-specific delivery owner.
+
+Profiles preserve material differences. HydraSafe requires contract lifecycle execution and conditionally requires the accepted SOW's deposit/milestone predicates. GP10 requires authorized customer source material and exact written scope/fee basis before payment. StegGate, StegTalk, Ecosystem Chat and StegLearn retain preview/non-production maturity ceilings. StegCRM retains projection authority NONE and no write-back without separate admission. KnowledgeVault retains provider/InTr/SKAP separation. The assessment/support offerings retain their own data/source and non-certification/non-execution boundaries.
+
+The common envelope cannot itself authorize work. Its strongest evidence result is `DELIVERY_ADMISSION_EVIDENCE_SATISFIED`; `SERVICE_DELIVERY_AUTHORIZED` remains `FAIL_CLOSED` until an authentic offering-specific operational owner separately admits the bounded delivery. Evaluation stops at the first missing required owner-specific predicate.
+
+No delivery evaluation or authorization was invoked. No runtime, invoice/payment, contract execution, customer/CRM record, Task Registry or COSV authority was created.
