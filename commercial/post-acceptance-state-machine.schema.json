@@ -1,0 +1,125 @@
+{
+  "schema_version": "icv.post-acceptance-state-machine.v1",
+  "authority": "POST_ACCEPTANCE_EVIDENCE_SEPARATION_ONLY",
+  "canonical_task_binding": null,
+  "cosv_task_vector": null,
+  "purpose": "Separate accepted commercial terms, contract lifecycle execution, invoice/payment readiness, payment observation and service-delivery authorization without creating any of them.",
+  "entry_state": "CONTRACT_OR_SOW_ACCEPTED",
+  "states": {
+    "CONTRACT_LIFECYCLE_EXECUTED": {
+      "owner_ref": "StegVerse-Labs/StegBusiness-Ops contracts/README.md",
+      "current_disposition": "FAIL_CLOSED",
+      "required_evidence": [
+        "applicable contract requires execution lifecycle transition",
+        "exact legal contracting entity/counterparty/scope/pricing/payment/effective terms",
+        "signature authority",
+        "direct signed-contract evidence",
+        "applicable compliance/procurement dependencies"
+      ],
+      "effect": "CONTRACT_LIFECYCLE_EVIDENCE_ONLY",
+      "does_not_create": [
+        "legal enforceability",
+        "invoice",
+        "payment authority",
+        "fund movement",
+        "service-delivery authorization"
+      ]
+    },
+    "INVOICE_OR_PAYMENT_TERMS_READY": {
+      "owner_refs": [
+        "StegVerse-Labs/StegBusiness docs/RECORD_DOMAINS.md Finance",
+        "StegVerse-Labs/StegBusiness-Ops finance/README.md",
+        "StegVerse-Labs/StegBusiness-Ops finance/schemas/invoice.schema.json"
+      ],
+      "current_disposition": "FAIL_CLOSED",
+      "required_evidence": [
+        "applicable accepted/executed terms establish an amount or deterministic billing basis",
+        "correct billing entity/customer reference",
+        "applicable issue/milestone/deposit condition satisfied",
+        "invoice/AR evidence owner admitted when invoice is required"
+      ],
+      "effect": "FINANCIAL_RECORD_READINESS_ONLY",
+      "does_not_create": [
+        "invoice",
+        "bank/provider authority",
+        "payment credential",
+        "payment execution",
+        "fund movement",
+        "service-delivery authorization"
+      ]
+    },
+    "PAYMENT_OBSERVED": {
+      "owner_refs": [
+        "StegVerse-Labs/StegBusiness-Ops finance/README.md",
+        "StegVerse-Labs/StegBusiness-Ops finance/AR_REGISTER.md",
+        "StegVerse-Labs/StegBusiness-Ops banking/README.md"
+      ],
+      "current_disposition": "FAIL_CLOSED",
+      "required_evidence": [
+        "authentic provider/financial evidence of payment or receivable settlement",
+        "amount/currency attributable to exact engagement/invoice or accepted payment obligation",
+        "receipt/reconciliation evidence"
+      ],
+      "effect": "PAYMENT_EVIDENCE_ONLY",
+      "does_not_create": [
+        "payment mechanism",
+        "bank authority",
+        "legal enforceability",
+        "service-delivery authorization"
+      ]
+    },
+    "SERVICE_DELIVERY_AUTHORIZED": {
+      "owner": "applicable offering transaction boundary plus separately admitted operational owner",
+      "current_disposition": "FAIL_CLOSED",
+      "required_evidence": [
+        "exact offering/engagement and accepted scope",
+        "all offering-specific start conditions satisfied",
+        "customer source/data authority satisfied where required",
+        "required contract/deposit/payment condition satisfied only when the offering terms require it",
+        "professional/regulatory/provider/runtime dependencies separately satisfied where applicable",
+        "an authentic delivery owner/admission path exists"
+      ],
+      "effect": "BOUNDED_DELIVERY_ADMISSION_ONLY",
+      "does_not_create": [
+        "runtime authority beyond admitted scope",
+        "regulatory approval",
+        "professional certification",
+        "payment authority",
+        "contract execution"
+      ]
+    }
+  },
+  "topology": {
+    "rule": "States are not automatically transitive. CONTRACT_OR_SOW_ACCEPTED does not imply any downstream state.",
+    "contract_execution": "When the engagement requires StegBusiness-Ops contract execution, CONTRACT_LIFECYCLE_EXECUTED is separately observed. Acceptance alone cannot synthesize EXECUTED.",
+    "finance": "INVOICE_OR_PAYMENT_TERMS_READY is evidence/readiness only. Invoice issuance is a separate owner action. PAYMENT_OBSERVED requires authentic financial/provider evidence and is not inferred from an invoice or accepted terms.",
+    "delivery": "SERVICE_DELIVERY_AUTHORIZED is independently gated by the applicable offering's start conditions. Payment is neither universally required nor universally sufficient for delivery authorization."
+  },
+  "offering_boundaries": {
+    "icv.governance-assessment.v1": "No universal payment/deposit prerequisite documented; delivery/start authority must be separately admitted from accepted scope and authorized source handling.",
+    "icv.governance-boundary-validation.v1": "Pilot/data-handling/runtime boundaries remain separate; accepted terms do not create production execution authority.",
+    "icv.admitted-code.v1": "Assessment delivery cannot authorize deployment or production admission.",
+    "icv.steggate.v1": "Preview/pilot delivery cannot promote unreleased source to production authority.",
+    "icv.stegcrm.v1": "Managed pilot delivery cannot create CRM write-back/source authority.",
+    "icv.hydrasafe.v1": "SOW explicitly contains execution/deposit/milestone semantics; only selected deliverables in executed proposal are included and operational/professional authorization remains separate.",
+    "icv.gp10-field-validation.v1": "Written exact scope and fixed-fee/cost-plus amount are required before accepting payment; payment does not establish safety/regulatory/repair/release authority.",
+    "icv.governance-observatory.v1": "Fee/schedule/support are separately quoted; delivery remains observation/evaluation support without execution authority.",
+    "icv.knowledgevault.v1": "Pilot delivery requires bounded vault/install scope; provider/storage/synchronization authority remains separate.",
+    "icv.stegtalk.v1": "Prototype demonstration only; payment/acceptance cannot create production transport/deployment authority.",
+    "icv.ecosystem-chat.v1": "Preview delivery cannot create live distributed execution/provider entitlement.",
+    "icv.steglearn.v1": "Pilot delivery remains bounded by parent/steward, privacy and review responsibilities."
+  },
+  "no_current_transition_invoked": true,
+  "payment_execution_path": "NONE",
+  "payment_or_contract_execution_ready": false,
+  "prohibitions": [
+    "No payment mechanism",
+    "No invoice creation",
+    "No contract execution",
+    "No delivery authorization",
+    "No customer record",
+    "No CRM mutation",
+    "No runtime authority",
+    "No Task Registry/COSV binding"
+  ]
+}

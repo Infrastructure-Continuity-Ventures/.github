@@ -126,3 +126,12 @@ The state semantics are intentionally distinct. `CONTRACT_OR_SOW_ACCEPTED` is a 
 The acceptance gate therefore requires `PURPORTED_ACCEPTANCE_OBSERVED`, `VERIFIED_COUNTERPART_AUTHORITY`, `VERIFIED_LEGAL_ENTITY_IDENTITY_CAPACITY` and `VERIFIED_SIGNATURE_SUFFICIENCY`. `VERIFIED_LEGAL_ENFORCEABILITY` remains a separate, non-gating predicate that may remain unresolved even after accepted terms are recorded.
 
 StegBusiness-Ops `EXECUTED` remains separately governed and requires its own direct signed-contract evidence and applicable lifecycle controls.
+
+
+## Post-acceptance state separation
+
+`post-acceptance-state-machine.schema.json` replaces the former direct `CONTRACT_OR_SOW_ACCEPTED -> PAYMENT_EXECUTABLE_OR_OBSERVED` jump.
+
+Accepted commercial terms do not imply StegBusiness-Ops `EXECUTED`, invoice issuance/readiness, payment, or service-delivery authorization. The bounded downstream states are `CONTRACT_LIFECYCLE_EXECUTED`, `INVOICE_OR_PAYMENT_TERMS_READY`, `PAYMENT_OBSERVED`, and `SERVICE_DELIVERY_AUTHORIZED`; each is independently `FAIL_CLOSED` until its authentic owner/evidence requirements are satisfied.
+
+Payment is neither universally required nor universally sufficient for delivery authorization. Offering-specific start conditions remain controlling.

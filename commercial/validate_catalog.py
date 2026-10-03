@@ -10,6 +10,7 @@ PROPOSAL_ENVELOPE=ROOT/"commercial/scoped-engagement-proposal.schema.json"
 ACCEPTANCE_OBSERVATION=ROOT/"commercial/contract-acceptance-observation.schema.json"
 COUNTERPART_AUTHORITY=ROOT/"commercial/counterpart-authority-evidence.schema.json"
 ACCEPTANCE_PREDICATES=ROOT/"commercial/contract-acceptance-predicates.schema.json"
+POST_ACCEPTANCE=ROOT/"commercial/post-acceptance-state-machine.schema.json"
 CLASSES=[
     "RELEASED_PRODUCT","REVENUE_READY_SERVICE","MANAGED_PILOT",
     "ASSESSMENT_ONLY","DEVELOPMENT_PREVIEW","INTERNAL_SUBSTRATE",
@@ -137,7 +138,20 @@ def main():
     assert acceptance["dispositions"]["contract_or_sow_accepted"]["contract_execution_effect"]=="NONE"
     assert acceptance["dispositions"]["contract_or_sow_accepted"]["acceptance_predicates_contract"]=="commercial/contract-acceptance-predicates.schema.json"
     print("ICV_COUNTERPART_AUTHORITY_EVIDENCE_V1_VALID")
+    post=json.loads(POST_ACCEPTANCE.read_text(encoding="utf-8"))
+    assert post["schema_version"]=="icv.post-acceptance-state-machine.v1"
+    assert post["canonical_task_binding"] is None and post["cosv_task_vector"] is None
+    assert post["entry_state"]=="CONTRACT_OR_SOW_ACCEPTED"
+    assert set(post["states"])=={"CONTRACT_LIFECYCLE_EXECUTED","INVOICE_OR_PAYMENT_TERMS_READY","PAYMENT_OBSERVED","SERVICE_DELIVERY_AUTHORIZED"}
+    assert all(v["current_disposition"]=="FAIL_CLOSED" for v in post["states"].values())
+    assert post["no_current_transition_invoked"] is True
+    assert post["payment_execution_path"]=="NONE"
+    assert post["payment_or_contract_execution_ready"] is False
+    assert len(post["offering_boundaries"])==12
+    assert transition["post_acceptance_state_machine"]=="commercial/post-acceptance-state-machine.schema.json"
+    assert not any(x.get("to")=="PAYMENT_EXECUTABLE_OR_OBSERVED" for x in transition["transitions"])
     print("ICV_CONTRACT_ACCEPTANCE_PREDICATES_V1_VALID")
+    print("ICV_POST_ACCEPTANCE_STATE_MACHINE_V1_VALID")
 
 if __name__=="__main__":
     main()
