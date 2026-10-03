@@ -14,6 +14,7 @@ POST_ACCEPTANCE=ROOT/"commercial/post-acceptance-state-machine.schema.json"
 DELIVERY_ADMISSION=ROOT/"commercial/service-delivery-admission.schema.json"
 DELIVERY_PROFILES=ROOT/"commercial/service-delivery-prerequisite-profiles.json"
 DELIVERY_OWNERS=ROOT/"commercial/service-delivery-owner-reconciliation.json"
+DELIVERY_OWNER_DECISION=ROOT/"commercial/service-delivery-owner-decision.schema.json"
 CLASSES=[
     "RELEASED_PRODUCT","REVENUE_READY_SERVICE","MANAGED_PILOT",
     "ASSESSMENT_ONLY","DEVELOPMENT_PREVIEW","INTERNAL_SUBSTRATE",
@@ -170,18 +171,26 @@ def main():
     assert post["states"]["SERVICE_DELIVERY_AUTHORIZED"]["prerequisite_profiles"]=="commercial/service-delivery-prerequisite-profiles.json"
     print("ICV_POST_ACCEPTANCE_STATE_MACHINE_V1_VALID")
     owners=json.loads(DELIVERY_OWNERS.read_text(encoding="utf-8"))
-    assert owners["schema_version"]=="icv.service-delivery-owner-reconciliation.v1"
+    assert owners["schema_version"]=="icv.service-delivery-owner-reconciliation.v2"
     assert owners["canonical_task_binding"] is None and owners["cosv_task_vector"] is None
-    assert owners["result"]=="NO_EXISTING_OFFERING_OWNER_ADMISSION_INTERFACE_OBSERVED"
+    assert owners["result"]=="MACHINE_ADMISSION_INTERFACE_NOT_REQUIRED_FOR_BOUNDED_PROFESSIONAL_SERVICE_AUTHORIZATION"
     assert len(owners["records"])==12
-    assert all(x["current_disposition"]=="FAIL_CLOSED" for x in owners["records"])
-    assert all(x["can_receive_icv_delivery_admission_evidence_and_return_service_delivery_disposition"] is False for x in owners["records"])
+    assert all(x["current_disposition"]=="FAIL_CLOSED_NOT_EVALUATED" for x in owners["records"])
+    assert all(x["can_receive_icv_delivery_admission_evidence_and_return_service_delivery_disposition"] is True for x in owners["records"])
+    assert all(x["machine_delivery_admission_interface_required"] is False for x in owners["records"])
+    assert all(x["accountable_human_owner_decision_permitted"] is True for x in owners["records"])
     assert all(x["first_missing_existing_owner_predicate"] for x in owners["records"])
     assert owners["no_interface_creation"] is True and owners["no_transition_invoked"] is True
-    assert delivery["disposition"]["service_delivery_authorized"]=="FAIL_CLOSED_NO_EXISTING_OWNER_ADMISSION_INTERFACE_OBSERVED"
-    assert profiles["current_global_disposition"]=="SERVICE_DELIVERY_AUTHORIZED=FAIL_CLOSED_NO_EXISTING_OWNER_ADMISSION_INTERFACE_OBSERVED"
+    assert delivery["disposition"]["service_delivery_authorized"]=="FAIL_CLOSED_NOT_EVALUATED"
+    assert profiles["current_global_disposition"]=="SERVICE_DELIVERY_AUTHORIZED=FAIL_CLOSED_NOT_EVALUATED"
+    decision=json.loads(DELIVERY_OWNER_DECISION.read_text(encoding="utf-8"))
+    assert decision["schema_version"]=="icv.service-delivery-owner-decision.v1"
+    assert decision["decision_values"]==["ALLOW","DENY","FAIL_CLOSED"]
+    assert decision["runtime_separation"]["rule"].startswith("SERVICE_DELIVERY_AUTHORIZED does not authorize consequential software execution")
+    assert decision["current_evaluation"]=="NOT_INVOKED_NO_AUTHENTIC_ACCEPTANCE_EVENT"
     print("ICV_SERVICE_DELIVERY_ADMISSION_V1_VALID")
-    print("ICV_SERVICE_DELIVERY_OWNER_RECONCILIATION_V1_VALID")
+    print("ICV_SERVICE_DELIVERY_OWNER_RECONCILIATION_V2_VALID")
+    print("ICV_SERVICE_DELIVERY_OWNER_DECISION_V1_VALID")
 
 if __name__=="__main__":
     main()
