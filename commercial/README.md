@@ -135,3 +135,12 @@ StegBusiness-Ops `EXECUTED` remains separately governed and requires its own dir
 Accepted commercial terms do not imply StegBusiness-Ops `EXECUTED`, invoice issuance/readiness, payment, or service-delivery authorization. The bounded downstream states are `CONTRACT_LIFECYCLE_EXECUTED`, `INVOICE_OR_PAYMENT_TERMS_READY`, `PAYMENT_OBSERVED`, and `SERVICE_DELIVERY_AUTHORIZED`; each is independently `FAIL_CLOSED` until its authentic owner/evidence requirements are satisfied.
 
 Payment is neither universally required nor universally sufficient for delivery authorization. Offering-specific start conditions remain controlling.
+
+
+## Service-delivery admission evidence
+
+`service-delivery-admission.schema.json` is the common evidence-only envelope for evaluating delivery prerequisites. `service-delivery-prerequisite-profiles.json` binds all twelve offerings without flattening their rules.
+
+The envelope evaluates exact accepted scope, contract-lifecycle requirement, deposit/payment prerequisite, customer source/data authority, maturity/release ceiling, professional/regulatory/provider dependencies and an authentic delivery owner. Offering profiles resolve each prerequisite as required, not required by the package, or engagement-specific.
+
+Passing the evidence envelope produces only `DELIVERY_ADMISSION_EVIDENCE_SATISFIED`; it does not itself produce `SERVICE_DELIVERY_AUTHORIZED`. That state remains fail-closed until an authentic offering-specific delivery owner separately admits it. No evaluation has been invoked.
