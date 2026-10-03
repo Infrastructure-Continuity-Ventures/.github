@@ -86,7 +86,11 @@
         "professional certification",
         "payment authority",
         "contract execution"
-      ]
+      ],
+      "admission_contract": "commercial/service-delivery-admission.schema.json",
+      "prerequisite_profiles": "commercial/service-delivery-prerequisite-profiles.json",
+      "admission_evidence_effect": "DELIVERY_ADMISSION_EVIDENCE_SATISFIED_ONLY",
+      "authorization_rule": "Even complete common-envelope evidence does not itself authorize or begin delivery; authentic offering-specific delivery owner must separately admit SERVICE_DELIVERY_AUTHORIZED."
     }
   },
   "topology": {

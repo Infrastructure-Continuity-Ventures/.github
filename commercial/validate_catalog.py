@@ -11,6 +11,8 @@ ACCEPTANCE_OBSERVATION=ROOT/"commercial/contract-acceptance-observation.schema.j
 COUNTERPART_AUTHORITY=ROOT/"commercial/counterpart-authority-evidence.schema.json"
 ACCEPTANCE_PREDICATES=ROOT/"commercial/contract-acceptance-predicates.schema.json"
 POST_ACCEPTANCE=ROOT/"commercial/post-acceptance-state-machine.schema.json"
+DELIVERY_ADMISSION=ROOT/"commercial/service-delivery-admission.schema.json"
+DELIVERY_PROFILES=ROOT/"commercial/service-delivery-prerequisite-profiles.json"
 CLASSES=[
     "RELEASED_PRODUCT","REVENUE_READY_SERVICE","MANAGED_PILOT",
     "ASSESSMENT_ONLY","DEVELOPMENT_PREVIEW","INTERNAL_SUBSTRATE",
@@ -151,7 +153,22 @@ def main():
     assert transition["post_acceptance_state_machine"]=="commercial/post-acceptance-state-machine.schema.json"
     assert not any(x.get("to")=="PAYMENT_EXECUTABLE_OR_OBSERVED" for x in transition["transitions"])
     print("ICV_CONTRACT_ACCEPTANCE_PREDICATES_V1_VALID")
+    delivery=json.loads(DELIVERY_ADMISSION.read_text(encoding="utf-8"))
+    profiles=json.loads(DELIVERY_PROFILES.read_text(encoding="utf-8"))
+    assert delivery["schema_version"]=="icv.service-delivery-admission.v1"
+    assert delivery["canonical_task_binding"] is None and delivery["cosv_task_vector"] is None
+    assert delivery["disposition"]["service_delivery_authorized"]=="FAIL_CLOSED_UNTIL_SEPARATELY_ADMITTED_BY_AUTHENTIC_DELIVERY_OWNER"
+    assert delivery["disposition"]["no_runtime_or_delivery_effect"] is True
+    assert profiles["schema_version"]=="icv.service-delivery-prerequisite-profiles.v1"
+    assert len(profiles["profiles"])==12
+    assert len({x["offering_id"] for x in profiles["profiles"]})==12
+    assert all(x["current_disposition"]=="FAIL_CLOSED_NOT_EVALUATED" for x in profiles["profiles"])
+    assert profiles["current_global_disposition"]=="SERVICE_DELIVERY_AUTHORIZED=FAIL_CLOSED"
+    assert profiles["no_current_evaluation_invoked"] is True
+    assert post["states"]["SERVICE_DELIVERY_AUTHORIZED"]["admission_contract"]=="commercial/service-delivery-admission.schema.json"
+    assert post["states"]["SERVICE_DELIVERY_AUTHORIZED"]["prerequisite_profiles"]=="commercial/service-delivery-prerequisite-profiles.json"
     print("ICV_POST_ACCEPTANCE_STATE_MACHINE_V1_VALID")
+    print("ICV_SERVICE_DELIVERY_ADMISSION_V1_VALID")
 
 if __name__=="__main__":
     main()

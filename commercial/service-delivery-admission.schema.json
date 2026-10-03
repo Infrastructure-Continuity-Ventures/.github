@@ -1,0 +1,74 @@
+{
+  "schema_version": "icv.service-delivery-admission.v1",
+  "authority": "DELIVERY_ADMISSION_EVIDENCE_ONLY",
+  "canonical_task_binding": null,
+  "cosv_task_vector": null,
+  "purpose": "Evaluate whether evidence prerequisites for a bounded service-delivery admission are satisfied without authorizing or beginning delivery.",
+  "required_fields": [
+    "engagement_id",
+    "offering_id",
+    "proposal_id",
+    "proposal_version",
+    "accepted_scope_identity",
+    "contract_lifecycle_requirement",
+    "deposit_payment_prerequisite",
+    "customer_source_data_authority",
+    "maturity_release_constraint",
+    "professional_regulatory_provider_dependencies",
+    "delivery_owner",
+    "evidence_refs"
+  ],
+  "predicate_values": [
+    "REQUIRED",
+    "NOT_REQUIRED_BY_PACKAGE",
+    "ENGAGEMENT_SPECIFIC"
+  ],
+  "common_predicates": {
+    "accepted_scope_identity": {
+      "required": true,
+      "evidence": [
+        "CONTRACT_OR_SOW_ACCEPTED for exact proposal_id/proposal_version",
+        "deliverables/exclusions/change-stop conditions unchanged or separately amended"
+      ]
+    },
+    "contract_lifecycle_requirement": {
+      "required": true,
+      "rule": "Resolve profile value. REQUIRED needs authentic CONTRACT_LIFECYCLE_EXECUTED evidence; NOT_REQUIRED_BY_PACKAGE does not synthesize execution; ENGAGEMENT_SPECIFIC must be resolved from accepted terms."
+    },
+    "deposit_payment_prerequisite": {
+      "required": true,
+      "rule": "Resolve profile value. REQUIRED needs the exact accepted payment/deposit predicate satisfied; NOT_REQUIRED_BY_PACKAGE does not imply free service; ENGAGEMENT_SPECIFIC must be resolved from accepted terms."
+    },
+    "customer_source_data_authority": {
+      "required": true,
+      "rule": "When customer material/data/system access is in scope, retain attributable permission and handling boundaries; absence of needed authority FAIL_CLOSED."
+    },
+    "maturity_release_constraint": {
+      "required": true,
+      "rule": "Delivery may not exceed canonical product/service maturity or represent unreleased/unproven substrate as released/production."
+    },
+    "professional_regulatory_provider_dependencies": {
+      "required": true,
+      "rule": "Each applicable external dependency must be SATISFIED, NOT_APPLICABLE, or retained unresolved; unresolved required dependency FAIL_CLOSED."
+    },
+    "delivery_owner": {
+      "required": true,
+      "rule": "An authentic offering-specific operational owner/admission path must be identified. Package text or this envelope is not itself a delivery owner."
+    }
+  },
+  "disposition": {
+    "allow_evidence_state": "DELIVERY_ADMISSION_EVIDENCE_SATISFIED",
+    "service_delivery_authorized": "FAIL_CLOSED_UNTIL_SEPARATELY_ADMITTED_BY_AUTHENTIC_DELIVERY_OWNER",
+    "fail_closed_first_missing_predicate": true,
+    "no_runtime_or_delivery_effect": true
+  },
+  "privacy": "Retain customer/private source material, provider IDs, credentials and sensitive evidence outside public repository records; public evidence may retain bounded disposition and authorized redacted/hash references.",
+  "prohibitions": [
+    "Does not authorize or begin delivery",
+    "Does not invoke runtime",
+    "Does not create invoice/payment",
+    "Does not create customer/CRM record",
+    "Does not create contract execution",
+    "Does not create Task Registry/COSV authority"
+  ]
+}
