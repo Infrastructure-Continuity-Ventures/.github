@@ -94,7 +94,9 @@
       "owner_reconciliation": "commercial/service-delivery-owner-reconciliation.json",
       "first_missing_predicate": "AUTHENTIC_ACCEPTANCE_EVENT_AND_ENGAGEMENT_SPECIFIC_EVIDENCE_NOT_PRESENT",
       "owner_decision_contract": "commercial/service-delivery-owner-decision.schema.json",
-      "runtime_authorization_effect": "NONE_SEPARATE_NATIVE_ADMISSION_REQUIRED"
+      "runtime_authorization_effect": "NONE_SEPARATE_NATIVE_ADMISSION_REQUIRED",
+      "terminal_path_effect": "ENTRY_ONLY_NO_PROOF_OF_WORK",
+      "next_evidence_state": "DELIVERY_BEGUN"
     }
   },
   "topology": {
@@ -129,5 +131,6 @@
     "No CRM mutation",
     "No runtime authority",
     "No Task Registry/COSV binding"
-  ]
+  ],
+  "terminal_commercial_evidence_path": "commercial/terminal-commercial-evidence-path.schema.json"
 }
