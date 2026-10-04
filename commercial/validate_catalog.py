@@ -22,6 +22,7 @@ SUCCESSOR_HANDOFF=ROOT/"commercial/successor-obligation-handoff.schema.json"
 CONTINUING_OBLIGATION=ROOT/"commercial/original-terms-continuing-obligation.schema.json"
 CONTINUING_OBLIGATION_PROFILES=ROOT/"commercial/original-terms-continuing-obligation-profiles.json"
 OBLIGATION_RESOLUTION_RECEIPT=ROOT/"commercial/continuing-obligation-resolution-receipt.schema.json"
+CONTINUING_OBLIGATION_PROJECTION=ROOT/"commercial/continuing-obligation-current-state-projection.schema.json"
 CLASSES=[
     "RELEASED_PRODUCT","REVENUE_READY_SERVICE","MANAGED_PILOT",
     "ASSESSMENT_ONLY","DEVELOPMENT_PREVIEW","INTERNAL_SUBSTRATE",
@@ -254,7 +255,19 @@ def main():
     assert continuing["resolution_receipt_contract"]=="commercial/continuing-obligation-resolution-receipt.schema.json"
     assert all(continuing["states"][x]["resolution_receipt_required"] is True for x in ["SATISFIED","WAIVED","BREACHED_OR_UNSATISFIED"])
     print("ICV_ORIGINAL_TERMS_CONTINUING_OBLIGATION_V1_VALID")
+    projection=json.loads(CONTINUING_OBLIGATION_PROJECTION.read_text(encoding="utf-8"))
+    assert projection["schema_version"]=="icv.continuing-obligation-current-state-projection.v1"
+    assert projection["canonical_task_binding"] is None and projection["cosv_task_vector"] is None
+    assert projection["output_states"]==["PENDING_TRIGGER","DUE","IN_PROGRESS","SATISFIED","WAIVED","BREACHED_OR_UNSATISFIED","SATISFIED_AFTER_CURE","WAIVED_AFTER_UNSATISFIED","FAIL_CLOSED"]
+    assert projection["precedence"]["fail_closed"].startswith("Any unresolved authenticity")
+    assert projection["duplicate_handling"].startswith("Exact duplicate representations")
+    assert projection["ordering_boundary"].startswith("Timestamps and deterministic tie-break metadata")
+    assert projection["work_authorization_effect"]=="NONE"
+    assert projection["current_evaluation"]=="NOT_INVOKED_NO_AUTHENTIC_CONTINUING_OBLIGATION_HISTORY"
+    assert continuing["current_state_projection_contract"]=="commercial/continuing-obligation-current-state-projection.schema.json"
+    assert resolution["current_state_projection_contract"]=="commercial/continuing-obligation-current-state-projection.schema.json"
     print("ICV_CONTINUING_OBLIGATION_RESOLUTION_RECEIPT_V1_VALID")
+    print("ICV_CONTINUING_OBLIGATION_CURRENT_STATE_PROJECTION_V1_VALID")
 
 if __name__=="__main__":
     main()
