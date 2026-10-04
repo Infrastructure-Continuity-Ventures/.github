@@ -465,3 +465,16 @@ Outputs are `PENDING_TRIGGER`, `DUE`, `IN_PROGRESS`, `SATISFIED`, `WAIVED`, `BRE
 Contradictory valid frontiers, content-divergent duplicate IDs, ambiguous duplicate events, stale predecessor links, missing/cyclic lineage, unauthorized actors, missing consequential-work authorization for `IN_PROGRESS`, invalid cure ancestry, or unbound/contradictory evidence force `FAIL_CLOSED`. Exact duplicates may collapse for projection only after event/evidence equivalence is established, while every source record remains retained.
 
 The projection is a derived view only. Reconstruction retains the source closure, successor handoff, every lifecycle observation, every terminal/cure receipt, evidence/authority references and each record's validation disposition. The source engagement remains `COMPLETE_WITH_SUCCESSOR_OBLIGATION`.
+
+
+## 2026-10-04 — continuing-obligation reconstruction manifest
+
+Added `commercial/continuing-obligation-reconstruction-manifest.schema.json` as a separate authority-neutral reconstruction layer over the validated continuing-obligation projection.
+
+The minimum manifest binds the source `COMPLETE_WITH_SUCCESSOR_OBLIGATION` closure, `ORIGINAL_ACCEPTED_TERMS_CONTINUATION` handoff, engagement/proposal/version and obligation identities; deterministically enumerates all lifecycle observations, terminal resolution receipts and cure receipts; preserves each record's evidence/authority references; assigns every record a validation disposition and reason code; records valid-lineage references, frontier references/count and derivation rule; and emits the final projected state.
+
+Every input record must appear exactly once. Valid equivalent duplicates remain retained even when collapsed for projection, and invalid/stale/unauthorized/contradictory/non-equivalent-duplicate/broken-lineage records remain visible with exclusion reasons. No rejected evidence may be silently omitted.
+
+`FAIL_CLOSED` has equal reconstruction standing with substantive states: the manifest must enumerate the exact authenticity, authority, lineage, contradiction, duplicate, stale or evidence gap that prevented a unique authentic frontier. If reconstruction itself lacks a required input or relationship, it emits `FAIL_CLOSED` and identifies that gap.
+
+Manifest identity, signature/hash, storage, publication or validation cannot rehabilitate invalid source evidence. The manifest has no commercial, contract/legal, work, runtime, Task Registry or COSV effect and does not replace source observations or receipts.

@@ -1,0 +1,129 @@
+{
+  "schema_version": "icv.continuing-obligation-reconstruction-manifest.v1",
+  "authority": "RECONSTRUCTION_EVIDENCE_ONLY",
+  "canonical_task_binding": null,
+  "cosv_task_vector": null,
+  "purpose": "Deterministically enumerate the complete evidence lineage admitted and rejected by the continuing-obligation current-state projection so any substantive or FAIL_CLOSED result can be reconstructed without creating authority.",
+  "projection_contract": "commercial/continuing-obligation-current-state-projection.schema.json",
+  "required_fields": [
+    "reconstruction_manifest_id",
+    "continuing_obligation_id",
+    "successor_obligation_id",
+    "source_closure",
+    "source_handoff",
+    "source_engagement_id",
+    "source_proposal_id",
+    "source_proposal_version",
+    "continuation_classification",
+    "ordered_records",
+    "frontier_derivation",
+    "final_projected_state",
+    "reconstructed_at",
+    "manifest_evidence_refs"
+  ],
+  "source_closure": {
+    "required": [
+      "source_closure_id",
+      "closure_disposition",
+      "closure_evidence_refs"
+    ],
+    "required_disposition": "COMPLETE_WITH_SUCCESSOR_OBLIGATION"
+  },
+  "source_handoff": {
+    "required": [
+      "successor_obligation_id",
+      "continuation_classification",
+      "handoff_evidence_refs"
+    ],
+    "required_classification": "ORIGINAL_ACCEPTED_TERMS_CONTINUATION"
+  },
+  "record_schema": {
+    "required": [
+      "record_ref",
+      "record_kind",
+      "claimed_state_or_result",
+      "predecessor_ref",
+      "observed_or_resolved_at",
+      "evidence_refs",
+      "authority_refs",
+      "validation_disposition",
+      "validation_reason_codes",
+      "included_in_valid_lineage"
+    ],
+    "record_kinds": [
+      "LIFECYCLE_OBSERVATION",
+      "RESOLUTION_RECEIPT",
+      "CURE_RECEIPT"
+    ],
+    "validation_dispositions": [
+      "VALID_INCLUDED",
+      "VALID_EQUIVALENT_DUPLICATE_RETAINED",
+      "EXCLUDED_INVALID",
+      "EXCLUDED_STALE",
+      "EXCLUDED_UNAUTHORIZED",
+      "EXCLUDED_CONTRADICTORY",
+      "EXCLUDED_NON_EQUIVALENT_DUPLICATE",
+      "EXCLUDED_BROKEN_LINEAGE"
+    ],
+    "ordering_rule": "ordered_records must be deterministically enumerable, but order never supplies authenticity, authority, predecessor validity or transition permission."
+  },
+  "frontier_derivation": {
+    "required": [
+      "valid_lineage_record_refs",
+      "frontier_record_refs",
+      "frontier_count",
+      "derivation_rule",
+      "fail_closed_reason_codes"
+    ],
+    "substantive_rule": "A substantive final_projected_state requires exactly one valid frontier whose state derives under the projection contract.",
+    "fail_closed_rule": "FAIL_CLOSED must enumerate the exact missing, contradictory, duplicate, stale, unauthorized, broken-lineage or evidence reason(s) that prevented a unique authentic frontier. It is reconstructed with the same fidelity as a substantive state.",
+    "no_hidden_exclusions": "Every input record must appear exactly once in ordered_records with a validation disposition; rejected evidence cannot be silently omitted."
+  },
+  "final_projected_states": [
+    "PENDING_TRIGGER",
+    "DUE",
+    "IN_PROGRESS",
+    "SATISFIED",
+    "WAIVED",
+    "BREACHED_OR_UNSATISFIED",
+    "SATISFIED_AFTER_CURE",
+    "WAIVED_AFTER_UNSATISFIED",
+    "FAIL_CLOSED"
+  ],
+  "deterministic_reconstruction_rules": [
+    "bind exact source closure/handoff/engagement/proposal/version and continuing/successor obligation identities",
+    "enumerate every lifecycle observation, resolution receipt and cure receipt available to the projection evidence set",
+    "retain each record's evidence and authority references even when excluded",
+    "apply the projection contract validation and predecessor rules without latest-record or timestamp authority",
+    "record each validation disposition and reason code",
+    "construct valid lineage and unique-frontier derivation from VALID_INCLUDED records plus proven equivalent duplicate treatment",
+    "emit final_projected_state exactly matching the projection result",
+    "if any required input or validation relationship cannot be reconstructed, emit FAIL_CLOSED and identify the reconstruction gap"
+  ],
+  "integrity": {
+    "manifest_identity": "Manifest identity/evidence may attest the manifest bytes/version but cannot validate an otherwise invalid source record.",
+    "reproducibility": "Same complete evidence set, same schema versions and same validation rules must produce the same record dispositions, frontier derivation and final projected state.",
+    "history_preservation": "Manifest does not replace source observations/receipts; it references and classifies them for reconstruction."
+  },
+  "authority_boundaries": {
+    "commercial_effect": "NONE",
+    "contract_or_legal_effect": "NONE",
+    "work_authorization_effect": "NONE",
+    "runtime_effect": "NONE",
+    "task_registry_effect": "NONE",
+    "cosv_effect": "NONE",
+    "rule": "A reconstruction manifest is evidence about derivation only. Its existence, signature, hash, storage, publication or validation cannot create or expand commercial, contract, legal, payment, work, runtime, Task Registry or COSV authority."
+  },
+  "current_evaluation": "NOT_INVOKED_NO_AUTHENTIC_CONTINUING_OBLIGATION_HISTORY",
+  "prohibitions": [
+    "No source evidence deletion/overwrite",
+    "No hidden rejected records",
+    "No latest-receipt-wins reconstruction",
+    "No source engagement mutation",
+    "No customer record inspection",
+    "No proposal/contract/amendment/renewal/invoice/payment creation",
+    "No CRM mutation",
+    "No runtime invocation",
+    "No Task Registry/COSV authority"
+  ]
+}

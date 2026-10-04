@@ -238,3 +238,12 @@ Projection outputs are `PENDING_TRIGGER`, `DUE`, `IN_PROGRESS`, `SATISFIED`, `WA
 Every observation/receipt must independently satisfy its evidence, actor/authority, source-binding and state predicates and must form an allowed predecessor-linked transition. Timestamps/order sequence already-valid evidence but cannot authenticate or authorize it. A current state is returned only when there is one unambiguous valid frontier.
 
 Contradictory frontiers, non-equivalent duplicates, stale predecessor links, broken/cyclic lineage, unauthorized observations, invalid cure ancestry or unresolved evidence produce `FAIL_CLOSED`. All records—including excluded invalid/stale/contradictory records—remain reconstructable with their validation failure.
+
+
+## Continuing-obligation reconstruction manifest
+
+`continuing-obligation-reconstruction-manifest.schema.json` makes every derived current state independently reconstructable from its complete evidence set. The manifest binds source closure/handoff/engagement/proposal/version identities; enumerates every lifecycle observation, resolution receipt and cure receipt; retains evidence/authority references; assigns each record a validation disposition/reason; records the valid lineage and frontier derivation; and emits the final projected state.
+
+No rejected record may be silently omitted. `FAIL_CLOSED` must be reconstructed with the same fidelity as a substantive state by preserving the exact contradiction, duplicate, stale, unauthorized, broken-lineage or evidence reason that prevented a unique authentic frontier.
+
+The manifest is reconstruction evidence only. Hashing, signing, storing, publishing or validating it cannot repair invalid source evidence or create commercial, contract/legal, work, runtime, Task Registry or COSV authority.

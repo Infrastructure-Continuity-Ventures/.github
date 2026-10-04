@@ -95,5 +95,6 @@
     "No runtime/provider/credential/custody invocation",
     "No Task Registry/COSV authority"
   ],
-  "current_state_projection_contract": "commercial/continuing-obligation-current-state-projection.schema.json"
+  "current_state_projection_contract": "commercial/continuing-obligation-current-state-projection.schema.json",
+  "reconstruction_manifest_contract": "commercial/continuing-obligation-reconstruction-manifest.schema.json"
 }
