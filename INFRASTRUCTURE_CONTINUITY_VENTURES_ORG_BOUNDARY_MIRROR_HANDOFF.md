@@ -441,3 +441,14 @@ Added `commercial/original-terms-continuing-obligation.schema.json` for post-clo
 Added twelve offering profiles for candidate original-terms support, retention/deletion, publication/reference, correction-period and other explicit continuing duties. These profiles do not create obligations: the exact accepted proposal/SOW/version remains controlling. HydraSafe licensed-professional review, GP10 recommended qualified-review actions, future integrations and other separately scoped work do not become original-terms continuation merely because the package mentions them.
 
 The source engagement remains historically `COMPLETE_WITH_SUCCESSOR_OBLIGATION` through every lifecycle transition and is never reopened or mutated.
+
+
+## 2026-10-03 — immutable continuing-obligation resolution receipts
+
+The existing StegBusiness/StegBusiness-Ops evidence architecture and ICV acceptance/delivery/closure patterns support a separate immutable resolution receipt rather than destructive mutation of continuing-duty state.
+
+Added `commercial/continuing-obligation-resolution-receipt.schema.json`. Every `SATISFIED`, `WAIVED` or `BREACHED_OR_UNSATISFIED` terminal observation now requires an append-only receipt binding the continuing/successor obligation, source closure/engagement/proposal/version, predecessor state and observation reference, triggering evidence, resolution actor, applicable actor-authority evidence, timestamp, resulting state and receipt evidence. `supersedes_prior_history` is always false.
+
+A later cure after `BREACHED_OR_UNSATISFIED` is represented by a new `CURE_SATISFIED` or `CURE_WAIVED` receipt referencing the immutable earlier unsatisfied receipt and new cure evidence. The current projection may report `SATISFIED_AFTER_CURE` or `WAIVED_AFTER_UNSATISFIED`; reconstruction still returns the historical unsatisfied event and all intervening evidence.
+
+The receipt has no work/runtime authority and no legal breach, damages, default, enforceability, remedy, release or discharge effect. The source engagement remains `COMPLETE_WITH_SUCCESSOR_OBLIGATION`.

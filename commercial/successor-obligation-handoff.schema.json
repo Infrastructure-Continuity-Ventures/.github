@@ -67,5 +67,6 @@
   ],
   "current_evaluation": "NOT_INVOKED_NO_AUTHENTIC_SUCCESSOR_OBLIGATION",
   "original_terms_continuing_obligation_contract": "commercial/original-terms-continuing-obligation.schema.json",
-  "original_terms_profiles": "commercial/original-terms-continuing-obligation-profiles.json"
+  "original_terms_profiles": "commercial/original-terms-continuing-obligation-profiles.json",
+  "original_terms_resolution_receipt": "commercial/continuing-obligation-resolution-receipt.schema.json"
 }
