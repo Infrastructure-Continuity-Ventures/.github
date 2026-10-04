@@ -247,3 +247,12 @@ Contradictory frontiers, non-equivalent duplicates, stale predecessor links, bro
 No rejected record may be silently omitted. `FAIL_CLOSED` must be reconstructed with the same fidelity as a substantive state by preserving the exact contradiction, duplicate, stale, unauthorized, broken-lineage or evidence reason that prevented a unique authentic frontier.
 
 The manifest is reconstruction evidence only. Hashing, signing, storing, publishing or validating it cannot repair invalid source evidence or create commercial, contract/legal, work, runtime, Task Registry or COSV authority.
+
+
+## Continuing-obligation evidence-set commitment
+
+`continuing-obligation-evidence-set-commitment.schema.json` gives each reconstruction a deterministic identity for the complete declared input set. It commits the exact source closure/handoff coordinates and content identities, every retained lifecycle/resolution/cure record and immutable content identity, every rule/schema version that can affect validation or projection, and the complete inclusion/exclusion inventory.
+
+Independent reconstructions compare as `SAME_EVIDENCE_SET`, `DIFFERENT_EVIDENCE_SET`, or `FAIL_CLOSED_UNCOMPARABLE`. The same projected state is not evidence that the same inputs were evaluated. Matching commitments establish only equality of the declared canonical commitment inputs under the declared digest/canonicalization assumptions; they do not prove source authenticity, authority, legal effect, semantic validity, or completeness against evidence never supplied.
+
+The commitment remains evidence-set identity only. It has no commercial, contract/legal, work, runtime, Task Registry or COSV effect.
