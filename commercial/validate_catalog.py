@@ -21,6 +21,7 @@ ENGAGEMENT_CLOSURE_PROFILES=ROOT/"commercial/engagement-closure-profiles.json"
 SUCCESSOR_HANDOFF=ROOT/"commercial/successor-obligation-handoff.schema.json"
 CONTINUING_OBLIGATION=ROOT/"commercial/original-terms-continuing-obligation.schema.json"
 CONTINUING_OBLIGATION_PROFILES=ROOT/"commercial/original-terms-continuing-obligation-profiles.json"
+OBLIGATION_RESOLUTION_RECEIPT=ROOT/"commercial/continuing-obligation-resolution-receipt.schema.json"
 CLASSES=[
     "RELEASED_PRODUCT","REVENUE_READY_SERVICE","MANAGED_PILOT",
     "ASSESSMENT_ONLY","DEVELOPMENT_PREVIEW","INTERNAL_SUBSTRATE",
@@ -241,7 +242,19 @@ def main():
     assert all(x["current_state"]=="FAIL_CLOSED_NOT_EVALUATED" for x in continuing_profiles["profiles"])
     assert successor["original_terms_continuing_obligation_contract"]=="commercial/original-terms-continuing-obligation.schema.json"
     print("ICV_SUCCESSOR_OBLIGATION_HANDOFF_V1_VALID")
+    resolution=json.loads(OBLIGATION_RESOLUTION_RECEIPT.read_text(encoding="utf-8"))
+    assert resolution["schema_version"]=="icv.continuing-obligation-resolution-receipt.v1"
+    assert resolution["canonical_task_binding"] is None and resolution["cosv_task_vector"] is None
+    assert resolution["applies_to_terminal_observations"]==["SATISFIED","WAIVED","BREACHED_OR_UNSATISFIED"]
+    assert resolution["field_rules"]["supersedes_prior_history"]=="Must always be false."
+    assert resolution["cure"]["resulting_states"]==["CURE_SATISFIED","CURE_WAIVED"]
+    assert resolution["source_closure_effect"].startswith("NONE")
+    assert resolution["work_authorization_effect"]=="NONE"
+    assert resolution["current_evaluation"]=="NOT_INVOKED_NO_AUTHENTIC_RESOLUTION_EVENT"
+    assert continuing["resolution_receipt_contract"]=="commercial/continuing-obligation-resolution-receipt.schema.json"
+    assert all(continuing["states"][x]["resolution_receipt_required"] is True for x in ["SATISFIED","WAIVED","BREACHED_OR_UNSATISFIED"])
     print("ICV_ORIGINAL_TERMS_CONTINUING_OBLIGATION_V1_VALID")
+    print("ICV_CONTINUING_OBLIGATION_RESOLUTION_RECEIPT_V1_VALID")
 
 if __name__=="__main__":
     main()
