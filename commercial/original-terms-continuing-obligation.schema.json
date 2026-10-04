@@ -117,5 +117,17 @@
     "No Task Registry/COSV authority"
   ],
   "resolution_receipt_contract": "commercial/continuing-obligation-resolution-receipt.schema.json",
-  "history_rule": "Lifecycle observations and terminal/cure resolution receipts are append-only. current_state is a projection over retained history, not a destructive rewrite."
+  "history_rule": "Lifecycle observations and terminal/cure resolution receipts are append-only. current_state is a deterministic validated-history projection under commercial/continuing-obligation-current-state-projection.schema.json, not a destructive rewrite or latest-receipt selection.",
+  "current_state_projection_contract": "commercial/continuing-obligation-current-state-projection.schema.json",
+  "current_state_projection_outputs": [
+    "PENDING_TRIGGER",
+    "DUE",
+    "IN_PROGRESS",
+    "SATISFIED",
+    "WAIVED",
+    "BREACHED_OR_UNSATISFIED",
+    "SATISFIED_AFTER_CURE",
+    "WAIVED_AFTER_UNSATISFIED",
+    "FAIL_CLOSED"
+  ]
 }
