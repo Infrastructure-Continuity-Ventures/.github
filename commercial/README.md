@@ -227,3 +227,14 @@ The offering profiles identify candidate continuing-duty types, but package text
 `continuing-obligation-resolution-receipt.schema.json` makes `SATISFIED`, `WAIVED`, and `BREACHED_OR_UNSATISFIED` append-only resolution events. Each receipt binds the exact obligation and source coordinates, predecessor state/observation, triggering evidence, resolution actor and applicable authority evidence, timestamp, resulting state and retained evidence references. `supersedes_prior_history` must be false.
 
 A later cure does not rewrite a prior `BREACHED_OR_UNSATISFIED` observation. It appends `CURE_SATISFIED` or `CURE_WAIVED` referencing the immutable prior unsatisfied receipt plus the new cure evidence. A current projection may say `SATISFIED_AFTER_CURE` or `WAIVED_AFTER_UNSATISFIED`, while reconstruction retains the complete ordered history.
+
+
+## Continuing-obligation current-state projection
+
+`continuing-obligation-current-state-projection.schema.json` derives current state from the append-only obligation history. It is a validated-history reduction, never a latest-receipt-wins rule.
+
+Projection outputs are `PENDING_TRIGGER`, `DUE`, `IN_PROGRESS`, `SATISFIED`, `WAIVED`, `BREACHED_OR_UNSATISFIED`, `SATISFIED_AFTER_CURE`, `WAIVED_AFTER_UNSATISFIED`, and `FAIL_CLOSED`.
+
+Every observation/receipt must independently satisfy its evidence, actor/authority, source-binding and state predicates and must form an allowed predecessor-linked transition. Timestamps/order sequence already-valid evidence but cannot authenticate or authorize it. A current state is returned only when there is one unambiguous valid frontier.
+
+Contradictory frontiers, non-equivalent duplicates, stale predecessor links, broken/cyclic lineage, unauthorized observations, invalid cure ancestry or unresolved evidence produce `FAIL_CLOSED`. All records—including excluded invalid/stale/contradictory records—remain reconstructable with their validation failure.
