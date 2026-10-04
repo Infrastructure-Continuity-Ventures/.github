@@ -1,0 +1,149 @@
+{
+  "schema_version": "icv.v1-release-readiness.synthetic.v1",
+  "authority": "SYNTHETIC_VALIDATION_ONLY",
+  "synthetic_only": true,
+  "purpose": "Bounded v1 integration fixture proving vocabulary/reference/predecessor/reconstruction compatibility without representing a real customer, contract, payment, delivery, runtime event or authority.",
+  "ordinary_engagement": {
+    "fixture_id": "SYNTHETIC-ORDINARY-001",
+    "offering_id": "icv.governance-assessment.v1",
+    "trace": [
+      "AUTHENTIC_ENGAGEMENT_REQUEST_OBSERVED",
+      "ENGAGEMENT_REQUEST_DOCUMENTED",
+      "SCOPED_ENGAGEMENT_PROPOSED",
+      "VERIFIED_COUNTERPART_AUTHORITY",
+      "CONTRACT_OR_SOW_ACCEPTED",
+      "SERVICE_DELIVERY_AUTHORIZED",
+      "DELIVERY_BEGUN",
+      "DELIVERABLE_DELIVERED",
+      "CUSTOMER_DELIVERABLE_ACCEPTED",
+      "PAYMENT_OBSERVED",
+      "COMPLETE"
+    ],
+    "payment_applicable": true,
+    "closure_disposition": "COMPLETE",
+    "deterministic_reconstruction": "COMPLETE"
+  },
+  "successor_engagement": {
+    "fixture_id": "SYNTHETIC-SUCCESSOR-001",
+    "offering_id": "icv.governance-assessment.v1",
+    "trace": [
+      "AUTHENTIC_ENGAGEMENT_REQUEST_OBSERVED",
+      "ENGAGEMENT_REQUEST_DOCUMENTED",
+      "SCOPED_ENGAGEMENT_PROPOSED",
+      "VERIFIED_COUNTERPART_AUTHORITY",
+      "CONTRACT_OR_SOW_ACCEPTED",
+      "SERVICE_DELIVERY_AUTHORIZED",
+      "DELIVERY_BEGUN",
+      "DELIVERABLE_DELIVERED",
+      "CUSTOMER_DELIVERABLE_ACCEPTED",
+      "COMPLETE_WITH_SUCCESSOR_OBLIGATION",
+      "ORIGINAL_ACCEPTED_TERMS_CONTINUATION",
+      "PENDING_TRIGGER",
+      "DUE",
+      "IN_PROGRESS",
+      "SATISFIED",
+      "RECONSTRUCTED_SATISFIED",
+      "SAME_EVIDENCE_SET"
+    ],
+    "payment_applicable": false,
+    "closure_disposition": "COMPLETE_WITH_SUCCESSOR_OBLIGATION",
+    "continuation_classification": "ORIGINAL_ACCEPTED_TERMS_CONTINUATION",
+    "terminal_resolution": "SATISFIED",
+    "projected_state": "SATISFIED",
+    "reconstructed_state": "SATISFIED",
+    "evidence_set_comparison": "SAME_EVIDENCE_SET"
+  },
+  "predecessor_relationships": [
+    {
+      "state": "ENGAGEMENT_REQUEST_DOCUMENTED",
+      "from": "AUTHENTIC_ENGAGEMENT_REQUEST_OBSERVED",
+      "allowed_from": [
+        "AUTHENTIC_ENGAGEMENT_REQUEST_OBSERVED"
+      ]
+    },
+    {
+      "state": "SCOPED_ENGAGEMENT_PROPOSED",
+      "from": "ENGAGEMENT_REQUEST_DOCUMENTED",
+      "allowed_from": [
+        "ENGAGEMENT_REQUEST_DOCUMENTED"
+      ]
+    },
+    {
+      "state": "CONTRACT_OR_SOW_ACCEPTED",
+      "from": "SCOPED_ENGAGEMENT_PROPOSED",
+      "allowed_from": [
+        "SCOPED_ENGAGEMENT_PROPOSED"
+      ]
+    },
+    {
+      "state": "DELIVERY_BEGUN",
+      "from": "SERVICE_DELIVERY_AUTHORIZED",
+      "allowed_from": [
+        "SERVICE_DELIVERY_AUTHORIZED"
+      ]
+    },
+    {
+      "state": "DELIVERABLE_DELIVERED",
+      "from": "DELIVERY_BEGUN",
+      "allowed_from": [
+        "DELIVERY_BEGUN"
+      ]
+    },
+    {
+      "state": "CUSTOMER_DELIVERABLE_ACCEPTED",
+      "from": "DELIVERABLE_DELIVERED",
+      "allowed_from": [
+        "DELIVERABLE_DELIVERED"
+      ]
+    },
+    {
+      "state": "DUE",
+      "from": "PENDING_TRIGGER",
+      "allowed_from": [
+        "PENDING_TRIGGER"
+      ]
+    },
+    {
+      "state": "IN_PROGRESS",
+      "from": "DUE",
+      "allowed_from": [
+        "DUE"
+      ]
+    },
+    {
+      "state": "SATISFIED",
+      "from": "IN_PROGRESS",
+      "allowed_from": [
+        "DUE",
+        "IN_PROGRESS"
+      ]
+    }
+  ],
+  "schema_references": [
+    "commercial/engagement-request-transition.json",
+    "commercial/scoped-engagement-proposal.schema.json",
+    "commercial/contract-acceptance-observation.schema.json",
+    "commercial/counterpart-authority-evidence.schema.json",
+    "commercial/contract-acceptance-predicates.schema.json",
+    "commercial/post-acceptance-state-machine.schema.json",
+    "commercial/service-delivery-admission.schema.json",
+    "commercial/service-delivery-owner-decision.schema.json",
+    "commercial/terminal-commercial-evidence-path.schema.json",
+    "commercial/engagement-closure.schema.json",
+    "commercial/successor-obligation-handoff.schema.json",
+    "commercial/original-terms-continuing-obligation.schema.json",
+    "commercial/continuing-obligation-resolution-receipt.schema.json",
+    "commercial/continuing-obligation-current-state-projection.schema.json",
+    "commercial/continuing-obligation-reconstruction-manifest.schema.json",
+    "commercial/continuing-obligation-evidence-set-commitment.schema.json"
+  ],
+  "authority_checks": {
+    "all_effects_non_escalating": true,
+    "synthetic_acceptance_creates_real_contract": false,
+    "synthetic_payment_creates_fund_movement": false,
+    "synthetic_delivery_creates_runtime_authority": false,
+    "synthetic_closure_creates_legal_discharge": false,
+    "synthetic_reconstruction_creates_authority": false
+  },
+  "expected_release_disposition": "RELEASE_READY_IF_VALIDATOR_PASSES_AT_EXACT_HEAD"
+}
