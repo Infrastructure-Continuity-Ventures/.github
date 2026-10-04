@@ -489,3 +489,12 @@ The commitment binds exact closure/handoff/engagement/proposal/version and oblig
 Comparison outcomes are `SAME_EVIDENCE_SET`, `DIFFERENT_EVIDENCE_SET` and `FAIL_CLOSED_UNCOMPARABLE`. Matching hashes establish only equality of declared canonical commitment inputs under the declared algorithm/canonicalization assumptions. They do not prove source authenticity, actor authority, legal effect, semantic validity, completeness against external reality, or correctness of a substantive projection. Missing/malformed identity, incomplete inventory accounting, unsupported/unresolved comparison semantics or inconsistent aggregate commitment fail closed as uncomparable.
 
 The reconstruction manifest now requires this evidence-set commitment. The commitment is identity evidence only and has no commercial, contract/legal, payment, work, runtime, Task Registry or COSV effect. No real customer record was inspected and no commercial/runtime transition was invoked.
+
+
+## 2026-10-04 — ICV v1 commercial release-readiness reconciliation
+
+A bounded synthetic integration fixture now traces both an ordinary engagement and a COMPLETE_WITH_SUCCESSOR_OBLIGATION engagement through the existing commercial contracts, including acceptance/authority separation, delivery admission, terminal evidence, successor handoff, original-terms lifecycle, immutable resolution, current-state projection, reconstruction and evidence-set comparison. The fixture is SYNTHETIC_VALIDATION_ONLY and grants no customer, contract, payment, delivery, runtime, legal, Task Registry or COSV authority.
+
+The reconciliation also repairs demonstrated validator drift: public requestability is now true after the already-recorded served-body observation; SERVICE_DELIVERY_AUTHORIZED and ENGAGEMENT_COMPLETE retain their newer FAIL_CLOSED_NOT_EVALUATED vocabulary instead of stale predecessor assertions. No architectural layer was added.
+
+Release candidate status: exact-head validator execution and PR merge evidence are still required before declaring ICV v1.0.0 release-ready or tagging a release.
