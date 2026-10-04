@@ -33,7 +33,9 @@
     "COMPLETE_WITH_SUCCESSOR_OBLIGATION": [
       "original bounded engagement completion obligations are satisfied or explicitly resolved",
       "one or more surviving/follow-on obligations are explicitly identified with type, scope, owner, trigger/due condition and evidence reference",
-      "successor obligation is not silently treated as work remaining inside the completed engagement"
+      "successor obligation is not silently treated as work remaining inside the completed engagement",
+      "each successor obligation is classified through the successor-obligation handoff as original-terms continuation, amendment/renewal required, separate successor engagement required, or FAIL_CLOSED",
+      "recording/classifying a successor obligation does not authorize successor work"
     ],
     "TERMINATED": [
       "authentic accepted termination/stop condition or authorized termination decision is evidenced",
@@ -81,5 +83,7 @@
     "No CRM mutation",
     "No runtime invocation",
     "No Task Registry/COSV authority"
-  ]
+  ],
+  "successor_obligation_handoff": "commercial/successor-obligation-handoff.schema.json",
+  "source_closure_immutability": "COMPLETE_WITH_SUCCESSOR_OBLIGATION remains the historical source-engagement closure disposition after any successor handoff."
 }
