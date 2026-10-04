@@ -498,3 +498,12 @@ A bounded synthetic integration fixture now traces both an ordinary engagement a
 The reconciliation also repairs demonstrated validator drift: public requestability is now true after the already-recorded served-body observation; SERVICE_DELIVERY_AUTHORIZED and ENGAGEMENT_COMPLETE retain their newer FAIL_CLOSED_NOT_EVALUATED vocabulary instead of stale predecessor assertions. No architectural layer was added.
 
 Release readiness: PASS at merged commercial architecture cd1e251d36cd2b6350446cdb62ab7258cc0d71b2. The bounded exact-head reconciliation resolved every fixture schema reference, aligned state vocabularies and predecessor relationships, preserved non-escalating authority boundaries, and deterministically reconstructed the successor lifecycle to SATISFIED with SAME_EVIDENCE_SET comparison. ICV commercial architecture is release-ready for v1.0.0. Tag/release publication remains a separate repository-host operation.
+
+
+## 2026-10-04 — v1.0.0 release evidence and bounded propagation
+
+Git ref `refs/tags/v1.0.0` resolves directly to commit `9b691cfaac076b565153c5a1c0f6c4072b8b044e`. GitHub Release `Infrastructure-Continuity-Ventures-v_1_0_0` is published, non-draft and non-prerelease with tag `v1.0.0` and target commitish `9b691cfaac076b565153c5a1c0f6c4072b8b044e`.
+
+Downstream reconciliation found one demonstrated propagation relationship: `StegVerse-Labs/Site` explicitly mirrors ICV public commercial catalog authority and currently pins source catalog merge `dcc176eea7e4ecc69e9b05c76036a337d987e650`. A separate canonical propagation-verification Goal, `ICV-V1-SITE-PROPAGATION-VERIFICATION-001`, is registered in `StegVerse-org/.github` issue #64 with handoff `docs/ICV_V1_SITE_PROPAGATION_VERIFICATION_MIRROR_HANDOFF.md`.
+
+No ICV propagation contract was found in `GCAT-BCAT-Engine/Publisher`, `admissibility-wiki`, or `stegguardian-wiki`; no propagation Goal is created for those repositories absent new evidence. The Site verification must propagate only externally relevant changed catalog/request semantics and may conclude `NO_PROPAGATION_REQUIRED`; internal lifecycle/reconstruction/evidence-set machinery is not mirrored merely because it is part of v1.0.0.
