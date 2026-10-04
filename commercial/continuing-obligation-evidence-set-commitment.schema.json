@@ -1,0 +1,111 @@
+{
+  "schema_version": "icv.continuing-obligation-evidence-set-commitment.v1",
+  "authority": "EVIDENCE_SET_IDENTITY_ONLY",
+  "canonical_task_binding": null,
+  "cosv_task_vector": null,
+  "purpose": "Deterministically identify the complete declared input evidence set used by a continuing-obligation reconstruction so independent reconstructions can establish whether they evaluated the same retained inputs without treating identity equality as proof of source authenticity, authority or completeness against external reality.",
+  "reconstruction_manifest_contract": "commercial/continuing-obligation-reconstruction-manifest.schema.json",
+  "required_fields": [
+    "evidence_set_commitment_id",
+    "continuing_obligation_id",
+    "successor_obligation_id",
+    "source_coordinates",
+    "schema_rule_versions",
+    "canonicalization",
+    "source_identity_inventory",
+    "record_inventory",
+    "inclusion_exclusion_inventory",
+    "aggregate_commitment",
+    "committed_at"
+  ],
+  "source_coordinates": {
+    "required": [
+      "source_closure_id",
+      "source_closure_content_identity",
+      "source_engagement_id",
+      "source_proposal_id",
+      "source_proposal_version",
+      "successor_handoff_content_identity",
+      "continuation_classification"
+    ],
+    "required_closure_disposition": "COMPLETE_WITH_SUCCESSOR_OBLIGATION",
+    "required_continuation_classification": "ORIGINAL_ACCEPTED_TERMS_CONTINUATION"
+  },
+  "content_identity": {
+    "required": ["algorithm", "digest"],
+    "algorithm_v1": "SHA-256",
+    "rule": "Digest the immutable source bytes or a declared canonical byte representation. A digest identifies committed content under the declared algorithm/canonicalization only; it does not prove authenticity, authority, legal validity, semantic correctness or completeness against evidence that was never supplied."
+  },
+  "schema_rule_versions": {
+    "required": [
+      "successor_obligation_handoff_schema",
+      "continuing_obligation_schema",
+      "resolution_receipt_schema",
+      "current_state_projection_schema",
+      "reconstruction_manifest_schema",
+      "evidence_set_commitment_schema"
+    ],
+    "rule": "Comparison is version-bound. Every rule/schema version capable of changing validation disposition, lineage or projection must be declared."
+  },
+  "canonicalization": {
+    "version": "icv.evidence-set-canonicalization.v1",
+    "record_order": "Sort by record_kind, then record_ref, then immutable content digest. Ordering is identity-only and grants no temporal, predecessor, authenticity or authority precedence.",
+    "serialization": "UTF-8 JSON with object keys sorted lexicographically, arrays retained in their schema-defined semantic order except record_inventory which uses record_order, no insignificant whitespace.",
+    "aggregate_algorithm": "SHA-256"
+  },
+  "source_identity_inventory": {
+    "required_entries": ["SOURCE_CLOSURE", "SUCCESSOR_HANDOFF"],
+    "entry_required": ["source_kind", "source_ref", "content_identity"]
+  },
+  "record_inventory": {
+    "entry_required": [
+      "record_ref",
+      "record_kind",
+      "content_identity",
+      "validation_disposition",
+      "included_in_valid_lineage"
+    ],
+    "record_kinds": ["LIFECYCLE_OBSERVATION", "RESOLUTION_RECEIPT", "CURE_RECEIPT"],
+    "rule": "Every record retained by the reconstruction manifest appears exactly once with its immutable content identity and reconstruction validation disposition. Equivalent duplicates remain distinct inventory entries."
+  },
+  "inclusion_exclusion_inventory": {
+    "required": ["included_record_refs", "excluded_record_refs", "retained_equivalent_duplicate_refs"],
+    "rule": "The three inventories must account for every record_inventory entry exactly once according to its reconstruction disposition; excluded records are part of evidence-set identity and cannot be omitted from the commitment."
+  },
+  "aggregate_commitment": {
+    "required": ["algorithm", "digest"],
+    "algorithm_v1": "SHA-256",
+    "input_rule": "Digest the canonical serialization of source coordinates, schema/rule versions, source identity inventory, complete record inventory and inclusion/exclusion inventory. Do not include evidence_set_commitment_id, committed_at or the aggregate digest itself.",
+    "meaning": "Equality proves only that the compared valid commitments declare identical canonical commitment inputs under the same comparison semantics."
+  },
+  "comparison": {
+    "outcomes": ["SAME_EVIDENCE_SET", "DIFFERENT_EVIDENCE_SET", "FAIL_CLOSED_UNCOMPARABLE"],
+    "SAME_EVIDENCE_SET": "Both commitments are structurally valid and comparison-compatible, and source coordinates, schema/rule versions, canonicalization, source content identities, complete record identities and inclusion/exclusion inventories are identical; aggregate digests must also match.",
+    "DIFFERENT_EVIDENCE_SET": "Both commitments are structurally valid and comparison-compatible, but one or more committed coordinates, versions, source identities, record identities or inclusion/exclusion inventory values differ. Report the differing committed fields; a matching projected state does not change this outcome.",
+    "FAIL_CLOSED_UNCOMPARABLE": "Comparison compatibility or commitment integrity cannot be established, including missing/malformed required identity, unsupported or unresolved canonicalization/digest semantics, incomplete inventory accounting, or an aggregate digest inconsistent with the declared canonical inputs.",
+    "hash_boundary": "Matching hashes never prove that source evidence is authentic, authoritative, legally effective, semantically valid, complete against external reality, or sufficient for a substantive projected state. Those remain governed by the projection/reconstruction validation rules.",
+    "collision_boundary": "Digest equality is interpreted only under the declared algorithm and canonicalization assumptions; unresolved algorithm/canonicalization integrity fails closed."
+  },
+  "authority_boundaries": {
+    "commercial_effect": "NONE",
+    "contract_or_legal_effect": "NONE",
+    "work_authorization_effect": "NONE",
+    "runtime_effect": "NONE",
+    "task_registry_effect": "NONE",
+    "cosv_effect": "NONE",
+    "rule": "Evidence-set commitment and comparison establish declared input-set identity only. Creation, hashing, matching, signing, storage, publication or validation cannot create or expand commercial, contract/legal, payment, work, runtime, Task Registry or COSV authority."
+  },
+  "current_evaluation": "NOT_INVOKED_NO_AUTHENTIC_CONTINUING_OBLIGATION_EVIDENCE_SET",
+  "prohibitions": [
+    "No source authenticity inference from hash equality",
+    "No source authority inference from hash equality",
+    "No hidden rejected records",
+    "No source evidence deletion/overwrite",
+    "No source engagement mutation",
+    "No customer record inspection",
+    "No proposal/contract/amendment/renewal/invoice/payment creation",
+    "No CRM mutation",
+    "No runtime invocation",
+    "No Task Registry/COSV authority"
+  ]
+}

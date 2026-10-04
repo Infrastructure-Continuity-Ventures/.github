@@ -16,6 +16,7 @@
     "source_proposal_version",
     "continuation_classification",
     "ordered_records",
+    "evidence_set_commitment",
     "frontier_derivation",
     "final_projected_state",
     "reconstructed_at",
@@ -103,7 +104,8 @@
   "integrity": {
     "manifest_identity": "Manifest identity/evidence may attest the manifest bytes/version but cannot validate an otherwise invalid source record.",
     "reproducibility": "Same complete evidence set, same schema versions and same validation rules must produce the same record dispositions, frontier derivation and final projected state.",
-    "history_preservation": "Manifest does not replace source observations/receipts; it references and classifies them for reconstruction."
+    "history_preservation": "Manifest does not replace source observations/receipts; it references and classifies them for reconstruction.",
+    "evidence_set_identity": "Two reconstructions may claim the same complete input set only through compatible evidence-set commitments. Matching final_projected_state alone is insufficient."
   },
   "authority_boundaries": {
     "commercial_effect": "NONE",
@@ -125,5 +127,14 @@
     "No CRM mutation",
     "No runtime invocation",
     "No Task Registry/COSV authority"
-  ]
+  ],
+  "evidence_set_commitment": {
+    "contract": "commercial/continuing-obligation-evidence-set-commitment.schema.json",
+    "rule": "Every reconstruction manifest must bind one deterministic commitment over the complete declared evidence set, including excluded records. Commitment equality is evidence-set identity only and cannot validate source authenticity, authority or completeness against external reality.",
+    "comparison_outcomes": [
+      "SAME_EVIDENCE_SET",
+      "DIFFERENT_EVIDENCE_SET",
+      "FAIL_CLOSED_UNCOMPARABLE"
+    ]
+  }
 }

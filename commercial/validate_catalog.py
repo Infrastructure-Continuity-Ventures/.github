@@ -24,6 +24,7 @@ CONTINUING_OBLIGATION_PROFILES=ROOT/"commercial/original-terms-continuing-obliga
 OBLIGATION_RESOLUTION_RECEIPT=ROOT/"commercial/continuing-obligation-resolution-receipt.schema.json"
 CONTINUING_OBLIGATION_PROJECTION=ROOT/"commercial/continuing-obligation-current-state-projection.schema.json"
 CONTINUING_OBLIGATION_RECONSTRUCTION=ROOT/"commercial/continuing-obligation-reconstruction-manifest.schema.json"
+CONTINUING_OBLIGATION_EVIDENCE_SET=ROOT/"commercial/continuing-obligation-evidence-set-commitment.schema.json"
 CLASSES=[
     "RELEASED_PRODUCT","REVENUE_READY_SERVICE","MANAGED_PILOT",
     "ASSESSMENT_ONLY","DEVELOPMENT_PREVIEW","INTERNAL_SUBSTRATE",
@@ -281,7 +282,23 @@ def main():
     assert projection["reconstruction_manifest_contract"]=="commercial/continuing-obligation-reconstruction-manifest.schema.json"
     assert resolution["reconstruction_manifest_contract"]=="commercial/continuing-obligation-reconstruction-manifest.schema.json"
     print("ICV_CONTINUING_OBLIGATION_CURRENT_STATE_PROJECTION_V1_VALID")
+    evidence_set=json.loads(CONTINUING_OBLIGATION_EVIDENCE_SET.read_text(encoding="utf-8"))
+    assert evidence_set["schema_version"]=="icv.continuing-obligation-evidence-set-commitment.v1"
+    assert evidence_set["canonical_task_binding"] is None and evidence_set["cosv_task_vector"] is None
+    assert evidence_set["reconstruction_manifest_contract"]=="commercial/continuing-obligation-reconstruction-manifest.schema.json"
+    assert evidence_set["source_coordinates"]["required_closure_disposition"]=="COMPLETE_WITH_SUCCESSOR_OBLIGATION"
+    assert evidence_set["source_coordinates"]["required_continuation_classification"]=="ORIGINAL_ACCEPTED_TERMS_CONTINUATION"
+    assert evidence_set["content_identity"]["algorithm_v1"]=="SHA-256"
+    assert evidence_set["canonicalization"]["version"]=="icv.evidence-set-canonicalization.v1"
+    assert evidence_set["aggregate_commitment"]["algorithm_v1"]=="SHA-256"
+    assert evidence_set["comparison"]["outcomes"]==["SAME_EVIDENCE_SET","DIFFERENT_EVIDENCE_SET","FAIL_CLOSED_UNCOMPARABLE"]
+    assert "never prove" in evidence_set["comparison"]["hash_boundary"]
+    assert all(v=="NONE" for k,v in evidence_set["authority_boundaries"].items() if k.endswith("_effect"))
+    assert evidence_set["current_evaluation"]=="NOT_INVOKED_NO_AUTHENTIC_CONTINUING_OBLIGATION_EVIDENCE_SET"
+    assert reconstruction["evidence_set_commitment"]["contract"]=="commercial/continuing-obligation-evidence-set-commitment.schema.json"
+    assert reconstruction["evidence_set_commitment"]["comparison_outcomes"]==evidence_set["comparison"]["outcomes"]
     print("ICV_CONTINUING_OBLIGATION_RECONSTRUCTION_MANIFEST_V1_VALID")
+    print("ICV_CONTINUING_OBLIGATION_EVIDENCE_SET_COMMITMENT_V1_VALID")
 
 if __name__=="__main__":
     main()
