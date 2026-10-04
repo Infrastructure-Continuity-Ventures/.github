@@ -430,3 +430,14 @@ Classification is evidence-bounded:
 HydraSafe separately governed professional review and reference-rights terms, GP10 qualified-review follow-up, and the packages' separately quoted support/retention/publication/future-integration terms remain bounded by their existing source semantics.
 
 The source closure disposition is immutable historical evidence: it remains `COMPLETE_WITH_SUCCESSOR_OBLIGATION`. The handoff creates no proposal, amendment, renewal, contract, successor engagement or work authority. Successor work remains `NOT_AUTHORIZED` until the applicable existing commercial/operational predicates are separately satisfied.
+
+
+## 2026-10-03 — original-terms continuing-obligation lifecycle
+
+Added `commercial/original-terms-continuing-obligation.schema.json` for post-closure duties classified `ORIGINAL_ACCEPTED_TERMS_CONTINUATION`. The lifecycle is independent from the closed source engagement and uses `PENDING_TRIGGER`, `DUE`, `IN_PROGRESS`, `SATISFIED`, `WAIVED`, `BREACHED_OR_UNSATISFIED` and `FAIL_CLOSED`.
+
+`PENDING_TRIGGER` records an accepted duty whose trigger/due condition has not occurred. `DUE` requires authentic trigger/time evidence. Neither authorizes work. `IN_PROGRESS` additionally requires attributable performance evidence and separate applicable authorization for consequential service/data/provider/credential/custody/mutation/runtime action. `SATISFIED` requires exact duty fulfillment evidence. `WAIVED` requires explicit evidence from an authorized waiving party and cannot be inferred from silence or non-enforcement. `BREACHED_OR_UNSATISFIED` records evidence that a due duty remains unsatisfied or failed; it is expressly not a legal breach/default/damages/enforceability/remedy conclusion. Ambiguous lifecycle evidence is `FAIL_CLOSED`.
+
+Added twelve offering profiles for candidate original-terms support, retention/deletion, publication/reference, correction-period and other explicit continuing duties. These profiles do not create obligations: the exact accepted proposal/SOW/version remains controlling. HydraSafe licensed-professional review, GP10 recommended qualified-review actions, future integrations and other separately scoped work do not become original-terms continuation merely because the package mentions them.
+
+The source engagement remains historically `COMPLETE_WITH_SUCCESSOR_OBLIGATION` through every lifecycle transition and is never reopened or mutated.
