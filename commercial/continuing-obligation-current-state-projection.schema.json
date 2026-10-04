@@ -1,0 +1,109 @@
+{
+  "schema_version": "icv.continuing-obligation-current-state-projection.v1",
+  "authority": "DERIVED_EVIDENCE_PROJECTION_ONLY",
+  "canonical_task_binding": null,
+  "cosv_task_vector": null,
+  "purpose": "Deterministically derive current state for an ORIGINAL_ACCEPTED_TERMS_CONTINUATION obligation from authentic append-only lifecycle observations and resolution receipts without destroying history or treating receipt order as validity.",
+  "input_contracts": [
+    "commercial/successor-obligation-handoff.schema.json",
+    "commercial/original-terms-continuing-obligation.schema.json",
+    "commercial/continuing-obligation-resolution-receipt.schema.json"
+  ],
+  "output_states": [
+    "PENDING_TRIGGER",
+    "DUE",
+    "IN_PROGRESS",
+    "SATISFIED",
+    "WAIVED",
+    "BREACHED_OR_UNSATISFIED",
+    "SATISFIED_AFTER_CURE",
+    "WAIVED_AFTER_UNSATISFIED",
+    "FAIL_CLOSED"
+  ],
+  "validation_order": [
+    "bind exact continuing_obligation_id, successor_obligation_id, source closure/engagement/proposal/version and ORIGINAL_ACCEPTED_TERMS_CONTINUATION classification",
+    "validate each observation/receipt independently for authentic evidence, required actor attribution/authority, obligation scope and state-specific predicates",
+    "validate predecessor references and allowed transition semantics; timestamps cannot repair a broken predecessor link",
+    "deduplicate only byte/evidence-identical or explicitly same-event records; retain all source records",
+    "construct the unique valid predecessor-linked history graph",
+    "derive current state only when one unambiguous valid frontier exists; otherwise FAIL_CLOSED"
+  ],
+  "precedence": {
+    "rule": "Semantic validity and authenticated predecessor lineage take precedence over timestamp, insertion order, repository order, identifier lexical order or receipt arrival order.",
+    "terminal": "A valid SATISFIED or WAIVED receipt is terminal for ordinary lifecycle projection unless a separately valid historical correction model is introduced; contradictory later ordinary observations do not override it and force FAIL_CLOSED.",
+    "unsatisfied": "A valid BREACHED_OR_UNSATISFIED receipt projects that state unless exactly one valid cure receipt descends from that exact unsatisfied receipt.",
+    "cure_satisfied": "Valid CURE_SATISFIED descending from the projected BREACHED_OR_UNSATISFIED receipt projects SATISFIED_AFTER_CURE.",
+    "cure_waived": "Valid CURE_WAIVED descending from the projected BREACHED_OR_UNSATISFIED receipt projects WAIVED_AFTER_UNSATISFIED.",
+    "fail_closed": "Any unresolved authenticity, lineage, authority, contradiction or frontier ambiguity takes precedence over a substantive projected state."
+  },
+  "state_derivation": {
+    "PENDING_TRIGGER": "Unique valid frontier is PENDING_TRIGGER and no authentic due trigger or terminal resolution exists.",
+    "DUE": "Unique valid frontier is DUE with authentic trigger/time evidence and no later valid progress/resolution receipt.",
+    "IN_PROGRESS": "Unique valid frontier is IN_PROGRESS with valid DUE predecessor, attributable progress evidence and required separate consequential-work authorization.",
+    "SATISFIED": "Unique valid frontier is an immutable SATISFIED resolution receipt with valid predecessor/evidence/attribution.",
+    "WAIVED": "Unique valid frontier is an immutable WAIVED resolution receipt with explicit authorized waiver evidence.",
+    "BREACHED_OR_UNSATISFIED": "Unique valid frontier is an immutable BREACHED_OR_UNSATISFIED receipt and no valid cure descendant exists.",
+    "SATISFIED_AFTER_CURE": "Unique valid frontier is CURE_SATISFIED referencing the exact retained BREACHED_OR_UNSATISFIED receipt and authentic cure evidence.",
+    "WAIVED_AFTER_UNSATISFIED": "Unique valid frontier is CURE_WAIVED referencing the exact retained BREACHED_OR_UNSATISFIED receipt and authentic waiver evidence.",
+    "FAIL_CLOSED": "No unique authentic valid frontier can be derived."
+  },
+  "fail_closed_conditions": {
+    "contradictory": [
+      "two or more independently valid incompatible frontier states exist",
+      "SATISFIED and WAIVED receipts claim the same unresolved predecessor without an explicit valid relationship",
+      "terminal/cure receipt conflicts with exact obligation identity, source coordinates, scope or triggering evidence"
+    ],
+    "duplicate": [
+      "same event identifier has different content/evidence/authority",
+      "nominal duplicates cannot be proven to represent the same event",
+      "duplicate records create competing predecessor descendants"
+    ],
+    "stale": [
+      "observation references a predecessor that is not the unique valid frontier required by its transition",
+      "ordinary lifecycle observation attempts to continue after valid SATISFIED or WAIVED terminal receipt",
+      "cure references an unsatisfied receipt other than the exact retained predecessor lineage"
+    ],
+    "unauthorized": [
+      "required actor/waiver/accountable-owner authority is absent, unresolved or rejected",
+      "IN_PROGRESS lacks separately required consequential-work authorization",
+      "record attempts to derive authority from timestamp/order/repository presence alone"
+    ],
+    "broken_lineage": [
+      "missing predecessor observation",
+      "predecessor state does not match referenced observation",
+      "cycle in predecessor graph",
+      "source closure/engagement/proposal/version or obligation identifiers diverge across lineage"
+    ],
+    "evidence": [
+      "required evidence absent, contradictory, unauthenticated or cannot be bound to exact state predicate"
+    ]
+  },
+  "duplicate_handling": "Exact duplicate representations of the same authenticated event may collapse to one projection node only after identity/evidence equivalence is established; duplicates remain retained as source evidence. Non-identical duplicates FAIL_CLOSED.",
+  "reconstruction": {
+    "preserve": [
+      "source engagement closure",
+      "successor-obligation handoff",
+      "all lifecycle observations including invalid/stale/contradictory records",
+      "all terminal resolution receipts",
+      "all cure receipts",
+      "all evidence/authority references",
+      "validation disposition for every record"
+    ],
+    "projection_is_not_history": "Current state is a derived view only. It never deletes, edits, supersedes or rewrites retained observations/receipts.",
+    "invalid_records": "Records excluded from the valid lineage remain reconstructable with their validation failure reason."
+  },
+  "ordering_boundary": "Timestamps and deterministic tie-break metadata may order already-authenticated compatible records for reconstruction, but never establish authenticity, authority, predecessor validity or transition permission.",
+  "source_closure_effect": "NONE; source engagement remains COMPLETE_WITH_SUCCESSOR_OBLIGATION.",
+  "work_authorization_effect": "NONE",
+  "current_evaluation": "NOT_INVOKED_NO_AUTHENTIC_CONTINUING_OBLIGATION_HISTORY",
+  "prohibitions": [
+    "No history deletion/overwrite",
+    "No latest-receipt-wins rule",
+    "No source engagement mutation",
+    "No customer record inspection",
+    "No proposal/contract/amendment/renewal/invoice/payment creation",
+    "No CRM mutation",
+    "No runtime/provider/credential/custody invocation",
+    "No Task Registry/COSV authority"
+  ]
+}

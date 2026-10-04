@@ -452,3 +452,16 @@ Added `commercial/continuing-obligation-resolution-receipt.schema.json`. Every `
 A later cure after `BREACHED_OR_UNSATISFIED` is represented by a new `CURE_SATISFIED` or `CURE_WAIVED` receipt referencing the immutable earlier unsatisfied receipt and new cure evidence. The current projection may report `SATISFIED_AFTER_CURE` or `WAIVED_AFTER_UNSATISFIED`; reconstruction still returns the historical unsatisfied event and all intervening evidence.
 
 The receipt has no work/runtime authority and no legal breach, damages, default, enforceability, remedy, release or discharge effect. The source engagement remains `COMPLETE_WITH_SUCCESSOR_OBLIGATION`.
+
+
+## 2026-10-04 — deterministic continuing-obligation current-state projection
+
+Added `commercial/continuing-obligation-current-state-projection.schema.json` to derive current state from append-only lifecycle observations and immutable resolution/cure receipts without treating the newest record as authoritative.
+
+Validation proceeds by exact source/obligation binding, independent evidence/authority validation, predecessor and transition validation, safe duplicate handling, construction of a unique valid predecessor-linked history, then projection from its unique valid frontier. Timestamp, insertion order, repository order, identifier ordering or receipt arrival order cannot establish authenticity, authority or transition permission.
+
+Outputs are `PENDING_TRIGGER`, `DUE`, `IN_PROGRESS`, `SATISFIED`, `WAIVED`, `BREACHED_OR_UNSATISFIED`, `SATISFIED_AFTER_CURE`, `WAIVED_AFTER_UNSATISFIED` and `FAIL_CLOSED`. A cure must descend from the exact retained `BREACHED_OR_UNSATISFIED` receipt. A valid `SATISFIED` or `WAIVED` terminal receipt cannot be displaced merely by a later ordinary observation.
+
+Contradictory valid frontiers, content-divergent duplicate IDs, ambiguous duplicate events, stale predecessor links, missing/cyclic lineage, unauthorized actors, missing consequential-work authorization for `IN_PROGRESS`, invalid cure ancestry, or unbound/contradictory evidence force `FAIL_CLOSED`. Exact duplicates may collapse for projection only after event/evidence equivalence is established, while every source record remains retained.
+
+The projection is a derived view only. Reconstruction retains the source closure, successor handoff, every lifecycle observation, every terminal/cure receipt, evidence/authority references and each record's validation disposition. The source engagement remains `COMPLETE_WITH_SUCCESSOR_OBLIGATION`.
