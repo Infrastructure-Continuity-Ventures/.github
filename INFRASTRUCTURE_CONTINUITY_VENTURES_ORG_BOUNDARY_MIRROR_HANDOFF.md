@@ -478,3 +478,14 @@ Every input record must appear exactly once. Valid equivalent duplicates remain 
 `FAIL_CLOSED` has equal reconstruction standing with substantive states: the manifest must enumerate the exact authenticity, authority, lineage, contradiction, duplicate, stale or evidence gap that prevented a unique authentic frontier. If reconstruction itself lacks a required input or relationship, it emits `FAIL_CLOSED` and identifies that gap.
 
 Manifest identity, signature/hash, storage, publication or validation cannot rehabilitate invalid source evidence. The manifest has no commercial, contract/legal, work, runtime, Task Registry or COSV effect and does not replace source observations or receipts.
+
+
+## 2026-10-04 — continuing-obligation evidence-set identity
+
+Added `commercial/continuing-obligation-evidence-set-commitment.schema.json` so independent continuing-obligation reconstructions can establish whether they evaluated the same complete declared evidence set rather than relying on equality of the final projected state.
+
+The commitment binds exact closure/handoff/engagement/proposal/version and obligation coordinates; immutable content identities for the source closure and handoff; every retained lifecycle observation, terminal resolution receipt and cure receipt; each record's reconstruction validation disposition; the complete included/excluded/equivalent-duplicate inventory; and every schema/rule version capable of changing validation, lineage or projection. Canonical ordering/serialization and SHA-256 produce the aggregate commitment without granting ordering authority.
+
+Comparison outcomes are `SAME_EVIDENCE_SET`, `DIFFERENT_EVIDENCE_SET` and `FAIL_CLOSED_UNCOMPARABLE`. Matching hashes establish only equality of declared canonical commitment inputs under the declared algorithm/canonicalization assumptions. They do not prove source authenticity, actor authority, legal effect, semantic validity, completeness against external reality, or correctness of a substantive projection. Missing/malformed identity, incomplete inventory accounting, unsupported/unresolved comparison semantics or inconsistent aggregate commitment fail closed as uncomparable.
+
+The reconstruction manifest now requires this evidence-set commitment. The commitment is identity evidence only and has no commercial, contract/legal, payment, work, runtime, Task Registry or COSV effect. No real customer record was inspected and no commercial/runtime transition was invoked.
