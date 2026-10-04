@@ -78,7 +78,8 @@
       "ordered lifecycle observations",
       "ordered resolution/cure receipts",
       "evidence/authority references"
-    ]
+    ],
+    "projection_boundary": "Receipt timestamp/order does not establish validity. Projection requires authentic predecessor/evidence/authority relationships and a unique valid frontier."
   },
   "source_closure_effect": "NONE; source engagement remains COMPLETE_WITH_SUCCESSOR_OBLIGATION.",
   "work_authorization_effect": "NONE",
@@ -93,5 +94,6 @@
     "No CRM mutation",
     "No runtime/provider/credential/custody invocation",
     "No Task Registry/COSV authority"
-  ]
+  ],
+  "current_state_projection_contract": "commercial/continuing-obligation-current-state-projection.schema.json"
 }
