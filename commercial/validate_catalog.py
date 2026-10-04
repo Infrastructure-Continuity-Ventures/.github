@@ -23,6 +23,7 @@ CONTINUING_OBLIGATION=ROOT/"commercial/original-terms-continuing-obligation.sche
 CONTINUING_OBLIGATION_PROFILES=ROOT/"commercial/original-terms-continuing-obligation-profiles.json"
 OBLIGATION_RESOLUTION_RECEIPT=ROOT/"commercial/continuing-obligation-resolution-receipt.schema.json"
 CONTINUING_OBLIGATION_PROJECTION=ROOT/"commercial/continuing-obligation-current-state-projection.schema.json"
+CONTINUING_OBLIGATION_RECONSTRUCTION=ROOT/"commercial/continuing-obligation-reconstruction-manifest.schema.json"
 CLASSES=[
     "RELEASED_PRODUCT","REVENUE_READY_SERVICE","MANAGED_PILOT",
     "ASSESSMENT_ONLY","DEVELOPMENT_PREVIEW","INTERNAL_SUBSTRATE",
@@ -267,7 +268,20 @@ def main():
     assert continuing["current_state_projection_contract"]=="commercial/continuing-obligation-current-state-projection.schema.json"
     assert resolution["current_state_projection_contract"]=="commercial/continuing-obligation-current-state-projection.schema.json"
     print("ICV_CONTINUING_OBLIGATION_RESOLUTION_RECEIPT_V1_VALID")
+    reconstruction=json.loads(CONTINUING_OBLIGATION_RECONSTRUCTION.read_text(encoding="utf-8"))
+    assert reconstruction["schema_version"]=="icv.continuing-obligation-reconstruction-manifest.v1"
+    assert reconstruction["canonical_task_binding"] is None and reconstruction["cosv_task_vector"] is None
+    assert reconstruction["projection_contract"]=="commercial/continuing-obligation-current-state-projection.schema.json"
+    assert reconstruction["source_closure"]["required_disposition"]=="COMPLETE_WITH_SUCCESSOR_OBLIGATION"
+    assert reconstruction["source_handoff"]["required_classification"]=="ORIGINAL_ACCEPTED_TERMS_CONTINUATION"
+    assert reconstruction["frontier_derivation"]["no_hidden_exclusions"].startswith("Every input record")
+    assert reconstruction["final_projected_states"]==projection["output_states"]
+    assert all(v=="NONE" for k,v in reconstruction["authority_boundaries"].items() if k.endswith("_effect"))
+    assert reconstruction["current_evaluation"]=="NOT_INVOKED_NO_AUTHENTIC_CONTINUING_OBLIGATION_HISTORY"
+    assert projection["reconstruction_manifest_contract"]=="commercial/continuing-obligation-reconstruction-manifest.schema.json"
+    assert resolution["reconstruction_manifest_contract"]=="commercial/continuing-obligation-reconstruction-manifest.schema.json"
     print("ICV_CONTINUING_OBLIGATION_CURRENT_STATE_PROJECTION_V1_VALID")
+    print("ICV_CONTINUING_OBLIGATION_RECONSTRUCTION_MANIFEST_V1_VALID")
 
 if __name__=="__main__":
     main()
