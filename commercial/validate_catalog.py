@@ -18,6 +18,7 @@ DELIVERY_OWNER_DECISION=ROOT/"commercial/service-delivery-owner-decision.schema.
 TERMINAL_COMMERCIAL=ROOT/"commercial/terminal-commercial-evidence-path.schema.json"
 ENGAGEMENT_CLOSURE=ROOT/"commercial/engagement-closure.schema.json"
 ENGAGEMENT_CLOSURE_PROFILES=ROOT/"commercial/engagement-closure-profiles.json"
+SUCCESSOR_HANDOFF=ROOT/"commercial/successor-obligation-handoff.schema.json"
 CLASSES=[
     "RELEASED_PRODUCT","REVENUE_READY_SERVICE","MANAGED_PILOT",
     "ASSESSMENT_ONLY","DEVELOPMENT_PREVIEW","INTERNAL_SUBSTRATE",
@@ -217,7 +218,17 @@ def main():
     assert terminal["engagement_closure_contract"]=="commercial/engagement-closure.schema.json"
     assert terminal["states"]["ENGAGEMENT_COMPLETE"]["closure_independence"].startswith("Independent of StegBusiness-Ops contract COMPLETE")
     print("ICV_TERMINAL_COMMERCIAL_EVIDENCE_PATH_V1_VALID")
+    successor=json.loads(SUCCESSOR_HANDOFF.read_text(encoding="utf-8"))
+    assert successor["schema_version"]=="icv.successor-obligation-handoff.v1"
+    assert successor["canonical_task_binding"] is None and successor["cosv_task_vector"] is None
+    assert successor["continuation_classifications"]==["ORIGINAL_ACCEPTED_TERMS_CONTINUATION","AMENDMENT_OR_RENEWAL_REQUIRED","SEPARATE_SUCCESSOR_ENGAGEMENT_REQUIRED","FAIL_CLOSED_UNCLASSIFIED"]
+    assert successor["work_authorization"]["default"]=="NOT_AUTHORIZED"
+    assert successor["work_authorization"]["runtime_effect"]=="NONE"
+    assert successor["current_evaluation"]=="NOT_INVOKED_NO_AUTHENTIC_SUCCESSOR_OBLIGATION"
+    assert closure["successor_obligation_handoff"]=="commercial/successor-obligation-handoff.schema.json"
+    assert all(x["successor_work_authorization"]=="NOT_AUTHORIZED_BY_CLOSURE_OR_HANDOFF" for x in closure_profiles["profiles"])
     print("ICV_ENGAGEMENT_CLOSURE_V1_VALID")
+    print("ICV_SUCCESSOR_OBLIGATION_HANDOFF_V1_VALID")
 
 if __name__=="__main__":
     main()
