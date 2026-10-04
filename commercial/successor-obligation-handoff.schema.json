@@ -29,7 +29,8 @@
     "ORIGINAL_ACCEPTED_TERMS_CONTINUATION": [
       "exact accepted proposal/SOW/version expressly contains the surviving obligation",
       "obligation scope, owner and applicable term/trigger are already fixed by accepted evidence",
-      "performing the obligation does not materially change price/scope/deliverables/exclusions/schedule/liability/authority/payment or another accepted material term"
+      "performing the obligation does not materially change price/scope/deliverables/exclusions/schedule/liability/authority/payment or another accepted material term",
+      "post-closure lifecycle is tracked independently without reopening the source engagement"
     ],
     "AMENDMENT_OR_RENEWAL_REQUIRED": [
       "surviving obligation belongs to the same commercial relationship but performance requires changing or extending a material accepted term",
@@ -64,5 +65,7 @@
     "No Task Registry/COSV authority",
     "No repository state treated as commercial authority"
   ],
-  "current_evaluation": "NOT_INVOKED_NO_AUTHENTIC_SUCCESSOR_OBLIGATION"
+  "current_evaluation": "NOT_INVOKED_NO_AUTHENTIC_SUCCESSOR_OBLIGATION",
+  "original_terms_continuing_obligation_contract": "commercial/original-terms-continuing-obligation.schema.json",
+  "original_terms_profiles": "commercial/original-terms-continuing-obligation-profiles.json"
 }
