@@ -1,0 +1,116 @@
+{
+  "schema_version": "icv.original-terms-continuing-obligation.v1",
+  "authority": "CONTINUING_OBLIGATION_EVIDENCE_ONLY",
+  "canonical_task_binding": null,
+  "cosv_task_vector": null,
+  "applies_only_when": "successor-obligation-handoff continuation_classification == ORIGINAL_ACCEPTED_TERMS_CONTINUATION",
+  "purpose": "Track an obligation already contained in exact accepted terms after source engagement closure without reopening/mutating the source engagement or creating new commercial/runtime authority.",
+  "required_fields": [
+    "continuing_obligation_id",
+    "successor_obligation_id",
+    "source_closure_id",
+    "source_engagement_id",
+    "source_proposal_id",
+    "source_proposal_version",
+    "obligation_type",
+    "obligation_scope",
+    "obligation_owner",
+    "trigger_or_due_condition",
+    "current_state",
+    "state_evidence_refs",
+    "observed_at",
+    "work_authorization_state"
+  ],
+  "states": {
+    "PENDING_TRIGGER": {
+      "meaning": "Accepted continuing duty exists but its exact trigger/due condition has not authentically occurred.",
+      "requires": [
+        "exact original-terms obligation identity",
+        "trigger/due condition defined by accepted terms",
+        "evidence trigger has not yet occurred or due time has not arrived"
+      ],
+      "work_effect": "NONE"
+    },
+    "DUE": {
+      "meaning": "The accepted trigger/due condition has authentically occurred and the obligation remains unresolved.",
+      "requires": [
+        "authentic trigger/time evidence",
+        "obligation not already SATISFIED or WAIVED"
+      ],
+      "work_effect": "NONE; due status alone does not authorize consequential work"
+    },
+    "IN_PROGRESS": {
+      "meaning": "Authentic evidence shows authorized performance of the due continuing duty has begun and is not yet resolved.",
+      "requires": [
+        "DUE evidence",
+        "authentic attributable commencement/progress evidence",
+        "separate applicable authorization for any consequential work"
+      ],
+      "work_effect": "EVIDENCE_ONLY"
+    },
+    "SATISFIED": {
+      "meaning": "Authentic evidence shows the exact continuing duty was fulfilled within its accepted scope.",
+      "requires": [
+        "exact obligation identity",
+        "completion/satisfaction evidence appropriate to obligation type",
+        "accountable owner attribution where applicable"
+      ],
+      "work_effect": "NONE"
+    },
+    "WAIVED": {
+      "meaning": "Authentic evidence from an authorized party shows the continuing duty was validly waived within that party's authority.",
+      "requires": [
+        "exact obligation identity",
+        "waiving party identity/authority evidence",
+        "explicit waiver scope and timestamp",
+        "no inference from silence, non-enforcement or repository state"
+      ],
+      "work_effect": "NONE"
+    },
+    "BREACHED_OR_UNSATISFIED": {
+      "meaning": "Evidence classification that a due accepted duty is not satisfied; not a legal breach/enforceability conclusion.",
+      "requires": [
+        "exact obligation identity",
+        "authentic due/trigger evidence",
+        "evidence of non-satisfaction, refusal, failed required performance, or applicable accepted period elapsing without satisfaction",
+        "preserve unresolved legal consequences separately"
+      ],
+      "work_effect": "NONE"
+    },
+    "FAIL_CLOSED": {
+      "meaning": "Authentic lifecycle state cannot be determined.",
+      "requires_any": [
+        "trigger/due evidence missing or contradictory",
+        "owner/scope/source terms cannot be bound",
+        "satisfaction/waiver/non-satisfaction evidence is ambiguous",
+        "required consequential-work authorization cannot be established for an asserted IN_PROGRESS state"
+      ],
+      "work_effect": "NONE"
+    }
+  },
+  "transitions": [
+    "PENDING_TRIGGER -> DUE | WAIVED | FAIL_CLOSED",
+    "DUE -> IN_PROGRESS | SATISFIED | WAIVED | BREACHED_OR_UNSATISFIED | FAIL_CLOSED",
+    "IN_PROGRESS -> SATISFIED | WAIVED | BREACHED_OR_UNSATISFIED | FAIL_CLOSED",
+    "BREACHED_OR_UNSATISFIED -> SATISFIED | WAIVED | FAIL_CLOSED when later authentic cure/waiver evidence exists; historical non-satisfaction evidence is retained"
+  ],
+  "source_closure_immutability": "Source engagement remains COMPLETE_WITH_SUCCESSOR_OBLIGATION and is never reopened, mutated or reclassified by this lifecycle.",
+  "owner_refs": [
+    "exact accepted proposal/SOW/version and successor-obligation handoff",
+    "applicable offering/accountable obligation owner",
+    "StegVerse-Labs/StegBusiness contract scope/term/signature-authority/evidence references",
+    "StegVerse-Labs/StegBusiness-Ops contract lifecycle evidence where applicable"
+  ],
+  "authorization_boundary": "Lifecycle state and work authority are independent. PENDING_TRIGGER/DUE do not authorize work. IN_PROGRESS requires separate applicable authorization for any consequential service, data, provider, credential, custody, mutation or runtime action.",
+  "legal_boundary": "BREACHED_OR_UNSATISFIED is descriptive evidence only and does not establish legal breach, damages, default, enforceability or remedy.",
+  "current_evaluation": "NOT_INVOKED_NO_AUTHENTIC_CONTINUING_OBLIGATION",
+  "prohibitions": [
+    "No source engagement reopening/mutation",
+    "No real customer record inspection",
+    "No proposal/contract/amendment/renewal creation",
+    "No invoice/payment creation",
+    "No CRM mutation",
+    "No runtime/provider/credential/custody invocation",
+    "No Task Registry/COSV authority"
+  ]
+}

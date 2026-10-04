@@ -209,3 +209,14 @@ Payment, deliverable acceptance, contract expiry, contract `COMPLETE`, accountin
 Original-terms continuation is permitted only when the exact accepted proposal/SOW already fixes the obligation, owner, scope and applicable term/trigger without material modification. Material changes/extensions route to the existing StegBusiness-Ops amendment/renewal lifecycle. Separately quoted, separately governed or out-of-scope work requires a separately accepted successor engagement.
 
 Every handoff has `work_authorization_state=NOT_AUTHORIZED` by default. Recording or classifying an obligation never starts successor work, and the source engagement remains historically `COMPLETE_WITH_SUCCESSOR_OBLIGATION`.
+
+
+## Original-terms continuing obligations
+
+`original-terms-continuing-obligation.schema.json` tracks only obligations classified `ORIGINAL_ACCEPTED_TERMS_CONTINUATION` after the source engagement has closed. The closed engagement remains immutable.
+
+Lifecycle evidence states are `PENDING_TRIGGER`, `DUE`, `IN_PROGRESS`, `SATISFIED`, `WAIVED`, `BREACHED_OR_UNSATISFIED`, and `FAIL_CLOSED`.
+
+A trigger becoming due does not authorize consequential work. `IN_PROGRESS` requires separate applicable work/runtime/data/provider/credential/custody authorization where the duty requires such action. `BREACHED_OR_UNSATISFIED` is an evidence classification only, not a legal breach, damages, default, enforceability or remedy conclusion.
+
+The offering profiles identify candidate continuing-duty types, but package text alone never creates a duty; the exact accepted proposal/SOW/version must contain it.

@@ -19,6 +19,8 @@ TERMINAL_COMMERCIAL=ROOT/"commercial/terminal-commercial-evidence-path.schema.js
 ENGAGEMENT_CLOSURE=ROOT/"commercial/engagement-closure.schema.json"
 ENGAGEMENT_CLOSURE_PROFILES=ROOT/"commercial/engagement-closure-profiles.json"
 SUCCESSOR_HANDOFF=ROOT/"commercial/successor-obligation-handoff.schema.json"
+CONTINUING_OBLIGATION=ROOT/"commercial/original-terms-continuing-obligation.schema.json"
+CONTINUING_OBLIGATION_PROFILES=ROOT/"commercial/original-terms-continuing-obligation-profiles.json"
 CLASSES=[
     "RELEASED_PRODUCT","REVENUE_READY_SERVICE","MANAGED_PILOT",
     "ASSESSMENT_ONLY","DEVELOPMENT_PREVIEW","INTERNAL_SUBSTRATE",
@@ -228,7 +230,18 @@ def main():
     assert closure["successor_obligation_handoff"]=="commercial/successor-obligation-handoff.schema.json"
     assert all(x["successor_work_authorization"]=="NOT_AUTHORIZED_BY_CLOSURE_OR_HANDOFF" for x in closure_profiles["profiles"])
     print("ICV_ENGAGEMENT_CLOSURE_V1_VALID")
+    continuing=json.loads(CONTINUING_OBLIGATION.read_text(encoding="utf-8"))
+    continuing_profiles=json.loads(CONTINUING_OBLIGATION_PROFILES.read_text(encoding="utf-8"))
+    assert continuing["schema_version"]=="icv.original-terms-continuing-obligation.v1"
+    assert set(continuing["states"])=={"PENDING_TRIGGER","DUE","IN_PROGRESS","SATISFIED","WAIVED","BREACHED_OR_UNSATISFIED","FAIL_CLOSED"}
+    assert continuing["source_closure_immutability"].startswith("Source engagement remains COMPLETE_WITH_SUCCESSOR_OBLIGATION")
+    assert continuing["current_evaluation"]=="NOT_INVOKED_NO_AUTHENTIC_CONTINUING_OBLIGATION"
+    assert continuing_profiles["schema_version"]=="icv.original-terms-continuing-obligation-profiles.v1"
+    assert len(continuing_profiles["profiles"])==12
+    assert all(x["current_state"]=="FAIL_CLOSED_NOT_EVALUATED" for x in continuing_profiles["profiles"])
+    assert successor["original_terms_continuing_obligation_contract"]=="commercial/original-terms-continuing-obligation.schema.json"
     print("ICV_SUCCESSOR_OBLIGATION_HANDOFF_V1_VALID")
+    print("ICV_ORIGINAL_TERMS_CONTINUING_OBLIGATION_V1_VALID")
 
 if __name__=="__main__":
     main()

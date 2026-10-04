@@ -1,0 +1,119 @@
+{
+  "schema_version": "icv.original-terms-continuing-obligation-profiles.v1",
+  "authority": "OFFERING_CONTINUING_DUTY_DESCRIPTION_ONLY",
+  "canonical_task_binding": null,
+  "cosv_task_vector": null,
+  "profiles": [
+    {
+      "offering_id": "icv.governance-assessment.v1",
+      "applicable_original_terms_types": [
+        "RETENTION_OR_DELETION"
+      ],
+      "source_semantics": "Retention can continue only when fixed by exact written scope; follow-on implementation is not original-terms continuation unless expressly accepted.",
+      "current_state": "FAIL_CLOSED_NOT_EVALUATED"
+    },
+    {
+      "offering_id": "icv.governance-boundary-validation.v1",
+      "applicable_original_terms_types": [
+        "SUPPORT",
+        "RETENTION_OR_DELETION",
+        "PUBLICATION_OR_REFERENCE_RIGHTS"
+      ],
+      "source_semantics": "Support, retention and publication rights are engagement-specific written terms; follow-on licensing remains separate unless exact terms already create the duty.",
+      "current_state": "FAIL_CLOSED_NOT_EVALUATED"
+    },
+    {
+      "offering_id": "icv.admitted-code.v1",
+      "applicable_original_terms_types": [
+        "SUPPORT",
+        "RETENTION_OR_DELETION"
+      ],
+      "source_semantics": "Support/retention may continue only as exactly quoted; implementation work remains separately scoped unless expressly included.",
+      "current_state": "FAIL_CLOSED_NOT_EVALUATED"
+    },
+    {
+      "offering_id": "icv.steggate.v1",
+      "applicable_original_terms_types": [
+        "SUPPORT",
+        "RETENTION_OR_DELETION"
+      ],
+      "source_semantics": "Quoted preview support/source handling/retention may continue; no production SLA/license is implied.",
+      "current_state": "FAIL_CLOSED_NOT_EVALUATED"
+    },
+    {
+      "offering_id": "icv.stegcrm.v1",
+      "applicable_original_terms_types": [
+        "SUPPORT",
+        "RETENTION_OR_DELETION"
+      ],
+      "source_semantics": "Quoted pilot support/retention may continue; later write-enabled integration remains separately admitted.",
+      "current_state": "FAIL_CLOSED_NOT_EVALUATED"
+    },
+    {
+      "offering_id": "icv.hydrasafe.v1",
+      "applicable_original_terms_types": [
+        "CORRECTION_PERIOD",
+        "PUBLICATION_OR_REFERENCE_RIGHTS"
+      ],
+      "source_semantics": "Agreed review/correction period and separately agreed reference-rights restrictions may continue; licensed-professional review remains a separate agreement.",
+      "current_state": "FAIL_CLOSED_NOT_EVALUATED"
+    },
+    {
+      "offering_id": "icv.gp10-field-validation.v1",
+      "applicable_original_terms_types": [
+        "OTHER_EXPLICIT_ACCEPTED_OBLIGATION"
+      ],
+      "source_semantics": "Only an explicit duty already contained in the exact written field-validation scope can continue; recommended qualified-review actions are successor work by default.",
+      "current_state": "FAIL_CLOSED_NOT_EVALUATED"
+    },
+    {
+      "offering_id": "icv.governance-observatory.v1",
+      "applicable_original_terms_types": [
+        "SUPPORT",
+        "RETENTION_OR_DELETION",
+        "PUBLICATION_OR_REFERENCE_RIGHTS"
+      ],
+      "source_semantics": "Separately quoted support/retention/publication terms may survive artifact delivery when already accepted.",
+      "current_state": "FAIL_CLOSED_NOT_EVALUATED"
+    },
+    {
+      "offering_id": "icv.knowledgevault.v1",
+      "applicable_original_terms_types": [
+        "SUPPORT",
+        "RETENTION_OR_DELETION"
+      ],
+      "source_semantics": "Accepted support/retention may continue; storage-provider work or optional governed integration is separate unless exact terms already contain the duty and authority.",
+      "current_state": "FAIL_CLOSED_NOT_EVALUATED"
+    },
+    {
+      "offering_id": "icv.stegtalk.v1",
+      "applicable_original_terms_types": [
+        "SUPPORT",
+        "RETENTION_OR_DELETION"
+      ],
+      "source_semantics": "Accepted demo/pilot support and test-data handling may continue; production service/SLA does not.",
+      "current_state": "FAIL_CLOSED_NOT_EVALUATED"
+    },
+    {
+      "offering_id": "icv.ecosystem-chat.v1",
+      "applicable_original_terms_types": [
+        "SUPPORT",
+        "RETENTION_OR_DELETION"
+      ],
+      "source_semantics": "Accepted preview support/data handling may continue; future integration/provider consumption remains separate.",
+      "current_state": "FAIL_CLOSED_NOT_EVALUATED"
+    },
+    {
+      "offering_id": "icv.steglearn.v1",
+      "applicable_original_terms_types": [
+        "SUPPORT",
+        "RETENTION_OR_DELETION"
+      ],
+      "source_semantics": "Accepted pilot support/privacy-retention may continue; external media/provider integration remains separately agreed.",
+      "current_state": "FAIL_CLOSED_NOT_EVALUATED"
+    }
+  ],
+  "rule": "These are candidate obligation types only when the exact accepted source terms actually contain the duty. Package text alone never creates a continuing obligation.",
+  "current_global_state": "FAIL_CLOSED_NOT_EVALUATED",
+  "no_current_evaluation_invoked": true
+}
