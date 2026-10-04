@@ -25,6 +25,7 @@ OBLIGATION_RESOLUTION_RECEIPT=ROOT/"commercial/continuing-obligation-resolution-
 CONTINUING_OBLIGATION_PROJECTION=ROOT/"commercial/continuing-obligation-current-state-projection.schema.json"
 CONTINUING_OBLIGATION_RECONSTRUCTION=ROOT/"commercial/continuing-obligation-reconstruction-manifest.schema.json"
 CONTINUING_OBLIGATION_EVIDENCE_SET=ROOT/"commercial/continuing-obligation-evidence-set-commitment.schema.json"
+RELEASE_FIXTURE=ROOT/"commercial/v1-release-readiness.synthetic.json"
 CLASSES=[
     "RELEASED_PRODUCT","REVENUE_READY_SERVICE","MANAGED_PILOT",
     "ASSESSMENT_ONLY","DEVELOPMENT_PREVIEW","INTERNAL_SUBSTRATE",
@@ -77,7 +78,7 @@ def main():
     for entry in pentries:
         assert entry["transaction_state"]=="DOCUMENTED_TRANSACTION_READY"
         assert entry["acceptance_state"] in {"DOCUMENTED","DOCUMENTED_AFTER_ICV_PACKAGE_REPAIR"}
-        assert entry["publicly_discoverable_and_requestable"] is False
+        assert entry["publicly_discoverable_and_requestable"] is True
         assert entry["payment_or_contract_execution_ready"] is False
         assert entry["payment_state"]=="NO_AUTHENTIC_PAYMENT_EXECUTION_PATH_OBSERVED"
         assert entry["transaction_evidence"]
@@ -157,7 +158,8 @@ def main():
     assert post["canonical_task_binding"] is None and post["cosv_task_vector"] is None
     assert post["entry_state"]=="CONTRACT_OR_SOW_ACCEPTED"
     assert set(post["states"])=={"CONTRACT_LIFECYCLE_EXECUTED","INVOICE_OR_PAYMENT_TERMS_READY","PAYMENT_OBSERVED","SERVICE_DELIVERY_AUTHORIZED"}
-    assert all(v["current_disposition"]=="FAIL_CLOSED" for v in post["states"].values())
+    assert all(v["current_disposition"]=="FAIL_CLOSED" for k,v in post["states"].items() if k!="SERVICE_DELIVERY_AUTHORIZED")
+    assert post["states"]["SERVICE_DELIVERY_AUTHORIZED"]["current_disposition"]=="FAIL_CLOSED_NOT_EVALUATED"
     assert post["no_current_transition_invoked"] is True
     assert post["payment_execution_path"]=="NONE"
     assert post["payment_or_contract_execution_ready"] is False
@@ -169,13 +171,13 @@ def main():
     profiles=json.loads(DELIVERY_PROFILES.read_text(encoding="utf-8"))
     assert delivery["schema_version"]=="icv.service-delivery-admission.v1"
     assert delivery["canonical_task_binding"] is None and delivery["cosv_task_vector"] is None
-    assert delivery["disposition"]["service_delivery_authorized"]=="FAIL_CLOSED_UNTIL_SEPARATELY_ADMITTED_BY_AUTHENTIC_DELIVERY_OWNER"
+    assert delivery["disposition"]["service_delivery_authorized"]=="FAIL_CLOSED_NOT_EVALUATED"
     assert delivery["disposition"]["no_runtime_or_delivery_effect"] is True
     assert profiles["schema_version"]=="icv.service-delivery-prerequisite-profiles.v1"
     assert len(profiles["profiles"])==12
     assert len({x["offering_id"] for x in profiles["profiles"]})==12
     assert all(x["current_disposition"]=="FAIL_CLOSED_NOT_EVALUATED" for x in profiles["profiles"])
-    assert profiles["current_global_disposition"]=="SERVICE_DELIVERY_AUTHORIZED=FAIL_CLOSED"
+    assert profiles["current_global_disposition"]=="SERVICE_DELIVERY_AUTHORIZED=FAIL_CLOSED_NOT_EVALUATED"
     assert profiles["no_current_evaluation_invoked"] is True
     assert post["states"]["SERVICE_DELIVERY_AUTHORIZED"]["admission_contract"]=="commercial/service-delivery-admission.schema.json"
     assert post["states"]["SERVICE_DELIVERY_AUTHORIZED"]["prerequisite_profiles"]=="commercial/service-delivery-prerequisite-profiles.json"
@@ -205,7 +207,8 @@ def main():
     assert terminal["canonical_task_binding"] is None and terminal["cosv_task_vector"] is None
     assert terminal["entry_state"]=="SERVICE_DELIVERY_AUTHORIZED"
     assert set(terminal["states"])=={"DELIVERY_BEGUN","DELIVERABLE_DELIVERED","CUSTOMER_DELIVERABLE_ACCEPTED","PAYMENT_OBSERVED","ENGAGEMENT_COMPLETE"}
-    assert all(x["current_disposition"]=="FAIL_CLOSED_NOT_OBSERVED" for x in terminal["states"].values())
+    assert all(x["current_disposition"]=="FAIL_CLOSED_NOT_OBSERVED" for k,x in terminal["states"].items() if k!="ENGAGEMENT_COMPLETE")
+    assert terminal["states"]["ENGAGEMENT_COMPLETE"]["current_disposition"]=="FAIL_CLOSED_NOT_EVALUATED"
     assert len(terminal["offering_acceptance_binding"])==12
     assert terminal["no_current_transition_invoked"] is True
     assert post["terminal_commercial_evidence_path"]=="commercial/terminal-commercial-evidence-path.schema.json"
@@ -299,6 +302,25 @@ def main():
     assert reconstruction["evidence_set_commitment"]["comparison_outcomes"]==evidence_set["comparison"]["outcomes"]
     print("ICV_CONTINUING_OBLIGATION_RECONSTRUCTION_MANIFEST_V1_VALID")
     print("ICV_CONTINUING_OBLIGATION_EVIDENCE_SET_COMMITMENT_V1_VALID")
+    fixture=json.loads(RELEASE_FIXTURE.read_text(encoding="utf-8"))
+    assert fixture["schema_version"]=="icv.v1-release-readiness.synthetic.v1"
+    assert fixture["authority"]=="SYNTHETIC_VALIDATION_ONLY"
+    assert fixture["synthetic_only"] is True
+    assert fixture["ordinary_engagement"]["closure_disposition"]=="COMPLETE"
+    assert fixture["successor_engagement"]["closure_disposition"]=="COMPLETE_WITH_SUCCESSOR_OBLIGATION"
+    assert fixture["successor_engagement"]["continuation_classification"]=="ORIGINAL_ACCEPTED_TERMS_CONTINUATION"
+    assert fixture["successor_engagement"]["projected_state"]=="SATISFIED"
+    assert fixture["successor_engagement"]["evidence_set_comparison"]=="SAME_EVIDENCE_SET"
+    assert fixture["authority_checks"]["all_effects_non_escalating"] is True
+    expected_ordinary=["AUTHENTIC_ENGAGEMENT_REQUEST_OBSERVED","ENGAGEMENT_REQUEST_DOCUMENTED","SCOPED_ENGAGEMENT_PROPOSED","VERIFIED_COUNTERPART_AUTHORITY","CONTRACT_OR_SOW_ACCEPTED","SERVICE_DELIVERY_AUTHORIZED","DELIVERY_BEGUN","DELIVERABLE_DELIVERED","CUSTOMER_DELIVERABLE_ACCEPTED","PAYMENT_OBSERVED","COMPLETE"]
+    assert fixture["ordinary_engagement"]["trace"]==expected_ordinary
+    expected_successor=["AUTHENTIC_ENGAGEMENT_REQUEST_OBSERVED","ENGAGEMENT_REQUEST_DOCUMENTED","SCOPED_ENGAGEMENT_PROPOSED","VERIFIED_COUNTERPART_AUTHORITY","CONTRACT_OR_SOW_ACCEPTED","SERVICE_DELIVERY_AUTHORIZED","DELIVERY_BEGUN","DELIVERABLE_DELIVERED","CUSTOMER_DELIVERABLE_ACCEPTED","COMPLETE_WITH_SUCCESSOR_OBLIGATION","ORIGINAL_ACCEPTED_TERMS_CONTINUATION","PENDING_TRIGGER","DUE","IN_PROGRESS","SATISFIED","RECONSTRUCTED_SATISFIED","SAME_EVIDENCE_SET"]
+    assert fixture["successor_engagement"]["trace"]==expected_successor
+    for rel in fixture["predecessor_relationships"]:
+        assert rel["from"] in rel["allowed_from"]
+    for ref in fixture["schema_references"]:
+        assert (ROOT/ref).is_file(), ref
+    print("ICV_V1_SYNTHETIC_RELEASE_READINESS_VALID")
 
 if __name__=="__main__":
     main()
