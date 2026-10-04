@@ -413,3 +413,20 @@ Added `commercial/engagement-closure.schema.json` with four dispositions: `COMPL
 StegBusiness-Ops contract `AMENDED`, `RENEWAL_DUE`, `EXPIRED`, `TERMINATED` and `COMPLETE` remain separate contract-lifecycle states. Accounting period close and revenue cut-off review remain separate finance operations. Payment, deliverable acceptance, contract expiry and repository closure cannot establish engagement closure.
 
 No real engagement was evaluated or closed.
+
+
+## 2026-10-03 — successor-obligation handoff
+
+Added `commercial/successor-obligation-handoff.schema.json` so `COMPLETE_WITH_SUCCESSOR_OBLIGATION` can preserve a surviving duty without implicitly creating a new engagement.
+
+The minimum record binds the source closure/engagement/offering/proposal/version, obligation type/scope/owner, trigger or due condition, evidence references, one continuation classification and `work_authorization_state`.
+
+Classification is evidence-bounded:
+- `ORIGINAL_ACCEPTED_TERMS_CONTINUATION`: the exact accepted terms already contain the obligation, owner, scope and trigger/term and no material term changes.
+- `AMENDMENT_OR_RENEWAL_REQUIRED`: same commercial relationship, but performance requires material change/extension; existing StegBusiness-Ops `AMENDED` / `RENEWAL_DUE` lifecycle remains controlling.
+- `SEPARATE_SUCCESSOR_ENGAGEMENT_REQUIRED`: follow-on work is outside the accepted scope or expressly separately quoted/contracted/governed and must pass the normal proposal/acceptance/service-start path.
+- `FAIL_CLOSED_UNCLASSIFIED`: source evidence cannot safely establish one of those paths.
+
+HydraSafe separately governed professional review and reference-rights terms, GP10 qualified-review follow-up, and the packages' separately quoted support/retention/publication/future-integration terms remain bounded by their existing source semantics.
+
+The source closure disposition is immutable historical evidence: it remains `COMPLETE_WITH_SUCCESSOR_OBLIGATION`. The handoff creates no proposal, amendment, renewal, contract, successor engagement or work authority. Successor work remains `NOT_AUTHORIZED` until the applicable existing commercial/operational predicates are separately satisfied.

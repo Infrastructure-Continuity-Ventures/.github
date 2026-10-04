@@ -195,3 +195,17 @@ Revenue recognition remains a separate accounting-basis determination under Steg
 `engagement-closure-profiles.json` preserves the twelve offerings' possible surviving obligations, including support, retention/deletion, publication/reference rights, correction periods, professional-review follow-up, renewal/extension and separately scoped future integration/licensing.
 
 Payment, deliverable acceptance, contract expiry, contract `COMPLETE`, accounting-period close and repository closure are not substitutes for ICV engagement closure.
+
+
+## Successor-obligation handoff
+
+`successor-obligation-handoff.schema.json` classifies every obligation surviving `COMPLETE_WITH_SUCCESSOR_OBLIGATION` without creating new commercial authority:
+
+- `ORIGINAL_ACCEPTED_TERMS_CONTINUATION`
+- `AMENDMENT_OR_RENEWAL_REQUIRED`
+- `SEPARATE_SUCCESSOR_ENGAGEMENT_REQUIRED`
+- `FAIL_CLOSED_UNCLASSIFIED`
+
+Original-terms continuation is permitted only when the exact accepted proposal/SOW already fixes the obligation, owner, scope and applicable term/trigger without material modification. Material changes/extensions route to the existing StegBusiness-Ops amendment/renewal lifecycle. Separately quoted, separately governed or out-of-scope work requires a separately accepted successor engagement.
+
+Every handoff has `work_authorization_state=NOT_AUTHORIZED` by default. Recording or classifying an obligation never starts successor work, and the source engagement remains historically `COMPLETE_WITH_SUCCESSOR_OBLIGATION`.
