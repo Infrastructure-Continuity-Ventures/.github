@@ -1,0 +1,97 @@
+{
+  "schema_version": "icv.continuing-obligation-resolution-receipt.v1",
+  "authority": "IMMUTABLE_OBLIGATION_RESOLUTION_EVIDENCE_ONLY",
+  "canonical_task_binding": null,
+  "cosv_task_vector": null,
+  "purpose": "Append an immutable resolution event for an original-terms continuing obligation without deleting, replacing or mutating prior lifecycle observations or the closed source engagement.",
+  "applies_to_terminal_observations": [
+    "SATISFIED",
+    "WAIVED",
+    "BREACHED_OR_UNSATISFIED"
+  ],
+  "required_fields": [
+    "resolution_receipt_id",
+    "continuing_obligation_id",
+    "successor_obligation_id",
+    "source_closure_id",
+    "source_engagement_id",
+    "source_proposal_id",
+    "source_proposal_version",
+    "predecessor_state",
+    "predecessor_observation_ref",
+    "triggering_evidence_refs",
+    "resulting_state",
+    "resolved_or_observed_at",
+    "resolution_actor",
+    "actor_authority_evidence_refs",
+    "receipt_evidence_refs",
+    "supersedes_prior_history"
+  ],
+  "field_rules": {
+    "predecessor_state": "Must name the authentically observed lifecycle state immediately preceding this resolution event.",
+    "predecessor_observation_ref": "Must identify the retained predecessor observation/receipt; it is never overwritten.",
+    "triggering_evidence_refs": "Exact evidence that justifies this resolution observation.",
+    "resolution_actor": "Accountable obligation owner or counterpart/waiving party as required by the resolution semantics.",
+    "actor_authority_evidence_refs": "Required when the resolution depends on authority, especially WAIVED; may be an empty array only when the resolution is purely evidence-of-performance and no counterpart/waiver authority is required.",
+    "resulting_state": "SATISFIED, WAIVED or BREACHED_OR_UNSATISFIED for ordinary resolution receipts; CURE_SATISFIED or CURE_WAIVED for append-only later cure/waiver receipts.",
+    "supersedes_prior_history": "Must always be false."
+  },
+  "resolution_rules": {
+    "SATISFIED": [
+      "exact obligation fulfillment evidence",
+      "predecessor state/evidence retained",
+      "accountable attribution where applicable"
+    ],
+    "WAIVED": [
+      "explicit waiver evidence",
+      "waiving party identity and authority evidence",
+      "exact waiver scope/timestamp",
+      "predecessor state/evidence retained"
+    ],
+    "BREACHED_OR_UNSATISFIED": [
+      "authentic due/trigger evidence",
+      "non-satisfaction/refusal/failed performance/elapsed accepted period evidence",
+      "legal consequences remain unresolved",
+      "predecessor state/evidence retained"
+    ]
+  },
+  "cure": {
+    "rule": "A later cure never edits or supersedes a BREACHED_OR_UNSATISFIED receipt. Append a new cure receipt referencing the prior unsatisfied receipt and new cure evidence.",
+    "required_fields": [
+      "prior_unsatisfied_resolution_receipt_id",
+      "cure_evidence_refs",
+      "cure_observed_at"
+    ],
+    "resulting_states": [
+      "CURE_SATISFIED",
+      "CURE_WAIVED"
+    ],
+    "projection_rule": "A current-state projection may report SATISFIED_AFTER_CURE or WAIVED_AFTER_UNSATISFIED while reconstruction must retain the earlier BREACHED_OR_UNSATISFIED event and every intervening observation.",
+    "legal_effect": "NONE"
+  },
+  "append_only_history": {
+    "rule": "Resolution receipts form an ordered evidence history by predecessor reference and timestamp. No receipt deletes, edits, replaces or retroactively changes an earlier observation.",
+    "reconstruction_minimum": [
+      "source engagement closure",
+      "successor-obligation handoff",
+      "continuing obligation identity",
+      "ordered lifecycle observations",
+      "ordered resolution/cure receipts",
+      "evidence/authority references"
+    ]
+  },
+  "source_closure_effect": "NONE; source engagement remains COMPLETE_WITH_SUCCESSOR_OBLIGATION.",
+  "work_authorization_effect": "NONE",
+  "legal_boundary": "Receipts record evidence dispositions only and do not establish legal breach, damages, default, enforceability, remedy, release or discharge.",
+  "current_evaluation": "NOT_INVOKED_NO_AUTHENTIC_RESOLUTION_EVENT",
+  "prohibitions": [
+    "No prior observation deletion/overwrite",
+    "No source engagement mutation",
+    "No customer record inspection",
+    "No proposal/contract/amendment/renewal creation",
+    "No invoice/payment creation",
+    "No CRM mutation",
+    "No runtime/provider/credential/custody invocation",
+    "No Task Registry/COSV authority"
+  ]
+}
