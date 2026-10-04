@@ -220,3 +220,10 @@ Lifecycle evidence states are `PENDING_TRIGGER`, `DUE`, `IN_PROGRESS`, `SATISFIE
 A trigger becoming due does not authorize consequential work. `IN_PROGRESS` requires separate applicable work/runtime/data/provider/credential/custody authorization where the duty requires such action. `BREACHED_OR_UNSATISFIED` is an evidence classification only, not a legal breach, damages, default, enforceability or remedy conclusion.
 
 The offering profiles identify candidate continuing-duty types, but package text alone never creates a duty; the exact accepted proposal/SOW/version must contain it.
+
+
+## Continuing-obligation resolution receipts
+
+`continuing-obligation-resolution-receipt.schema.json` makes `SATISFIED`, `WAIVED`, and `BREACHED_OR_UNSATISFIED` append-only resolution events. Each receipt binds the exact obligation and source coordinates, predecessor state/observation, triggering evidence, resolution actor and applicable authority evidence, timestamp, resulting state and retained evidence references. `supersedes_prior_history` must be false.
+
+A later cure does not rewrite a prior `BREACHED_OR_UNSATISFIED` observation. It appends `CURE_SATISFIED` or `CURE_WAIVED` referencing the immutable prior unsatisfied receipt plus the new cure evidence. A current projection may say `SATISFIED_AFTER_CURE` or `WAIVED_AFTER_UNSATISFIED`, while reconstruction retains the complete ordered history.
