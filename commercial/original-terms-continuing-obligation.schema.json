@@ -55,7 +55,8 @@
         "completion/satisfaction evidence appropriate to obligation type",
         "accountable owner attribution where applicable"
       ],
-      "work_effect": "NONE"
+      "work_effect": "NONE",
+      "resolution_receipt_required": true
     },
     "WAIVED": {
       "meaning": "Authentic evidence from an authorized party shows the continuing duty was validly waived within that party's authority.",
@@ -65,7 +66,8 @@
         "explicit waiver scope and timestamp",
         "no inference from silence, non-enforcement or repository state"
       ],
-      "work_effect": "NONE"
+      "work_effect": "NONE",
+      "resolution_receipt_required": true
     },
     "BREACHED_OR_UNSATISFIED": {
       "meaning": "Evidence classification that a due accepted duty is not satisfied; not a legal breach/enforceability conclusion.",
@@ -75,7 +77,8 @@
         "evidence of non-satisfaction, refusal, failed required performance, or applicable accepted period elapsing without satisfaction",
         "preserve unresolved legal consequences separately"
       ],
-      "work_effect": "NONE"
+      "work_effect": "NONE",
+      "resolution_receipt_required": true
     },
     "FAIL_CLOSED": {
       "meaning": "Authentic lifecycle state cannot be determined.",
@@ -92,7 +95,7 @@
     "PENDING_TRIGGER -> DUE | WAIVED | FAIL_CLOSED",
     "DUE -> IN_PROGRESS | SATISFIED | WAIVED | BREACHED_OR_UNSATISFIED | FAIL_CLOSED",
     "IN_PROGRESS -> SATISFIED | WAIVED | BREACHED_OR_UNSATISFIED | FAIL_CLOSED",
-    "BREACHED_OR_UNSATISFIED -> SATISFIED | WAIVED | FAIL_CLOSED when later authentic cure/waiver evidence exists; historical non-satisfaction evidence is retained"
+    "BREACHED_OR_UNSATISFIED + later authentic cure/waiver evidence -> append CURE_SATISFIED | CURE_WAIVED receipt; historical BREACHED_OR_UNSATISFIED receipt remains immutable"
   ],
   "source_closure_immutability": "Source engagement remains COMPLETE_WITH_SUCCESSOR_OBLIGATION and is never reopened, mutated or reclassified by this lifecycle.",
   "owner_refs": [
@@ -112,5 +115,7 @@
     "No CRM mutation",
     "No runtime/provider/credential/custody invocation",
     "No Task Registry/COSV authority"
-  ]
+  ],
+  "resolution_receipt_contract": "commercial/continuing-obligation-resolution-receipt.schema.json",
+  "history_rule": "Lifecycle observations and terminal/cure resolution receipts are append-only. current_state is a projection over retained history, not a destructive rewrite."
 }
