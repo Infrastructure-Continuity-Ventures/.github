@@ -1,0 +1,68 @@
+{
+  "schema_version": "icv.successor-obligation-handoff.v1",
+  "authority": "SUCCESSOR_OBLIGATION_EVIDENCE_ONLY",
+  "canonical_task_binding": null,
+  "cosv_task_vector": null,
+  "purpose": "Record a surviving obligation from COMPLETE_WITH_SUCCESSOR_OBLIGATION without implicitly creating, accepting or authorizing an amendment, renewal or successor engagement.",
+  "required_fields": [
+    "successor_obligation_id",
+    "source_closure_id",
+    "source_engagement_id",
+    "source_offering_id",
+    "source_proposal_id",
+    "source_proposal_version",
+    "obligation_type",
+    "obligation_scope",
+    "obligation_owner",
+    "trigger_or_due_condition",
+    "evidence_refs",
+    "continuation_classification",
+    "work_authorization_state"
+  ],
+  "continuation_classifications": [
+    "ORIGINAL_ACCEPTED_TERMS_CONTINUATION",
+    "AMENDMENT_OR_RENEWAL_REQUIRED",
+    "SEPARATE_SUCCESSOR_ENGAGEMENT_REQUIRED",
+    "FAIL_CLOSED_UNCLASSIFIED"
+  ],
+  "classification_rules": {
+    "ORIGINAL_ACCEPTED_TERMS_CONTINUATION": [
+      "exact accepted proposal/SOW/version expressly contains the surviving obligation",
+      "obligation scope, owner and applicable term/trigger are already fixed by accepted evidence",
+      "performing the obligation does not materially change price/scope/deliverables/exclusions/schedule/liability/authority/payment or another accepted material term"
+    ],
+    "AMENDMENT_OR_RENEWAL_REQUIRED": [
+      "surviving obligation belongs to the same commercial relationship but performance requires changing or extending a material accepted term",
+      "StegBusiness-Ops AMENDED or RENEWAL_DUE/renewal evidence path is applicable",
+      "no amended/renewed authority is inferred from the handoff record"
+    ],
+    "SEPARATE_SUCCESSOR_ENGAGEMENT_REQUIRED": [
+      "follow-on work is outside the exact accepted scope or was expressly separately quoted/contracted/governed",
+      "new bounded scope/pricing/acceptance/professional or other material terms must be separately admitted",
+      "source engagement identity and closure remain unchanged"
+    ],
+    "FAIL_CLOSED_UNCLASSIFIED": [
+      "accepted source terms do not establish whether the obligation continues, requires amendment/renewal, or requires separate engagement",
+      "owner/scope/trigger/evidence is missing or contradictory"
+    ]
+  },
+  "proposal_versioning_boundary": "A material modification to accepted price, scope, deliverables, exclusions, schedule, liability, authority, payment or other material terms is not acceptance of the existing proposal/version; it requires a new proposal/version or explicit separately resolved amendment.",
+  "contract_lifecycle_boundary": "StegBusiness-Ops owns AMENDED / RENEWAL_DUE and related contract lifecycle evidence. This record does not transition those states.",
+  "work_authorization": {
+    "default": "NOT_AUTHORIZED",
+    "rule": "Recording or classifying a successor obligation never authorizes work. ORIGINAL_ACCEPTED_TERMS_CONTINUATION still requires the obligation's trigger/due condition and applicable operational/service-start evidence. AMENDMENT_OR_RENEWAL_REQUIRED requires authentic amended/renewed acceptance/execution as applicable. SEPARATE_SUCCESSOR_ENGAGEMENT_REQUIRED requires a separately proposed and accepted engagement plus its normal delivery-admission/service-start path.",
+    "runtime_effect": "NONE"
+  },
+  "source_closure_immutability": "The source engagement retains COMPLETE_WITH_SUCCESSOR_OBLIGATION. Later amendment, renewal, successor-engagement, performance or resolution evidence does not rewrite that historical closure disposition.",
+  "prohibitions": [
+    "No proposal/contract/amendment/renewal creation",
+    "No successor engagement creation",
+    "No work authorization from record existence",
+    "No invoice/payment creation",
+    "No customer/CRM mutation",
+    "No runtime invocation",
+    "No Task Registry/COSV authority",
+    "No repository state treated as commercial authority"
+  ],
+  "current_evaluation": "NOT_INVOKED_NO_AUTHENTIC_SUCCESSOR_OBLIGATION"
+}
