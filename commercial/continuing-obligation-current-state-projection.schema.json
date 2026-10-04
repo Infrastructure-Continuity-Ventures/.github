@@ -90,7 +90,9 @@
       "validation disposition for every record"
     ],
     "projection_is_not_history": "Current state is a derived view only. It never deletes, edits, supersedes or rewrites retained observations/receipts.",
-    "invalid_records": "Records excluded from the valid lineage remain reconstructable with their validation failure reason."
+    "invalid_records": "Records excluded from the valid lineage remain reconstructable with their validation failure reason.",
+    "manifest_rule": "Every projection, including FAIL_CLOSED, is reconstructable through the separate authority-neutral reconstruction manifest; the manifest enumerates all admitted and rejected records and cannot create authority.",
+    "fail_closed_fidelity": "FAIL_CLOSED reconstruction must preserve the exact validation gaps/contradictions that prevented a unique authentic frontier, not merely the final label."
   },
   "ordering_boundary": "Timestamps and deterministic tie-break metadata may order already-authenticated compatible records for reconstruction, but never establish authenticity, authority, predecessor validity or transition permission.",
   "source_closure_effect": "NONE; source engagement remains COMPLETE_WITH_SUCCESSOR_OBLIGATION.",
@@ -105,5 +107,6 @@
     "No CRM mutation",
     "No runtime/provider/credential/custody invocation",
     "No Task Registry/COSV authority"
-  ]
+  ],
+  "reconstruction_manifest_contract": "commercial/continuing-obligation-reconstruction-manifest.schema.json"
 }
