@@ -497,4 +497,4 @@ A bounded synthetic integration fixture now traces both an ordinary engagement a
 
 The reconciliation also repairs demonstrated validator drift: public requestability is now true after the already-recorded served-body observation; SERVICE_DELIVERY_AUTHORIZED and ENGAGEMENT_COMPLETE retain their newer FAIL_CLOSED_NOT_EVALUATED vocabulary instead of stale predecessor assertions. No architectural layer was added.
 
-Release candidate status: exact-head validator execution and PR merge evidence are still required before declaring ICV v1.0.0 release-ready or tagging a release.
+Release readiness: PASS at merged commercial architecture cd1e251d36cd2b6350446cdb62ab7258cc0d71b2. The bounded exact-head reconciliation resolved every fixture schema reference, aligned state vocabularies and predecessor relationships, preserved non-escalating authority boundaries, and deterministically reconstructed the successor lifecycle to SATISFIED with SAME_EVIDENCE_SET comparison. ICV commercial architecture is release-ready for v1.0.0. Tag/release publication remains a separate repository-host operation.
