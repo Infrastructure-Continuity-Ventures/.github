@@ -91,7 +91,7 @@ def main():
     assert transition["payment_or_contract_execution_ready"] is False
     assert any(x["to"]=="AUTHENTIC_ENGAGEMENT_REQUEST_OBSERVED" for x in transition["transitions"])
     assert any(x["to"]=="CONTRACT_OR_SOW_ACCEPTED" and x["disposition_on_current_evidence"]=="FAIL_CLOSED" for x in transition["transitions"])
-    assert any(x["to"]=="PAYMENT_EXECUTABLE_OR_OBSERVED" and x["disposition_on_current_evidence"]=="FAIL_CLOSED" for x in transition["transitions"])
+    assert any(x["to"]=="PAYMENT_OBSERVED" and x["disposition_on_current_evidence"]=="FAIL_CLOSED" for x in transition["transitions"])
     assert "Lead/Deal creation is a later separately admitted action" in transition["crm_boundary"]
     print("ICV_CUSTOMER_PURCHASE_PATH_CENSUS_V1_VALID")
     envelope=json.loads(PROPOSAL_ENVELOPE.read_text(encoding="utf-8"))
