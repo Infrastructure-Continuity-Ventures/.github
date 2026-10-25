@@ -1,0 +1,1 @@
+python commercial/validate_catalog.py
