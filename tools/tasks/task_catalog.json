@@ -1,0 +1,205 @@
+{
+ "schema": "stegverse.task-catalog/v1",
+ "repository": "Infrastructure-Continuity-Ventures/.github",
+ "goal_id": "G17-WORKFLOW-SURFACE-MINIMIZATION",
+ "authority": "Rigel 2026-10-24 retroactive G17 enforcement (StegVerse-org/.github#166); pattern StegVerse-Labs/StegDB#60 (eab2e773)",
+ "dispatcher": ".github/workflows/validation-dispatcher.yml",
+ "runner": "tools/tasks/run_catalog.py",
+ "runner_source": "StegVerse-Labs/StegDB tools/tasks/run_catalog.py @ eab2e773271f3e63466a710f1b4555f677882848 (sha256 f741f30557888fd8e4852a52adfc65736a08898d49ade7519f6bcc2672921e9b), copied unmodified",
+ "rule": "Every check a folded workflow job ran is one group here; its step bodies are the original run blocks byte for byte, pinned by sha256, except the repairs listed. A new check is a new group (or a step in one), never a new workflow file.",
+ "path_filters": "Dropped: every group runs on every pull_request and push to main (a superset of the original path-filtered runs). workflow_dispatch/schedule triggers are not carried (no manual dispatch, no cron).",
+ "repairs": [
+  "In the install record .stegverse/components/intr-ingress-ledger-v1.json, the row for the component's validation workflow now uses the path tools/tasks/folded/intr-ingress-ledger-component-validation.yml. The bytes are unchanged (git mv), so the pinned sha256 still matches."
+ ],
+ "folded_from_commit": "f226c260cb964da131a29146bd20b467e77682ae",
+ "groups": [
+  {
+   "id": "commercial-catalog.validate",
+   "source": {
+    "workflow": ".github/workflows/commercial-catalog.yml",
+    "workflow_name": "Validate Commercial Catalog and Negative Cases",
+    "job": "validate",
+    "job_name": null,
+    "commit": "f226c26",
+    "triggers_before": [
+     "pull_request",
+     "push",
+     "workflow_dispatch"
+    ],
+    "permissions_before": {
+     "contents": "read"
+    }
+   },
+   "events": [
+    "pull_request",
+    "push"
+   ],
+   "env": {},
+   "steps": [
+    {
+     "name": "Validate commercial catalog records",
+     "run_file": "tools/tasks/steps/commercial-catalog.validate/01-validate-commercial-catalog-records.sh",
+     "run_sha256": "f3613ad3ed69db4d3672663cca36238a14745d52789b604d327efbe09cd40ff8"
+    },
+    {
+     "name": "Offline payment/entitlement negative cases",
+     "run_file": "tools/tasks/steps/commercial-catalog.validate/02-offline-payment-entitlement-negative-cases.sh",
+     "run_sha256": "1ec5098fd165404f3b1ba065e037a22ebe0d9a993355d4b678f522234ed36fbf"
+    }
+   ],
+   "artifacts": [],
+   "runner": {
+    "fetch_depth": "1",
+    "persist_credentials": "false",
+    "timeout_minutes": 30
+   }
+  },
+  {
+   "id": "intr-ingress-ledger-component-validation.validate-intr-ingress-ledger",
+   "source": {
+    "workflow": ".github/workflows/intr-ingress-ledger-component-validation.yml",
+    "workflow_name": "Validate InTr Ingress Ledger Component",
+    "job": "validate-intr-ingress-ledger",
+    "job_name": null,
+    "commit": "f226c26",
+    "triggers_before": [
+     "pull_request",
+     "push"
+    ],
+    "permissions_before": {
+     "contents": "read"
+    }
+   },
+   "events": [
+    "pull_request",
+    "push"
+   ],
+   "env": {},
+   "steps": [
+    {
+     "name": "Installed bytes, InTr v1 conformance, ledger designation, self-closure on temporary ledgers",
+     "run_file": "tools/tasks/steps/intr-ingress-ledger-component-validation.validate-intr-ingress-ledger/01-installed-bytes-intr-v1-conformance-ledger-designation-self-.sh",
+     "run_sha256": "52762ab1be61e6f2ab927034434cb666e0531bfe4f0ebf4478f4c7c571f908a5"
+    },
+    {
+     "name": "Conformance, read-only: Infrastructure-Continuity-Ventures at infrastructure-continuity-ventures.intr-destination",
+     "run_file": "tools/tasks/steps/intr-ingress-ledger-component-validation.validate-intr-ingress-ledger/02-conformance-read-only-infrastructure-continuity-ventures-at-.sh",
+     "run_sha256": "9a8a93c394bf36a8a142d7b7b00434a0d81208cee293dbf141128b235afe2f34"
+    }
+   ],
+   "artifacts": [],
+   "runner": {
+    "fetch_depth": "1",
+    "persist_credentials": "false",
+    "timeout_minutes": 30
+   }
+  },
+  {
+   "id": "org-boundary-execution.execute",
+   "source": {
+    "workflow": ".github/workflows/org-boundary-execution.yml",
+    "workflow_name": "Org Boundary Execution",
+    "job": "execute",
+    "job_name": null,
+    "commit": "f226c26",
+    "triggers_before": [
+     "push",
+     "workflow_dispatch"
+    ],
+    "permissions_before": null
+   },
+   "events": [
+    "pull_request",
+    "push"
+   ],
+   "env": {},
+   "steps": [
+    {
+     "name": "step 1",
+     "run_file": "tools/tasks/steps/org-boundary-execution.execute/01-step-1.sh",
+     "run_sha256": "1329c4923783d430df6bff291e2157c1082d9b25cbe7fd0f2b3c4d579b50e527"
+    }
+   ],
+   "artifacts": [],
+   "runner": {
+    "fetch_depth": "1",
+    "persist_credentials": "true",
+    "timeout_minutes": 30
+   }
+  },
+  {
+   "id": "org-runtime-boundary.validate",
+   "source": {
+    "workflow": ".github/workflows/org-runtime-boundary.yml",
+    "workflow_name": "Validate Organization Resident Runtime and Interlock-InTr Boundary",
+    "job": "validate",
+    "job_name": null,
+    "commit": "f226c26",
+    "triggers_before": [
+     "pull_request",
+     "push",
+     "workflow_dispatch"
+    ],
+    "permissions_before": {
+     "contents": "read"
+    }
+   },
+   "events": [
+    "pull_request",
+    "push"
+   ],
+   "env": {},
+   "steps": [
+    {
+     "name": "Validate organization boundary",
+     "run_file": "tools/tasks/steps/org-runtime-boundary.validate/01-validate-organization-boundary.sh",
+     "run_sha256": "c9c2fd2dfe2c5d29536cc797227f7bbfa4e717660d99b88410cbd839f9899cfe"
+    },
+    {
+     "name": "Validate activation request generation",
+     "run_file": "tools/tasks/steps/org-runtime-boundary.validate/02-validate-activation-request-generation.sh",
+     "run_sha256": "414092fd3ea5ea34767176c11026846851a31e2bb7896c82d9424e2aaa08c97f"
+    },
+    {
+     "name": "Validate Interlock/InTr ingress generation",
+     "run_file": "tools/tasks/steps/org-runtime-boundary.validate/03-validate-interlock-intr-ingress-generation.sh",
+     "run_sha256": "1e839eaf709caf91c71c5ffc27049b8590735ad5bf13e46492805caa709661a8"
+    },
+    {
+     "name": "Validate Interlock/InTr egress generation",
+     "run_file": "tools/tasks/steps/org-runtime-boundary.validate/04-validate-interlock-intr-egress-generation.sh",
+     "run_sha256": "153882a73b231e18f324f59519bb2e13cdda510de9a998665392fa46b829401c"
+    }
+   ],
+   "artifacts": [],
+   "runner": {
+    "fetch_depth": "1",
+    "persist_credentials": "true",
+    "timeout_minutes": 30
+   }
+  },
+  {
+   "id": "workflow-surface-registry.validate",
+   "catalog_addition": "G17 registry gate (no folded source workflow)",
+   "events": [
+    "pull_request",
+    "push"
+   ],
+   "env": {},
+   "steps": [
+    {
+     "name": "Workflow files equal the registered surfaces; catalog verifies ALLOW",
+     "run_file": "tools/tasks/steps/workflow-surface-registry.validate/01-registry.sh",
+     "run_sha256": "811824e88664923006be2eeb35632d710f5504145967f61632ad9e8fbdcb35ca"
+    }
+   ],
+   "artifacts": [],
+   "runner": {
+    "fetch_depth": "1",
+    "persist_credentials": "false",
+    "timeout_minutes": 10,
+    "python_version": "3.11"
+   }
+  }
+ ]
+}
