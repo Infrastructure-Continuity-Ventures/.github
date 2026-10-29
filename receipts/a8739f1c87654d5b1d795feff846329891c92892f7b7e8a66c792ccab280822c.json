@@ -1,0 +1,38 @@
+{
+  "authority_effect": "NONE",
+  "boundary_evidence": {
+    "communication_id": "intr-path-v1:Triad-Test->Infrastructure-Continuity-Ventures",
+    "disposition": "ALLOW",
+    "operation": "ORGANIZATION_INTR_DESTINATION_INGRESS",
+    "path_id": "Triad-Test->Infrastructure-Continuity-Ventures:intr-destination",
+    "profile_id": "intr-destination",
+    "source_organization_receipt_sha256": "sha256:aaba5fd1e7bdce7bf233f12a47a8664564993922fdad02b6c82d47d1c302cc3a",
+    "source_repository": "Triad-Test/.github",
+    "source_repository_receipt_sha256": "sha256:29221d0a1593123e922bfc3f873146c4ae394f26db7efeb46edc56a2e508d5eb"
+  },
+  "canonical_state_transition_receipt_sha256": null,
+  "hb_reference": {
+    "authority_effect": "NONE",
+    "derived_from_clock": false,
+    "epoch": 469411750,
+    "frequency_hz": 100,
+    "generation": 469411750,
+    "heartbeat_id": "HB:469411750",
+    "phase_offset_ns": 0,
+    "progression_dependency": "OSCILLATOR_ONLY"
+  },
+  "org_transition_class": "REPO_STATE_PROPAGATION",
+  "organization": "Infrastructure-Continuity-Ventures",
+  "predecessor_org_state_sha256": "sha256:71c42129116e4a0165af9a203074a6637b5f019620619bcd662613e4a74b53d8",
+  "previous_receipt_sha256": "sha256:bfbccefc3c0b9fa63dce8d5990da63d03416085c1a84648e784d3d6d29ea2223",
+  "receipt_sha256": "sha256:a8739f1c87654d5b1d795feff846329891c92892f7b7e8a66c792ccab280822c",
+  "repo_receipt_sha256": "sha256:cdc06ad76b3f76ec831c8b766e1cd0c7e2499e049cad89f41a1c7450c5b86101",
+  "repo_transition_id": "INTR_MESH_PATH_INGRESS:Triad-Test->Infrastructure-Continuity-Ventures:intr-destination@intr-path-v1:Triad-Test->Infrastructure-Continuity-Ventures",
+  "schema": "stegverse.organization-transition-receipt/v1",
+  "source_receipt_schema": "stegverse.repo-transition-receipt/v1",
+  "source_repository": "Infrastructure-Continuity-Ventures/.github",
+  "source_transition_id": "INTR_MESH_PATH_INGRESS:Triad-Test->Infrastructure-Continuity-Ventures:intr-destination@intr-path-v1:Triad-Test->Infrastructure-Continuity-Ventures",
+  "source_transition_sha256": "sha256:cdc06ad76b3f76ec831c8b766e1cd0c7e2499e049cad89f41a1c7450c5b86101",
+  "subject_or_correlation_id": null,
+  "successor_org_state_sha256": "sha256:57dc468cf47d1ac87d4bc2192eabe088c22616c4944f26ee97d2f98af367fd3d"
+}
