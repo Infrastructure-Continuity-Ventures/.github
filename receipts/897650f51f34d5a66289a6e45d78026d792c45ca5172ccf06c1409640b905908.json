@@ -1,0 +1,38 @@
+{
+  "authority_effect": "NONE",
+  "boundary_evidence": {
+    "communication_id": "intr-path-v1:ECAT-ICAT-Formal->Infrastructure-Continuity-Ventures",
+    "disposition": "ALLOW",
+    "operation": "ORGANIZATION_INTR_DESTINATION_INGRESS",
+    "path_id": "ECAT-ICAT-Formal->Infrastructure-Continuity-Ventures:intr-destination",
+    "profile_id": "intr-destination",
+    "source_organization_receipt_sha256": "sha256:0332e11dc9b9ab93b8b521059679e79bc17c68c17b4d1ab86bb9917b1ebc54f6",
+    "source_repository": "ECAT-ICAT-Formal/.github",
+    "source_repository_receipt_sha256": "sha256:f17f789f1a4eb0090b066c46a753ac2ad4a0dbcf2ec17b8b7a11e68c7cc8058c"
+  },
+  "canonical_state_transition_receipt_sha256": null,
+  "hb_reference": {
+    "authority_effect": "NONE",
+    "derived_from_clock": false,
+    "epoch": 469411750,
+    "frequency_hz": 100,
+    "generation": 469411750,
+    "heartbeat_id": "HB:469411750",
+    "phase_offset_ns": 0,
+    "progression_dependency": "OSCILLATOR_ONLY"
+  },
+  "org_transition_class": "REPO_STATE_PROPAGATION",
+  "organization": "Infrastructure-Continuity-Ventures",
+  "predecessor_org_state_sha256": "sha256:e245906a485906cfd51f14da2a6a0129fa90fee8d1aceef8cef73984b630b85b",
+  "previous_receipt_sha256": "sha256:847a0d59a82b34f6b157bdac3be1b06e80626e52c05c28b84ff3ddcffdc58cc5",
+  "receipt_sha256": "sha256:897650f51f34d5a66289a6e45d78026d792c45ca5172ccf06c1409640b905908",
+  "repo_receipt_sha256": "sha256:7e7a1230abbbb8ea67e5e4795d1e729cef9e1612b4f7eba11862561b067aaa0e",
+  "repo_transition_id": "INTR_MESH_PATH_INGRESS:ECAT-ICAT-Formal->Infrastructure-Continuity-Ventures:intr-destination@intr-path-v1:ECAT-ICAT-Formal->Infrastructure-Continuity-Ventures",
+  "schema": "stegverse.organization-transition-receipt/v1",
+  "source_receipt_schema": "stegverse.repo-transition-receipt/v1",
+  "source_repository": "Infrastructure-Continuity-Ventures/.github",
+  "source_transition_id": "INTR_MESH_PATH_INGRESS:ECAT-ICAT-Formal->Infrastructure-Continuity-Ventures:intr-destination@intr-path-v1:ECAT-ICAT-Formal->Infrastructure-Continuity-Ventures",
+  "source_transition_sha256": "sha256:7e7a1230abbbb8ea67e5e4795d1e729cef9e1612b4f7eba11862561b067aaa0e",
+  "subject_or_correlation_id": null,
+  "successor_org_state_sha256": "sha256:0055135b52a21425ec3aa39db5fc8a08b50caa205901b64f9f74cbf40331c255"
+}
