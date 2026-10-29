@@ -1,0 +1,38 @@
+{
+  "authority_effect": "NONE",
+  "boundary_evidence": {
+    "communication_id": "intr-path-v1:Data-Continuation->Infrastructure-Continuity-Ventures",
+    "disposition": "ALLOW",
+    "operation": "ORGANIZATION_INTR_DESTINATION_INGRESS",
+    "path_id": "Data-Continuation->Infrastructure-Continuity-Ventures:intr-destination",
+    "profile_id": "intr-destination",
+    "source_organization_receipt_sha256": "sha256:b9a9e14d1cb89b9298d1890007e129a524f70999fd64bf448985eaa4ef18004e",
+    "source_repository": "Data-Continuation/.github",
+    "source_repository_receipt_sha256": "sha256:bf8bc0ac3259f6571a5270b4e56e6659bbe4e038cd5ce764eec55640d5b29321"
+  },
+  "canonical_state_transition_receipt_sha256": null,
+  "hb_reference": {
+    "authority_effect": "NONE",
+    "derived_from_clock": false,
+    "epoch": 469411750,
+    "frequency_hz": 100,
+    "generation": 469411750,
+    "heartbeat_id": "HB:469411750",
+    "phase_offset_ns": 0,
+    "progression_dependency": "OSCILLATOR_ONLY"
+  },
+  "org_transition_class": "REPO_STATE_PROPAGATION",
+  "organization": "Infrastructure-Continuity-Ventures",
+  "predecessor_org_state_sha256": "sha256:731f78760c7778351f9d3b320913812b0b20078b5415983daeac62f883978dd2",
+  "previous_receipt_sha256": "sha256:32ca61be9331e4690f9e1b1a10480b8db7d0eb9e9d20f6c5f66e90338898665e",
+  "receipt_sha256": "sha256:847a0d59a82b34f6b157bdac3be1b06e80626e52c05c28b84ff3ddcffdc58cc5",
+  "repo_receipt_sha256": "sha256:bded60b9fd3d173114ad1040987f0830dc93e502c66e3257da795d95ce501879",
+  "repo_transition_id": "INTR_MESH_PATH_INGRESS:Data-Continuation->Infrastructure-Continuity-Ventures:intr-destination@intr-path-v1:Data-Continuation->Infrastructure-Continuity-Ventures",
+  "schema": "stegverse.organization-transition-receipt/v1",
+  "source_receipt_schema": "stegverse.repo-transition-receipt/v1",
+  "source_repository": "Infrastructure-Continuity-Ventures/.github",
+  "source_transition_id": "INTR_MESH_PATH_INGRESS:Data-Continuation->Infrastructure-Continuity-Ventures:intr-destination@intr-path-v1:Data-Continuation->Infrastructure-Continuity-Ventures",
+  "source_transition_sha256": "sha256:bded60b9fd3d173114ad1040987f0830dc93e502c66e3257da795d95ce501879",
+  "subject_or_correlation_id": null,
+  "successor_org_state_sha256": "sha256:376cc28ff75255a0a0f587ebad6f3ca0c37abb3cf1c915ef340f84f791781bc6"
+}
