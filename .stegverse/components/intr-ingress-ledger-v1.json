@@ -32,11 +32,11 @@
     },
     {
       "path": "resident-runtime/intr_destination_ingress.py",
-      "sha256": "sha256:5f660cc83c310a180eaed8e432e0f3252b349d22d66ade6f1728ff06530e4071"
+      "sha256": "sha256:f8c7636fb75b5bc284ac795dfe25787795c6667629b6e1d720932cec462331ef"
     },
     {
       "path": "resident-runtime/organization_ledger_readback.py",
-      "sha256": "sha256:e24650287c04a964686a331c8e19af572617aff91d0a2885ec376f3e8db790b8"
+      "sha256": "sha256:c8301497d773ae4d4440cd2ef53789570e737dc8ef2fefc816b473b1d816b453"
     },
     {
       "path": ".stegverse/transition-ledger/contract.json",
@@ -47,16 +47,12 @@
       "sha256": "sha256:4526d3e142658b3cd9e79b21d3078643062971ace4ffa8966ce18b80064b0504"
     },
     {
-      "path": ".github/workflows/organization-ledger-transition.yml",
-      "sha256": "sha256:9fb91f1f52c336b180a6cb2609b3219717e0e1b974a3778bb70edfa79ef607be"
-    },
-    {
       "path": "tools/tasks/folded/intr-ingress-ledger-component-validation.yml",
-      "sha256": "sha256:c625822c0de7f2cecfde3b84e6bfa67ce718a68b3a4347d31dac7cc532a69608"
+      "sha256": "sha256:142c37d3111f21ee3f70fe9b31d70c3d2c8ca48ec90f8c978e3f2917c322078b"
     },
     {
       "path": "tests/test_intr_ingress_ledger_component.py",
-      "sha256": "sha256:9ec59eb4574ef76f1e7f70654f7aaa29fc3fce25b663a11285cc2b73d5d1d1d8"
+      "sha256": "sha256:338a965eeab6473c475542608beb8a25b1d81c8471be2caeb0c1866787eb1813"
     }
   ]
 }
