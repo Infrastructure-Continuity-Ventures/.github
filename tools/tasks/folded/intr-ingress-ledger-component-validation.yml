@@ -16,6 +16,7 @@ on:
       - 'resident-runtime/**'
       - 'data/intr-protocol/**'
       - 'tests/test_intr_ingress_ledger_component.py'
+      - 'tests/test_no_org_internal_intr_hop.py'
       - '.github/workflows/intr-ingress-ledger-component-validation.yml'
 
 permissions:
@@ -30,10 +31,13 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: Installed bytes, InTr v1 conformance, ledger designation, self-closure on temporary ledgers
+      - name: Installed bytes, InTr v1 conformance, ledger designation, ingress on temporary ledgers
         run: python3 -m unittest tests.test_intr_ingress_ledger_component -v
 
-      - name: "Conformance, read-only: Infrastructure-Continuity-Ventures at infrastructure-continuity-ventures.intr-destination"
+      - name: "No InTr hop inside this organization: the self-closure carrier is retired (Rigel's rule, 2026-10-25)"
+        run: python3 -m unittest tests.test_no_org_internal_intr_hop -v
+
+      - name: "Conformance, read-only: infrastructure-continuity-ventures at infrastructure-continuity-ventures.intr-destination"
         run: |
-          python3 org-runtime/intr_protocol.py conform --org "Infrastructure-Continuity-Ventures" > conform.json
+          python3 org-runtime/intr_protocol.py conform --org "infrastructure-continuity-ventures" > conform.json
           python3 -c 'import json; r=json.load(open("conform.json")); assert r["disposition"]=="ALLOW", r; print("INTR_DESTINATION_CONFORMS", r["disposition"])'

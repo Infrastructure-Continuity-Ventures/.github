@@ -9,7 +9,9 @@
  "rule": "Every check a folded workflow job ran is one group here; its step bodies are the original run blocks byte for byte, pinned by sha256, except the repairs listed. A new check is a new group (or a step in one), never a new workflow file.",
  "path_filters": "Dropped: every group runs on every pull_request and push to main (a superset of the original path-filtered runs). workflow_dispatch/schedule triggers are not carried (no manual dispatch, no cron).",
  "repairs": [
-  "In the install record .stegverse/components/intr-ingress-ledger-v1.json, the row for the component's validation workflow now uses the path tools/tasks/folded/intr-ingress-ledger-component-validation.yml. The bytes are unchanged (git mv), so the pinned sha256 still matches."
+  "In the install record .stegverse/components/intr-ingress-ledger-v1.json, the row for the component's validation workflow now uses the path tools/tasks/folded/intr-ingress-ledger-component-validation.yml. The bytes are unchanged (git mv), so the pinned sha256 still matches.",
+  "intr-ingress-ledger-component-validation is the component's validation as installed with the ledger stack (Lane B, #162): the self-closure carrier organization-ledger-transition.yml is retired (no InTr hop inside one organization) and the writer is organization-ledger-writer.yml.",
+  "organization-ledger-genesis.unit is a catalog addition for resident-runtime/ledger_genesis.py (no folded source workflow)."
  ],
  "folded_from_commit": "f226c260cb964da131a29146bd20b467e77682ae",
  "groups": [
@@ -61,7 +63,7 @@
     "workflow_name": "Validate InTr Ingress Ledger Component",
     "job": "validate-intr-ingress-ledger",
     "job_name": null,
-    "commit": "f226c26",
+    "commit": "c270bec",
     "triggers_before": [
      "pull_request",
      "push"
@@ -77,14 +79,19 @@
    "env": {},
    "steps": [
     {
-     "name": "Installed bytes, InTr v1 conformance, ledger designation, self-closure on temporary ledgers",
-     "run_file": "tools/tasks/steps/intr-ingress-ledger-component-validation.validate-intr-ingress-ledger/01-installed-bytes-intr-v1-conformance-ledger-designation-self-.sh",
+     "name": "Installed bytes, InTr v1 conformance, ledger designation, ingress on temporary ledgers",
+     "run_file": "tools/tasks/steps/intr-ingress-ledger-component-validation.validate-intr-ingress-ledger/01-installed-bytes-intr-v1-conformance-ledger-designation-ingre.sh",
      "run_sha256": "52762ab1be61e6f2ab927034434cb666e0531bfe4f0ebf4478f4c7c571f908a5"
     },
     {
-     "name": "Conformance, read-only: Infrastructure-Continuity-Ventures at infrastructure-continuity-ventures.intr-destination",
-     "run_file": "tools/tasks/steps/intr-ingress-ledger-component-validation.validate-intr-ingress-ledger/02-conformance-read-only-infrastructure-continuity-ventures-at-.sh",
-     "run_sha256": "9a8a93c394bf36a8a142d7b7b00434a0d81208cee293dbf141128b235afe2f34"
+     "name": "No InTr hop inside this organization: the self-closure carrier is retired (Rigel's rule, 2026-10-25)",
+     "run_file": "tools/tasks/steps/intr-ingress-ledger-component-validation.validate-intr-ingress-ledger/02-no-intr-hop-inside-this-organization-the-self-closure-carrie.sh",
+     "run_sha256": "e66689cf62fcbe884f3b7d3c6ee495cd69fad81a063a8eb4c385974296cc271e"
+    },
+    {
+     "name": "Conformance, read-only: infrastructure-continuity-ventures at infrastructure-continuity-ventures.intr-destination",
+     "run_file": "tools/tasks/steps/intr-ingress-ledger-component-validation.validate-intr-ingress-ledger/03-conformance-read-only-infrastructure-continuity-ventures-at-infrastructure-continuity-ventures-intr.sh",
+     "run_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     }
    ],
    "artifacts": [],
@@ -199,6 +206,28 @@
     "persist_credentials": "false",
     "timeout_minutes": 10,
     "python_version": "3.11"
+   }
+  },
+  {
+   "id": "organization-ledger-genesis.unit",
+   "catalog_addition": "Organization ledger genesis from the committed epoch packet (no folded source workflow)",
+   "events": [
+    "pull_request",
+    "push"
+   ],
+   "env": {},
+   "steps": [
+    {
+     "name": "Genesis opens the ledger once with a main-merge transfer at the verified epoch; refusals carry six fields",
+     "run_file": "tools/tasks/steps/organization-ledger-genesis.unit/01-genesis.sh",
+     "run_sha256": "a9746c204711b581a5b4b8ce8e81c6097d8b6ff1aa4ff38ebd775dd364647909"
+    }
+   ],
+   "artifacts": [],
+   "runner": {
+    "fetch_depth": "1",
+    "persist_credentials": "false",
+    "timeout_minutes": 10
    }
   }
  ]
