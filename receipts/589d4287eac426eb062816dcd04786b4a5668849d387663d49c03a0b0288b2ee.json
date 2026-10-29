@@ -1,0 +1,38 @@
+{
+  "authority_effect": "NONE",
+  "boundary_evidence": {
+    "communication_id": "intr-path-v1:StegGhost->Infrastructure-Continuity-Ventures",
+    "disposition": "ALLOW",
+    "operation": "ORGANIZATION_INTR_DESTINATION_INGRESS",
+    "path_id": "StegGhost->Infrastructure-Continuity-Ventures:intr-destination",
+    "profile_id": "intr-destination",
+    "source_organization_receipt_sha256": "sha256:c4c4228ed8e8bad3d4da0f188820a27d7f08f7de59cf15cde4784416d5d14de2",
+    "source_repository": "StegGhost/.github",
+    "source_repository_receipt_sha256": "sha256:ced74ceefe5a22276949af40053e66d9a6901778b089ea55f23c1d7a155fe7d7"
+  },
+  "canonical_state_transition_receipt_sha256": null,
+  "hb_reference": {
+    "authority_effect": "NONE",
+    "derived_from_clock": false,
+    "epoch": 469411750,
+    "frequency_hz": 100,
+    "generation": 469411750,
+    "heartbeat_id": "HB:469411750",
+    "phase_offset_ns": 0,
+    "progression_dependency": "OSCILLATOR_ONLY"
+  },
+  "org_transition_class": "REPO_STATE_PROPAGATION",
+  "organization": "Infrastructure-Continuity-Ventures",
+  "predecessor_org_state_sha256": "sha256:399e46ef9cbfe6c8bafb53246c1f67addbffc7bea8e24563b7b17a3a88572ecc",
+  "previous_receipt_sha256": "sha256:0fc5381b7c7621b269ec6a643befc939baf737169fcdd3edd90a9c7049e94055",
+  "receipt_sha256": "sha256:589d4287eac426eb062816dcd04786b4a5668849d387663d49c03a0b0288b2ee",
+  "repo_receipt_sha256": "sha256:f717671c70a4a0d82ecf3879a6927a6cdd14cbfdb96e8e82437d13f2bc1ceb47",
+  "repo_transition_id": "INTR_MESH_PATH_INGRESS:StegGhost->Infrastructure-Continuity-Ventures:intr-destination@intr-path-v1:StegGhost->Infrastructure-Continuity-Ventures",
+  "schema": "stegverse.organization-transition-receipt/v1",
+  "source_receipt_schema": "stegverse.repo-transition-receipt/v1",
+  "source_repository": "Infrastructure-Continuity-Ventures/.github",
+  "source_transition_id": "INTR_MESH_PATH_INGRESS:StegGhost->Infrastructure-Continuity-Ventures:intr-destination@intr-path-v1:StegGhost->Infrastructure-Continuity-Ventures",
+  "source_transition_sha256": "sha256:f717671c70a4a0d82ecf3879a6927a6cdd14cbfdb96e8e82437d13f2bc1ceb47",
+  "subject_or_correlation_id": null,
+  "successor_org_state_sha256": "sha256:e4601e124913ac638404addff4e0b83eba3425f58429659aa89f874150c9c546"
+}
