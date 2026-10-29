@@ -1,0 +1,38 @@
+{
+  "authority_effect": "NONE",
+  "boundary_evidence": {
+    "communication_id": "intr-path-v1:master-records->Infrastructure-Continuity-Ventures",
+    "disposition": "ALLOW",
+    "operation": "ORGANIZATION_INTR_DESTINATION_INGRESS",
+    "path_id": "master-records->Infrastructure-Continuity-Ventures:intr-destination",
+    "profile_id": "intr-destination",
+    "source_organization_receipt_sha256": "sha256:e644db94b2658f813b2e7bbbba2f288ebc4991f42472cce2b233ee864d0fea99",
+    "source_repository": "master-records/.github",
+    "source_repository_receipt_sha256": "sha256:5f6e1f08c481792142c960dcce8da7c28e48c8cb5acdf58115dd47c310ffc763"
+  },
+  "canonical_state_transition_receipt_sha256": null,
+  "hb_reference": {
+    "authority_effect": "NONE",
+    "derived_from_clock": false,
+    "epoch": 469411750,
+    "frequency_hz": 100,
+    "generation": 469411750,
+    "heartbeat_id": "HB:469411750",
+    "phase_offset_ns": 0,
+    "progression_dependency": "OSCILLATOR_ONLY"
+  },
+  "org_transition_class": "REPO_STATE_PROPAGATION",
+  "organization": "Infrastructure-Continuity-Ventures",
+  "predecessor_org_state_sha256": "sha256:aa3d0efd6b6b587a3dcc0c94c9ed5e03c0328111d023c59a7f34ff7957afe08b",
+  "previous_receipt_sha256": "sha256:c53982c9e46e15b69e600427fb27c3d4f0205ed8cb960708abc64ccde59557ec",
+  "receipt_sha256": "sha256:d5da6e0ca42619a6b0ddbb33f35ed44197ba4b833d8387500fbc2e4e9ef07c08",
+  "repo_receipt_sha256": "sha256:adb9d2ee2d803d51d53d9f04ca7242d443c0b8f0db91050aacf591ef805ab6ad",
+  "repo_transition_id": "INTR_MESH_PATH_INGRESS:master-records->Infrastructure-Continuity-Ventures:intr-destination@intr-path-v1:master-records->Infrastructure-Continuity-Ventures",
+  "schema": "stegverse.organization-transition-receipt/v1",
+  "source_receipt_schema": "stegverse.repo-transition-receipt/v1",
+  "source_repository": "Infrastructure-Continuity-Ventures/.github",
+  "source_transition_id": "INTR_MESH_PATH_INGRESS:master-records->Infrastructure-Continuity-Ventures:intr-destination@intr-path-v1:master-records->Infrastructure-Continuity-Ventures",
+  "source_transition_sha256": "sha256:adb9d2ee2d803d51d53d9f04ca7242d443c0b8f0db91050aacf591ef805ab6ad",
+  "subject_or_correlation_id": null,
+  "successor_org_state_sha256": "sha256:390f787bde9b02e851040f1e13f59267f7f6386d299907bf7c7bdb0c60ec4a4a"
+}
