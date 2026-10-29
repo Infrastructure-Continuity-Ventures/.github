@@ -1,0 +1,38 @@
+{
+  "authority_effect": "NONE",
+  "boundary_evidence": {
+    "communication_id": "intr-path-v1:formalism-tests->Infrastructure-Continuity-Ventures",
+    "disposition": "ALLOW",
+    "operation": "ORGANIZATION_INTR_DESTINATION_INGRESS",
+    "path_id": "formalism-tests->Infrastructure-Continuity-Ventures:intr-destination",
+    "profile_id": "intr-destination",
+    "source_organization_receipt_sha256": "sha256:69329d02ec677002398ad0115d274922894d185213f77945f53fa6e76979ebd0",
+    "source_repository": "formalism-tests/.github",
+    "source_repository_receipt_sha256": "sha256:35bb6b3bf10079b4e53656dda6bf241872795a0e4bf973e645101c1fbba435c4"
+  },
+  "canonical_state_transition_receipt_sha256": null,
+  "hb_reference": {
+    "authority_effect": "NONE",
+    "derived_from_clock": false,
+    "epoch": 469411750,
+    "frequency_hz": 100,
+    "generation": 469411750,
+    "heartbeat_id": "HB:469411750",
+    "phase_offset_ns": 0,
+    "progression_dependency": "OSCILLATOR_ONLY"
+  },
+  "org_transition_class": "REPO_STATE_PROPAGATION",
+  "organization": "Infrastructure-Continuity-Ventures",
+  "predecessor_org_state_sha256": "sha256:7e0f0e035ff35612c721f98cb4388df611c83fa97151d7e536a2f1091312b3e6",
+  "previous_receipt_sha256": "sha256:1b1acd02decbe4a4c9c478f4a05e0eead35c522931ec28141712e4b6008c8726",
+  "receipt_sha256": "sha256:c53982c9e46e15b69e600427fb27c3d4f0205ed8cb960708abc64ccde59557ec",
+  "repo_receipt_sha256": "sha256:71aa97e2c213af9b45b4d0a9b4874882e7b4c0fab3e6f750ba916965df3f81e5",
+  "repo_transition_id": "INTR_MESH_PATH_INGRESS:formalism-tests->Infrastructure-Continuity-Ventures:intr-destination@intr-path-v1:formalism-tests->Infrastructure-Continuity-Ventures",
+  "schema": "stegverse.organization-transition-receipt/v1",
+  "source_receipt_schema": "stegverse.repo-transition-receipt/v1",
+  "source_repository": "Infrastructure-Continuity-Ventures/.github",
+  "source_transition_id": "INTR_MESH_PATH_INGRESS:formalism-tests->Infrastructure-Continuity-Ventures:intr-destination@intr-path-v1:formalism-tests->Infrastructure-Continuity-Ventures",
+  "source_transition_sha256": "sha256:71aa97e2c213af9b45b4d0a9b4874882e7b4c0fab3e6f750ba916965df3f81e5",
+  "subject_or_correlation_id": null,
+  "successor_org_state_sha256": "sha256:379a88cc6791155d6f6193304cb97f7dd75150da8f4f19bd4db609779611f64c"
+}
